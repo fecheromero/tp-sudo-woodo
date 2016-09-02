@@ -27,7 +27,7 @@ int main(void) {
 	my_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 	memset(&(my_addr.sin_zero), '\0', 8); // Poner a cero el resto de la estructura
 
-	setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, MYPORT);
+	setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT, &(int){1}, sizeof(int));
 
 	int rdo=bind(sockfd, (struct sockaddr *)&my_addr, sizeof(struct sockaddr)); //bindea el socket al puerto (se usa esa estructura addr)
 	if(rdo==-1){
