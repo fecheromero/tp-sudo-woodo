@@ -5,12 +5,9 @@
  *  Created on: 3/9/2016
  *      Author: utnso
  */
-#include <nivel-gui/tad_items.h>
 #include <tad_items.h>
 #include <stdlib.h>
 #include <curses.h>
-#include <ncurses.h>
-#include <commons/collections/list.h>
 
 int main(void) {
 	int x = 1;
