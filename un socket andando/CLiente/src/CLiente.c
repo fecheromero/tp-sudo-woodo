@@ -11,14 +11,14 @@
 #include "/home/utnso/librerias/socketes.h"
     #define DEST_PORT 4555
     main()
-    {
+    {	puts("ingrese su envio");
+    	char* scan;
+    	char* paquete;
+    	scanf("%s",paquete);
     	int socket1;
     	socket1=crearSocket();
     	conectarSocket(socket1,DEST_PORT,IP_LOCAL);
         puts("teclea algo para enviar paquete");
-        char* scan;
-        scanf("%f",scan);
-        char* paquete="paqueton";
+        scanf("%s",scan);
         enviar(socket1,paquete,8);
-
     };

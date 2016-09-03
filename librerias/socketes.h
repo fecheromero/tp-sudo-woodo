@@ -83,17 +83,13 @@ void socketEscucha(int socket,int maxDeConexiones){
 	return unaDireccion;
 };
 //devuelve un puntero al dato
-void* recibir(int socket,size_t lenght){
+int recibir(int socket,void* guardeAqui,size_t lenght){
 	int rdo;
-	char* guardeAqui=malloc(8);
-	rdo=recv(socket,guardeAqui,8,0);
+	rdo=recv(socket,guardeAqui,lenght,0);
 		if(rdo==-1){
 			perror("Fallo al recibir paquete");
 		};
-		if(rdo==0){
-			perror("se desconecto el socket");
-		};//si devuelve 0 significa que se desconecto el socket
-		return guardeAqui;
+		return rdo;
 
 };
 //envia el dato en el buffer (2do parametro)
@@ -104,4 +100,55 @@ int enviar(int socket,void * sacaDeAca,size_t lenght){
 		perror("Fallo el envio");
 	};
 	return rdo;
+};
+
+void levantarServer(int listener,fd_set read_fds,fd_set master,direccion* direcciones,void(* function)(int,void*),int cantDeEjecucionesPorsocket,int fdmax,struct timeval *time){
+	FD_ZERO(&read_fds);
+	FD_ZERO(&master);
+	FD_SET(listener,&master);
+	int i;
+	char buf[256];
+	for(;;) {
+		            read_fds = master; // cópialo
+		            if (select(fdmax+1, &read_fds, NULL, NULL, time) == -1) {
+		                perror("fallo el select select");
+		                exit(1);
+		            };
+		            // explorar conexiones existentes en busca de datos que leer
+
+		            for( i = 0; i <= fdmax; i++) {
+		                if (FD_ISSET(i, &read_fds)) { // ¡¡tenemos datos!!
+		                    if (i == listener) {
+		                        // gestionar nuevas conexiones
+		                        direccion nuevoSocket=aceptarConexion(listener);
+		                       FD_SET(nuevoSocket.fd,&master);// añadir al conjunto maestro
+		                       if(nuevoSocket.fd>fdmax){
+		                    	   fdmax=nuevoSocket.fd;
+		                       };// actualizar el máximo
+
+		                      //ARMAR UNA BOLSA DE DIRECCIONES PARA GUARDAR LAS IP Y PORT DE CONEXION (X SI LAS MOSCAS)
+		                        }
+		                     else {
+		                    	int rdo;
+		                        // gestionar datos de un cliente
+		                        if (rdo=recibir(i,buf,sizeof(buf)) <= 0) {
+		                            // error o conexión cerrada por el cliente
+		                            if (rdo == 0) {
+		                                // conexión cerrada
+		                            	puts("socket desconectado");
+		                            }
+		                            close(i); // bye!
+		                            FD_CLR(i, &master); // eliminar del conjunto maestro
+		                        } else {
+		                        	int h;
+		                          for(h=0;h<=cantDeEjecucionesPorsocket;h++){
+								  function(i,buf);
+		                          };
+		                            };
+		                        };
+		                    };
+		                };
+		};
+
+
 };

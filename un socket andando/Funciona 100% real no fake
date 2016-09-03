@@ -2,4 +2,4 @@
 2-ir a las carpetas src de CLiente y de server (uno en cada uno)
 3- gcc <nombre del .c> -o ejecutable en cada consola (crea un exe con el nombre "ejecutable")
 4- ./ejecutable (corre los 2 ejecutables)
-5- seguir los pasos: primero server, despues cliente, aceptar el cliente, enviar paquete, recibir paquete.
+5- seguir los pasos: levantar el Server y el/los clientes e ir enviando cosas con los clientes.

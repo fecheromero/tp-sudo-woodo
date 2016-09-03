@@ -10,23 +10,22 @@
 
 #include "/home/utnso/librerias/socketes.h"
 #define MYPORT 4555
+
+
+void mostrar(int socket,void* buf){
+	puts(buf);
+};
 int main(void) {
-	int socket1;
-	socket1=crearSocket();
-	bindearSocket(socket1,MYPORT,IP_LOCAL);
-	socketEscucha(socket1,5);
-	char* paquete=malloc(8);
-	puts("teclea algo para aceptar");
-	char* scan=malloc(4);
-	scanf("%s",scan);
-	int socketConectado;
-	socketConectado=aceptarConexion(socket1).fd;
-	puts("teclea algo para recibir");
-	scanf("%s",scan);
-	paquete=recibir(socketConectado,8);
-	puts(paquete);
-	free(paquete);
-	free(scan);
+	fd_set read_fds;
+	fd_set master;
+	int listener;
+	direccion direcciones[256];
+	listener=crearSocket();
+	bindearSocket(listener,MYPORT,IP_LOCAL);
+	socketEscucha(listener,5);
+	levantarServer(listener,read_fds,master,direcciones,mostrar,2,10,NULL);
+
+
 
 	return 0;
 };
