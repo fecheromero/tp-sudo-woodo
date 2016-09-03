@@ -8,7 +8,7 @@
  ============================================================================
  */
 
-#include "/home/utnso/librerias/socketes.h"
+#include <socketes.h>
     #define DEST_PORT 4555
     main()
     {	puts("ingrese su envio");

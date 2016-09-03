@@ -8,7 +8,7 @@
  ============================================================================
  */
 
-#include "/home/utnso/librerias/socketes.h"
+#include <socketes.h>
 #define MYPORT 4555
 
 
