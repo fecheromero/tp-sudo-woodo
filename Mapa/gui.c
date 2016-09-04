@@ -8,7 +8,13 @@
 #include <tad_items.h>
 #include <stdlib.h>
 #include <curses.h>
+#include "tad_items.h"
+#include <stdbool.h>
+#include <stdio.h>
+
+
 //Mover entrenador una unidad a la izquierda
+
 void movIz(t_list* items, char id, char* nombre_nivel){
 	ITEM_NIVEL* item = _search_item_by_id(items, id);
 
@@ -24,16 +30,19 @@ void movIz(t_list* items, char id, char* nombre_nivel){
 
 
 void movDe(t_list* items, char id, char* nombre_nivel){
-	ITEM_NIVEL* item = _search_item_by_id(items, id);
-	int rows, cols;
-	nivel_gui_get_area_nivel(&rows, &cols);
-	if (item != NULL) {
+	ITEM_NIVEL* item1 = _search_item_by_id(items, id);
+//	int rows, cols;
+//	nivel_gui_get_area_nivel(&rows, &cols);
+	MoverPersonaje (items, id,  item1->posx + 1, item1->posy);
+//	nivel_gui_dibujar(items, nombre_nivel);
 
-	     item->posx = item->posx < cols ? item->posx + 1 : item->posx;
-	     nivel_gui_dibujar(items, nombre_nivel);
-	    } else {
-	        printf("WARN: Item %c no existente\n", id);
-	    }
+//	if (item != NULL) {
+//
+//	     item->posx = item->posx < cols ? item->posx + 1 : item->posx;
+//	     nivel_gui_dibujar(items, nombre_nivel);
+//	    } else {
+//	        printf("WARN: Item %c no existente\n", id);
+//	    }
 	}
 
 
@@ -79,9 +88,23 @@ void sumarRecurso(t_list* items, char id) {
     }
 }
 
+//capturar pokemon recibe un nest y un entrenador, compara su posicion y si estan en el mismo lugar captura
+
+void capturarPokemon(t_list* items, char entid, char nestid){
+    ITEM_NIVEL* nest = _search_item_by_id(items, nestid);
+    ITEM_NIVEL* entrenador = _search_item_by_id(items, entid);
+
+    if(nest->posx == entrenador->posx && nest->posy == entrenador->posy){
+    	restarRecurso(items, nestid);
+    	}
+}
+
+
+
 
 
 int main(void) {
+	char* nombre_nivel = "Test primer GUI";
 	int x = 1;
 	int y = 1;
 	int rows, cols;
@@ -100,34 +123,41 @@ int main(void) {
 	//Pokenest
 	CrearCaja(items, 'P', 33, 32, 4);
 
-	nivel_gui_dibujar(items, "Test primer GUI");
+	nivel_gui_dibujar(items, nombre_nivel);
 
-	while (y < rows) {
+	while (y < rows && x < cols ) {
 
 
 		int key = getch();
-		if (key == 'n' && y < rows && x < cols){
-			switch(mov){
-			case 0:
-				x ++;
-				mov = 1;
-				break;
-			case 1:
-				y++;
-				mov = 0;
-				break;
-			}
+		switch(key){
+		case 'n':
+				switch(mov){
+							case 0:
+								x ++;
+								mov = 1;
+								break;
+							case 1:
+								y++;
+								mov = 0;
+								break;
+							}
+			break;
+		case 'm':
+				movDe(items, '@', nombre_nivel);
+				x++;
+			break;
+		}
 			MoverPersonaje(items, '@', x, y);
-			if (((x == 33) && (y == 32)) ) {
-						restarRecurso(items, 'P');
-			}
-			nivel_gui_dibujar(items, "Test Chamber 04");
+			capturarPokemon(items, '@', 'P');
+			nivel_gui_dibujar(items, nombre_nivel);
 		}
 
-	}
 	BorrarItem(items, '@');
+
 	BorrarItem(items, 'P');
+
 	nivel_gui_terminar();
+
 	return 0;
 }
 
