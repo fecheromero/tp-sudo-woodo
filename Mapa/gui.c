@@ -16,62 +16,29 @@
 //Mover entrenador una unidad a la izquierda
 
 void movIz(t_list* items, char id, char* nombre_nivel){
-	ITEM_NIVEL* item = _search_item_by_id(items, id);
-
-	if (item != NULL) {
-
-	     item->posx = item->posx > 1 ? item->posx - 1 : item->posx;
-	     nivel_gui_dibujar(items, nombre_nivel);
-	    } else {
-	        printf("WARN: Item %c no existente\n", id);
-	    }
+	ITEM_NIVEL* item1 = _search_item_by_id(items, id);
+	MoverPersonaje (items, id,  item1->posx - 1, item1->posy);
 	}
 
 
 
 void movDe(t_list* items, char id, char* nombre_nivel){
 	ITEM_NIVEL* item1 = _search_item_by_id(items, id);
-//	int rows, cols;
-//	nivel_gui_get_area_nivel(&rows, &cols);
 	MoverPersonaje (items, id,  item1->posx + 1, item1->posy);
-//	nivel_gui_dibujar(items, nombre_nivel);
-
-//	if (item != NULL) {
-//
-//	     item->posx = item->posx < cols ? item->posx + 1 : item->posx;
-//	     nivel_gui_dibujar(items, nombre_nivel);
-//	    } else {
-//	        printf("WARN: Item %c no existente\n", id);
-//	    }
 	}
 
 
 
 void movAr(t_list* items, char id, char* nombre_nivel){
-	ITEM_NIVEL* item = _search_item_by_id(items, id);
-
-	if (item != NULL) {
-
-	     item->posy = item->posy > 1 ? item->posx - 1 : item->posy;
-	     nivel_gui_dibujar(items, nombre_nivel);
-	    } else {
-	        printf("WARN: Item %c no existente\n", id);
-	    }
+	ITEM_NIVEL* item1 = _search_item_by_id(items, id);
+	MoverPersonaje (items, id,  item1->posx, item1->posy + 1);
 	}
 
 
 
 void movAb(t_list* items, char id, char* nombre_nivel){
-	ITEM_NIVEL* item = _search_item_by_id(items, id);
-	int rows, cols;
-	nivel_gui_get_area_nivel(&rows, &cols);
-	if (item != NULL) {
-
-	     item->posy = item->posy < rows ? item->posy + 1 : item->posy;
-	     nivel_gui_dibujar(items, nombre_nivel);
-	    } else {
-	        printf("WARN: Item %c no existente\n", id);
-	    }
+	ITEM_NIVEL* item1 = _search_item_by_id(items, id);
+	MoverPersonaje (items, id,  item1->posx, item1->posy - 1);
 	}
 
 void crearEntrenador(t_list* items, char id) {
@@ -142,11 +109,13 @@ int main(void) {
 								break;
 							}
 			break;
+
 		case 'm':
 				movDe(items, '@', nombre_nivel);
 				x++;
 			break;
 		}
+
 			MoverPersonaje(items, '@', x, y);
 			capturarPokemon(items, '@', 'P');
 			nivel_gui_dibujar(items, nombre_nivel);
