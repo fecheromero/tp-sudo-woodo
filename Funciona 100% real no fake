@@ -1,5 +1,13 @@
+Instalar la libreria
+1- en una terminal entrar en Support
+2- tirar sudo make install
+3-estar atento de compilar con el -Support para indicarle al compilar q va a usar el codigo dentro de esa libreria
+
+
+
+Ejecutar
 1- abrir 2 consolas
 2-ir a las carpetas src de CLiente y de server (uno en cada uno)
-3- gcc <nombre del .c> -o ejecutable en cada consola (crea un exe con el nombre "ejecutable")
+3- gcc <nombre del .c> -lSupport -o exec en cada consola (crea un exe con el nombre "ejecutable")
 4- ./ejecutable (corre los 2 ejecutables)
 5- seguir los pasos: levantar el Server y el/los clientes e ir enviando cosas con los clientes.
