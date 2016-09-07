@@ -57,15 +57,27 @@ void sumarRecurso(t_list* items, char id) {
 
 //capturar pokemon recibe un nest y un entrenador, compara su posicion y si estan en el mismo lugar captura
 
-void capturarPokemon(t_list* items, char entid, char nestid){
+int capturarPokemon(t_list* items, char entid, char nestid){
     ITEM_NIVEL* nest = _search_item_by_id(items, nestid);
     ITEM_NIVEL* entrenador = _search_item_by_id(items, entid);
 
     if(nest->posx == entrenador->posx && nest->posy == entrenador->posy){
     	restarRecurso(items, nestid);
+    	return 0; //Capturo al Pokemon.
     	}
+    return -1; //No se encuentran en la misma posicion.
 }
 
+void finalizarGUI(t_list* items){
+	int n;
+	n = list_size(items);
+	int i;
+	for (i = 1; i < n ; i++) {
+		 ITEM_NIVEL* item = list_get(items, i);
+		 BorrarItem(items, item->id);
+	}
+	nivel_gui_terminar();
+}
 
 
 
@@ -85,7 +97,8 @@ int main(void) {
 	nivel_gui_get_area_nivel(&rows, &cols);
 
 	//entrenador
-	CrearPersonaje(items, '@', x, y);
+	//CrearPersonaje(items, '@', x, y);
+	crearEntrenador(items,'@');
 
 	//Pokenest
 	CrearCaja(items, 'P', 33, 32, 4);
@@ -121,11 +134,12 @@ int main(void) {
 			nivel_gui_dibujar(items, nombre_nivel);
 		}
 
-	BorrarItem(items, '@');
+	finalizarGUI(items);
+	//BorrarItem(items, '@');
 
-	BorrarItem(items, 'P');
+	//BorrarItem(items, 'P');
 
-	nivel_gui_terminar();
+	//nivel_gui_terminar();
 
 	return 0;
 }
