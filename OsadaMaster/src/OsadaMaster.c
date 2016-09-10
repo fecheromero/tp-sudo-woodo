@@ -25,7 +25,7 @@ int main(void) {
 	t_bitarray* fyleSystem;
 	osada_header unOsadaHeader;
 	unOsadaHeader.fs_blocks = 1500;
-	char unChar[7] = "Osada";
+	char unChar[7] = "OsadaFS";
 	strcpy(unOsadaHeader.magic_number, unChar);
 	unOsadaHeader.allocations_table_offset = 30;
 	unOsadaHeader.version = 1;
@@ -39,18 +39,18 @@ int main(void) {
 		fseek(saraza, 0, SEEK_SET);
 		fread(&otroOsadaHeader, sizeof(osada_header), 1, saraza);
 	}
-	puts("identificador");
-	printf("%s\n", otroOsadaHeader.magic_number);
-	puts("version");
-	printf("%d\n", otroOsadaHeader.version);
-	puts("tamaño del FS");
-	printf("%d\n", otroOsadaHeader.fs_blocks);
-	puts("tamaño del  bipmap");
-	printf("%d\n", otroOsadaHeader.bitmap_blocks);
-	puts("tamaño de la tabla de asignaciones");
-	printf("%d\n", otroOsadaHeader.allocations_table_offset);
-	puts("tamaño de la tabla de datos");
-	printf("%d\n", otroOsadaHeader.fs_blocks);
+	puts("Identificador:");
+	printf("%.*s\n\n", 7, otroOsadaHeader.magic_number);
+	puts("Version:");
+	printf("%d\n\n", otroOsadaHeader.version);
+	puts("Tamaño del FS:");
+	printf("%d\n\n", otroOsadaHeader.fs_blocks);
+	puts("Tamaño del  bitmap:");
+	printf("%d\n\n", otroOsadaHeader.bitmap_blocks);
+	puts("Tamaño de la tabla de asignaciones:");
+	printf("%d\n\n", otroOsadaHeader.allocations_table_offset);
+	puts("Tamaño de la tabla de datos:");
+	printf("%d\n\n", otroOsadaHeader.data_blocks);
 	return EXIT_SUCCESS;
 }
 //tamaño en bloques=1500
