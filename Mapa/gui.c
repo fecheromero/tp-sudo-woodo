@@ -15,30 +15,9 @@
 
 //Mover entrenador una unidad a la izquierda
 
-void movIz(t_list* items, char id, char* nombre_nivel){
+void mover(t_list* items, char id, char* nombre_nivel, int x, int y){
 	ITEM_NIVEL* item1 = _search_item_by_id(items, id);
-	MoverPersonaje (items, id,  item1->posx - 1, item1->posy);
-	}
-
-
-
-void movDe(t_list* items, char id, char* nombre_nivel){
-	ITEM_NIVEL* item1 = _search_item_by_id(items, id);
-	MoverPersonaje (items, id,  item1->posx + 1, item1->posy);
-	}
-
-
-
-void movAr(t_list* items, char id, char* nombre_nivel){
-	ITEM_NIVEL* item1 = _search_item_by_id(items, id);
-	MoverPersonaje (items, id,  item1->posx, item1->posy + 1);
-	}
-
-
-
-void movAb(t_list* items, char id, char* nombre_nivel){
-	ITEM_NIVEL* item1 = _search_item_by_id(items, id);
-	MoverPersonaje (items, id,  item1->posx, item1->posy - 1);
+	MoverPersonaje (items, id,  item1->posx +x, item1->posy +y);
 	}
 
 void crearEntrenador(t_list* items, char id) {
@@ -124,7 +103,7 @@ int main(void) {
 			break;
 
 		case 'm':
-				movDe(items, '@', nombre_nivel);
+				mover(items, '@', nombre_nivel, 1, 0);
 				x++;
 			break;
 		}
