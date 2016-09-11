@@ -175,6 +175,7 @@ void AceptarConexion(int fd,void* buffer){
 		case "SRDF":
 			pthread_mutex_lock(controlDelFlujo);
 			reacomodarPorTiempos(atendido,nuevo);
+			pthread_mutex_unlock(controlDelFlujo);
 			break;
 	}
 
