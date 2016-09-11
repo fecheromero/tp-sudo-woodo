@@ -55,10 +55,41 @@ void cargarMetaData(t_config config,char* direccion){
 		if(CONFIG!=NULL){puts("el archivo de metadata se cargo correctamente");};
 		//hacer el muestreo de datos
 };
-//Ejecutor
+//planificador
+void RRProximo(){
+	if(atendido!=NULL){
+	if(atendido.quantum>0){
 
-//agarra al primero de la cola de READY y le cumple una accion (la idea es que cada accion sepa lo q tiene q hacer incluido modificar los semaforos que correspondan)
-void Ejecutor(){
+		}
+	else{atendido.quantum=quantum;
+		sem_wait(&hayReadys);
+		pthread_mutex_lock(&SEM_READY);
+		queue_push(&READY,&atendido);
+		atendido=queue_pop(&READY);
+		pthread_mutex_unlock(&SEM_READY);
+	};
+}
+	else{
+		sem_wait(&hayReadys);
+	pthread_mutex_lock(&SEM_READY);
+	atendido queue_pop(&READY);
+	pthread_mutex_unlock(&SEM_READY);
+	};
+
+	};
+
+void SRDFProximo(){
+	if(atendido!=NULL){
+
+	}
+	else{
+		sem_wait(&hayReadys);
+		pthread_mutex_lock(&SEM_READY);
+		atendido= queue_pop(&READY);
+		pthread_mutex_unlock(&SEM_READY);
+};
+
+void Planificador(){
 	while(TRUE){
 		switch (tipoDePlanificacion) {
 			case "RR":
@@ -108,7 +139,6 @@ void desbloqueador(char id){
 		switch (tipoDePlanificacion) {
 			case "RR":
 				pthread_mutex_lock(SEM_READY);
-				nuevo=entrenadorADesbloquear.entrenador;
 				queue_push(READY,entrenadorADesbloquear.entrenador);
 				pthread_mutex_unlock(SEM_READY);
 
@@ -164,59 +194,17 @@ void conector(){
 
 
 };
-// controla si el socked del entrenador se desconecto, en caso de que si lo manda a desconectar
+// controla si el socked del entrenador se desconecto
 int sigueConectado(entrenador atendido){
 	char* algo;
 	return recibir(atendido.fd,algo,4);
 };
+//desconecta y libera pokemons
 void desconectar(entrenador entrenador){
 	atendido=NULL;
 	//falta liberar los pokemos
 };
-//planificador
-entrenador planificadorProximo(){
-	switch (tipoDePlanificacion) {
-		case "RR":
-			return RRProximo();
-			break;
-		case "SRDF":
-			return SRDFProximo();
-			break;
-	}
 
-};
-void RRProximo(){
-	if(atendido!=NULL){
-	if(atendido.quantum>0){
-
-		}
-	else{atendido.quantum=quantum;
-		sem_wait(&hayReadys);
-		pthread_mutex_lock(&SEM_READY);
-		queue_push(&READY,&atendido);
-		atendido=queue_pop(&READY);
-		pthread_mutex_unlock(&SEM_READY);
-	};
-}
-	else{
-		sem_wait(&hayReadys);
-	pthread_mutex_lock(&SEM_READY);
-	atendido queue_pop(&READY);
-	pthread_mutex_unlock(&SEM_READY);
-	};
-
-	};
-
-void SRDFProximo(){
-	if(atendido!=NULL){
-
-	}
-	else{
-		sem_wait(&hayReadys);
-		pthread_mutex_lock(&SEM_READY);
-		atendido= queue_pop(&READY);
-		pthread_mutex_unlock(&SEM_READY);
-};
 int main(void) {
 
 	return 0;
