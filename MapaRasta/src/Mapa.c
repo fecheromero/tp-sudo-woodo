@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <dirent.h>
 #include <commons/collections/queue.h>
 #include <commons/error.h>
 #include <socketes.h>
@@ -19,8 +20,9 @@
 #include <semaphore.h>
 #include <pthread.h>
 #include <socketes.h>
-#define MYPORT 4555
 
+#define MYPORT 4555
+char* POKEDEX;
 typedef struct entrenador{
 	int fd;
 	int quantum;
@@ -32,7 +34,7 @@ typedef enum{
 	RR,
 	SRDF
 }tipoPlanificacion;
-
+int POKEID;
 pthread_mutex_t* SEM_READY;
 pthread_mutex_t* SEM_BLOCKED;
 
@@ -40,7 +42,19 @@ sem_t* hayReadys;
 int pokemonsLiberados;
 
 t_queue* READY;
+
+typedef struct pokeNest{
+	int id;
+	char* pokemon;
+	t_list* instancias;
+}pokeNest;
+typedef struct pokemon{
+	int id;
+	char* nombre;
+	int nivel;
+}pokemon;
  t_list*  pokemons;
+
  typedef struct bloqueadosXPokemon{
 	int pokemonId;
 	int cantidad;
@@ -51,7 +65,7 @@ t_list*  BLOCKED;
 
 
  entrenador* atendido;
- t_config* CONFIG=NULL;
+ t_config* CONFIG;
  tipoPlanificacion planificacion;
  int QUANTUM;
  //valores para SDRF
@@ -64,13 +78,14 @@ typedef enum{
 }axion;
 
 typedef struct accion{
-	char string;
+	char* string;
 	axion enumerable;
 }accion;
-t_list acciones;
+t_list* acciones;
 void cumplirAccion(entrenador* ent,void* buf){
 	int criterio(accion* acc){
-		return acc->string==buf;
+		char* buff=buf;
+		return acc->string==buff;
 	};
 	accion* act=list_find(acciones,criterio);
 
@@ -83,13 +98,17 @@ void cumplirAccion(entrenador* ent,void* buf){
 		break;
 	};
 }; //switch con las posibles acciones que puede hacer el entrenador
-void cargarMetaData(t_config config,char* direccion){
-	char* file=malloc(250);
-		puts("igrese direccion"); //ojo con los espacios
-		scanf("%s",file);
+void cargarMetaData(char* mapa){
+	char* file=string_new();
+	string_append(&file,POKEDEX);
+	string_append(&file,"/Mapas/");
+	string_append(&file,mapa);
+	string_append(&file,"/metadata");
 		CONFIG=config_create(file);
 		if(CONFIG!=NULL){puts("el archivo de metadata se cargo correctamente");};
-		//hacer el muestreo de datos
+		puts(config_get_string_value(CONFIG,"IP"));
+		puts(config_get_string_value(CONFIG,"algoritmo"));
+
 };
 
 
@@ -146,6 +165,10 @@ void SRDFProximo(){
 		atendido= nuevo;
 		pthread_mutex_unlock(SEM_READY);
 }};
+void desconectar(entrenador* entrenador){
+	atendido=NULL;
+	//falta liberar los pokemos
+};
 //agarra al primero de la cola de READY y le cumple una accion (la idea es que cada accion sepa lo q tiene q hacer incluido modificar los semaforos que correspondan)
 void atenderLiberados(){
 	int cantidadDePokemons=list_size(BLOCKED);
@@ -247,22 +270,93 @@ void conector(){
 
 };
 
-void desconectar(entrenador entrenador){
-	atendido=NULL;
-	//falta liberar los pokemos
+void cargarPokemons(char *mapa){
+
+ char* direccionVariable=string_new();
+ 	   string_append(&direccionVariable,POKEDEX);
+
+
+ string_append(&direccionVariable,"/Mapas/");
+
+ string_append(&direccionVariable,mapa);
+
+ string_append(&direccionVariable,"/PokeNests");
+	struct dirent *dt;
+DIR *dire;
+ dire = opendir(direccionVariable);
+
+ printf("cargando el mapa %s\n",mapa);
+ //Recorrer directorio
+ while((dt=readdir(dire))!=NULL){
+ //strcmp permite comparar, si la comparación es verdadera devuelve un 0
+ //Aquí se pregunta si el arhivo o directorio es distinto de . y ..
+ //Para así asegurar que se muestre de forma recursiva los directorios y ficheros del directorio actual
+ if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)){
+    pokeNest* nests=malloc(sizeof(pokeNest));
+	   nests->pokemon=dt->d_name;
+	   nests->instancias=list_create();
+	   nests->id=POKEID;
+ 	 list_add(pokemons,nests);
+ //Cargar pokemons
+ 		   struct dirent *dt2;
+ 		   DIR *dire2;
+ 		   	char* direccionDeNests=string_new();
+ 		   	string_append(&direccionDeNests,direccionVariable);
+ 		 string_append(&direccionDeNests,"/");
+ 		 string_append(&direccionDeNests,nests->pokemon);
+ 		   dire2 = opendir(direccionDeNests);
+ 		   while((dt2=readdir(dire2))!=NULL){
+ 			if((strcmp(dt2->d_name,".")!=0)&&(strcmp(dt2->d_name,"..")!=0)){
+ 			   	   pokemon* nuevoPokemon=malloc(sizeof(pokemon));
+ 			   	   t_config* archivo=malloc(sizeof(t_config));
+ 			   	   char* direccionDeArchivo=string_new();
+ 			   	   string_append(&direccionDeArchivo,direccionDeNests);
+ 			   	string_append(&direccionDeArchivo,"/");
+ 			   	string_append(&direccionDeArchivo,dt2->d_name);
+ 			   	   archivo=config_create(direccionDeArchivo);
+ 			   	   nuevoPokemon->nombre=dt2->d_name;
+ 			   	    nuevoPokemon->id=POKEID;
+ 			   	   nuevoPokemon->nivel=config_get_int_value(archivo,"Nivel");
+
+ 			   	   list_add(nests->instancias,nuevoPokemon);
+ 			   	   puts("cargue A");
+ 			   	   puts(nuevoPokemon->nombre);
+ 			   	   puts("Nivel");
+ 			   	   printf("%d\n",nuevoPokemon->nivel);
+ 			   	   puts("ID");
+ 			   	   printf("%d\n",nuevoPokemon->id);
+		   		   free(nuevoPokemon);
+ 			}
+
+ 		   };
+ 		   close(dire2);
+ 		   POKEID++;
+ 		   free(nests);
+ }
+
+
+ }
+ closedir(dire);
+ 	puts("pokenests totales");
+ 	printf("%d\n",list_size(pokemons));
 };
 
 int main(void) {
-	pthread_mutex_init(SEM_BLOCKED,NULL);
-	pthread_mutex_init(SEM_READY,NULL);
-	pthread_mutex_init(controlDeFlujo,NULL);
-	sem_init(hayReadys,0,0);
+	//inicializaciones D:
+	POKEID=0;
+	pthread_mutex_init(&SEM_BLOCKED,NULL);
+	pthread_mutex_init(&SEM_READY,NULL);
+	pthread_mutex_init(&controlDeFlujo,NULL);
+	sem_init(&hayReadys,0,0);
 	pokemonsLiberados=0;
 	READY=queue_create();
 	  BLOCKED=list_create();
 	  atendido=NULL;
+	  POKEDEX=string_new();
+	  string_append(&POKEDEX,"/home/utnso/PokeDex");
+	 acciones=list_create();
 	  pokemons=list_create();
-	  accion* accion;
+	  accion* accion=malloc(sizeof(accion));
 	  accion->string="moverse";
 	  accion->enumerable=mover;
 	  list_add(acciones,accion);
@@ -272,6 +366,10 @@ int main(void) {
 	  accion->string="captura";
 	  accion->enumerable=capturar;
 	  list_add(acciones,accion);
-	return 0;
+	  free(accion);
+	  //carga de metadata
+	  cargarMetaData("PuebloPaleta");
+	  //carga de pokemons (recorre directorio)
+	  cargarPokemons("PuebloPaleta");
 	};
 
