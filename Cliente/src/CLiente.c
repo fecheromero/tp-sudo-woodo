@@ -21,4 +21,5 @@
         puts("teclea algo para enviar paquete");
         scanf("%s",scan);
         enviar(socket1,paquete,8);
+
     };
