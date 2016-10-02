@@ -20,12 +20,12 @@
 #include <semaphore.h>
 #include <pthread.h>
 #include <socketes.h>
-
+#include <time.h>
 #define MYPORT 4555
 char* POKEDEX;
-char* MAPA;
-t_list* items;
+char* mapaNombre;
 
+t_list* items;
 
 typedef struct entrenador{
 	int fd;
@@ -39,11 +39,21 @@ typedef enum{
 	RR,
 	SRDF
 }tipoPlanificacion;
-int POKEID;
-pthread_mutex_t* SEM_READY;
-pthread_mutex_t* SEM_BLOCKED;
 
-sem_t* hayReadys;
+typedef struct map{
+	int tiempoDeCheckeo;
+	int batallaOn;
+	int quantum;
+	int retardo;
+	tipoPlanificacion planificacion;
+	char* nombre;
+}map;
+map* MAPA;
+int POKEID;
+pthread_mutex_t SEM_READY;
+pthread_mutex_t SEM_BLOCKED;
+
+sem_t hayReadys;
 int pokemonsLiberados;
 
 t_queue* READY;
@@ -71,11 +81,7 @@ t_list*  BLOCKED;
 
 
  entrenador* atendido;
- t_config* CONFIG;
- tipoPlanificacion planificacion;
- int QUANTUM;
- //valores para SDRF
- pthread_mutex_t* controlDeFlujo;
+ pthread_mutex_t controlDeFlujo;
 
 typedef enum{
 	mover,
@@ -88,55 +94,121 @@ typedef struct accion{
 	char* string;
 	axion enumerable;
 }accion;
-t_list* acciones;
-void cumplirAccion(entrenador* ent,void* buf){
-	int criterio(accion* acc){
-		char* buff=buf;
-		return acc->string==buff;
-	};
-	accion* act=list_find(acciones,criterio);
 
-	switch(act->enumerable){
-	case mover:
-		break;
-	case capturar:
-		break;
-	case conocer:
-		break;
-	};
-}; //switch con las posibles acciones que puede hacer el entrenador
+t_list* acciones;
+
+t_list* sentidos;
+typedef enum{
+	IZQ,
+	DER,
+	ARR,
+	ABJ
+}sent;
+typedef struct sentido{
+	char caracter;
+	sent enumerable;
+}sentido;
+
 void cargarMetaData(char* mapa){
+	 t_config* CONFIG;
+	 CONFIG=malloc(sizeof(t_config));
 	char* file=string_new();
 	string_append(&file,POKEDEX);
 	string_append(&file,"/Mapas/");
 	string_append(&file,mapa);
 	string_append(&file,"/metadata");
 		CONFIG=config_create(file);
-		if(CONFIG!=NULL){puts("el archivo de metadata se cargo correctamente");};
 		puts(config_get_string_value(CONFIG,"IP"));
 		puts(config_get_string_value(CONFIG,"algoritmo"));
+		MAPA->batallaOn=config_get_int_value(CONFIG,"TiempoCheckeoDeadlock");
+		MAPA->quantum=config_get_int_value(CONFIG,"quantum");
+		MAPA->retardo=config_get_int_value(CONFIG,"retardo");
+		MAPA->nombre=mapa;
+		char* algoritmo=string_new();
+		string_append(&algoritmo,config_get_string_value(CONFIG,"algoritmo"));
 
+		if(strcmp(algoritmo,"RR")==0){
+			MAPA->planificacion=RR;
+
+		}
+		if(strcmp(algoritmo,"SRDF")==0){
+			MAPA->planificacion=SRDF;
+		}
+		free(CONFIG);
 };
 
 
-void RRProximo(){
-	if(atendido->fd=NULL){
-	if(atendido->quantum>0){
+void cumplirAccion(entrenador* ent,void* buf){
+	bool criterio(accion* acc){
+		char* buff=buf;
+		return (strcmp(acc->string,buff)==0);
+	};
+	accion* act=list_find(acciones,criterio);
 
+	char* arg;
+	switch(act->enumerable){
+	case mover:
+		arg=string_new();
+		recibir(ent->fd,arg,1);
+		bool crit(sentido* sent){
+			return (arg[0]==sent->caracter);
+		};
+		sentido* sent=list_find(sentidos,crit);
+			switch(sent->enumerable){
+			case IZQ:
+				movIz(items,ent->id,mapaNombre);
+				break;
+			case DER:
+				movDe(items,ent->id,mapaNombre);
+				break;
+			case ARR:
+				movAr(items,ent->id,mapaNombre);
+				break;
+			case ABJ:
+				movAb(items,ent->id,mapaNombre);
+				break;
+			};
+		break;
+	case capturar:
+
+		break;
+	case conocer:
+		arg=string_new();
+		recibir(ent->fd,arg,1);
+		bool criterio(ITEM_NIVEL* item){
+			return (item->id==arg[0]);
+		};
+		ITEM_NIVEL* item=list_find(items,criterio);
+		int* coord=malloc(sizeof(int));
+		*coord=item->posx;
+		enviar(ent->fd,coord,sizeof(int));
+		*coord=item->posy;
+		enviar(ent->fd,coord,sizeof(int));
+		free(coord);
+		break;
+	case medalla:
+		break;
+	};
+}; //switch con las posibles acciones que puede hacer el entrenador
+
+void RRProximo(){
+
+	if(atendido!=NULL){
+	if((atendido->quantum)>0){
 		}
 	else{
-		atendido->quantum=QUANTUM;
-		pthread_mutex_lock(SEM_READY);
+		atendido->quantum=MAPA->quantum;
+		pthread_mutex_lock(&SEM_READY);
 		queue_push(READY,atendido);
 		atendido=queue_pop(READY);
-		pthread_mutex_unlock(SEM_READY);
+		pthread_mutex_unlock(&SEM_READY);
 	};
 }
 	else{
-		sem_wait(hayReadys);
-	pthread_mutex_lock(SEM_READY);
+		sem_wait(&hayReadys);
+	pthread_mutex_lock(&SEM_READY);
 	atendido=queue_pop(READY);
-	pthread_mutex_unlock(SEM_READY);
+	pthread_mutex_unlock(&SEM_READY);
 	};
 
 	};
@@ -150,10 +222,10 @@ void SRDFProximo(){
 
 			return entr->pasosHastaLaPN==NULL;
 		};
-		sem_wait(hayReadys);
+		sem_wait(&hayReadys);
 		entrenador* nuevo=list_find(READY->elements,criterio);
 
-		pthread_mutex_lock(SEM_READY);
+		pthread_mutex_lock(&SEM_READY);
 		if(nuevo!=NULL){
 			bool igualAlNuevo(entrenador* entr){
 									return entr->fd==nuevo->fd;
@@ -170,14 +242,16 @@ void SRDFProximo(){
 			nuevo=list_find(READY->elements,menor);
 		};
 		atendido= nuevo;
-		pthread_mutex_unlock(SEM_READY);
+		pthread_mutex_unlock(&SEM_READY);
 }};
 void desconectar(entrenador* entrenador){
 	atendido=NULL;
 	//falta liberar los pokemos
 };
 int darPasoA(entrenador* entrenador,char* respuesta){
-	return (recibir(entrenador->fd,respuesta,7)==0);
+	int rdo=recibir(entrenador->fd,respuesta,7);
+		return (rdo!=0);
+
 
 };
 //agarra al primero de la cola de READY y le cumple una accion (la idea es que cada accion sepa lo q tiene q hacer incluido modificar los semaforos que correspondan)
@@ -193,64 +267,69 @@ void ejecutar(entrenador* entr){
 void atenderLiberados(){
 	int cantidadDePokemons=list_size(BLOCKED);
 	int i;
-	pthread_mutex_lock(SEM_BLOCKED);
+	pthread_mutex_lock(&SEM_BLOCKED);
 	for(i=0;i<=cantidadDePokemons;i++){
 	bloqueadosXPokemon* block=list_get(BLOCKED,i);
 	while(block->cantidad>0){
 		if(list_size(block->bloqueados->elements)>0){
 			entrenador* liberado=queue_pop(block->bloqueados);
 			//dar pokemon
-			pthread_mutex_lock(SEM_READY);
+			pthread_mutex_lock(&SEM_READY);
 			queue_push(READY,liberado);
-			pthread_mutex_unlock(SEM_READY);
+			pthread_mutex_unlock(&SEM_READY);
 		block->cantidad--;
 		pokemonsLiberados--;
 
 	};
 	};
-	pthread_mutex_unlock(BLOCKED);
+	pthread_mutex_unlock(&SEM_BLOCKED);
 }
 
 };
 //Planificador
-void Planificador(){
+void* hilo_Planificador(void* sarlompa){
 	while(TRUE){
 		while(pokemonsLiberados>0){
 		atenderLiberados();
 		};
-		switch (planificacion) {
+		if(atendido!=NULL ||(queue_is_empty(READY)==0)){
+		switch (MAPA->planificacion) {
 			case RR:
 				RRProximo();
 				ejecutar(atendido);
 				break;
 			case SRDF:
-				pthread_mutex_lock(controlDeFlujo);
+				pthread_mutex_lock(&controlDeFlujo);
 				SRDFProximo();
 				ejecutar(atendido);
-				pthread_mutex_unlock(controlDeFlujo);
+				pthread_mutex_unlock(&controlDeFlujo);
 
 				break;
 		}
-		pthread_mutex_unlock(controlDeFlujo);
+		pthread_mutex_unlock(&controlDeFlujo);
+		struct timespec* ret=malloc(sizeof(struct timespec));
+		ret->tv_nsec=MAPA->retardo*1000000;
+		ret->tv_sec=0;
+		nanosleep(ret,NULL);
 	};
-
+	}
 };
 
 
 //conector (acepta conexiones, arma el struct entrenador y lo mete en la cola de readys)
 void sumarNuevo(entrenador* nuevo){
-	switch (planificacion) {
+	switch (MAPA->planificacion) {
 		case RR:
 			pthread_mutex_lock(&SEM_READY);
 				queue_push(READY,nuevo);
-				sem_post(hayReadys);
+				sem_post(&hayReadys);
 				pthread_mutex_unlock(&SEM_READY);
 			break;
 		case SRDF:
-			pthread_mutex_lock(controlDeFlujo);
+			pthread_mutex_lock(&controlDeFlujo);
 			queue_push(READY,nuevo);
 			atendido=NULL;
-			pthread_mutex_unlock(controlDeFlujo);
+			pthread_mutex_unlock(&controlDeFlujo);
 			break;
 	}
 
@@ -262,6 +341,7 @@ void* hilo_Conector(void* sarlompa){
 	bindearSocket(listener,MYPORT,IP_LOCAL);
 	socketEscucha(listener,20);
 	while(true){
+
 		direccion direccionNuevo=aceptarConexion(listener);
 		int nuevoFd=direccionNuevo.fd;
 		entrenador* nuevoEntrenador=malloc(sizeof(entrenador));
@@ -271,11 +351,17 @@ void* hilo_Conector(void* sarlompa){
 		char* nombre=string_new();
 		recibir(nuevoFd,nombre,*size);
 		nuevoEntrenador->nombre=nombre;
-		nuevoEntrenador->quantum=QUANTUM;
+		nuevoEntrenador->quantum=MAPA->quantum;
 		char* id=string_new();
 		recibir(nuevoFd,id,1);
-		CrearPersonaje(items,id[0],2,4);
+		nuevoEntrenador->id=id[0];
+
+		CrearPersonaje(items,id[0],0,0);
 		sumarNuevo(nuevoEntrenador);
+
+
+
+
 	};
 	};
 
@@ -385,10 +471,13 @@ int main(void) {
 	puts("ingrese direccion de la pokeDex");
 	//inicializaciones D:
 	POKEID=0;
+	MAPA=malloc(sizeof(map));
 	pthread_mutex_init(&SEM_BLOCKED,NULL);
 	pthread_mutex_init(&SEM_READY,NULL);
 	pthread_mutex_init(&controlDeFlujo,NULL);
 	sem_init(&hayReadys,0,0);
+	mapaNombre=string_new();
+	string_append(&mapaNombre,"PuebloPaleta");
 	pokemonsLiberados=0;
 	READY=queue_create();
 	  BLOCKED=list_create();
@@ -397,50 +486,72 @@ int main(void) {
 	  string_append(&POKEDEX,"/home/utnso/PokeDex");
 	 acciones=list_create();
 	  pokemons=list_create();
-	  accion* accion=malloc(sizeof(accion));
-	  accion->string="moverse";
-	  accion->enumerable=mover;
-	  list_add(acciones,accion);
-	  accion->string="conocer";
-	  accion->enumerable=conocer;
-	  list_add(acciones,accion);
-	  accion->string="captura";
-	  accion->enumerable=capturar;
-	  list_add(acciones,accion);
-	  accion->string="medalla";
-	  accion->enumerable=medalla;
-	  list_add(acciones,accion);
-	  free(accion);
-	  //carga de metadata
-	  cargarMetaData("PuebloPaleta");
-	  char* nombre_nivel = "PuebloPaleta";
-	  	int x = 1;
-	  	int y = 1;
+	  accion* acc=malloc(sizeof(accion));
+	  acc->string="moverse";
+	  acc->enumerable=mover;
+	  list_add(acciones,acc);
+	  acc=malloc(sizeof(accion));
+	  acc->string="conocer";
+	  acc->enumerable=conocer;
+	  list_add(acciones,acc);
+	  acc=malloc(sizeof(accion));
+	  acc->string="captura";
+	  acc->enumerable=capturar;
+	  list_add(acciones,acc);
+	  acc=malloc(sizeof(accion));
+	  acc->string="medalla";
+	  acc->enumerable=medalla;
+	  list_add(acciones,acc);
+
+	  sentidos=list_create();
+	  sentido* sent=malloc(sizeof(sentido));
+	  	  sent->caracter='I';
+	  	  sent->enumerable=IZQ;
+		  list_add(sentidos,sent);
+		  sent=malloc(sizeof(sentido));
+	  	  sent->caracter='U';
+	  	  sent->enumerable=ARR;
+		  list_add(sentidos,sent);
+		  sent=malloc(sizeof(sentido));
+	  	  sent->caracter='A';
+	  	  sent->enumerable=ABJ;
+		  list_add(sentidos,sent);
+		  sent=malloc(sizeof(sentido));
+	  	  sent->caracter='D';
+	  	  sent->enumerable=DER;
+		  list_add(sentidos,sent);
+		  //carga de metadata
+	  cargarMetaData(mapaNombre);
+
+	  char* nombre_nivel = mapaNombre;
 	  	int rows, cols;
-	  	int mov = 0;
+
 	  	items = list_create();
 		  pthread_t thread_conector;
 
 		  int rd=pthread_create(&thread_conector,NULL,hilo_Conector,NULL);
 		  if(rd!=0){puts("fallo");};
+		  pthread_t thread_planificador;
+		  int rd2=pthread_create(&thread_planificador,NULL,hilo_Planificador,NULL);
+		  if(rd2!=0){puts("fallo");};
 		//inicializar mapa
 	  	nivel_gui_inicializar();
 
 	  	//tamaño del mapa
 	  	nivel_gui_get_area_nivel(&rows, &cols);
 	   //carga de pokemons (recorre directorio)
-	  cargarPokemons("PuebloPaleta");
+	  cargarPokemons(mapaNombre);
 	  while(TRUE){
 
 		  nivel_gui_dibujar(items,nombre_nivel);
-	  int key = getch();
+		  /*int key = getch();
 				if(key=='q'){
 
 					finalizarGUI(items);
 
 							return EXIT_SUCCESS;
 					break;
-				}
-	  }
+				}*/
+	}
 	};
 

@@ -15,7 +15,7 @@
 #include <commons/collections/queue.h>
 #include <socketes.h>
  #define DEST_PORT 4555
-char* nombre;
+char* NOMBRE;
 char* POKEDEX;
 char* RUTA;
 typedef struct point{
@@ -45,11 +45,10 @@ void cargarMetadata(){
 	char* ruta=string_new();
 	string_append(&ruta,POKEDEX);
 	string_append(&ruta,"/Entrenadores/");
-	  string_append(&ruta,nombre);
+	  string_append(&ruta,NOMBRE);
 	  string_append(&ruta,"/metadata");
 	  puts(ruta);
 	CONFIG=config_create(ruta);
-	puts("paso");
 	ENTRENADOR->nombre=config_get_string_value(CONFIG,"nombre");
 	ENTRENADOR->id=config_get_string_value(CONFIG,"simbolo")[0];
 	ENTRENADOR->reintentos=config_get_int_value(CONFIG,"reintentos");
@@ -96,11 +95,13 @@ int conectarA(char* nombre){
 	posicion->x=0;
 	posicion->y=0;
 	char* buffer=string_new();
-	string_append(&buffer,nombre);
+	string_append(&buffer,NOMBRE);
+	puts(buffer);
 	int* size=malloc(sizeof(int));
 	*size=string_length(buffer);
 	enviar(socket1,size,sizeof(int));
 	enviar(socket1,buffer,*size);
+
 	buffer=string_new();
 	buffer[0]=ENTRENADOR->id;
 	enviar(socket1,buffer,1);
@@ -108,6 +109,7 @@ int conectarA(char* nombre){
 	return socket1;
 };
 point* pedirUbicacion(char pokemon,int mapa){
+	puts("stoy pidiendo la ubicacion");
 	char* buffer=string_new();
 	string_append(&buffer,"conocer");
 	char* caracter=string_new();
@@ -131,29 +133,33 @@ typedef enum{
 	ABJ
 }sentido;
 void llegarA(point* nest,int mapa){
-	puts("pase");
 	sentido* sent=malloc(sizeof(sentido));
-	int horizontal;
-	while((posicion->x!=nest->x)&&(posicion->y!=nest->y)){
-		if(((posicion->x-nest->x)>0)&&horizontal){
+	int horizontal=1;
+	while((posicion->x!=nest->x) || (posicion->y!=nest->y)){
+		int paso=1;
+		if(((posicion->x-nest->x)>0) && horizontal && paso){
 				*sent=IZQ;
 				horizontal=0;
+				paso=0;
 				}
-			if(((posicion->x-nest->x)<0)&&horizontal){
+			if(((posicion->x-nest->x)<0)&& horizontal && paso){
 					*sent=DER;
 					horizontal=0;
+					paso=0;
 					}
 
-			if(((posicion->y-nest->y)>0)&&horizontal){
+			if(((posicion->y-nest->y)>0)&& !horizontal && paso){
 					*sent=ABJ;
 					horizontal=1;
+					paso=0;
 					}
-			if(((posicion->y-nest->y)<0)&&horizontal){
+			if(((posicion->y-nest->y)<0)&& !horizontal && paso){
 					*sent=ARR;
 					horizontal=1;
+					paso=0;
 					}
 			char* buffer;
-	switch(*sent){
+			switch(*sent){
 	case IZQ:
 		buffer=string_new();
 		string_append(&buffer,"moverse");
@@ -242,6 +248,7 @@ void pedirMedalla(int mapa,char* nombreMapa){
 }
 void completarMapa(char* nombre){
 	int mapa=conectarA(nombre);
+	puts("me conecte");
 	_Bool criterio(objetivos* obj){
 		return (strcmp(obj->mapa,nombre)==0);
 	};
@@ -258,15 +265,15 @@ void completarMapa(char* nombre){
     {
 	  posicion=malloc(sizeof(point));
 	  puts("ingrese nombre de Entrenador");
-	  nombre=string_new();
+	  NOMBRE=string_new();
 	  POKEDEX=string_new();
 	  string_append(&POKEDEX,"/home/utnso/PokeDex");
 	  ENTRENADOR=malloc(sizeof(entrenador));
 	  RUTA=string_new();
 	  string_append(&RUTA,POKEDEX);
 	  string_append(&RUTA,"/Entrenadores/");
-	  string_append(&nombre,"Red");
-	  string_append(&RUTA,nombre);
+	  string_append(&NOMBRE,"Red");
+	  string_append(&RUTA,NOMBRE);
 	  puts("ingrese ruta del pokedex");
 
 
