@@ -33,6 +33,8 @@ typedef struct entrenador{
 	int quantum;
 	char* nombre;
 	int pasosHastaLaPN;
+	t_list* pokemonsCapturados;
+
 }entrenador;
 
 typedef enum{
@@ -47,6 +49,7 @@ typedef struct map{
 	int retardo;
 	tipoPlanificacion planificacion;
 	char* nombre;
+	char* medalla;
 }map;
 map* MAPA;
 int POKEID;
@@ -58,26 +61,26 @@ int pokemonsLiberados;
 
 t_queue* READY;
 
-typedef struct pokeNest{
-	char id;
-	char* pokemon;
-	t_list* instancias;
-	char* tipo;
-}pokeNest;
+
 typedef struct pokemon{
 	char id;
 	char* nombre;
 	int nivel;
 }pokemon;
- t_list*  pokemons;
+typedef struct pokeNest{
+	char id;
+	char* nombre;
+	t_list* instancias; //lista de pokemons
+	char* tipo;
+}pokeNest;
 
  typedef struct bloqueadosXPokemon{
-	int pokemonId;
-	int cantidad;
-	t_queue* bloqueados;
+	pokeNest* pokeNest;
+	int liberados;
+	t_queue* bloqueados; //lista de entrenadores
 }bloqueadosXPokemon;
 
-t_list*  BLOCKED;
+t_list*  pokemons;
 
 
  entrenador* atendido;
@@ -112,10 +115,21 @@ typedef struct sentido{
 void cargarMetaData(char* mapa){
 	 t_config* CONFIG;
 	 CONFIG=malloc(sizeof(t_config));
-	char* file=string_new();
+	char* file=malloc(sizeof(char)*255);
 	string_append(&file,POKEDEX);
 	string_append(&file,"/Mapas/");
 	string_append(&file,mapa);
+	struct dirent *dt;
+	DIR *dire;
+	dire = opendir(file);
+
+ while((dt=readdir(dire))!=NULL){
+ if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)&&(strcmp(dt->d_name,"PokeNests"))){
+	 	 MAPA->medalla=malloc(sizeof(char)*100);
+	 	 string_append(&MAPA->medalla,dt->d_name);
+	 	 puts(MAPA->medalla);
+ }
+ };
 	string_append(&file,"/metadata");
 		CONFIG=config_create(file);
 		puts(config_get_string_value(CONFIG,"IP"));
@@ -124,7 +138,8 @@ void cargarMetaData(char* mapa){
 		MAPA->quantum=config_get_int_value(CONFIG,"quantum");
 		MAPA->retardo=config_get_int_value(CONFIG,"retardo");
 		MAPA->nombre=mapa;
-		char* algoritmo=string_new();
+		free(file);
+		char* algoritmo=malloc(sizeof(100));
 		string_append(&algoritmo,config_get_string_value(CONFIG,"algoritmo"));
 
 		if(strcmp(algoritmo,"RR")==0){
@@ -134,20 +149,79 @@ void cargarMetaData(char* mapa){
 		if(strcmp(algoritmo,"SRDF")==0){
 			MAPA->planificacion=SRDF;
 		}
+		free(algoritmo);
 		free(CONFIG);
+};
+ITEM_NIVEL* buscarItemXId(char caracter){
+		bool criterio(ITEM_NIVEL* item){
+					return (item->id==caracter);
+				};
+				ITEM_NIVEL* item=list_find(items,criterio);
+					return item;
+	};
+int modulo(int num){
+		if(num<0){
+			return num*(-1);
+		}
+		else{
+			return num;
+		}
+	};
+void capt(entrenador* ent,void* buf){
+
+	ITEM_NIVEL* itemEntr=buscarItemXId(ent->id);
+		_Bool criterio(ITEM_NIVEL* it){
+			return ((itemEntr->posx==it->posx) && (itemEntr->posy==it->posy));
+		};
+		ITEM_NIVEL* nest=list_find(items,criterio);
+		_Bool critPoke(bloqueadosXPokemon* pk){
+
+				return((pk->pokeNest->id)==nest->id);
+			};
+		bloqueadosXPokemon* poke;
+
+			poke=list_find(pokemons,critPoke);
+				if(list_size(poke->pokeNest->instancias)>0){
+
+				pokemon* instancia=list_remove(poke->pokeNest->instancias,0);
+
+				char* dirDePokemon=string_new();
+				string_append(&dirDePokemon,poke->pokeNest->nombre);
+				string_append(&dirDePokemon,"/");
+				string_append(&dirDePokemon,instancia->nombre);
+				int* size=malloc(sizeof(int));
+				*size=string_length(dirDePokemon);
+
+				enviar(ent->fd,size,sizeof(int));
+				enviar(ent->fd,dirDePokemon,*size);
+				nest->quantity--;
+				list_add(ent->pokemonsCapturados,instancia);
+				free(size);
+
+		}
+		else{
+			//aca se bloquea
+		};
+
+
 };
 
 
+
+
 void cumplirAccion(entrenador* ent,void* buf){
+	char* buff=calloc(7,sizeof(char));
+	buff=string_substring_until(buf,7);
 	bool criterio(accion* acc){
-		char* buff=buf;
+
 		return (strcmp(acc->string,buff)==0);
 	};
 	accion* act=list_find(acciones,criterio);
 
-	char* arg;
+	char* arg=malloc(sizeof(char)*255);
 	switch(act->enumerable){
 	case mover:
+
 		arg=string_new();
 		recibir(ent->fd,arg,1);
 		bool crit(sentido* sent){
@@ -168,25 +242,38 @@ void cumplirAccion(entrenador* ent,void* buf){
 				movAb(items,ent->id,mapaNombre);
 				break;
 			};
+			ent->pasosHastaLaPN--;
 		break;
 	case capturar:
+			capt(ent,buf);
 
 		break;
 	case conocer:
 		arg=string_new();
 		recibir(ent->fd,arg,1);
-		bool criterio(ITEM_NIVEL* item){
-			return (item->id==arg[0]);
-		};
-		ITEM_NIVEL* item=list_find(items,criterio);
+
+		int total=0;
+		ITEM_NIVEL* item=buscarItemXId(arg[0]);
+		ITEM_NIVEL* itemEntr=buscarItemXId(ent->id);
 		int* coord=malloc(sizeof(int));
 		*coord=item->posx;
+		total+=modulo((itemEntr->posx-item->posx));
 		enviar(ent->fd,coord,sizeof(int));
 		*coord=item->posy;
+		total+=modulo((itemEntr->posy-item->posy));
 		enviar(ent->fd,coord,sizeof(int));
 		free(coord);
+		ent->pasosHastaLaPN=total;
+
 		break;
 	case medalla:
+		arg=string_new();
+		int* size=malloc(sizeof(int));
+		*size=string_length(MAPA->medalla);
+		string_append(&arg,MAPA->medalla);
+		enviar(ent->fd,size,sizeof(int));
+		enviar(ent->fd,arg,*size);
+		free(size);
 		break;
 	};
 }; //switch con las posibles acciones que puede hacer el entrenador
@@ -220,7 +307,7 @@ void SRDFProximo(){
 	else{
 		bool criterio(entrenador* entr){
 
-			return entr->pasosHastaLaPN==NULL;
+			return (entr->pasosHastaLaPN==-1);
 		};
 		sem_wait(&hayReadys);
 		entrenador* nuevo=list_find(READY->elements,criterio);
@@ -228,7 +315,7 @@ void SRDFProximo(){
 		pthread_mutex_lock(&SEM_READY);
 		if(nuevo!=NULL){
 			bool igualAlNuevo(entrenador* entr){
-									return entr->fd==nuevo->fd;
+									return (entr->fd==nuevo->fd);
 								};
 		 list_remove_by_condition(READY->elements,igualAlNuevo);
 		}
@@ -246,7 +333,22 @@ void SRDFProximo(){
 }};
 void desconectar(entrenador* entrenador){
 	atendido=NULL;
-	//falta liberar los pokemos
+	void liberar(pokemon* poke){
+		_Bool condition(pokemon* pok){
+			return(strcmp(pok->nombre,poke->nombre)==0);
+		};
+		_Bool encontrado(bloqueadosXPokemon* block){
+			return (block->pokeNest->id==poke->id);
+		};
+		bloqueadosXPokemon* bloq=list_find(pokemons,encontrado);
+
+		list_add(bloq->pokeNest->instancias,poke);
+		ITEM_NIVEL* item=buscarItemXId(poke->id);
+			item->quantity++;
+			list_remove_by_condition(entrenador->pokemonsCapturados,condition);
+
+	};
+	list_iterate(entrenador->pokemonsCapturados,liberar);
 };
 int darPasoA(entrenador* entrenador,char* respuesta){
 	int rdo=recibir(entrenador->fd,respuesta,7);
@@ -259,29 +361,37 @@ void ejecutar(entrenador* entr){
 	char* pedido=string_new();
 	if(darPasoA(atendido,pedido)){
 							cumplirAccion(entr,pedido);
+
+							atendido->quantum--;
 						}
 						else{
 							desconectar(entr);
 						};
 };
 void atenderLiberados(){
-	int cantidadDePokemons=list_size(BLOCKED);
 	int i;
 	pthread_mutex_lock(&SEM_BLOCKED);
-	for(i=0;i<=cantidadDePokemons;i++){
-	bloqueadosXPokemon* block=list_get(BLOCKED,i);
-	while(block->cantidad>0){
-		if(list_size(block->bloqueados->elements)>0){
+	for(i=0;i<=pokemonsLiberados;i++){
+		bool criterio(bloqueadosXPokemon* block){
+			return block->liberados>0;
+		}
+	bloqueadosXPokemon* block;
+	block=NULL;
+	block=list_find(pokemons,criterio);
+	if(block!=NULL){
+	while(block->liberados>0){
+		if(!queue_is_empty(block->bloqueados)){
 			entrenador* liberado=queue_pop(block->bloqueados);
-			//dar pokemon
+			capt(liberado,NULL);
 			pthread_mutex_lock(&SEM_READY);
 			queue_push(READY,liberado);
 			pthread_mutex_unlock(&SEM_READY);
-		block->cantidad--;
+		block->liberados--;
 		pokemonsLiberados--;
 
 	};
 	};
+	}
 	pthread_mutex_unlock(&SEM_BLOCKED);
 }
 
@@ -297,6 +407,7 @@ void* hilo_Planificador(void* sarlompa){
 			case RR:
 				RRProximo();
 				ejecutar(atendido);
+
 				break;
 			case SRDF:
 				pthread_mutex_lock(&controlDeFlujo);
@@ -308,7 +419,7 @@ void* hilo_Planificador(void* sarlompa){
 		}
 		pthread_mutex_unlock(&controlDeFlujo);
 		struct timespec* ret=malloc(sizeof(struct timespec));
-		ret->tv_nsec=MAPA->retardo*1000000;
+		ret->tv_nsec=(MAPA->retardo-300)*1000000;
 		ret->tv_sec=0;
 		nanosleep(ret,NULL);
 	};
@@ -335,41 +446,64 @@ void sumarNuevo(entrenador* nuevo){
 
 };
 void* hilo_Conector(void* sarlompa){
-
 	int listener;
-	listener=crearSocket();
-	bindearSocket(listener,MYPORT,IP_LOCAL);
-	socketEscucha(listener,20);
+		listener=crearSocket();
+		bindearSocket(listener,MYPORT,IP_LOCAL);
+		socketEscucha(listener,5);
+		fd_set read_fds;
+		fd_set master;
+	FD_ZERO(&read_fds);
+	FD_ZERO(&master);
+	FD_SET(listener, &master);
+	int fdmax=20;
+
 	while(true){
-
-		direccion direccionNuevo=aceptarConexion(listener);
-		int nuevoFd=direccionNuevo.fd;
-		entrenador* nuevoEntrenador=malloc(sizeof(entrenador));
-		nuevoEntrenador->fd=nuevoFd;
-		int* size=malloc(sizeof(int));
-		recibir(nuevoFd,size,sizeof(int));
-		char* nombre=string_new();
-		recibir(nuevoFd,nombre,*size);
-		nuevoEntrenador->nombre=nombre;
-		nuevoEntrenador->quantum=MAPA->quantum;
-		char* id=string_new();
-		recibir(nuevoFd,id,1);
-		nuevoEntrenador->id=id[0];
-
-		CrearPersonaje(items,id[0],0,0);
-		sumarNuevo(nuevoEntrenador);
+		read_fds = master; // cópialo
+			if (select(fdmax + 1,&read_fds,NULL,NULL,NULL) == -1) {
+				perror("fallo el select select");
+				exit(1);
+			};
+			// explorar conexiones existentes en busca de datos que leer
+			int i;
+			for (i = 0; i <= fdmax; i++) {
+				if (FD_ISSET(i, &read_fds)) { // ¡¡tenemos datos!!
+					if (i == listener) {
+						direccion direccionNuevo=aceptarConexion(listener);
 
 
+								int nuevoFd=direccionNuevo.fd;
+								entrenador* nuevoEntrenador=calloc(1,sizeof(entrenador));
+								nuevoEntrenador->fd=nuevoFd;
+								int* size=calloc(1,sizeof(int));
+								recibir(nuevoFd,size,sizeof(int));
+								char* nombre=calloc(*size,sizeof(char));
+									nombre=string_new();
+								recibir(nuevoFd,nombre,*size);
+								nombre=string_substring_until(nombre,*size);
+								free(size);
+								nuevoEntrenador->nombre=nombre;
+								nuevoEntrenador->quantum=MAPA->quantum;
+								nuevoEntrenador->pokemonsCapturados=list_create();
+								char* id=string_new();
+								recibir(nuevoFd,id,1);
+								nuevoEntrenador->id=id[0];
+								nuevoEntrenador->pasosHastaLaPN=-1;
+								CrearPersonaje(items,id[0],0,0);
+
+								sumarNuevo(nuevoEntrenador);
+}
 
 
 	};
+			};
 	};
+};
 
 
 
 void cargarPokemons(char *mapa){
 
- char* direccionVariable=string_new();
+ char* direccionVariable=malloc(sizeof(char)*255);
  	   string_append(&direccionVariable,POKEDEX);
 
 
@@ -382,28 +516,28 @@ void cargarPokemons(char *mapa){
 DIR *dire;
  dire = opendir(direccionVariable);
 
- printf("cargando el mapa %s\n",mapa);
  //Recorrer directorio
  while((dt=readdir(dire))!=NULL){
  if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)){
 
 	 pokeNest* nests=malloc(sizeof(pokeNest));
+	 int x;
+	 int y;
 	 int cantidadDePokemons=0;
-    t_config* metadata=malloc(sizeof(t_config));
-    nests->pokemon=dt->d_name;
+    nests->instancias=malloc(sizeof(pokemon)*15);
     nests->instancias=list_create();
-    puts(dt->d_name);
-
-	   list_add(pokemons,nests);
-
+    nests->nombre=malloc(sizeof(char)*100);
+    nests->nombre=string_new();
+    string_append(&nests->nombre,dt->d_name);
  //Cargar pokemons
  		   struct dirent *dt2;
  		   DIR *dire2;
  		   	char* direccionDeNests=string_new();
  		   	string_append(&direccionDeNests,direccionVariable);
  		 string_append(&direccionDeNests,"/");
- 		 string_append(&direccionDeNests,nests->pokemon);
+ 		 string_append(&direccionDeNests,nests->nombre);
  		   dire2 = opendir(direccionDeNests);
+
  		   while((dt2=readdir(dire2))!=NULL){
  			if((strcmp(dt2->d_name,".")!=0)&&(strcmp(dt2->d_name,"..")!=0)){
  				 char* direccionDeArchivo=string_new();
@@ -414,77 +548,82 @@ DIR *dire;
 
  			   	   pokemon* nuevoPokemon=malloc(sizeof(pokemon));
  			   	   cantidadDePokemons++;
- 			   	   nuevoPokemon->nombre=dt2->d_name;
+ 			   	   	  nuevoPokemon->nombre=malloc(sizeof(char)*255);
+ 			   	   	  nuevoPokemon->nombre=string_new();
+ 			   	  string_append(&nuevoPokemon->nombre,dt2->d_name);
+
  			   	   t_config* archivo=malloc(sizeof(t_config));
  			   	   archivo=config_create(direccionDeArchivo);
  			   	    nuevoPokemon->nivel=config_get_int_value(archivo,"Nivel");
  			   	    free(archivo);
-
- 			   	    archivo=NULL;
  			   	   list_add(nests->instancias,nuevoPokemon);
- 			   	   puts("cargue A");
- 			   	   puts(nuevoPokemon->nombre);
- 			   	   puts("Nivel");
- 			   	   printf("%d\n",nuevoPokemon->nivel);
- 			   	   nuevoPokemon=NULL;
- 				}
+ 			   }
  				else{
+ 					t_config* metadata=malloc(sizeof(t_config));
+
  					metadata=config_create(direccionDeArchivo);
  					nests->id=config_get_string_value(metadata,"Identificador")[0];
+ 					nests->tipo=malloc(sizeof(char)*50);
+ 					nests->tipo=string_new();
  					nests->tipo=config_get_string_value(metadata,"Tipo");
+ 					char* pos=config_get_string_value(metadata,"Posicion");
+
+
+ 		 		   char** posiciones=string_split(pos,";");
+ 		 		    x=atoi(posiciones[0]);
+ 		 		    y=atoi(posiciones[1]);
+
+ 					free(metadata);
 
  				}
+		 		   void rellenarIds(pokemon* poke){
+		 			   poke->id=nests->id;
+		 			 };
+		 		    list_iterate(nests->instancias,rellenarIds);
+
+
  			}
+ 		   }
 
- 		   };
- 		   char* pos=config_get_string_value(metadata,"Posicion");
-
-
- 		   char** posiciones=string_split(pos,";");
- 		   int x=atoi(posiciones[0]);
- 		   int y=atoi(posiciones[1]);
-
- 		   void rellenarIds(pokemon* poke){
- 			   poke->id=nests->id;
- 			   printf("%c\n",poke->id);
- 		   };
- 		    list_iterate(nests->instancias,rellenarIds);
-
- 		   CrearCaja(items,nests->id,x,y,cantidadDePokemons);
- 		   close(dire2);
- 		   free(nests);
- 		   puts("algo");
- 		   nests=NULL;
-			free(metadata);
-			nests=NULL;
- }
+			 CrearCaja(items,nests->id,x,y,list_size(nests->instancias));
+bloqueadosXPokemon* elem=malloc(sizeof(bloqueadosXPokemon));
+ 		   elem->pokeNest=nests;
+ 		   elem->liberados=0;
+ 		   elem->bloqueados=queue_create();
+ 		   list_add(pokemons,elem);
+ 		   closedir(dire2);
+ };
 
 
- }
+ };
+
+	free(direccionVariable);
  closedir(dire);
- 	puts("pokenests totales");
- 	printf("%d\n",list_size(pokemons));
 };
 
 int main(void) {
+	char* nom=malloc(sizeof(char)*100);
 	puts("ingrese nombre del mapa");
+	scanf("%s",nom);
+	mapaNombre=malloc(sizeof(char)*100);
+		string_append(&mapaNombre,nom);
+		free(nom);
 	puts("ingrese direccion de la pokeDex");
 	//inicializaciones D:
-	POKEID=0;
+
 	MAPA=malloc(sizeof(map));
 	pthread_mutex_init(&SEM_BLOCKED,NULL);
 	pthread_mutex_init(&SEM_READY,NULL);
 	pthread_mutex_init(&controlDeFlujo,NULL);
 	sem_init(&hayReadys,0,0);
-	mapaNombre=string_new();
-	string_append(&mapaNombre,"PuebloPaleta");
+
 	pokemonsLiberados=0;
 	READY=queue_create();
-	  BLOCKED=list_create();
 	  atendido=NULL;
-	  POKEDEX=string_new();
+	  POKEDEX=malloc(sizeof(char)*255);
 	  string_append(&POKEDEX,"/home/utnso/PokeDex");
 	 acciones=list_create();
+	  pokemons=malloc(sizeof(bloqueadosXPokemon)*50);
 	  pokemons=list_create();
 	  accion* acc=malloc(sizeof(accion));
 	  acc->string="moverse";
@@ -523,7 +662,6 @@ int main(void) {
 		  //carga de metadata
 	  cargarMetaData(mapaNombre);
 
-	  char* nombre_nivel = mapaNombre;
 	  	int rows, cols;
 
 	  	items = list_create();
@@ -541,9 +679,13 @@ int main(void) {
 	  	nivel_gui_get_area_nivel(&rows, &cols);
 	   //carga de pokemons (recorre directorio)
 	  cargarPokemons(mapaNombre);
-	  while(TRUE){
+	  /*bloqueadosXPokemon* bloq=list_get(pokemons,2);
+	  	  	  pokemon* poke=list_get(bloq->pokeNest->instancias,0);
+	  	  	  puts(poke->nombre);*/
 
-		  nivel_gui_dibujar(items,nombre_nivel);
+	  while(TRUE){
+		  nivel_gui_dibujar(items,mapaNombre);
+
 		  /*int key = getch();
 				if(key=='q'){
 

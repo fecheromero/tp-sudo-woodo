@@ -64,12 +64,17 @@ void cargarMetadata(){
 		string_append(&key,obj->mapa);
 		string_append(&key,"]");
 		char** pokemons=config_get_array_value(CONFIG,key);
+		//printf("%d\n",string_length(pokemons));
+
 		char* simbolos=string_new();
 		int r=0;
 		while(pokemons[r]!=NULL){
 			simbolos[r]= pokemons[r][0];
 			printf("%c\n",simbolos[r]);
+			printf("%d\n",r);
 			r++;
+			simbolos=string_substring_until(simbolos,r);
+
 		};
 		obj->objetivos=simbolos;
 		list_add(ENTRENADOR->hojaDeViaje,obj);
@@ -77,7 +82,7 @@ void cargarMetadata(){
 		puts(obj->mapa);
 		i++;
 	};
-
+free(CONFIG);
 }
 int conectarA(char* nombre){
 	int socket1;
@@ -120,8 +125,10 @@ point* pedirUbicacion(char pokemon,int mapa){
 	int* coord=malloc(sizeof(int));
 	recibir(mapa,coord,sizeof(int));
 	pokeNest->x=*coord;
+	printf("%d\n",pokeNest->x);
 	recibir(mapa,coord,sizeof(int));
 	pokeNest->y=*coord;
+	printf("%d\n",pokeNest->y);
 	free(coord);
 	puts("tiene la ubicacion");
 	return pokeNest;
@@ -193,57 +200,78 @@ void llegarA(point* nest,int mapa){
 			break;
 	}
 	}
+
+	free(sent);
 };
 void copiar(char* origen,char* destino){
-	char* comando=string_new();
-
+	char* comando=calloc(1000,sizeof(char));
+	comando=string_new();
+			puts(origen);
 	string_append(&comando,"cp ");
 		string_append(&comando,origen);
 		string_append(&comando," ");
 		string_append(&comando,destino);
+		puts(comando);
 		system(comando);
+		free(comando);
 }
 void capturar(int mapa,char* nombreMapa){
 	char* buffer=string_new();
 	string_append(&buffer,"captura");
 	enviar(mapa,buffer,7);
-	char* ruta=string_new();
+	char* ruta=calloc(255,sizeof(char));
 	string_append(&ruta,POKEDEX);
 	string_append(&ruta,"/Mapas/");
 	string_append(&ruta,nombreMapa);
 	string_append(&ruta,"/PokeNests/");
-	int* size=malloc(sizeof(int));
+
+	int* size=calloc(1,sizeof(int));
 	recibir(mapa,size,sizeof(int));
-    char* dirPoke=string_new(); //Pikachu/Pikachu001.dat
+    char* dirPoke=calloc((*size),sizeof(char));
     recibir(mapa,dirPoke,*size);
 	free(size);
-	string_append(&ruta,dirPoke);
-	char* dirDeBill=string_new();
+	puts(dirPoke);
+	string_append_with_format(&ruta,"%s",dirPoke);
+	char* dirDeBill=calloc(255,sizeof(char));
 	string_append(&dirDeBill,RUTA);
-	string_append(&dirDeBill,"/Dir\ de\ Bill/");
-	string_append(&dirDeBill,dirPoke);
+	string_append(&dirDeBill,"/Dir\\ de\\ Bill/");
+	string_append_with_format(&dirDeBill,"%s",dirPoke);
 	copiar(ruta,dirDeBill);
-
+	free(dirPoke);
+	free(ruta);
+	free(dirDeBill);
+	puts("copiado");
 };
 void pedirMedalla(int mapa,char* nombreMapa){
 	char* buffer=string_new();
+
 	string_append(&buffer,"medalla");
 	enviar(mapa,buffer,7);
-	char* direccion=string_new();
+	char* direccion=calloc(255,sizeof(char));
+	direccion=string_new();
 	string_append(&direccion,POKEDEX);
 	string_append(&direccion,"/Mapas/");
 	string_append(&direccion,nombreMapa);
 	string_append(&direccion,"/");
-	int* size=malloc(sizeof(int));
+	int* size=calloc(1,sizeof(int));
 	recibir(mapa,size,sizeof(int));
-	char* medalla=string_new();
+	char* medalla=calloc((*size),sizeof(char));
+	medalla=string_new();
 	recibir(mapa,medalla,*size);
+	medalla=string_substring_until(medalla,*size);
+	printf("medalla:%s\n tamaño:%d\n",medalla,*size);
 	string_append(&direccion,medalla);
-	char* rutaMedallas=string_new();
+	puts(direccion);
+	char* rutaMedallas=calloc(255,sizeof(char));
+	rutaMedallas=string_new();
 	string_append(&rutaMedallas,RUTA);
 	string_append(&rutaMedallas,"/Medallas/");
 	string_append(&rutaMedallas,medalla);
 	copiar(direccion,rutaMedallas);
+	free(direccion);
+	free(medalla);
+	free(rutaMedallas);
+
 
 }
 void completarMapa(char* nombre){
@@ -254,10 +282,13 @@ void completarMapa(char* nombre){
 	};
 	objetivos* obj=list_find(ENTRENADOR->hojaDeViaje,criterio);
 	int i=0;
-	while(obj->objetivos[i]!='/0'){
+	printf("%d\n",string_length(obj->objetivos));
+	puts(obj->objetivos);
+	while(i<string_length(obj->objetivos)){
 		llegarA(pedirUbicacion(obj->objetivos[i],mapa),mapa);
 
 		capturar(mapa,nombre);
+		i++;
 	};
 	pedirMedalla(mapa,nombre);
 };
@@ -265,14 +296,21 @@ void completarMapa(char* nombre){
     {
 	  posicion=malloc(sizeof(point));
 	  puts("ingrese nombre de Entrenador");
+	  char* nom=malloc(sizeof(char)*100);
+	  scanf("%s",nom);
+	  NOMBRE=malloc(sizeof(char)*150);
 	  NOMBRE=string_new();
+	  string_append(&NOMBRE,nom);
+	  free(nom);
+	  POKEDEX=malloc(sizeof(char)*255);
 	  POKEDEX=string_new();
+
 	  string_append(&POKEDEX,"/home/utnso/PokeDex");
 	  ENTRENADOR=malloc(sizeof(entrenador));
+	  RUTA=malloc(sizeof(char)*255);
 	  RUTA=string_new();
 	  string_append(&RUTA,POKEDEX);
 	  string_append(&RUTA,"/Entrenadores/");
-	  string_append(&NOMBRE,"Red");
 	  string_append(&RUTA,NOMBRE);
 	  puts("ingrese ruta del pokedex");
 
