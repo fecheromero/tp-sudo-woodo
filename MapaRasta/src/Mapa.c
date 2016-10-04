@@ -133,13 +133,12 @@ void cargarMetaData(char* mapa){
 	string_append(&file,"/metadata");
 		CONFIG=config_create(file);
 		puts(config_get_string_value(CONFIG,"IP"));
-		puts(config_get_string_value(CONFIG,"algoritmo"));
 		MAPA->batallaOn=config_get_int_value(CONFIG,"TiempoCheckeoDeadlock");
 		MAPA->quantum=config_get_int_value(CONFIG,"quantum");
 		MAPA->retardo=config_get_int_value(CONFIG,"retardo");
 		MAPA->nombre=mapa;
 		free(file);
-		char* algoritmo=malloc(sizeof(100));
+		char* algoritmo=calloc(100,sizeof(char));
 		string_append(&algoritmo,config_get_string_value(CONFIG,"algoritmo"));
 
 		if(strcmp(algoritmo,"RR")==0){
@@ -149,9 +148,25 @@ void cargarMetaData(char* mapa){
 		if(strcmp(algoritmo,"SRDF")==0){
 			MAPA->planificacion=SRDF;
 		}
+		puts(algoritmo);
 		free(algoritmo);
 		free(CONFIG);
 };
+void quitarElementoDePila(t_queue* pila,_Bool(*condition)(void*)){
+			t_queue* pilaAuxiliar=queue_create();
+			void* elemento=queue_pop(pila);
+
+			while(elemento!=NULL && !condition(elemento)){
+							queue_push(pilaAuxiliar,elemento);
+
+								elemento=queue_pop(pila);
+					};
+					while(!queue_is_empty(pilaAuxiliar)){
+						void* ent=queue_pop(pilaAuxiliar);
+						queue_push(pila,ent);
+					}
+				free(pilaAuxiliar);
+				};
 ITEM_NIVEL* buscarItemXId(char caracter){
 		bool criterio(ITEM_NIVEL* item){
 					return (item->id==caracter);
@@ -191,7 +206,7 @@ void capt(entrenador* ent,void* buf){
 				string_append(&dirDePokemon,instancia->nombre);
 				int* size=malloc(sizeof(int));
 				*size=string_length(dirDePokemon);
-
+				ent->pasosHastaLaPN=-1;
 				enviar(ent->fd,size,sizeof(int));
 				enviar(ent->fd,dirDePokemon,*size);
 				nest->quantity--;
@@ -200,12 +215,47 @@ void capt(entrenador* ent,void* buf){
 
 		}
 		else{
-			//aca se bloquea
+			pthread_mutex_lock(&SEM_BLOCKED);
+			queue_push(poke->bloqueados,ent);
+			pthread_mutex_unlock(&SEM_BLOCKED);
+			atendido=NULL;
 		};
 
 
 };
+void sumarNuevo(entrenador* nuevo){
 
+	switch (MAPA->planificacion) {
+		case RR:
+			pthread_mutex_lock(&SEM_READY);
+
+				queue_push(READY,nuevo);
+				sem_post(&hayReadys);
+				pthread_mutex_unlock(&SEM_READY);
+			break;
+		case SRDF:
+			pthread_mutex_lock(&SEM_READY);
+			if(atendido!=NULL && atendido!=nuevo){
+							queue_push(READY,atendido);
+							sem_post(&hayReadys);
+							};
+			queue_push(READY,nuevo);
+			sem_post(&hayReadys);
+			atendido=NULL;
+			pthread_mutex_unlock(&SEM_READY);
+
+
+			break;
+	}
+
+};
+entrenador* sacarProximo(){
+	sem_wait(&hayReadys);
+	pthread_mutex_lock(&SEM_READY);
+	entrenador * nuevo=queue_pop(READY);
+	pthread_mutex_unlock(&SEM_READY);
+	return nuevo;
+};
 
 
 
@@ -246,7 +296,6 @@ void cumplirAccion(entrenador* ent,void* buf){
 		break;
 	case capturar:
 			capt(ent,buf);
-
 		break;
 	case conocer:
 		arg=string_new();
@@ -257,14 +306,19 @@ void cumplirAccion(entrenador* ent,void* buf){
 		ITEM_NIVEL* itemEntr=buscarItemXId(ent->id);
 		int* coord=malloc(sizeof(int));
 		*coord=item->posx;
-		total+=modulo((itemEntr->posx-item->posx));
+		total=(total+modulo((itemEntr->posx-item->posx)));
 		enviar(ent->fd,coord,sizeof(int));
 		*coord=item->posy;
-		total+=modulo((itemEntr->posy-item->posy));
+		total=(total+modulo((itemEntr->posy-item->posy)));
 		enviar(ent->fd,coord,sizeof(int));
 		free(coord);
 		ent->pasosHastaLaPN=total;
 
+		if(MAPA->planificacion==SRDF)
+		{
+			sumarNuevo(ent);
+			atendido=NULL;
+		};
 		break;
 	case medalla:
 		arg=string_new();
@@ -285,17 +339,12 @@ void RRProximo(){
 		}
 	else{
 		atendido->quantum=MAPA->quantum;
-		pthread_mutex_lock(&SEM_READY);
-		queue_push(READY,atendido);
-		atendido=queue_pop(READY);
-		pthread_mutex_unlock(&SEM_READY);
+		sumarNuevo(atendido);
+		atendido=sacarProximo();
 	};
 }
 	else{
-		sem_wait(&hayReadys);
-	pthread_mutex_lock(&SEM_READY);
-	atendido=queue_pop(READY);
-	pthread_mutex_unlock(&SEM_READY);
+	atendido=sacarProximo();
 	};
 
 	};
@@ -305,30 +354,34 @@ void SRDFProximo(){
 
 	}
 	else{
-		bool criterio(entrenador* entr){
+		_Bool criterio(entrenador* entr){
 
-			return (entr->pasosHastaLaPN==-1);
+			return (entr->pasosHastaLaPN<0);
 		};
 		sem_wait(&hayReadys);
-		entrenador* nuevo=list_find(READY->elements,criterio);
-
-		pthread_mutex_lock(&SEM_READY);
-		if(nuevo!=NULL){
-			bool igualAlNuevo(entrenador* entr){
-									return (entr->fd==nuevo->fd);
+		entrenador* nuevo=NULL;
+		nuevo=list_find(READY->elements,criterio);
+		_Bool igualAlNuevo(entrenador* entr){
+									return (strcmp(entr->nombre,nuevo->nombre)==0);
 								};
-		 list_remove_by_condition(READY->elements,igualAlNuevo);
+		if(nuevo!=NULL){
 		}
 		else{
-			bool menor(entrenador* entr){
-				bool mayor(entrenador* otro){
-					return entr->pasosHastaLaPN<=otro->pasosHastaLaPN;
-				}
+
+			_Bool menor(entrenador* entr){
+				_Bool mayor(entrenador* otro){
+
+					return (entr->pasosHastaLaPN<=otro->pasosHastaLaPN);
+
+
+				};
 				return list_all_satisfy(READY->elements,mayor);
-			}
+			};
 			nuevo=list_find(READY->elements,menor);
 		};
-		atendido= nuevo;
+		pthread_mutex_lock(&SEM_READY);
+		quitarElementoDePila(READY,igualAlNuevo);
+		atendido=nuevo;
 		pthread_mutex_unlock(&SEM_READY);
 }};
 void desconectar(entrenador* entrenador){
@@ -345,10 +398,14 @@ void desconectar(entrenador* entrenador){
 		list_add(bloq->pokeNest->instancias,poke);
 		ITEM_NIVEL* item=buscarItemXId(poke->id);
 			item->quantity++;
+			pokemonsLiberados++;
+			bloq->liberados++;
+			BorrarItem(items,entrenador->id);
 			list_remove_by_condition(entrenador->pokemonsCapturados,condition);
 
 	};
 	list_iterate(entrenador->pokemonsCapturados,liberar);
+	free(entrenador);
 };
 int darPasoA(entrenador* entrenador,char* respuesta){
 	int rdo=recibir(entrenador->fd,respuesta,7);
@@ -361,38 +418,37 @@ void ejecutar(entrenador* entr){
 	char* pedido=string_new();
 	if(darPasoA(atendido,pedido)){
 							cumplirAccion(entr,pedido);
-
+							if(atendido!=NULL){
 							atendido->quantum--;
+							};
 						}
 						else{
 							desconectar(entr);
 						};
 };
 void atenderLiberados(){
-	int i;
-	pthread_mutex_lock(&SEM_BLOCKED);
-	for(i=0;i<=pokemonsLiberados;i++){
-		bool criterio(bloqueadosXPokemon* block){
+
+		_Bool criterio(bloqueadosXPokemon* block){
 			return block->liberados>0;
 		}
-	bloqueadosXPokemon* block;
-	block=NULL;
-	block=list_find(pokemons,criterio);
-	if(block!=NULL){
-	while(block->liberados>0){
-		if(!queue_is_empty(block->bloqueados)){
-			entrenador* liberado=queue_pop(block->bloqueados);
+	bloqueadosXPokemon* blockConInstancias=NULL;
+	blockConInstancias=list_find(pokemons,criterio);
+	if(blockConInstancias!=NULL){
+	while(blockConInstancias->liberados>0){
+		if(!queue_is_empty(blockConInstancias->bloqueados)){
+			pthread_mutex_lock(&SEM_BLOCKED);
+			entrenador* liberado=queue_pop(blockConInstancias->bloqueados);
+			pthread_mutex_unlock(&SEM_BLOCKED);
 			capt(liberado,NULL);
-			pthread_mutex_lock(&SEM_READY);
-			queue_push(READY,liberado);
-			pthread_mutex_unlock(&SEM_READY);
-		block->liberados--;
-		pokemonsLiberados--;
+			liberado->quantum=MAPA->quantum;
+			sumarNuevo(liberado);
+
 
 	};
-	};
+		blockConInstancias->liberados--;
+		pokemonsLiberados--;
+
 	}
-	pthread_mutex_unlock(&SEM_BLOCKED);
 }
 
 };
@@ -400,9 +456,9 @@ void atenderLiberados(){
 void* hilo_Planificador(void* sarlompa){
 	while(TRUE){
 		while(pokemonsLiberados>0){
-		atenderLiberados();
+			atenderLiberados();
 		};
-		if(atendido!=NULL ||(queue_is_empty(READY)==0)){
+		if(atendido!=NULL || !(queue_is_empty(READY))){
 		switch (MAPA->planificacion) {
 			case RR:
 				RRProximo();
@@ -410,14 +466,15 @@ void* hilo_Planificador(void* sarlompa){
 
 				break;
 			case SRDF:
-				pthread_mutex_lock(&controlDeFlujo);
+				//pthread_mutex_lock(&controlDeFlujo);
 				SRDFProximo();
+
 				ejecutar(atendido);
-				pthread_mutex_unlock(&controlDeFlujo);
+				//pthread_mutex_unlock(&controlDeFlujo);
 
 				break;
 		}
-		pthread_mutex_unlock(&controlDeFlujo);
+		//pthread_mutex_unlock(&controlDeFlujo);
 		struct timespec* ret=malloc(sizeof(struct timespec));
 		ret->tv_nsec=(MAPA->retardo-300)*1000000;
 		ret->tv_sec=0;
@@ -428,23 +485,7 @@ void* hilo_Planificador(void* sarlompa){
 
 
 //conector (acepta conexiones, arma el struct entrenador y lo mete en la cola de readys)
-void sumarNuevo(entrenador* nuevo){
-	switch (MAPA->planificacion) {
-		case RR:
-			pthread_mutex_lock(&SEM_READY);
-				queue_push(READY,nuevo);
-				sem_post(&hayReadys);
-				pthread_mutex_unlock(&SEM_READY);
-			break;
-		case SRDF:
-			pthread_mutex_lock(&controlDeFlujo);
-			queue_push(READY,nuevo);
-			atendido=NULL;
-			pthread_mutex_unlock(&controlDeFlujo);
-			break;
-	}
 
-};
 void* hilo_Conector(void* sarlompa){
 	int listener;
 		listener=crearSocket();
@@ -489,7 +530,6 @@ void* hilo_Conector(void* sarlompa){
 								nuevoEntrenador->id=id[0];
 								nuevoEntrenador->pasosHastaLaPN=-1;
 								CrearPersonaje(items,id[0],0,0);
-
 								sumarNuevo(nuevoEntrenador);
 }
 
@@ -685,15 +725,6 @@ int main(void) {
 
 	  while(TRUE){
 		  nivel_gui_dibujar(items,mapaNombre);
-
-		  /*int key = getch();
-				if(key=='q'){
-
-					finalizarGUI(items);
-
-							return EXIT_SUCCESS;
-					break;
-				}*/
 	}
 	};
 

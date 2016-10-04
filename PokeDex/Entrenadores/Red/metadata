@@ -1,0 +1,6 @@
+nombre=Red
+simbolo=@
+hojaDeViaje=[PuebloPaleta]
+obj[PuebloPaleta]=[P,B,P]
+vidas=4
+reintentos=0

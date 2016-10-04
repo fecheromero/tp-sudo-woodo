@@ -235,11 +235,14 @@ void capturar(int mapa,char* nombreMapa){
 	char* dirDeBill=calloc(255,sizeof(char));
 	string_append(&dirDeBill,RUTA);
 	string_append(&dirDeBill,"/Dir\\ de\\ Bill/");
-	string_append_with_format(&dirDeBill,"%s",dirPoke);
+	char** dirPokeSeparado=calloc(255,sizeof(char));
+	dirPokeSeparado=string_split(dirPoke,"/");
+	string_append_with_format(&dirDeBill,"%s",dirPokeSeparado[1]);
 	copiar(ruta,dirDeBill);
 	free(dirPoke);
 	free(ruta);
 	free(dirDeBill);
+	free(dirPokeSeparado);
 	puts("copiado");
 };
 void pedirMedalla(int mapa,char* nombreMapa){

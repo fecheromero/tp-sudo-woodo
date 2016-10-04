@@ -1,0 +1,6 @@
+nombre=Brook
+simbolo=L
+hojaDeViaje=[PuebloPaleta]
+obj[PuebloPaleta]=[P,B]
+vidas=3
+reintentos=0

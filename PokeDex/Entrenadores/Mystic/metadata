@@ -1,0 +1,6 @@
+nombre=Mystic
+simbolo=M
+hojaDeViaje=[PuebloPaleta]
+obj[PuebloPaleta]=[B,P]
+vidas=4
+reintentos=0
