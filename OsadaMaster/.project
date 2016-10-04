@@ -3,6 +3,7 @@
 	<name>OsadaMaster</name>
 	<comment></comment>
 	<projects>
+		<project>Support</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

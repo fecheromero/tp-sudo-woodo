@@ -20,33 +20,12 @@
 typedef struct osada {
 	osada_header header;
 	t_bitarray bitmap;
-	osada_file archivos[2047];
+	osada_file *archivos;
 	int* asignaciones;
 	osada_block_pointer* datos;
 } osada;
 
-int main(void) {
-	t_bitarray* fyleSystem;
-	osada_header *osadaHeader;
-
-	int pagesize;
-	char * data;
-
-	int fd = open("basic.bin", O_RDWR,0);
-	if (fd != -1) {
-		pagesize = getpagesize();
-		osadaHeader =(struct osada_header *) mmap(NULL, pagesize, PROT_READ|PROT_WRITE, MAP_SHARED, fd,
-		0);
-		if(osadaHeader==MAP_FAILED){
-			close(fd);
-			perror("Cortemos todo que se fue todo a la mierda");
-			exit(EXIT_FAILURE);
-		}
-		close(fd);
-		//strcpy(osadaHeader->magic_number,unOsadaHeader.magic_number);
-
-
-	}
+void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
 	printf("%.*s\n\n", 7, osadaHeader->magic_number);
 	puts("Version:");
@@ -59,7 +38,47 @@ int main(void) {
 	printf("%d\n\n", osadaHeader->allocations_table_offset);
 	puts("Tamaño de la tabla de datos:");
 	printf("%d\n\n", osadaHeader->data_blocks);
-	munmap(osadaHeader, pagesize);
+}
+
+int main(void) {
+	t_bitarray* fyleSystem;
+
+
+	int pagesize;
+	char * data;
+	osada osadaDisk;
+
+	int fd = open("basic.bin", O_RDWR,0);
+	if (fd != -1) {
+		pagesize = getpagesize();
+		off_t fsize;
+		fsize = lseek(fd,0,SEEK_END);
+		data =(char *) mmap(NULL, fsize, PROT_READ|PROT_WRITE, MAP_SHARED, fd,
+		0);
+		if(data==MAP_FAILED){
+			close(fd);
+			perror("Cortemos todo que se fue todo a la mierda");
+			exit(EXIT_FAILURE);
+		}
+		close(fd);
+		osada_header *osadaHeader = (struct osada_header *) data;
+		osadaDisk.header = *osadaHeader;
+		long pointer = OSADA_BLOCK_SIZE;
+		char * bitmapCutted = string_substring(data, pointer, osadaHeader->fs_blocks/8);
+		osadaDisk.bitmap = *bitarray_create(bitmapCutted,osadaHeader->fs_blocks);
+		pointer+=sizeof(osadaDisk.bitmap);
+		osadaDisk.archivos = string_substring(data, pointer, 1024*OSADA_BLOCK_SIZE);
+		pointer+=sizeof(osadaDisk.archivos);
+		osadaDisk.asignaciones = string_substring(data, pointer, (osadaHeader->fs_blocks-1-(sizeof(osadaDisk.bitmap)/OSADA_BLOCK_SIZE)-1024)*4);
+		pointer+=sizeof(osadaDisk.asignaciones);
+		osadaDisk.datos = string_substring_from(data, pointer);
+
+	}
+	printHeader(&osadaDisk.header);
+
+	//osadaDisk.header=osadaHeader;
+
+	munmap(data, pagesize);
 	return EXIT_SUCCESS;
 }
 //tamaño en bloques=1500
