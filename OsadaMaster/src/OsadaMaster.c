@@ -20,7 +20,7 @@
 typedef struct osada {
 	osada_header header;
 	t_bitarray bitmap;
-	osada_file *archivos;
+	osada_file archivos[2047];
 	int* asignaciones;
 	osada_block_pointer* datos;
 } osada;
@@ -61,17 +61,25 @@ int main(void) {
 			exit(EXIT_FAILURE);
 		}
 		close(fd);
-		osada_header *osadaHeader = (struct osada_header *) data;
+		osada_header *osadaHeader = calloc(1,sizeof(osada_header));
+		memcpy(osadaHeader,data,OSADA_BLOCK_SIZE);
 		osadaDisk.header = *osadaHeader;
 		long pointer = OSADA_BLOCK_SIZE;
-		char * bitmapCutted = string_substring(data, pointer, osadaHeader->fs_blocks/8);
+
+		char * bitmapCutted = calloc(1,(osadaHeader->bitmap_blocks)*OSADA_BLOCK_SIZE);
+		memcpy(bitmapCutted,data+pointer,(osadaHeader->bitmap_blocks)*OSADA_BLOCK_SIZE);
 		osadaDisk.bitmap = *bitarray_create(bitmapCutted,osadaHeader->fs_blocks);
-		pointer+=sizeof(osadaDisk.bitmap);
-		osadaDisk.archivos = string_substring(data, pointer, 1024*OSADA_BLOCK_SIZE);
-		pointer+=sizeof(osadaDisk.archivos);
-		osadaDisk.asignaciones = string_substring(data, pointer, (osadaHeader->fs_blocks-1-(sizeof(osadaDisk.bitmap)/OSADA_BLOCK_SIZE)-1024)*4);
-		pointer+=sizeof(osadaDisk.asignaciones);
-		osadaDisk.datos = string_substring_from(data, pointer);
+		pointer+=(osadaHeader->bitmap_blocks)*OSADA_BLOCK_SIZE;
+
+		memccpy(osadaDisk.archivos,data+pointer, sizeof(osada_file)*2048);
+		pointer+=sizeof(osada_file)*2048;
+
+		osadaDisk.asignaciones = calloc(osadaHeader->allocations_table_offset,OSADA_BLOCK_SIZE);
+		memcpy(osadaDisk.asignaciones, data+pointer,(osadaHeader->allocations_table_offset)*OSADA_BLOCK_SIZE);
+		pointer+=(osadaHeader->allocations_table_offset)*OSADA_BLOCK_SIZE;
+
+		osadaDisk.datos = calloc((osadaHeader->data_blocks), OSADA_BLOCK_SIZE);
+		memccpy(osadaDisk.datos,data+pointer,(osadaHeader->data_blocks)*OSADA_BLOCK_SIZE);
 
 	}
 	printHeader(&osadaDisk.header);
