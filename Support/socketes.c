@@ -20,9 +20,7 @@ struct sockaddr_in crearAddr(uint16_t puerto, char *ip) {
 int crearSocket() {
 	int sockfd;
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
-	if (sockfd == -1) {
-		perror("fallo la creacion del socket");
-	};
+
 	setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT, &(int ) { 1 }, sizeof(int));
 	return sockfd;
 
@@ -80,9 +78,7 @@ direccion aceptarConexion(int socketEscucha) {
 int recibir(int socket, void* guardeAqui, size_t lenght) {
 	int rdo;
 	rdo = recv(socket, guardeAqui, lenght, 0);
-	if (rdo == -1) {
-		perror("Fallo al recibir paquete");
-	};
+	
 	return rdo;
 
 }
@@ -91,9 +87,7 @@ int recibir(int socket, void* guardeAqui, size_t lenght) {
 int enviar(int socket, void * sacaDeAca, size_t lenght) {
 	int rdo;
 	rdo = send(socket, sacaDeAca, lenght, 0);
-	if (rdo == -1) {
-		perror("Fallo el envio");
-	};
+
 	return rdo;
 }
 ;

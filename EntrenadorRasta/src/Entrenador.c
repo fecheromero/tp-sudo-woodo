@@ -14,10 +14,33 @@
 #include <commons/string.h>
 #include <commons/collections/queue.h>
 #include <socketes.h>
+#include <signal.h>
+#include <commons/process.h>
+#include <dirent.h>
  #define DEST_PORT 4555
 char* NOMBRE;
 char* POKEDEX;
 char* RUTA;
+void limpiarDirectorios(int senial){
+	char* comando=calloc(255,sizeof(char));
+	string_append(&comando,"rm -rf ");
+	char* rutaBorrado=calloc(255,sizeof(char));
+	string_append(&rutaBorrado,RUTA);
+	string_append(&rutaBorrado,"/Dir\\ de\\ Bill/*");
+	string_append(&comando,rutaBorrado);
+	system(comando);
+	comando=string_new();
+	rutaBorrado=string_new();
+	string_append(&comando,"rm -rf ");
+	string_append(&rutaBorrado,RUTA);
+	string_append(&rutaBorrado,"/Medallas/*");
+	string_append(&comando,rutaBorrado);
+	system(comando);
+	puts("me mori");
+	kill(process_getpid(),SIGKILL);
+	free(comando);
+	free(rutaBorrado);
+};
 typedef struct point{
 	int x;
 	int y;
@@ -84,6 +107,36 @@ void cargarMetadata(){
 	};
 free(CONFIG);
 }
+typedef struct pokemon{
+	char* nombre;
+	int nivel;
+}pokemon;
+pokemon* elegirPokemonMasFuerte(){
+	char* direccionVariable=calloc(255,sizeof(char));
+	string_append(&direccionVariable,RUTA);
+	string_append(&direccionVariable,"/Dir\\ de\\ Bill/");
+	struct dirent *dt;
+	pokemon* poke=calloc(1,sizeof(pokemon));
+		poke=NULL;
+	DIR *dire;
+	 dire = opendir(direccionVariable);
+
+	 //Recorrer directorio
+	 while((dt=readdir(dire))!=NULL){
+	 if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)){
+		 char* dirPoke=calloc(255,sizeof(char));
+		 string_append(&dirPoke,direccionVariable);
+		 string_append(&dirPoke,dt->d_name);
+		 t_config* pokemonData=config_create(dirPoke);
+		 	 int level=config_get_int_value(pokemonData,"Nivel");
+		 	 	 if(poke!=NULL && level>=poke->nivel){
+		 	 poke->nombre=dt->d_name;
+		 	 poke->nivel=level;}
+
+	 }
+	 }
+	 return poke;
+};
 int conectarA(char* nombre){
 	int socket1;
 	socket1=crearSocket();
@@ -227,6 +280,8 @@ void capturar(int mapa,char* nombreMapa){
 
 	int* size=calloc(1,sizeof(int));
 	recibir(mapa,size,sizeof(int));
+	printf("%d /n",*size);
+	if(size!=-1){
     char* dirPoke=calloc((*size),sizeof(char));
     recibir(mapa,dirPoke,*size);
 	free(size);
@@ -244,6 +299,17 @@ void capturar(int mapa,char* nombreMapa){
 	free(dirDeBill);
 	free(dirPokeSeparado);
 	puts("copiado");
+	}
+	else{ //sta en deadlock
+		puts("deadlock");
+		pokemon* poke=elegirPokemonMasFuerte();
+
+		*size=string_length(poke->nombre);
+			enviar(mapa,size,sizeof(int));
+			enviar(mapa,poke->nombre,*size);
+			enviar(mapa,poke->nivel,sizeof(int));
+			//espera la respuesta
+	}
 };
 void pedirMedalla(int mapa,char* nombreMapa){
 	char* buffer=string_new();
@@ -295,8 +361,43 @@ void completarMapa(char* nombre){
 	};
 	pedirMedalla(mapa,nombre);
 };
+void ganarVida(int signal){
+	puts("gane");
+	ENTRENADOR->vidas=ENTRENADOR->vidas+1;
+};
+void perderVida(int signal){
+		ENTRENADOR->vidas=ENTRENADOR->vidas-1;
+		if(ENTRENADOR->vidas<=0){
+			char* rta=calloc(10,sizeof(char));
+				rta="";
+			while(!strcmp(rta,"Y") && !strcmp(rta,"N")){
+				puts("¿Desea reiniciar el juego? Y/N");
+				scanf("%s",rta);
+			};
+			if(!strcmp(rta,"Y")){
+
+			}
+			else{
+				limpiarDirectorios(4);
+
+			};
+		};
+}
+void atenderSenial(int sig){
+	if(sig==SIGUSR1)
+		ganarVida(SIGUSR1);
+
+	if(sig== SIGINT) limpiarDirectorios(SIGINT);
+
+	if(sig==SIGTERM) perderVida(SIGTERM);
+
+	}
+
   int   main()
     {
+	  signal(SIGINT,atenderSenial);
+	  signal(SIGTERM,atenderSenial);
+	  signal(SIGUSR1,atenderSenial);
 	  posicion=malloc(sizeof(point));
 	  puts("ingrese nombre de Entrenador");
 	  char* nom=malloc(sizeof(char)*100);
