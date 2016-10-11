@@ -279,6 +279,7 @@ entrenador* sacarProximo(){
 
 
 void cumplirAccion(entrenador* ent,void* buf){
+	log_info(logger,"arranque ");
 	char* buff=calloc(7,sizeof(char));
 	buff=string_substring_until(buf,7);
 	bool criterio(accion* acc){
@@ -292,10 +293,14 @@ void cumplirAccion(entrenador* ent,void* buf){
 	case mover:
 
 		arg=string_new();
+		log_info(logger,"casi recibo");
 		recibir(ent->fd,arg,1);
+		log_info(logger,"recibi");
 		bool crit(sentido* sent){
 			return (arg[0]==sent->caracter);
 		};
+
+		log_info(logger,"encontre el sentido");
 		sentido* sent=list_find(sentidos,crit);
 			switch(sent->enumerable){
 			case IZQ:
@@ -311,6 +316,13 @@ void cumplirAccion(entrenador* ent,void* buf){
 				movAb(items,ent->id,mapaNombre);
 				break;
 			};
+			int* ok=malloc(sizeof(int));
+			*ok=1;
+
+			log_info(logger,"casi envio");
+			enviar(ent->fd,ok,sizeof(int));
+			log_info(logger,"envie");
+			free(ok);
 			ent->pasosHastaLaPN--;
 
 		break;
@@ -413,7 +425,6 @@ void SRDFProximo(){
 }};
 void desconectar(entrenador* entrenador){
 	pthread_mutex_lock(&SEM_BLOCKED);
-
 	pthread_mutex_lock(&SEM_ATENDIDO);
 	atendido=NULL;
 	pthread_mutex_unlock(&SEM_ATENDIDO);
@@ -430,15 +441,13 @@ void desconectar(entrenador* entrenador){
 			item->quantity++;
 			pokemonsLiberados++;
 			bloq->liberados++;
-			BorrarItem(items,entrenador->id);
 			list_remove_by_condition(entrenador->pokemonsCapturados,condition);
-
 	};
+
 	list_iterate(entrenador->pokemonsCapturados,liberar);
+	BorrarItem(items,entrenador->id);
 	free(entrenador);
-
-	pthread_mutex_lock(&SEM_BLOCKED);
-
+	pthread_mutex_unlock(&SEM_BLOCKED);
 };
 int darPasoA(entrenador* entrenador,char* respuesta){
 	int rdo=recibir(entrenador->fd,respuesta,7);
@@ -450,6 +459,7 @@ int darPasoA(entrenador* entrenador,char* respuesta){
 void ejecutar(entrenador* entr){
 	char* pedido=string_new();
 	if(darPasoA(entr,pedido)){
+
 							cumplirAccion(entr,pedido);
 							if(atendido!=NULL){
 
@@ -500,9 +510,7 @@ void* hilo_Planificador(void* sarlompa){
 			case RR:
 				RRProximo();
 				pthread_mutex_lock(&controlDeFlujo);
-
 				ejecutar(atendido);
-
 				pthread_mutex_unlock(&controlDeFlujo);
 
 				break;
@@ -599,19 +607,30 @@ while(true){
 
 	pthread_mutex_lock(&controlDeFlujo);
 	pthread_mutex_lock(&SEM_ATENDIDO);
-	if(atendido!=NULL){list_add(listaEntrenadoresParaDeadLock,atendido);}
+	if(atendido!=NULL){		list_add(listaEntrenadoresParaDeadLock,atendido);}
 	log_info(logger,"previo2");
 	pthread_mutex_unlock(&SEM_ATENDIDO);
 	void cargarALista(entrenador* ent){
-		if(ent!=NULL){list_add(listaEntrenadoresParaDeadLock,ent);};
+		//CARGAR ENTRENADORES PARA DEADLOCK!
+		log_info(logger,"carga a 1");
+		if(ent!=NULL){
+		log_info(logger,"carganding");
+		list_add(listaEntrenadoresParaDeadLock,ent);
+		};
+		log_info(logger,"%d", list_size(listaEntrenadoresParaDeadLock));
+
 	};
 	list_iterate(READY->elements,cargarALista);
 
 	void iterarBlocked(bloqueadosXPokemon* bloq){
-		if(bloq==NULL){log_info(logger,"aca se caga");}
-		if(bloq->bloqueados==NULL){log_info(logger,"se cago el bloq");}
 
-		list_iterate(bloq->bloqueados,cargarALista);
+		if(bloq!=NULL){
+		if(bloq->bloqueados!=NULL){
+			list_iterate(bloq->bloqueados->elements,cargarALista);
+
+		};
+		};
+
 	};
 	pthread_mutex_lock(&SEM_BLOCKED);
 	log_info(logger,"ready");
@@ -628,7 +647,7 @@ while(true){
 		log_info(logger,"arrancando");
 		for(h=0;h<list_size(listaEntrenadoresParaDeadLock);h++){
 					entrenador* ent=list_get(listaEntrenadoresParaDeadLock,h);
-					//log_info(logger,"%s pos: %d \n",ent->nombre,h);
+					log_info(logger,"%s pos: %d \n",ent->nombre,h);
 
 			};
 		pthread_mutex_lock(&SEM_BLOCKED);
@@ -698,14 +717,15 @@ while(true){
 					*size=-1;
 					log_info(logger,"aca");
 						enviar(ent->fd,size,sizeof(int));
-						log_info(logger,"paso el envio");
+						log_info(logger,"paso el envio a: %s",ent->nombre);
 						recibir(ent->fd,size,sizeof(int));
 						recibir(ent->fd,poke,*size);
 						recibir(ent->fd,nivel,sizeof(int));
 						free(size);
 						ent->pokemonMasFuerte=calloc(1,sizeof(t_pokemon));
-						log_info(logger,"entrenador: %s pelea con %s",ent->nombre,ent->pokemonMasFuerte->species);
+						log_info(logger,"entrenador: %s pelea con %s",ent->nombre,poke);
 						ent->pokemonMasFuerte=create_pokemon(factory,string_substring_until(poke,(string_length(poke)-7)),nivel);
+						log_info(logger,"entrenador: %s pelea con %s",ent->nombre,ent->pokemonMasFuerte->species);
 
 				};
 					list_iterate(listaEntrenadoresParaDeadLock,elegiTuPokemon);
@@ -733,78 +753,13 @@ while(true){
 													ent2=NULL;
 												}
 					};
-						desconectar(ent1);
+					//puts(ent1->nombre);
+					//	desconectar(ent1);
+					//falta un desconectado puntual (ya que no lo tiene en atendido al desconectarlo, hay q desconectar, liberar, matar al proceso y sacarlo de la lista de bloqueados correspondiente)
 			};
 	};
 };
-};/*while(true){
-
-	_Bool tieneBloqueados(bloqueadosXPokemon* bloq){
-		return (!list_is_empty(bloq->bloqueados)&&bloq->liberados==0);
-	};
-	t_list* entrenadoresPosiblesEnDL=list_create();
-	t_list* pokemonsPosiblesEnDL=list_filter(pokemons,tieneBloqueados);
-	void cargarLista(bloqueadosXPokemon* bloq){
-		_Bool HayInstanciasEnReady(entrenador* posibleLiberador){
-			_Bool esElPokemon(pokemon* poke){
-				return poke->id==bloq->pokeNest->id;
-			}
-					return list_any_satisfy(posibleLiberador->pokemonsCapturados,esElPokemon);
-				};
-		void iterarBLoqueados(entrenador* entrenador){
-				entrenadorDL* ent=calloc(1,sizeof(entrenadorDL));
-				ent->entrenador=entrenador;
-				ent->pokemonBLockID=bloq->pokeNest->id;
-
-				if(!list_any_satisfy(READY,HayInstanciasEnReady)&& !list_any_satisfy(atendido->pokemonsCapturados,esElPokemon)){
-				list_add(entrenadoresPosiblesEnDL,ent);
-				};
-		};
-		list_iterate(bloq->bloqueados,iterarBLoqueados);
-	};
-			list_iterate(pokemonsPosiblesEnDL,cargarLista);
-
-			entrenadorDL* estasEsperandoA(entrenadorDL* ent1){
-
-							_Bool tieneAlPokemon(entrenador* noLoLarga){
-								_Bool esElPokemon(pokemon* pok){
-															return pok->id==ent1->pokemonBLockID;
-															};
-								return list_any_satisfy(noLoLarga->pokemonsCapturados,esElPokemon);
-							};
-							return list_find(entrenadoresPosiblesEnDL,tieneAlPokemon);
-
-				};
-			_Bool esperasAEsteMono(entrenadorDL* ent1, entrenadorDL* ent2){
-					_Bool tieneA(entrenador* ent,char ID){
-						_Bool crterio(pokemon* poke){
-							return poke->id==ID;
-						};
-						return list_any_satisfy(ent->pokemonsCapturados,criterio);
-					};
-					return tieneA(ent2,ent1->pokemonBLockID);
-
-			};
-			t_list* secuenciaDL=list_create();
-			entrenadorDL* unBloqueado=list_get(pokemons,0);
-			entrenadorDL* esperado=esperasA(unBloqueado);
-			_Bool cerroElCiclo(entrenador* ent){
-				return ent->id==esperado->entrenador->id;
-			};
-			while(unBloqueado!=NULL && esperado!=NULL&&esperado!=unBloqueado&&!list_any_satisfy(secuenciaDL,cerroElCiclo)){
-					list_add(secuenciaDL,unBloqueado);
-					list_add(secuenciaDL,esperado);
-					unBloqueado=esperado;
-					esperado=esperasA(unBloqueado);
-			};
-			//t_pokemon devolverElPokemonMasFuerte (ya usando la factory para crearlo)
-			//mapear los entrenadores por su pokemon mas fuerte
-			//hacerlos pelear
-			//matar al entrenador del poekmon que perdio
-
 };
-};
-*/
 void cargarPokemons(char *mapa){
 
  char* direccionVariable=malloc(sizeof(char)*255);

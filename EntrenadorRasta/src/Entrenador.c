@@ -21,6 +21,7 @@
 char* NOMBRE;
 char* POKEDEX;
 char* RUTA;
+int mapa;
 void limpiarDirectorios(int senial){
 	char* comando=calloc(255,sizeof(char));
 	string_append(&comando,"rm -rf ");
@@ -36,11 +37,15 @@ void limpiarDirectorios(int senial){
 	string_append(&rutaBorrado,"/Medallas/*");
 	string_append(&comando,rutaBorrado);
 	system(comando);
-	puts("me mori");
-	kill(process_getpid(),SIGKILL);
-	free(comando);
+		free(comando);
 	free(rutaBorrado);
 };
+void suicidate(int senial){
+	limpiarDirectorios(4);
+	puts("me mori");
+	kill(process_getpid(),SIGKILL);
+
+}
 typedef struct point{
 	int x;
 	int y;
@@ -114,24 +119,45 @@ typedef struct pokemon{
 pokemon* elegirPokemonMasFuerte(){
 	char* direccionVariable=calloc(255,sizeof(char));
 	string_append(&direccionVariable,RUTA);
-	string_append(&direccionVariable,"/Dir\\ de\\ Bill/");
+	string_append(&direccionVariable,"/Dir de Bill/");
 	struct dirent *dt;
-	pokemon* poke=calloc(1,sizeof(pokemon));
-		poke=NULL;
+	puts(direccionVariable);
+	pokemon* poke=NULL;
 	DIR *dire;
 	 dire = opendir(direccionVariable);
-
+	 if(dire==NULL){puts("fallo");};
+	 puts("arme el directorio");
 	 //Recorrer directorio
 	 while((dt=readdir(dire))!=NULL){
 	 if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)){
 		 char* dirPoke=calloc(255,sizeof(char));
 		 string_append(&dirPoke,direccionVariable);
 		 string_append(&dirPoke,dt->d_name);
-		 t_config* pokemonData=config_create(dirPoke);
-		 	 int level=config_get_int_value(pokemonData,"Nivel");
-		 	 	 if(poke!=NULL && level>=poke->nivel){
-		 	 poke->nombre=dt->d_name;
-		 	 poke->nivel=level;}
+		 t_config* pokemonData=calloc(1,sizeof(t_config));
+				 pokemonData=config_create(dirPoke);
+				 if(pokemonData==NULL){puts("fallo");};
+		 puts(dirPoke);
+		 int level=config_get_int_value(pokemonData,"Nivel");
+		 puts("nivel ok");
+		 pokemon* unPoke=calloc(1,sizeof(pokemon));
+		 if(poke!=NULL){
+			 	 if(level>=poke->nivel){
+		 	 unPoke->nombre=dt->d_name;
+		 	 unPoke->nivel=level;
+			 free(poke);
+		 	 poke=unPoke;
+			 puts(poke->nombre);
+				 	 }
+	 }
+		 else{
+			 unPoke->nombre=dt->d_name;
+			 unPoke->nivel=level;
+			 free(poke);
+			 poke=unPoke;
+			 puts(poke->nombre);
+		 };
+ 	 	 free(pokemonData);
+
 
 	 }
 	 }
@@ -252,6 +278,9 @@ void llegarA(point* nest,int mapa){
 
 			break;
 	}
+			int* ok=malloc(sizeof(int));
+			recibir(mapa,ok,sizeof(int));
+			free(ok);
 	}
 
 	free(sent);
@@ -270,6 +299,7 @@ void copiar(char* origen,char* destino){
 }
 void capturar(int mapa,char* nombreMapa){
 	char* buffer=string_new();
+	puts("capturando");
 	string_append(&buffer,"captura");
 	enviar(mapa,buffer,7);
 	char* ruta=calloc(255,sizeof(char));
@@ -281,7 +311,7 @@ void capturar(int mapa,char* nombreMapa){
 	int* size=calloc(1,sizeof(int));
 	recibir(mapa,size,sizeof(int));
 	printf("%d /n",*size);
-	if(size!=-1){
+	if(*size!=-1){
     char* dirPoke=calloc((*size),sizeof(char));
     recibir(mapa,dirPoke,*size);
 	free(size);
@@ -303,12 +333,15 @@ void capturar(int mapa,char* nombreMapa){
 	else{ //sta en deadlock
 		puts("deadlock");
 		pokemon* poke=elegirPokemonMasFuerte();
-
+		puts(poke->nombre);
 		*size=string_length(poke->nombre);
 			enviar(mapa,size,sizeof(int));
 			enviar(mapa,poke->nombre,*size);
 			enviar(mapa,poke->nivel,sizeof(int));
-			//espera la respuesta
+			free(size);
+			free(ruta);
+			//falta esperar la respuesta (y mas que nada atender que pasa cuando no es la victima)
+
 	}
 };
 void pedirMedalla(int mapa,char* nombreMapa){
@@ -344,7 +377,7 @@ void pedirMedalla(int mapa,char* nombreMapa){
 
 }
 void completarMapa(char* nombre){
-	int mapa=conectarA(nombre);
+	mapa=conectarA(nombre);
 	puts("me conecte");
 	_Bool criterio(objetivos* obj){
 		return (strcmp(obj->mapa,nombre)==0);
@@ -366,38 +399,31 @@ void ganarVida(int signal){
 	ENTRENADOR->vidas=ENTRENADOR->vidas+1;
 };
 void perderVida(int signal){
+	puts("perdi");
 		ENTRENADOR->vidas=ENTRENADOR->vidas-1;
 		if(ENTRENADOR->vidas<=0){
-			char* rta=calloc(10,sizeof(char));
-				rta="";
-			while(!strcmp(rta,"Y") && !strcmp(rta,"N")){
+			char rta;
+			while(rta!='Y' && rta!='N'){
 				puts("¿Desea reiniciar el juego? Y/N");
-				scanf("%s",rta);
-			};
-			if(!strcmp(rta,"Y")){
+				scanf(" %c",&rta);
 
+			};
+			if(rta=='Y'){
+				limpiarDirectorios(4);
+				close(mapa);
+				main();
 			}
 			else{
-				limpiarDirectorios(4);
 
+				suicidate(4);
 			};
+
 		};
-}
-void atenderSenial(int sig){
-	if(sig==SIGUSR1)
-		ganarVida(SIGUSR1);
-
-	if(sig== SIGINT) limpiarDirectorios(SIGINT);
-
-	if(sig==SIGTERM) perderVida(SIGTERM);
-
-	}
-
-  int   main()
+}  int   main()
     {
-	  signal(SIGINT,atenderSenial);
-	  signal(SIGTERM,atenderSenial);
-	  signal(SIGUSR1,atenderSenial);
+	  signal(SIGINT,suicidate);
+	  signal(SIGTERM,perderVida);
+	  signal(SIGUSR1,ganarVida);
 	  posicion=malloc(sizeof(point));
 	  puts("ingrese nombre de Entrenador");
 	  char* nom=malloc(sizeof(char)*100);
