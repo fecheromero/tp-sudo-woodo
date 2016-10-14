@@ -17,10 +17,11 @@
 #include <sys/types.h>
 #include <sys/mman.h>
 #include <fcntl.h>
+#define filesQuantity 2048
 typedef struct osada {
 	osada_header header;
 	t_bitarray bitmap;
-	osada_file archivos[2047];
+	osada_file archivos[filesQuantity-1];
 	int* asignaciones;
 	osada_block_pointer* datos;
 } osada;
@@ -34,7 +35,7 @@ void printHeader(osada_header* osadaHeader) {
 	printf("%d\n\n", osadaHeader->fs_blocks);
 	puts("Tamaño del  bitmap:");
 	printf("%d\n\n", osadaHeader->bitmap_blocks);
-	puts("Tamaño de la tabla de asignaciones:");
+	puts("Offset de la tabla de asignaciones:");
 	printf("%d\n\n", osadaHeader->allocations_table_offset);
 	puts("Tamaño de la tabla de datos:");
 	printf("%d\n\n", osadaHeader->data_blocks);
@@ -66,20 +67,25 @@ int main(void) {
 		osadaDisk.header = *osadaHeader;
 		long pointer = OSADA_BLOCK_SIZE;
 
-		char * bitmapCutted = calloc(1,(osadaHeader->bitmap_blocks)*OSADA_BLOCK_SIZE);
+		char * bitmapCutted = calloc(osadaHeader->bitmap_blocks,OSADA_BLOCK_SIZE);
 		memcpy(bitmapCutted,data+pointer,(osadaHeader->bitmap_blocks)*OSADA_BLOCK_SIZE);
 		osadaDisk.bitmap = *bitarray_create(bitmapCutted,osadaHeader->fs_blocks);
 		pointer+=(osadaHeader->bitmap_blocks)*OSADA_BLOCK_SIZE;
 
-		memccpy(osadaDisk.archivos,data+pointer, sizeof(osada_file)*2048);
-		pointer+=sizeof(osada_file)*2048;
+		memccpy(osadaDisk.archivos,data+pointer, sizeof(osada_file)*filesQuantity);
+		pointer+=sizeof(osada_file)*filesQuantity;
 
-		osadaDisk.asignaciones = calloc(osadaHeader->allocations_table_offset,OSADA_BLOCK_SIZE);
-		memcpy(osadaDisk.asignaciones, data+pointer,(osadaHeader->allocations_table_offset)*OSADA_BLOCK_SIZE);
-		pointer+=(osadaHeader->allocations_table_offset)*OSADA_BLOCK_SIZE;
+		int asignationSize = getAsignationTableSize(osadaHeader->fs_blocks,osadaHeader->bitmap_blocks,filesQuantity/2);
+		osadaDisk.asignaciones = calloc(asignationSize,OSADA_BLOCK_SIZE);
+		memcpy(osadaDisk.asignaciones, data+pointer,asignationSize*OSADA_BLOCK_SIZE);
+		pointer+=asignationSize*OSADA_BLOCK_SIZE;
 
 		osadaDisk.datos = calloc((osadaHeader->data_blocks), OSADA_BLOCK_SIZE);
 		memccpy(osadaDisk.datos,data+pointer,(osadaHeader->data_blocks)*OSADA_BLOCK_SIZE);
+		pointer+=(osadaHeader->data_blocks)*OSADA_BLOCK_SIZE;
+		if(pointer!=osadaHeader->fs_blocks*64){
+			perror("Something was wrong while creating FS struct");
+		}
 
 	}
 	printHeader(&osadaDisk.header);
@@ -88,6 +94,15 @@ int main(void) {
 
 	munmap(data, pagesize);
 	return EXIT_SUCCESS;
+}
+
+int getAsignationTableSize(int F, int N, int A){
+	int value =(F - 1 - N - 1024)*4;
+	int result = value/64;
+	if(value%64!=0){
+		result++;
+	}
+	return result;
 }
 //tamaño en bloques=1500
 //1 bloque ->header
