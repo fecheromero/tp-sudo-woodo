@@ -13,15 +13,43 @@
 #include <commons/config.h>
 #include <commons/string.h>
 #include <commons/collections/queue.h>
+#include <commons/collections/list.h>
 #include <socketes.h>
 #include <signal.h>
 #include <commons/process.h>
 #include <dirent.h>
+#include <pthread.h>
  #define DEST_PORT 4555
+
 char* NOMBRE;
 char* POKEDEX;
 char* RUTA;
 int mapa;
+t_list* hilos;
+pthread_t hiloActual;
+pthread_mutex_t SEM_EJECUTANDO;
+typedef struct point{
+	int x;
+	int y;
+}point;
+
+point* posicion;
+
+typedef struct objetivos{
+char* mapa;
+char* objetivos;
+}objetivos;
+
+typedef struct entrenador{
+	char* nombre;
+	char id;
+	t_list* hojaDeViaje;
+	int vidas;
+	int reintentos;
+}entrenador;
+
+entrenador* ENTRENADOR;
+
 void limpiarDirectorios(int senial){
 	char* comando=calloc(255,sizeof(char));
 	string_append(&comando,"rm -rf ");
@@ -46,27 +74,35 @@ void suicidate(int senial){
 	kill(process_getpid(),SIGKILL);
 
 }
-typedef struct point{
-	int x;
-	int y;
-}point;
+void ganarVida(int signal){
+	ENTRENADOR->vidas=ENTRENADOR->vidas+1;
+};
 
-point* posicion;
+void perderVida(int signal){
+		ENTRENADOR->vidas=ENTRENADOR->vidas-1;
+		if(ENTRENADOR->vidas<=0){
+			close(mapa);
+			char rta;
+			while(rta!='Y' && rta!='N'){
+				puts("¿Desea reiniciar el juego? Y/N");
+				scanf(" %c",&rta);
 
-typedef struct objetivos{
-char* mapa;
-char* objetivos;
-}objetivos;
+			};
+			if(rta=='Y'){
+				//limpiarDirectorios(4);
+				reiniciar();
+					rta='/0';
+			}
+			else{
 
-typedef struct entrenador{
-	char* nombre;
-	char id;
-	t_list* hojaDeViaje;
-	int vidas;
-	int reintentos;
-}entrenador;
+				suicidate(4);
+			};
 
-entrenador* ENTRENADOR;
+		};
+};
+
+
+
 void cargarMetadata(){
 	t_config* CONFIG;
 	CONFIG=malloc(sizeof(t_config));
@@ -112,6 +148,35 @@ void cargarMetadata(){
 	};
 free(CONFIG);
 }
+
+
+
+void   correr(char* nom)
+   {
+
+
+	  cargarMetadata();
+	  void closure(objetivos* obj){
+		  completarMapa(obj->mapa);
+	  };
+	  list_iterate(ENTRENADOR->hojaDeViaje,closure);
+	  puts("termine la ruta");
+	  /*list_remove(hilos,0);
+	  pthread_cancel(hiloActual);*/
+	  pthread_mutex_unlock(&SEM_EJECUTANDO);
+	};
+void reiniciar(){
+	puts("entre");
+	  pthread_t hilo;
+	 int rd=pthread_create(&hilo,NULL,correr,ENTRENADOR->nombre);
+			  if(rd!=0){puts("fallo");};
+			  /*puts("entre");
+			  list_add(hilos,hilo);
+			  hiloActual=hilo;
+			  list_remove(hilos,0);
+			  */
+			  pthread_exit(NULL);
+};
 typedef struct pokemon{
 	char* nombre;
 	int nivel;
@@ -121,12 +186,10 @@ pokemon* elegirPokemonMasFuerte(){
 	string_append(&direccionVariable,RUTA);
 	string_append(&direccionVariable,"/Dir de Bill/");
 	struct dirent *dt;
-	puts(direccionVariable);
 	pokemon* poke=NULL;
 	DIR *dire;
 	 dire = opendir(direccionVariable);
 	 if(dire==NULL){puts("fallo");};
-	 puts("arme el directorio");
 	 //Recorrer directorio
 	 while((dt=readdir(dire))!=NULL){
 	 if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)){
@@ -136,9 +199,7 @@ pokemon* elegirPokemonMasFuerte(){
 		 t_config* pokemonData=calloc(1,sizeof(t_config));
 				 pokemonData=config_create(dirPoke);
 				 if(pokemonData==NULL){puts("fallo");};
-		 puts(dirPoke);
 		 int level=config_get_int_value(pokemonData,"Nivel");
-		 puts("nivel ok");
 		 pokemon* unPoke=calloc(1,sizeof(pokemon));
 		 if(poke!=NULL){
 			 	 if(level>=poke->nivel){
@@ -146,7 +207,6 @@ pokemon* elegirPokemonMasFuerte(){
 		 	 unPoke->nivel=level;
 			 free(poke);
 		 	 poke=unPoke;
-			 puts(poke->nombre);
 				 	 }
 	 }
 		 else{
@@ -297,53 +357,100 @@ void copiar(char* origen,char* destino){
 		system(comando);
 		free(comando);
 }
-void capturar(int mapa,char* nombreMapa){
-	char* buffer=string_new();
-	puts("capturando");
-	string_append(&buffer,"captura");
-	enviar(mapa,buffer,7);
+void efectivizarCaptura(int mapa,char* nombreMapa){
+
 	char* ruta=calloc(255,sizeof(char));
 	string_append(&ruta,POKEDEX);
 	string_append(&ruta,"/Mapas/");
 	string_append(&ruta,nombreMapa);
 	string_append(&ruta,"/PokeNests/");
-
 	int* size=calloc(1,sizeof(int));
-	recibir(mapa,size,sizeof(int));
-	printf("%d /n",*size);
-	if(*size!=-1){
-    char* dirPoke=calloc((*size),sizeof(char));
-    recibir(mapa,dirPoke,*size);
-	free(size);
-	puts(dirPoke);
-	string_append_with_format(&ruta,"%s",dirPoke);
-	char* dirDeBill=calloc(255,sizeof(char));
-	string_append(&dirDeBill,RUTA);
-	string_append(&dirDeBill,"/Dir\\ de\\ Bill/");
-	char** dirPokeSeparado=calloc(255,sizeof(char));
-	dirPokeSeparado=string_split(dirPoke,"/");
-	string_append_with_format(&dirDeBill,"%s",dirPokeSeparado[1]);
-	copiar(ruta,dirDeBill);
-	free(dirPoke);
-	free(ruta);
-	free(dirDeBill);
-	free(dirPokeSeparado);
-	puts("copiado");
-	}
-	else{ //sta en deadlock
-		puts("deadlock");
-		pokemon* poke=elegirPokemonMasFuerte();
-		puts(poke->nombre);
-		*size=string_length(poke->nombre);
-			enviar(mapa,size,sizeof(int));
-			enviar(mapa,poke->nombre,*size);
-			enviar(mapa,poke->nivel,sizeof(int));
-			free(size);
-			free(ruta);
-			//falta esperar la respuesta (y mas que nada atender que pasa cuando no es la victima)
+		recibir(mapa,size,sizeof(int));
+		printf("%d \n",*size);
 
-	}
+		if(*size!=-1){ //-1 es la señal de deadlock
+	    char* dirPoke=calloc((*size),sizeof(char));
+	    recibir(mapa,dirPoke,*size);
+		puts(dirPoke);
+		string_append_with_format(&ruta,"%s",dirPoke);
+		char* dirDeBill=calloc(255,sizeof(char));
+		string_append(&dirDeBill,RUTA);
+		string_append(&dirDeBill,"/Dir\\ de\\ Bill/");
+		char** dirPokeSeparado=calloc(255,sizeof(char));
+		dirPokeSeparado=string_split(dirPoke,"/");
+		string_append_with_format(&dirDeBill,"%s",dirPokeSeparado[1]);
+		copiar(ruta,dirDeBill);
+		free(dirPoke);
+		free(dirDeBill);
+		free(dirPokeSeparado);
+		puts("copiado");
+		}
+		else{ //sta en deadlock
+			char* contrincante=calloc(255,sizeof(char));
+			char*  pokemonEnemigo=calloc(255,sizeof(char));
+			puts("deadlock");
+			pokemon* poke=elegirPokemonMasFuerte();
+			printf("%s %d \n",poke->nombre,poke->nivel);
+			*size=string_length(poke->nombre);
+				enviar(mapa,size,sizeof(int));
+				enviar(mapa,poke->nombre,*size);
+				int* lvl=calloc(1,sizeof(int));
+				*lvl=poke->nivel;
+				printf("%d \n", *lvl);
+				enviar(mapa,lvl,sizeof(int));
+				int* rdo=calloc(1,sizeof(int));
+				recibir(mapa,rdo,sizeof(int));
+				while(*rdo==0){ //-1 es la señal de muerte
+				recibir(mapa,size,sizeof(int));
+				recibir(mapa,contrincante,sizeof(char)*(*size));
+				printf("%d \n %s \n",*size,contrincante);
+				recibir(mapa,size,sizeof(int));
+				recibir(mapa,pokemonEnemigo,sizeof(char)*(*size));
+				printf("%d \n",*size);
+				recibir(mapa,lvl,sizeof(int));
+					printf("perdi contra %s y su %s nivel: %d \n",contrincante,pokemonEnemigo,*lvl);
+				recibir(mapa,rdo,sizeof(int));
+
+		}
+
+
+				if(*rdo==1){
+					recibir(mapa,size,sizeof(int));
+									recibir(mapa,contrincante,sizeof(char)*(*size));
+									printf("%d \n",*size);
+									recibir(mapa,size,sizeof(int));
+									printf("%d \n",*size);
+									recibir(mapa,pokemonEnemigo,sizeof(char)*(*size));
+									recibir(mapa,lvl,sizeof(int));
+					printf("gane contra %s y su %s nivel: %d \n",contrincante,pokemonEnemigo,*lvl);
+
+							efectivizarCaptura(mapa,ruta);
+
+							}
+				if(*rdo==-1){
+					perderVida(4);
+					if(ENTRENADOR->vidas>0){
+							reiniciar();
+					}
+				};
+				free(contrincante);
+				free(pokemonEnemigo);
+				free(lvl);
+				free(rdo);
+		}
+		free(ruta);
+		free(size);
+
+}
+void capturar(int mapa,char* nombreMapa){
+	char* buffer=calloc(7,sizeof(char));
+	puts("capturando");
+	string_append(&buffer,"captura");
+	enviar(mapa,buffer,7);
+	free(buffer);
+	efectivizarCaptura(mapa,nombreMapa);
 };
+
 void pedirMedalla(int mapa,char* nombreMapa){
 	char* buffer=string_new();
 
@@ -393,62 +500,43 @@ void completarMapa(char* nombre){
 		i++;
 	};
 	pedirMedalla(mapa,nombre);
+	close(mapa);
 };
-void ganarVida(int signal){
-	puts("gane");
-	ENTRENADOR->vidas=ENTRENADOR->vidas+1;
-};
-void perderVida(int signal){
-	puts("perdi");
-		ENTRENADOR->vidas=ENTRENADOR->vidas-1;
-		if(ENTRENADOR->vidas<=0){
-			char rta;
-			while(rta!='Y' && rta!='N'){
-				puts("¿Desea reiniciar el juego? Y/N");
-				scanf(" %c",&rta);
 
-			};
-			if(rta=='Y'){
-				limpiarDirectorios(4);
-				close(mapa);
-				main();
-			}
-			else{
-
-				suicidate(4);
-			};
-
-		};
-}  int   main()
-    {
+int main(){
 	  signal(SIGINT,suicidate);
-	  signal(SIGTERM,perderVida);
-	  signal(SIGUSR1,ganarVida);
-	  posicion=malloc(sizeof(point));
-	  puts("ingrese nombre de Entrenador");
-	  char* nom=malloc(sizeof(char)*100);
-	  scanf("%s",nom);
-	  NOMBRE=malloc(sizeof(char)*150);
-	  NOMBRE=string_new();
-	  string_append(&NOMBRE,nom);
-	  free(nom);
-	  POKEDEX=malloc(sizeof(char)*255);
-	  POKEDEX=string_new();
+		  signal(SIGTERM,perderVida);
+		  signal(SIGUSR1,ganarVida);
 
-	  string_append(&POKEDEX,"/home/utnso/PokeDex");
-	  ENTRENADOR=malloc(sizeof(entrenador));
-	  RUTA=malloc(sizeof(char)*255);
-	  RUTA=string_new();
-	  string_append(&RUTA,POKEDEX);
-	  string_append(&RUTA,"/Entrenadores/");
-	  string_append(&RUTA,NOMBRE);
-	  puts("ingrese ruta del pokedex");
+	pthread_mutex_init(&SEM_EJECUTANDO,NULL);
+	 puts("ingrese nombre de Entrenador");
+		  char* nom=malloc(sizeof(char)*100);
+		  scanf("%s",nom);
+		  posicion=malloc(sizeof(point));
+		 NOMBRE=malloc(sizeof(char)*150);
+		  NOMBRE=string_new();
+		  string_append(&NOMBRE,nom);
+		  free(nom);
+		  POKEDEX=malloc(sizeof(char)*255);
+		  POKEDEX=string_new();
 
+		  string_append(&POKEDEX,"/home/utnso/PokeDex");
+		  ENTRENADOR=malloc(sizeof(entrenador));
+		  RUTA=malloc(sizeof(char)*255);
+		  RUTA=string_new();
+		  string_append(&RUTA,POKEDEX);
+		  string_append(&RUTA,"/Entrenadores/");
+		  string_append(&RUTA,NOMBRE);
+		  puts("ingrese ruta del pokedex");
 
-	  cargarMetadata();
-	  void closure(objetivos* obj){
-		  completarMapa(obj->mapa);
-	  };
-	  list_iterate(ENTRENADOR->hojaDeViaje,closure);
-	  puts("termine la ruta");
-	};
+		  pthread_mutex_lock(&SEM_EJECUTANDO);
+		  hilos=list_create();
+	  pthread_t hilo;
+	 int rd=pthread_create(&hilo,NULL,correr,nom);
+			  if(rd!=0){puts("fallo");};
+			 /* hiloActual=hilo;
+			  list_add(hilos,hilo);
+			  while(!list_is_empty(hilos)){};*/
+			  pthread_mutex_lock(&SEM_EJECUTANDO);
+
+}
