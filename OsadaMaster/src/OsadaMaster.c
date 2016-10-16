@@ -10,6 +10,7 @@
 
 #include "OsadaMaster.h"
 
+#include <math.h>
 void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
 	printf("%.*s\n\n", 7, osadaHeader->magic_number);
@@ -25,19 +26,87 @@ void printHeader(osada_header* osadaHeader) {
 	printf("%d\n\n", osadaHeader->data_blocks);
 }
 
+void* devolverArchivo(char* ruta,osada* FS){
+	if(findFileWithPath(ruta,FS)!=NULL){
+	osada_file* archivo=findFileWithPath(ruta,FS);
+void* file=calloc(archivo->file_size,sizeof(char));
+	uint32_t siguienteBloque=FS->asignaciones[archivo->first_block];
+	printf("%d \n", archivo->file_size);
+	int i=0;
+	if(archivo->file_size<=64){
+	file=memcpy(file,FS->datos[archivo->first_block],archivo->file_size);
+		i+=archivo->file_size;
+	}
+	else{
+		file=memcpy(file,FS->datos[archivo->first_block],64);
+		i+=64;
+	}
+	while(siguienteBloque!=0xFFFFFFFF){
+		if((archivo->file_size-i)<=64){
+			file=memcpy(file,FS->datos[archivo->first_block],archivo->file_size);
+					i+=archivo->file_size-i;
+
+		}else{
+		file=memcpy(file,FS->datos[archivo->first_block],64);
+		i+=64;
+
+		}
+			siguienteBloque=FS->asignaciones[siguienteBloque];
+	}
+
+	return file;
+	}
+	else{
+		return NULL;
+	}
+}
+uint32_t encontrarPosicionEnTablaDeArchivos(char* ruta,osada* FS){
+	if(strcmp(ruta,"/")==0){
+			return 0xFFFF;}
+	osada_file* file=findFileWithPath(ruta,FS);
+	uint32_t i=0;
+		while(i<filesQuantity && FS->archivos[i]!=file){
+		i++;
+	}
+	return i;
+
+}
+void mostrarContenidoDir(uint32_t directorioPadre, osada* FS,int n){ //directorioPadre es la posicion en la tabla de archivos del directorio
+	osada_file* file;
+		int i=0;
+		file=&(*FS->archivos)[i];
+		while(i<=2047){
+			if(file->parent_directory==directorioPadre){
+				if(file->state==REGULAR){
+					printf("%*s",n,""); printf("%s \n",file->fname);
+
+				}
+				if(file->state==DIRECTORY){
+					printf("%*s",n,"/"); printf("%s \n",file->fname);
+					mostrarContenidoDir(i,FS,(n+1));}
+
+			}
+			i++;
+			file=&(*FS->archivos)[i];
+		}
+
+}
+void mostrarContenido(char* ruta, osada* FS){
+	mostrarContenidoDir(encontrarPosicionEnTablaDeArchivos(ruta,FS),FS,1);
+}
 int main(void) {
 	t_bitarray* fyleSystem;
 
 	int pagesize;
-	char * data;
-	osada osadaDisk;
+	osada_block * data;
+	osada* osadaDisk=calloc(1,sizeof(osada));
 
-	int fd = open("basic.bin", O_RDWR, 0);
+	int fd = open("challenge.bin", O_RDWR, 0);
 	if (fd != -1) {
 		pagesize = getpagesize();
 		off_t fsize;
 		fsize = lseek(fd, 0, SEEK_END);
-		data = (char *) mmap(NULL, fsize, PROT_READ | PROT_WRITE, MAP_SHARED,
+		data = (osada_block *) mmap(NULL, fsize, PROT_READ | PROT_WRITE, MAP_SHARED,
 				fd, 0);
 		if (data == MAP_FAILED) {
 			close(fd);
@@ -45,44 +114,29 @@ int main(void) {
 			exit(EXIT_FAILURE);
 		}
 		close(fd);
-		osada_header *osadaHeader = calloc(1, sizeof(osada_header));
-		memcpy(osadaHeader, data, OSADA_BLOCK_SIZE);
-		osadaDisk.header = *osadaHeader;
-		long pointer = OSADA_BLOCK_SIZE;
-
-		char * bitmapCutted = calloc(osadaHeader->bitmap_blocks,
-				OSADA_BLOCK_SIZE);
-		memcpy(bitmapCutted, data + pointer,
-				(osadaHeader->bitmap_blocks) * OSADA_BLOCK_SIZE);
-		osadaDisk.bitmap = *bitarray_create(bitmapCutted,
-				osadaHeader->fs_blocks);
-		pointer += (osadaHeader->bitmap_blocks) * OSADA_BLOCK_SIZE;
-
-		memccpy(osadaDisk.archivos, data + pointer,
-				sizeof(osada_file) * filesQuantity);
-		pointer += sizeof(osada_file) * filesQuantity;
-
-		int asignationSize = getAsignationTableSize(osadaHeader->fs_blocks,
-				osadaHeader->bitmap_blocks, filesQuantity / 2);
-		osadaDisk.asignaciones = calloc(asignationSize, OSADA_BLOCK_SIZE);
-		memcpy(osadaDisk.asignaciones, data + pointer,
-				asignationSize * OSADA_BLOCK_SIZE);
-		pointer += asignationSize * OSADA_BLOCK_SIZE;
-
-		osadaDisk.datos = calloc((osadaHeader->data_blocks), OSADA_BLOCK_SIZE);
-		memccpy(osadaDisk.datos, data + pointer,
-				(osadaHeader->data_blocks) * OSADA_BLOCK_SIZE);
-		pointer += (osadaHeader->data_blocks) * OSADA_BLOCK_SIZE;
-		if (pointer != osadaHeader->fs_blocks * 64) {
-			perror("Something was wrong while creating FS struct");
-		}
+		osadaDisk->header=calloc(1,sizeof(osada_block));
+		osadaDisk->header=data;
+		//osadaDisk->bitmap = calloc(osadaDisk->header->bitmap_blocks,sizeof(osada_block));
+		osadaDisk->bitmap=bitarray_create(data[1],osadaDisk->header->bitmap_blocks*sizeof(osada_block));
+		printf("%d \n",osadaDisk->bitmap->size);
+		osadaDisk->archivos=calloc(2048,sizeof(osada_file));
+		osadaDisk->archivos=data[1+osadaDisk->header->bitmap_blocks];
+		float tmSinDiv=(osadaDisk->header->fs_blocks-1-osadaDisk->header->bitmap_blocks-1024)*4;
+		float tmAsignaciones=tmSinDiv/64.0f; //blocksize
+		int tamanioDeTablaDeAsignaciones=ceil(tmAsignaciones);
+		osadaDisk->asignaciones=calloc(tamanioDeTablaDeAsignaciones,sizeof(osada_block));
+		osadaDisk->asignaciones=data[osadaDisk->header->allocations_table_offset];
+		osadaDisk->datos=calloc(osadaDisk->header->data_blocks,sizeof(osada_block));
+		osadaDisk->datos=data[osadaDisk->header->allocations_table_offset+tamanioDeTablaDeAsignaciones];
 
 	}
-	printHeader(&osadaDisk.header);
-	findFileWithPath("directorio/subdirectorio/large.txt", &osadaDisk);
-
-	//osadaDisk.header=osadaHeader;
-
+	printHeader(osadaDisk->header);
+	if(devolverArchivo("Pokemons/001.txt", osadaDisk)!=NULL){puts("lo encontre");
+	char* s=devolverArchivo("Pokemons/001.txt", osadaDisk);
+	//printf("%s",s);
+	}
+	else{puts("no lo encontre");}
+	mostrarContenido("/",osadaDisk);
 	munmap(data, pagesize);
 	return EXIT_SUCCESS;
 }
@@ -109,11 +163,11 @@ char* getFilesQuantity(char** pointer) {
 }
 osada_file* findFile(char ** route, osada * disk, int pathQuantity){
 		int i;
-		osada_file file;
+		osada_file* file;
 		for (i = 0; i < filesQuantity; i++) {
-			file = disk->archivos[i];
-			if (isTheFile(&file, route, pathQuantity, disk)) {
-				return &file;
+			file = &(*disk->archivos)[i];
+				if (isTheFile(file, route, pathQuantity, disk)) {
+				return file;
 			}
 		}
 
@@ -123,7 +177,8 @@ osada_file* findFile(char ** route, osada * disk, int pathQuantity){
 osada_file* findFileWithPath(char * path, osada * disk) {
 	char** route = string_split(path, "/");
 	int pathQuantity = getFilesQuantity(route);
-	return findFile(route, disk, pathQuantity);
+	osada_file* file= findFile(route, disk, pathQuantity);
+	return file;
 }
 
 bool isTheFile(osada_file * file, char** route, int pathQuantity, osada * disk) {
@@ -136,7 +191,7 @@ bool isTheFile(osada_file * file, char** route, int pathQuantity, osada * disk) 
 	int i;
 	osada_file * pointer = file;
 	for(i=pathQuantity-1; i>=0;i--){
-		osada_file * parent = &disk->archivos[pointer->parent_directory];;
+		osada_file * parent = &(*disk->archivos)[pointer->parent_directory];
 		if(strcmp(parent->fname,route[i])!=0){
 			return false;
 		}
@@ -144,10 +199,3 @@ bool isTheFile(osada_file * file, char** route, int pathQuantity, osada * disk) 
 	}
 	return true;
 }
-
-//tamaño en bloques=1500
-//1 bloque ->header
-//3 bloques->bitmap
-//1024 bloques->tabla de archivos
-//30 bloques->tabla de asignaciones
-//442 bloques ->datos

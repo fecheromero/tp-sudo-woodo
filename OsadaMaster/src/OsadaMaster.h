@@ -17,13 +17,14 @@
 #include <sys/mman.h>
 #include <fcntl.h>
 #define filesQuantity 2048
-
+#define BLOCKSIZE 64
+typedef  osada_file tablaDeArchivos[filesQuantity];
 typedef struct osada {
-	osada_header header;
-	t_bitarray bitmap;
-	osada_file archivos[filesQuantity - 1];
-	int* asignaciones;
-	osada_block_pointer* datos;
+	osada_header* header;
+	t_bitarray* bitmap;
+	tablaDeArchivos* archivos;
+	uint32_t* asignaciones;
+	osada_block* datos;
 } osada;
 
 bool isTheFile(osada_file * file, char** route, int pathQuantity, osada * disk);
