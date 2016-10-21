@@ -40,23 +40,25 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 	int link;
 	int permisos;
 	char* tipo;
+	int size;
 
 	memset(stbuf, 0, sizeof(struct stat));
 
 	//Si path es igual a "/" nos estan pidiendo los atributos del punto de montaje
 
-	enviar() //path + getattr
-	recibir() //tipo de archivo (dir o arch), permisos, link, size
+	enviar(); //path + getattr
+	recibir(); //tipo de archivo (S_IFDIR/S_IFREG) + tamaño archivo (size) + link (cantidad de carpetas que hay que entrar para llegar al
 	//Transformar lo que devuelva el server a los parametros tipo, permisos, link y size que necesito
 
-	if(tipo==S_IFDIR){
-				stbuf->st_mode = tipo | permisos;
+	if(tipo=="S_IFDIR"){
+		//Le damos los permisos nosotros
+				stbuf->st_mode = tipo | 0755;
 				stbuf->st_nlink = link;
-	}else if (strcmp(path, DEFAULT_FILE_PATH) == 0){
-				stbuf->st_mode = tipo | permisos;
+	}else if(tipo=="S_IFREG"){
+				stbuf->st_mode = tipo | 0755;
 				stbuf->st_nlink = link;
 				stbuf->st_size = size;
-	}else {
+	}else{
 		res = -ENOENT;
 	}
 	return res;
@@ -82,21 +84,32 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
 	(void) offset;
 	(void) fi;
+	char* nombre;
+	int i;
+	int n;
+//recibo vector con todos los nombres y itero y voy completando
+	enviar(); //path + readdir
+	recibir(); //Numero de archivos en path (n)
+	for(i=0; i<n; i++){
+		recibir(); //Nombre de archivo/carpeta
+		filler(buf, nombre, NULL, 0);
+	}
 
-	enviar() //path + readdir
-	recibir() //
-
-	if (strcmp(path, "/") != 0)
-		return -ENOENT;
-
-	// "." y ".." son entradas validas, la primera es una referencia al directorio donde estamos parados
-	// y la segunda indica el directorio padre
-	filler(buf, ".", NULL, 0);
-	filler(buf, "..", NULL, 0);
-	filler(buf, DEFAULT_FILE_NAME, NULL, 0);
 
 	return 0;
 }
+
+static int tp_read(const char *path, char *buf, size_t size, off_t offset,
+		struct fuse_file_info *fi) {
+	char* archivo;
+
+	enviar(); //Read + size + path
+	recibir(); //Archivo
+		memcpy(buf,archivo,size);
+		return size;
+}
+
+
 
 /*
  * Esta es la estructura principal de FUSE con la cual nosotros le decimos a
@@ -104,27 +117,16 @@ static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t
  * Como se observa la estructura contiene punteros a funciones.
  */
 
-static struct fuse_operations tp_oper = {
+static struct fuse_operations funciones = {
 		.getattr = tp_getattr,
 		.readdir = tp_readdir,
+		.read = tp_read,
 };
 
 
-// Dentro de los argumentos que recibe nuestro programa obligatoriamente
-// debe estar el path al directorio donde vamos a montar nuestro FS
+
 int main(int argc, char *argv[]) {
-	struct fuse_args args = FUSE_ARGS_INIT(argc, argv);
-
-	// Limpio la estructura que va a contener los parametros
-	memset(&runtime_options, 0, sizeof(struct t_runtime_options));
-
-	// Esta funcion de FUSE lee los parametros recibidos y los intepreta
-	if (fuse_opt_parse(&args, &runtime_options, fuse_options, NULL) == -1){
-		/** error parsing options */
-		perror("Invalid arguments!");
-		return EXIT_FAILURE;
+		return fuse_main(argc, argv, &funciones, NULL);
 	}
 
 
-	return fuse_main(args.argc, args.argv, &tp_oper, NULL);
-}
