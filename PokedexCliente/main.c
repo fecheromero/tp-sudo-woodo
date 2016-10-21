@@ -47,6 +47,10 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 	//Si path es igual a "/" nos estan pidiendo los atributos del punto de montaje
 
 	enviar(); //path + getattr
+
+	//Neceisto: tipo, tamaño, link
+	//envio: path de archivo
+
 	recibir(); //tipo de archivo (S_IFDIR/S_IFREG) + tamaño archivo (size) + link (cantidad de carpetas que hay que entrar para llegar al
 	//Transformar lo que devuelva el server a los parametros tipo, permisos, link y size que necesito
 
@@ -85,16 +89,21 @@ static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t
 	(void) offset;
 	(void) fi;
 	char* nombre;
-	int i;
-	int n;
+	int i=0;
+	char* V[];
 //recibo vector con todos los nombres y itero y voy completando
 	enviar(); //path + readdir
-	recibir(); //Numero de archivos en path (n)
-	for(i=0; i<n; i++){
-		recibir(); //Nombre de archivo/carpeta
-		filler(buf, nombre, NULL, 0);
-	}
 
+	//Necesito: Vector, con todos los nombres de los elementos
+	//Envio: path
+
+
+	recibir(); //Vector
+
+	while(V[i] != '\0'){
+		filler(buf, V[i], NULL, 0);
+		i++;
+	}
 
 	return 0;
 }
@@ -105,11 +114,29 @@ static int tp_read(const char *path, char *buf, size_t size, off_t offset,
 
 	enviar(); //Read + size + path
 	recibir(); //Archivo
+
+	//Necesito: Archivo char*
+	//Envio: Path + size
+
 		memcpy(buf,archivo,size);
 		return size;
 }
 
+static int tp_unlink(const char *path)
+{
+   enviar(); //Eliminar + path
+   recibir();//0(bien), -1(error)
 
+   //Necesito: Eliminar un archivo del fs + confirmacion
+   //Envio: Path
+
+
+   if(recibir() == -1){
+        return -errno;
+   }
+
+    return 0;
+}
 
 /*
  * Esta es la estructura principal de FUSE con la cual nosotros le decimos a
@@ -121,6 +148,7 @@ static struct fuse_operations funciones = {
 		.getattr = tp_getattr,
 		.readdir = tp_readdir,
 		.read = tp_read,
+		.unlink	= tp_unlink,
 };
 
 
