@@ -31,6 +31,38 @@ bool isTheFile(osada_file * file, char** route, int pathQuantity, osada * disk);
 
 osada_file* findFileWithPath(char * path, osada * disk);
 
-bool isTheFile(osada_file * file, char** route, int pathQuantity, osada * disk);
+osada_file* findFile(char ** route, osada * disk, int pathQuantity);
+
+void printHeader(osada_header* osadaHeader);
+
+void* leerArchivo(char* ruta,osada* FS);
+
+uint32_t encontrarPosicionEnTablaDeArchivos(char* ruta,osada* FS);
+
+void mostrarContenidoDir(uint32_t directorioPadre, osada* FS,int n);
+
+void mostrarContenido(char* ruta, osada* FS);
+
+_Bool validarContenedor(char* ruta, osada* FS);
+
+int bloqueDisponible(osada* FS);
+
+osada_file* encontrarOsadaFileLibre(osada* FS);
+
+_Bool crearArchivo(char* ruta, void* contenido,int size,osada* FS);
+
+_Bool borrarArchivo(char* ruta, osada* FS);
+
+_Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS);
+
+int encontrarUltimoBloque(char* ruta, osada* FS);
+
+_Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido,int size);
+
+_Bool crearDirectorio(char* ruta, osada* FS);
+
+_Bool borrarDirectorio(char* ruta,osada* FS);
+
+void listarContenido(char* ruta, osada* FS);
 
 #endif /* OSADAMASTER_H_ */
