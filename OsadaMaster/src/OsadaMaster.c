@@ -133,12 +133,10 @@ osada_file* encontrarOsadaFileLibre(osada* FS){ //sin testear
 			return FS->archivos[i];
 		}
 
-	else{
-		return NULL;
-	}
-
 	i++;
 	}
+
+	return NULL;
 }
 
 
@@ -274,9 +272,11 @@ _Bool crearDirectorio(char* ruta, osada* FS){//sin testear
 		while(vectorRuta[j]!=NULL){
 			j++;
 		}
+		j--; //Hay que restarle, porque el valor actual ya es NULL
 		memcpy(file->fname,vectorRuta[j],17);
 		j--;
 		char* padre=calloc(255,sizeof(char));
+		//TODO: acá me perdí, ponele que el padre es raíz, tamos en bolas. Tampoco entiendo bien que hace, le appendea toda la ruta? (?)
 		while(j>=0){
 			string_append(&padre,vectorRuta[j]);
 		}
@@ -385,7 +385,13 @@ int main(void) {
 		else{puts("no lo encontre");}
 
 	*///mostrarContenido("/",osadaDisk);
-	listarContenido("Cerulean City", osadaDisk);
+	listarContenido("/", osadaDisk);
+	borrarDirectorio("Celadon City", osadaDisk);
+	printf("---------------------------------");
+	listarContenido("/", osadaDisk);
+	printf("---------------------------------");
+	crearDirectorio("dir1", osadaDisk);
+	listarContenido("/", osadaDisk);
 	if(validarContenedor("Pokems",osadaDisk)){puts("OK");}
 	else{puts("Fail");}
 	munmap(data, pagesize);
@@ -416,6 +422,9 @@ osada_file* findFile(char ** route, osada * disk, int pathQuantity, uint32_t * p
 				if (isTheFile(file, route, pathQuantity, disk)) {
 				if(position!=NULL){
 				*position=i;
+				}
+				if(file->state==DELETED){
+					return NULL;
 				}
 				return file;
 			}
