@@ -27,8 +27,8 @@ void printHeader(osada_header* osadaHeader) {
 }
 
 void* leerArchivo(char* ruta,osada* FS){
-	if(findFileWithPath(ruta,FS)!=NULL){
-	osada_file* archivo=findFileWithPath(ruta,FS);
+	if(findFileWithPath(ruta,FS, NULL)!=NULL){
+	osada_file* archivo=findFileWithPath(ruta,FS, NULL);
 	void* file=calloc(archivo->file_size,sizeof(char)); //lo que devuelve hay q liberarlo despues o se puede pasar el puntero como parametro
 	uint32_t siguienteBloque=FS->asignaciones[archivo->first_block];
 	printf("%d \n", archivo->file_size);
@@ -63,12 +63,9 @@ void* leerArchivo(char* ruta,osada* FS){
 uint32_t encontrarPosicionEnTablaDeArchivos(char* ruta,osada* FS){
 	if(strcmp(ruta,"/")==0){
 			return 0xFFFF;}
-	osada_file* file=findFileWithPath(ruta,FS);
-	uint32_t i=0;
-		while(i<filesQuantity && FS->archivos[i]!=file){
-		i++;
-	}
-	return i;
+	uint32_t position = -1;
+	osada_file* file=findFileWithPath(ruta,FS, &position);
+	return position;
 
 }
 void mostrarContenidoDir(uint32_t directorioPadre, osada* FS,int n){ //directorioPadre es la posicion en la tabla de archivos del directorio
@@ -111,7 +108,7 @@ _Bool validarContenedor(char* ruta, osada* FS){
 		string_append(&rutaAnterior,vectorRuta[size]);
 		size--;
 	}
-	osada_file* rdo= findFileWithPath(rutaAnterior,FS);
+	osada_file* rdo= findFileWithPath(rutaAnterior,FS, NULL);
 		free(rutaAnterior);
 		return rdo!=NULL;
 };
@@ -196,7 +193,7 @@ else{
 }
 }
 _Bool borrarArchivo(char* ruta, osada* FS){//sin testear
-	osada_file* file=findFileWithPath(ruta,FS);
+	osada_file* file=findFileWithPath(ruta,FS, NULL);
 	if(file!=NULL){
 		file->state=DELETED;
 		file->lastmod=time(NULL);
@@ -209,7 +206,7 @@ _Bool borrarArchivo(char* ruta, osada* FS){//sin testear
 	else{return false;}
 }
 _Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS){// sin testear
-	osada_file* file=findFileWithPath(ruta,FS);
+	osada_file* file=findFileWithPath(ruta,FS, NULL);
 	if(file!=NULL){
 		*file->fname=nombreNuevo; //ojota
 	return true;
@@ -217,7 +214,7 @@ _Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS){// sin testear
 	else{return false;}
 }
 int encontrarUltimoBloque(char* ruta, osada* FS){//sin testear
-	osada_file* file=findFileWithPath(ruta,FS);
+	osada_file* file=findFileWithPath(ruta,FS, NULL);
 	if(file!=NULL){
 		int bloque=file->first_block;
 		while(FS->asignaciones[bloque]!=0xFFFFFFFF){
@@ -230,7 +227,7 @@ int encontrarUltimoBloque(char* ruta, osada* FS){//sin testear
 	}
 }
 _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido,int size){//sin testear
-	osada_file* file=findFileWithPath(ruta,FS);
+	osada_file* file=findFileWithPath(ruta,FS, NULL);
 	if(file!=NULL){
 		char* data=contenido; //esto lo hago para manejar bytes (1 char 1 byte)
 		int ultimoBloque=encontrarUltimoBloque(ruta,FS);
@@ -292,7 +289,7 @@ _Bool crearDirectorio(char* ruta, osada* FS){//sin testear
 	else{return false;}
 }
 _Bool borrarDirectorio(char* ruta,osada* FS){//sin testear
-	osada_file* file=findFileWithPath(ruta,FS);
+	osada_file* file=findFileWithPath(ruta,FS, NULL);
 	int posicion=encontrarPosicionEnTablaDeArchivos(ruta,FS);
 	if(file!=NULL){
 		file->state=DELETED;
@@ -388,6 +385,7 @@ int main(void) {
 		else{puts("no lo encontre");}
 
 	*///mostrarContenido("/",osadaDisk);
+	listarContenido("Cerulean City", osadaDisk);
 	if(validarContenedor("Pokems",osadaDisk)){puts("OK");}
 	else{puts("Fail");}
 	munmap(data, pagesize);
@@ -410,12 +408,15 @@ int getFilesQuantity(char** vectorRuta) {
 	}
 	return counter-1;
 }
-osada_file* findFile(char ** route, osada * disk, int pathQuantity){
+osada_file* findFile(char ** route, osada * disk, int pathQuantity, uint32_t * position){
 		int i;
 		osada_file* file;
 		for (i = 0; i < filesQuantity; i++) {
 			file = &(*disk->archivos)[i];
 				if (isTheFile(file, route, pathQuantity, disk)) {
+				if(position!=NULL){
+				*position=i;
+				}
 				return file;
 			}
 		}
@@ -423,10 +424,10 @@ osada_file* findFile(char ** route, osada * disk, int pathQuantity){
 		return NULL;
 }
 
-osada_file* findFileWithPath(char * path, osada * disk) {
+osada_file* findFileWithPath(char * path, osada * disk, uint32_t * position) {
 	char** route = string_split(path, "/");
 	int pathQuantity = getFilesQuantity(route);
-	osada_file* file= findFile(route, disk, pathQuantity);
+	osada_file* file= findFile(route, disk, pathQuantity, position);
 
 	return file;
 }

@@ -29,9 +29,9 @@ typedef struct osada {
 
 bool isTheFile(osada_file * file, char** route, int pathQuantity, osada * disk);
 
-osada_file* findFileWithPath(char * path, osada * disk);
+osada_file* findFileWithPath(char * path, osada * disk, uint32_t * position);
 
-osada_file* findFile(char ** route, osada * disk, int pathQuantity);
+osada_file* findFile(char ** route, osada * disk, int pathQuantity, uint32_t * position);
 
 void printHeader(osada_header* osadaHeader);
 
