@@ -11,6 +11,7 @@
 #include "OsadaMaster.h"
 
 #include <math.h>
+#include <socketes.h>
 void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
 	printf("%.*s\n\n", 7, osadaHeader->magic_number);
@@ -26,10 +27,9 @@ void printHeader(osada_header* osadaHeader) {
 	printf("%d\n\n", osadaHeader->data_blocks);
 }
 
-void* leerArchivo(char* ruta,osada* FS){
+void* leerArchivo(char* ruta,osada* FS,void* file){ //el file es un puntero para almacenar la lectura
 	if(findFileWithPath(ruta,FS, NULL)!=NULL){
-	osada_file* archivo=findFileWithPath(ruta,FS, NULL);
-	void* file=calloc(archivo->file_size,sizeof(char)); //lo que devuelve hay q liberarlo despues o se puede pasar el puntero como parametro
+		osada_file* archivo=findFileWithPath(ruta,FS,NULL);
 	uint32_t siguienteBloque=FS->asignaciones[archivo->first_block];
 	printf("%d \n", archivo->file_size);
 	int i=0;
@@ -113,23 +113,26 @@ _Bool validarContenedor(char* ruta, osada* FS){
 		return rdo!=NULL;
 };
 
-int bloqueDisponible(osada* FS){ //sin testear
-	int i=0;
-	bool flag=1;
-	while(i<=FS->header->bitmap_blocks*64*8 &&flag){
+uint32_t bloqueDisponible(osada* FS){
+	uint32_t i=0;
+	int flag=1;
+	int max=FS->header->bitmap_blocks*64*8;
+	while(i<=max &&flag){
 		flag=bitarray_test_bit(FS->bitmap,i);
+		i++;
 	}
 	if(i!=0){
 	return i;
 	}
 	else{
 		perror("disco lleno");
+		return 0;
 	}
 }
-osada_file* encontrarOsadaFileLibre(osada* FS){ //sin testear
+osada_file* encontrarOsadaFileLibre(osada* FS){
 	int i=0;
 	while(i<2048){
-		if(FS->archivos[i]->state==DELETED || FS->archivos[i]->fname==NULL){ //si en la tablaDeAsignaciones los punteros son NULL es simplemnete FS->asignaciones[i]==NULL
+		if(FS->archivos[i]->state==DELETED || FS->archivos[i]->fname==NULL){ //controlar el puntero a null->null
 			return FS->archivos[i];
 		}
 
@@ -140,38 +143,57 @@ osada_file* encontrarOsadaFileLibre(osada* FS){ //sin testear
 }
 
 
-_Bool crearArchivo(char* ruta, void* contenido,int size,osada* FS){//sin testear
+_Bool crearArchivo(char* ruta, void* contenido,uint32_t size,osada* FS){//sin testear
+	if(findFileWithPath(ruta,FS,NULL)){return false;};
 if(validarContenedor(ruta,FS)){
 	char* datos=contenido;
 int cantDeBloques=size/64;
 int resto=size;
-int i=0;
-int bloqueLibre=bloqueDisponible(FS);
+int i=1;
+uint32_t bloqueLibre=bloqueDisponible(FS);
 osada_file* file=encontrarOsadaFileLibre(FS);
-	file->file_size=size;
+if(file==NULL){puts("fallo");};
+printf("%d  %d \n", bloqueLibre,size);
+printf("%u \n",file->file_size);
+file->file_size=size;
+	puts("paso");
+
 	file->first_block=bloqueLibre;
+
+
 	char** vectorRuta=string_split(ruta,"/");
 	int j=0;
 	while(vectorRuta[j]!=NULL){
 		j++;
 	}
+	j--;
+	printf("%d \n",file->file_size);
 	memcpy(file->fname,vectorRuta[j],17);
 	j--;
-	char* padre=calloc(255,sizeof(char));
-	while(j>=0){
-		string_append(&padre,vectorRuta[j]);
-	}
+	printf("%s \n",file->fname);
+	char* padre=string_new();
+	if(j!=-1){
+		int h=0;
+	while(i<=j){
+		string_append(&padre,vectorRuta[h]);
+		if(h!=j){string_append(&padre,"/");}
+	}}
+	else{padre="/";};
+	puts(padre);
 	file->parent_directory=encontrarPosicionEnTablaDeArchivos(padre,FS);
-	free(padre);
-	file->state=REGULAR;
-	file->lastmod=time(NULL);
-while(i<cantDeBloques&&resto>64){//ojota
-	memccpy(FS->datos[bloqueLibre],datos,64);
+
+	printf("%d \n",file->parent_directory);
+		file->state=REGULAR;
+	file->lastmod=(uint32_t)time(NULL);
+	printf("%u \n",file->lastmod);
+	printf("cantDeBloques=%d resto=%d \n",cantDeBloques,resto);
+	while(i<cantDeBloques&&resto>64){//ojota
+	memcpy(FS->datos[bloqueLibre],datos,64);
 	i++;
 	resto=resto-64;
 	bitarray_set_bit(FS->bitmap,bloqueLibre);
 	int bloqViejo=bloqueLibre;
-	if(i==(cantDeBloques-1)&&resto<=0){
+	if(i==cantDeBloques&&resto<=0){
 		bloqueLibre=0xFFFFFFFF;
 	}
 	else{bloqueLibre=bloqueDisponible(FS);
@@ -341,9 +363,17 @@ void listarContenido(char* ruta, osada* FS){//sin testear
 
 }
 
+void enviarOsadaFile(osada FS,int fd ){
+	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
+	recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
+	char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
+	recibir(fd,ruta,size); //recibo la ruta
+	osada_file* file=findFileWithPath(ruta,FS,NULL); //encuentro el file
+	enviar(fd,file,sizeof(osada_file)); //mando el file
+	free(size); //libero
+	free(ruta);
+}
 int main(void) {
-	t_bitarray* fyleSystem;
-
 	int pagesize;
 	osada_block * data;
 	osada* osadaDisk=calloc(1,sizeof(osada));
@@ -378,6 +408,7 @@ int main(void) {
 
 	}
 	printHeader(osadaDisk->header);
+
 	/*if(leerArchivo("Pokemons/001.txt", osadaDisk)!=NULL){puts("lo encontre");
 		char* s=leerArchivo("Pokemons/001.txt", osadaDisk);
 		printf("%s",s);
@@ -386,14 +417,20 @@ int main(void) {
 
 	*///mostrarContenido("/",osadaDisk);
 	listarContenido("/", osadaDisk);
-	borrarDirectorio("Celadon City", osadaDisk);
+	char* contenido=calloc(10,sizeof(char));
+	contenido="saraza";
+	puts(contenido);
+	crearArchivo("sarlomp",contenido,6,osadaDisk);
+	listarContenido("/",osadaDisk);
+	free(contenido);
+	/*borrarDirectorio("Celadon City", osadaDisk);
 	printf("---------------------------------");
 	listarContenido("/", osadaDisk);
 	printf("---------------------------------");
 	crearDirectorio("dir1", osadaDisk);
 	listarContenido("/", osadaDisk);
 	if(validarContenedor("Pokems",osadaDisk)){puts("OK");}
-	else{puts("Fail");}
+	else{puts("Fail");}*/
 	munmap(data, pagesize);
 	return EXIT_SUCCESS;
 }

@@ -35,7 +35,7 @@ osada_file* findFile(char ** route, osada * disk, int pathQuantity, uint32_t * p
 
 void printHeader(osada_header* osadaHeader);
 
-void* leerArchivo(char* ruta,osada* FS);
+void* leerArchivo(char* ruta,osada* FS,void* file);
 
 uint32_t encontrarPosicionEnTablaDeArchivos(char* ruta,osada* FS);
 
@@ -45,11 +45,11 @@ void mostrarContenido(char* ruta, osada* FS);
 
 _Bool validarContenedor(char* ruta, osada* FS);
 
-int bloqueDisponible(osada* FS);
+uint32_t bloqueDisponible(osada* FS);
 
 osada_file* encontrarOsadaFileLibre(osada* FS);
 
-_Bool crearArchivo(char* ruta, void* contenido,int size,osada* FS);
+_Bool crearArchivo(char* ruta, void* contenido,uint32_t size,osada* FS);
 
 _Bool borrarArchivo(char* ruta, osada* FS);
 
