@@ -108,7 +108,7 @@ static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t
 
 	recibir(); //Vector
 
-	while(V[i] != '\0'){
+	while(V[i] != NULL){
 		filler(buf, V[i], NULL, 0);
 		i++;
 	}
@@ -158,7 +158,7 @@ static struct fuse_operations funciones = {
 		.read = tp_read,
 		.unlink	= tp_unlink,
 };
-*/
+ */
 
 
 
@@ -173,15 +173,16 @@ int main(int argc, char *argv[]) {
 		    conectarSocket(socket1,DEST_PORT,IP_LOCAL);
 		    ruta=calloc(16,sizeof(char));
 		    string_append(&ruta,"Pokemons/001.txt");
+		    printf("Ruta: %s \n", ruta);
 		    size=calloc(1,sizeof(int));
 		    *size=16;
 	        puts("teclea algo para enviar paquete");
-	        scanf("%s",primero);
 	        enviar(socket1,size,sizeof(int));
-	        printf("\n");
+	        printf("Ruta: %s \n", ruta);
 	        puts("teclea algo para enviar paquete2");
-	        scanf("%s",segundo);
-	        enviar(socket1,ruta,sizeof(ruta));
+	        printf("Ruta: %s \n", ruta);
+	        enviar(socket1,ruta,string_length(ruta));
+			printf("Ruta: %s \n", ruta);
 	        osada_file* file=calloc(1,sizeof(osada_file));
 	        recibir(socket1,file,sizeof(osada_file));
 	        free(ruta);
