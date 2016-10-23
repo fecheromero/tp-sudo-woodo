@@ -12,6 +12,9 @@
 
 #include <math.h>
 #include <socketes.h>
+#include <pthread.h>
+
+#define MYPORT 4555
 void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
 	printf("%.*s\n\n", 7, osadaHeader->magic_number);
@@ -157,8 +160,7 @@ printf("%d  %d \n", bloqueLibre,size);
 printf("%u \n",file->file_size);
 file->file_size=size;
 	puts("paso");
-
-	file->first_block=bloqueLibre;
+file->first_block=bloqueLibre;
 
 
 	char** vectorRuta=string_split(ruta,"/");
@@ -363,7 +365,7 @@ void listarContenido(char* ruta, osada* FS){//sin testear
 
 }
 
-void enviarOsadaFile(osada FS,int fd ){
+void enviarOsadaFile(osada* FS,int fd ){
 	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
 	recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
@@ -372,6 +374,15 @@ void enviarOsadaFile(osada FS,int fd ){
 	enviar(fd,file,sizeof(osada_file)); //mando el file
 	free(size); //libero
 	free(ruta);
+}
+typedef struct base{
+	int fd;
+	osada* FS;
+}base;
+void* hilo_atendedor(base* bas){
+	enviarOsadaFile(bas->FS,bas->fd);
+	puts("todo ok");
+	return 0;
 }
 int main(void) {
 	int pagesize;
@@ -416,7 +427,7 @@ int main(void) {
 		else{puts("no lo encontre");}
 
 	*///mostrarContenido("/",osadaDisk);
-	listarContenido("/", osadaDisk);
+	/*listarContenido("/", osadaDisk);
 	char* contenido=calloc(10,sizeof(char));
 	contenido="saraza";
 	puts(contenido);
@@ -431,6 +442,43 @@ int main(void) {
 	listarContenido("/", osadaDisk);
 	if(validarContenedor("Pokems",osadaDisk)){puts("OK");}
 	else{puts("Fail");}*/
+	int listener;
+		listener=crearSocket();
+		bindearSocket(listener,MYPORT,IP_LOCAL);
+		socketEscucha(listener,5);
+		fd_set read_fds;
+		fd_set master;
+	FD_ZERO(&read_fds);
+	FD_ZERO(&master);
+	FD_SET(listener, &master);
+	int fdmax=20;
+
+	while(true){
+		read_fds = master;
+			if (select(fdmax + 1,&read_fds,NULL,NULL,NULL) == -1) {
+				perror("fallo el select");
+				exit(1);
+			};
+			int i;
+			for (i = 0; i <= fdmax; i++) {
+				if (FD_ISSET(i, &read_fds)) {
+					if (i == listener) {
+						direccion direccionNuevo=aceptarConexion(listener);
+						base* bas=calloc(1,sizeof(base));
+						bas->FS=osadaDisk;
+						bas->fd=direccionNuevo.fd;
+						 pthread_t thread_conector;
+
+					int rd=pthread_create(&thread_conector,NULL,hilo_atendedor,bas);
+					if(rd!=0){puts("fallo");};
+
+}
+
+
+	};
+			};
+	};
+
 	munmap(data, pagesize);
 	return EXIT_SUCCESS;
 }
