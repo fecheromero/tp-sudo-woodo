@@ -40,7 +40,7 @@
  * 	@RETURN
  * 		O archivo/directorio fue encontrado. -ENOENT archivo/directorio no encontrado
  */
-/*
+
 static int tp_getattr(const char *path, struct stat *stbuf) {
 	int res = 0;
 	int link;
@@ -92,7 +92,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  * 		O directorio fue encontrado. -ENOENT directorio no encontrado
  */
 
-/*
+
 static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
 	(void) offset;
 	(void) fi;
@@ -151,14 +151,14 @@ static int tp_unlink(const char *path)
  * biblioteca que funciones tiene que invocar segun que se le pida a FUSE.
  * Como se observa la estructura contiene punteros a funciones.
  */
-/*
+
 static struct fuse_operations funciones = {
 		.getattr = tp_getattr,
 		.readdir = tp_readdir,
 		.read = tp_read,
 		.unlink	= tp_unlink,
 };
- */
+
 
 
 
