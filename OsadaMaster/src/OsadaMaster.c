@@ -369,17 +369,25 @@ void enviarOsadaFile(osada* FS,int fd ){
 	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
 	recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
-	recibir(fd,ruta,size); //recibo la ruta
+	puts("antes de recibir");
+	recibir(fd,ruta,*size); //recibo la ruta
+	puts("despues de recibir");
+	printf("%s \n",ruta);
+	printf("%d",  *size);
 	osada_file* file=findFileWithPath(ruta,FS,NULL); //encuentro el file
+	printf("%s \n",file->fname);
 	enviar(fd,file,sizeof(osada_file)); //mando el file
+	puts("antes de free");
 	free(size); //libero
 	free(ruta);
+	puts("despues");
 }
 typedef struct base{
 	int fd;
 	osada* FS;
 }base;
 void* hilo_atendedor(base* bas){
+	puts("antes de todo ok");
 	enviarOsadaFile(bas->FS,bas->fd);
 	puts("todo ok");
 	return 0;
@@ -389,7 +397,7 @@ int main(void) {
 	osada_block * data;
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
-	int fd = open("challenge.bin", O_RDWR, 0);
+	int fd = open("/home/utnso/Escritorio/a/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
 	if (fd != -1) {
 		pagesize = getpagesize();
 		off_t fsize;
