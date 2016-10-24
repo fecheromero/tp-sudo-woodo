@@ -342,22 +342,22 @@ _Bool borrarDirectorio(char* ruta,osada* FS){//sin testear
 	else{return false;}
 
 }
-void listarContenido(char* ruta, osada* FS,osada_file* vector, int size){//sin testear
+void listarContenido(char* ruta, osada* FS,osada_file* vector, int* size){//sin testear
 	osada_file* file;
 			int i=0;
-			size=0;
+			*size=0;
 			file=&(*FS->archivos)[i];
 			while(i<=2047){
 				if(file->parent_directory==encontrarPosicionEnTablaDeArchivos(ruta,FS)){
 					if(file->state==REGULAR){
 					puts("archivo:"); printf("%s \n",file->fname);
-					vector[size]=*file;
-					size++;
+					vector[*size]=*file;
+					(*size)++;
 					}
 					if(file->state==DIRECTORY){
 						puts("directorio:"); printf("%s \n",file->fname);
-						vector[size]=*file;
-						size++;
+						vector[*size]=*file;
+						(*size)++;
 					}
 
 				}
@@ -379,9 +379,11 @@ void enviarFilesContenidos(osada* FS,int fd){
 		printf("%s \n",ruta);
 		printf("%d",  *size);
 		osada_file* vector=calloc(2048,sizeof(osada_file));
-		int i;
-		listarContenido(ruta,FS,vector,&i);
-		enviar(fd,vector,sizeof(osada_file)*i); //mando el file
+		int* i = calloc(1,sizeof(int));
+		listarContenido(ruta,FS,vector,i);
+		enviar(fd, i, sizeof(int));
+		printf("Ruta: %d \n", *i);
+		enviar(fd,vector,sizeof(osada_file)*(*i)); //mando el file
 		puts("antes de free");
 		free(vector);
 		free(size); //libero
@@ -414,7 +416,7 @@ typedef struct base{
 }base;
 void* hilo_atendedor(base* bas){
 	puts("antes de todo ok");
-	enviarOsadaFile(bas->FS,bas->fd);
+	enviarFilesContenidos(bas->FS,bas->fd);
 	puts("todo ok");
 	return 0;
 }

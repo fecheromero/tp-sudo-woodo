@@ -40,7 +40,7 @@
  * 	@RETURN
  * 		O archivo/directorio fue encontrado. -ENOENT archivo/directorio no encontrado
  */
-
+/*
 static int tp_getattr(const char *path, struct stat *stbuf) {
 	int res = 0;
 	int link;
@@ -92,7 +92,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  * 		O directorio fue encontrado. -ENOENT directorio no encontrado
  */
 
-
+/*
 static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
 	(void) offset;
 	(void) fi;
@@ -151,14 +151,14 @@ static int tp_unlink(const char *path)
  * biblioteca que funciones tiene que invocar segun que se le pida a FUSE.
  * Como se observa la estructura contiene punteros a funciones.
  */
-
+/*
 static struct fuse_operations funciones = {
 		.getattr = tp_getattr,
 		.readdir = tp_readdir,
 		.read = tp_read,
 		.unlink	= tp_unlink,
 };
-
+*/
 
 
 
@@ -168,27 +168,31 @@ int main(int argc, char *argv[]) {
 			char* segundo;
 			char* ruta;
 			int* size;
-
+			int* tamanio;
+			int n;
 		    socket1=crearSocket();
 		    conectarSocket(socket1,DEST_PORT,IP_LOCAL);
-		    ruta=calloc(16,sizeof(char));
-		    string_append(&ruta,"Pokemons/001.txt");
+		    ruta=calloc(9,sizeof(char));
+		    string_append(&ruta,"Pokemons");
 		    printf("Ruta: %s \n", ruta);
 		    size=calloc(1,sizeof(int));
-		    *size=16;
+		    *size=8;
 	        puts("teclea algo para enviar paquete");
 	        enviar(socket1,size,sizeof(int));
-	        printf("Ruta: %s \n", ruta);
 	        puts("teclea algo para enviar paquete2");
-	        printf("Ruta: %s \n", ruta);
 	        enviar(socket1,ruta,string_length(ruta));
-			printf("Ruta: %s \n", ruta);
-	        osada_file* file=calloc(1,sizeof(osada_file));
-	        recibir(socket1,file,sizeof(osada_file));
+	        tamanio=calloc(1,sizeof(int));
+	        recibir(socket1,tamanio,sizeof(int));
+	        printf("%d \n",*tamanio);
+	        puts("pase por aqui");
+	        osada_file* vector=calloc(*tamanio,sizeof(osada_file));
+	        recibir(socket1,vector,(*tamanio)*sizeof(osada_file));
+	        puts("pase por aqui 2.0");
 	        free(ruta);
 	        free(size);
-	        printf("fname: %s \n",file->fname);
-	        printf("fsize: %d \n",file->file_size);
+	       for(n=0; n<*tamanio; n++){
+	    	   printf("Elemento numero %d: fname: %s fsize: %d \n",n,(vector[n]).fname,(vector[n]).file_size);
+	       }
 	        //return fuse_main(argc, argv, &funciones, NULL);
 	        return 0;
 	}
