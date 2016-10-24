@@ -377,15 +377,37 @@ void listarContenido(char* ruta, osada* FS,osada_file* vector, int size){
 
 }
 
+void enviarFilesContenidos(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
+		recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
+		char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
+		puts("antes de recibir");
+		recibir(fd,ruta,*size); //recibo la ruta
+		puts("despues de recibir");
+		printf("%s \n",ruta);
+		printf("%d",  *size);
+		osada_file* vector=calloc(2048,sizeof(osada_file));
+		int i;
+		listarContenido(ruta,FS,vector,&i);
+		enviar(fd,vector,sizeof(osada_file)*i); //mando el file
+		puts("antes de free");
+		free(vector);
+		free(size); //libero
+		free(ruta);
+		puts("despues");
+
+}
+
 void enviarOsadaFile(osada* FS,int fd ){
 	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
 	recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
+	printf("%d \n",  *size);
 	char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
 	puts("antes de recibir");
 	recibir(fd,ruta,*size); //recibo la ruta
 	puts("despues de recibir");
-	printf("%s \n",ruta);
-	printf("%d",  *size);
+	printf("probando %s \n",ruta);
+	printf("%d \n",  *size);
 	osada_file* file=findFileWithPath(ruta,FS,NULL); //encuentro el file
 	printf("%s \n",file->fname);
 	enviar(fd,file,sizeof(osada_file)); //mando el file
