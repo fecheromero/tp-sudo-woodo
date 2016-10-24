@@ -435,6 +435,7 @@ int main(void) {
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
 	int fd = open("/home/utnso/Escritorio/a/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
+	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();
 		off_t fsize;
