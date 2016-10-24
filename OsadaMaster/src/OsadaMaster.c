@@ -134,9 +134,11 @@ uint32_t bloqueDisponible(osada* FS){
 }
 osada_file* encontrarOsadaFileLibre(osada* FS){
 	int i=0;
+
 	while(i<2048){
-		if(FS->archivos[i]->state==DELETED || FS->archivos[i]->fname==NULL){ //controlar el puntero a null->null
-			return FS->archivos[i];
+		osada_file* file=&(*FS->archivos)[i];
+		if(file->state==NULL || file->state==DELETED){
+			return file;
 		}
 
 	i++;
@@ -146,13 +148,13 @@ osada_file* encontrarOsadaFileLibre(osada* FS){
 }
 
 
-_Bool crearArchivo(char* ruta, void* contenido,uint32_t size,osada* FS){//sin testear
+_Bool crearArchivo(char* ruta, void* contenido,uint32_t size,osada* FS){
 	if(findFileWithPath(ruta,FS,NULL)){return false;};
 if(validarContenedor(ruta,FS)){
 	char* datos=contenido;
 int cantDeBloques=size/64;
 int resto=size;
-int i=1;
+int i=0;
 uint32_t bloqueLibre=bloqueDisponible(FS);
 osada_file* file=encontrarOsadaFileLibre(FS);
 if(file==NULL){puts("fallo");};
@@ -176,10 +178,13 @@ file->first_block=bloqueLibre;
 	char* padre=string_new();
 	if(j!=-1){
 		int h=0;
-	while(i<=j){
+	while(h<=j){
 		string_append(&padre,vectorRuta[h]);
 		if(h!=j){string_append(&padre,"/");}
-	}}
+		h++;
+
+	}
+	}
 	else{padre="/";};
 	puts(padre);
 	file->parent_directory=encontrarPosicionEnTablaDeArchivos(padre,FS);
@@ -213,8 +218,10 @@ return true;
 else{
 	return false;
 }
+	return true;
 }
-_Bool borrarArchivo(char* ruta, osada* FS){//sin testear
+
+_Bool borrarArchivo(char* ruta, osada* FS){
 	osada_file* file=findFileWithPath(ruta,FS, NULL);
 	if(file!=NULL){
 		file->state=DELETED;
@@ -224,13 +231,14 @@ _Bool borrarArchivo(char* ruta, osada* FS){//sin testear
 		bitarray_clean_bit(FS->bitmap,bloque);
 		bloque=FS->asignaciones[bloque];
 	}
+	puts("borre");
 	return true;}
 	else{return false;}
 }
-_Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS){// sin testear
+_Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS){
 	osada_file* file=findFileWithPath(ruta,FS, NULL);
 	if(file!=NULL){
-		*file->fname=nombreNuevo; //ojota
+		strcpy(&file->fname,nombreNuevo);//ojota
 	return true;
 	}
 	else{return false;}
@@ -342,19 +350,23 @@ _Bool borrarDirectorio(char* ruta,osada* FS){//sin testear
 	else{return false;}
 
 }
-void listarContenido(char* ruta, osada* FS){//sin testear
+void listarContenido(char* ruta, osada* FS,osada_file* vector, int size){
 	osada_file* file;
 			int i=0;
+			size=0;
 			file=&(*FS->archivos)[i];
 			while(i<=2047){
 				if(file->parent_directory==encontrarPosicionEnTablaDeArchivos(ruta,FS)){
 					if(file->state==REGULAR){
 					puts("archivo:"); printf("%s \n",file->fname);
-
+					vector[size]=*file;
+					size++;
 					}
 					if(file->state==DIRECTORY){
 						puts("directorio:"); printf("%s \n",file->fname);
-						}
+						vector[size]=*file;
+						size++;
+					}
 
 				}
 				i++;
@@ -382,6 +394,26 @@ void enviarOsadaFile(osada* FS,int fd ){
 	free(ruta);
 	puts("despues");
 }
+void enviarFilesContenidos(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
+		recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
+		char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
+		puts("antes de recibir");
+		recibir(fd,ruta,*size); //recibo la ruta
+		puts("despues de recibir");
+		printf("%s \n",ruta);
+		printf("%d",  *size);
+		osada_file* vector=calloc(2048,sizeof(osada_file));
+		int i;
+		listarContenido(ruta,FS,vector,&i);
+		enviar(fd,vector,sizeof(osada_file)*i); //mando el file
+		puts("antes de free");
+		free(vector);
+		free(size); //libero
+		free(ruta);
+		puts("despues");
+
+}
 typedef struct base{
 	int fd;
 	osada* FS;
@@ -397,7 +429,7 @@ int main(void) {
 	osada_block * data;
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
-	int fd = open("/home/utnso/Escritorio/a/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
+	int fd = open("challenge.bin", O_RDWR, 0);
 	if (fd != -1) {
 		pagesize = getpagesize();
 		off_t fsize;
@@ -427,21 +459,21 @@ int main(void) {
 
 	}
 	printHeader(osadaDisk->header);
-
-	/*if(leerArchivo("Pokemons/001.txt", osadaDisk)!=NULL){puts("lo encontre");
+		/*if(leerArchivo("Pokemons/001.txt", osadaDisk)!=NULL){puts("lo encontre");
 		char* s=leerArchivo("Pokemons/001.txt", osadaDisk);
 		printf("%s",s);
 		}
 		else{puts("no lo encontre");}
 
 	*///mostrarContenido("/",osadaDisk);
-	/*listarContenido("/", osadaDisk);
-	char* contenido=calloc(10,sizeof(char));
-	contenido="saraza";
-	puts(contenido);
-	crearArchivo("sarlomp",contenido,6,osadaDisk);
-	listarContenido("/",osadaDisk);
+	char* contenido=calloc(6,sizeof(char));
+	string_append(&contenido,"algo42");
+	crearArchivo("sarlompa2",contenido,6,osadaDisk);
+	mostrarContenido("/",osadaDisk);
+	renombrarArchivo("sarlompa2","ss3",osadaDisk);
+	mostrarContenido("/",osadaDisk);
 	free(contenido);
+	//listarContenido("/",osadaDisk,vector,&i);
 	/*borrarDirectorio("Celadon City", osadaDisk);
 	printf("---------------------------------");
 	listarContenido("/", osadaDisk);
@@ -450,7 +482,7 @@ int main(void) {
 	listarContenido("/", osadaDisk);
 	if(validarContenedor("Pokems",osadaDisk)){puts("OK");}
 	else{puts("Fail");}*/
-	int listener;
+	/*int listener;
 		listener=crearSocket();
 		bindearSocket(listener,MYPORT,IP_LOCAL);
 		socketEscucha(listener,5);
@@ -486,7 +518,7 @@ int main(void) {
 	};
 			};
 	};
-
+	*/
 	munmap(data, pagesize);
 	return EXIT_SUCCESS;
 }
