@@ -30,27 +30,28 @@ void printHeader(osada_header* osadaHeader) {
 	printf("%d\n\n", osadaHeader->data_blocks);
 }
 
-void* leerArchivo(char* ruta,osada* FS,void* file){ //el file es un puntero para almacenar la lectura
+void* leerArchivo(char* ruta,osada* FS){ //no se puede hacer free al puntero resultante D:
 	if(findFileWithPath(ruta,FS, NULL)!=NULL){
 		osada_file* archivo=findFileWithPath(ruta,FS,NULL);
+		char* file=calloc(255,sizeof(char));
 	uint32_t siguienteBloque=FS->asignaciones[archivo->first_block];
 	printf("%d \n", archivo->file_size);
 	int i=0;
 	if(archivo->file_size<=64){
-	file=memcpy(file,FS->datos[archivo->first_block],archivo->file_size);
+	memcpy(file,FS->datos[archivo->first_block],archivo->file_size);
 		i+=archivo->file_size;
 	}
 	else{
-		file=memcpy(file,FS->datos[archivo->first_block],64);
+		memcpy(file,FS->datos[archivo->first_block],64);
 		i+=64;
 	}
 	while(siguienteBloque!=0xFFFFFFFF){
 		if((archivo->file_size-i)<=64){
-			file=memcpy(file,FS->datos[archivo->first_block],archivo->file_size);
+			memcpy(file,FS->datos[archivo->first_block],archivo->file_size);
 					i+=archivo->file_size-i;
 
 		}else{
-		file=memcpy(file,FS->datos[archivo->first_block],64);
+		memcpy(file,FS->datos[archivo->first_block],64);
 		i+=64;
 
 		}
@@ -231,7 +232,6 @@ _Bool borrarArchivo(char* ruta, osada* FS){
 		bitarray_clean_bit(FS->bitmap,bloque);
 		bloque=FS->asignaciones[bloque];
 	}
-	puts("borre");
 	return true;}
 	else{return false;}
 }
@@ -243,20 +243,21 @@ _Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS){
 	}
 	else{return false;}
 }
-int encontrarUltimoBloque(char* ruta, osada* FS){//sin testear
+int encontrarUltimoBloque(char* ruta, osada* FS){
 	osada_file* file=findFileWithPath(ruta,FS, NULL);
 	if(file!=NULL){
 		int bloque=file->first_block;
 		while(FS->asignaciones[bloque]!=0xFFFFFFFF){
 			bloque=FS->asignaciones[bloque];
 		}
+		printf("%d \n",bloque);
 		return bloque;
 	}
 	else{
 		return -1;
 	}
 }
-_Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido,int size){//sin testear
+_Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido,int size){
 	osada_file* file=findFileWithPath(ruta,FS, NULL);
 	if(file!=NULL){
 		char* data=contenido; //esto lo hago para manejar bytes (1 char 1 byte)
@@ -294,8 +295,10 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido,int size){
 		return false;
 	}
 }
-_Bool crearDirectorio(char* ruta, osada* FS){//sin testear
+_Bool crearDirectorio(char* ruta, osada* FS){
+	if(findFileWithPath(ruta,FS,NULL)){return false;};
 	if(validarContenedor(ruta,FS)){
+			puts("un paso");
 	osada_file* file=encontrarOsadaFileLibre(FS);
 		file->file_size=0;
 		file->first_block=0xFFFFFFFF;
@@ -307,11 +310,23 @@ _Bool crearDirectorio(char* ruta, osada* FS){//sin testear
 		j--; //Hay que restarle, porque el valor actual ya es NULL
 		memcpy(file->fname,vectorRuta[j],17);
 		j--;
+		puts(file->fname);
 		char* padre=calloc(255,sizeof(char));
-		//TODO: acá me perdí, ponele que el padre es raíz, tamos en bolas. Tampoco entiendo bien que hace, le appendea toda la ruta? (?)
-		while(j>=0){
-			string_append(&padre,vectorRuta[j]);
+		if(j<=-1){
+			string_append(&padre,"/");
 		}
+		int h=0;
+		printf("%d \n",j);
+		while(h<=j){
+			string_append(&padre,vectorRuta[h]);
+			if(h!=j){
+				string_append(&padre,"/");
+				}
+			h++;
+
+
+		}
+		puts(padre);
 		file->parent_directory=encontrarPosicionEnTablaDeArchivos(padre,FS);
 		free(padre);
 		file->state=DIRECTORY;
@@ -320,25 +335,29 @@ _Bool crearDirectorio(char* ruta, osada* FS){//sin testear
 	}
 	else{return false;}
 }
-_Bool borrarDirectorio(char* ruta,osada* FS){//sin testear
+_Bool borrarDirectorio(char* ruta,osada* FS){
 	osada_file* file=findFileWithPath(ruta,FS, NULL);
-	int posicion=encontrarPosicionEnTablaDeArchivos(ruta,FS);
 	if(file!=NULL){
+		puts("pase");
+		int posicion=encontrarPosicionEnTablaDeArchivos(ruta,FS);
+		printf("%d \n",posicion);
 		file->state=DELETED;
 		file->lastmod=time(NULL);
 	int i=0;
 	while(i<2048){
-	osada_file* contenido=FS->archivos[i];
+	osada_file* contenido=&(*FS->archivos)[i];
 	if(contenido->parent_directory==posicion){
 
 		char* rutaArchivo=calloc(255,sizeof(char));
 		string_append(&rutaArchivo,ruta);
 		string_append(&rutaArchivo,"/");
+		puts(rutaArchivo);
 		string_append(&rutaArchivo,contenido->fname);
-		if(contenido->state=REGULAR){
+		puts(rutaArchivo);
+		if(contenido->state==REGULAR){
 			borrarArchivo(rutaArchivo,FS);
 		};
-		if(contenido->state=DIRECTORY){
+		if(contenido->state==DIRECTORY){
 			borrarDirectorio(rutaArchivo,FS);
 		}
 		free(rutaArchivo);
@@ -351,7 +370,7 @@ _Bool borrarDirectorio(char* ruta,osada* FS){//sin testear
 
 }
 
-void listarContenido(char* ruta, osada* FS,osada_file* vector, int* size){//sin testear
+void listarContenido(char* ruta, osada* FS,osada_file* vector, int* size){
 	osada_file* file;
 			int i=0;
 			*size=0;
@@ -434,7 +453,7 @@ int main(void) {
 	osada_block * data;
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
-	int fd = open("/home/utnso/Escritorio/a/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
+	int fd = open("challenge.bin", O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();
@@ -465,29 +484,8 @@ int main(void) {
 
 	}
 	printHeader(osadaDisk->header);
-		/*if(leerArchivo("Pokemons/001.txt", osadaDisk)!=NULL){puts("lo encontre");
-		char* s=leerArchivo("Pokemons/001.txt", osadaDisk);
-		printf("%s",s);
-		}
-		else{puts("no lo encontre");}
 
-	*///mostrarContenido("/",osadaDisk);
-	char* contenido=calloc(6,sizeof(char));
-	string_append(&contenido,"algo42");
-	crearArchivo("sarlompa2",contenido,6,osadaDisk);
-	mostrarContenido("/",osadaDisk);
-	renombrarArchivo("sarlompa2","ss3",osadaDisk);
-	mostrarContenido("/",osadaDisk);
-	free(contenido);
-	//listarContenido("/",osadaDisk,vector,&i);
-	/*borrarDirectorio("Celadon City", osadaDisk);
-	printf("---------------------------------");
-	listarContenido("/", osadaDisk);
-	printf("---------------------------------");
-	crearDirectorio("dir1", osadaDisk);
-	listarContenido("/", osadaDisk);
-	if(validarContenedor("Pokems",osadaDisk)){puts("OK");}
-	else{puts("Fail");}*/
+
 	int listener;
 		listener=crearSocket();
 		bindearSocket(listener,MYPORT,IP_LOCAL);

@@ -35,7 +35,7 @@ osada_file* findFile(char ** route, osada * disk, int pathQuantity, uint32_t * p
 
 void printHeader(osada_header* osadaHeader);
 
-void* leerArchivo(char* ruta,osada* FS,void* file);
+void* leerArchivo(char* ruta,osada* FS);
 
 uint32_t encontrarPosicionEnTablaDeArchivos(char* ruta,osada* FS);
 
