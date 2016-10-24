@@ -65,4 +65,6 @@ _Bool borrarDirectorio(char* ruta,osada* FS);
 
 void listarContenido(char* ruta, osada* FS,osada_file* vector, int* size);
 
+
+
 #endif /* OSADAMASTER_H_ */
