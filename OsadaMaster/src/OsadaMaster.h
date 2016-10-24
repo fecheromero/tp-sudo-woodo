@@ -16,6 +16,8 @@
 #include <sys/types.h>
 #include <sys/mman.h>
 #include <fcntl.h>
+#include <socketes.h>
+#include <pthread.h>
 #define filesQuantity 2048
 #define BLOCKSIZE 64
 typedef  osada_file tablaDeArchivos[filesQuantity];

@@ -10,10 +10,6 @@
 
 #include "OsadaMaster.h"
 
-#include <math.h>
-#include <socketes.h>
-#include <pthread.h>
-
 #define MYPORT 4555
 void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
