@@ -147,16 +147,20 @@
  */
 
 int main(int argc, char *argv[]) {
+	t_log_level logLevel = LOG_LEVEL_DEBUG;
+	t_log * logger = log_create("log.txt", "PokedexCliente", true, logLevel);
 	int socket1;
 	char* ruta;
 	int n;
 	int* tamanio = calloc(1, sizeof(int));
+	log_debug(logger, "Creando socket");
 	socket1 = crearSocket();
+	log_debug(logger, "Conectando al servidor");
 	conectarSocket(socket1, DEST_PORT, IP_LOCAL);
 	ruta = calloc(9, sizeof(char));
 	puts("Ingrese una ruta");
 	scanf("%s", ruta);
-	osada_file* vector = listarDirServer(ruta, socket1, tamanio);
+	osada_file* vector = listarDirServer(ruta, socket1, tamanio, logger);
 	free(ruta);
 	for (n = 0; n < *tamanio; n++) {
 		printf("Elemento numero %d: fname: %s fsize: %d \n", n,
@@ -166,11 +170,13 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-osada_file* listarDirServer(char* path, int socket, int* tamanio) {
+osada_file* listarDirServer(char* path, int socket, int* tamanio, t_log* logger) {
 	int* size = calloc(1, sizeof(int));
 	*size = string_length(path);
+	log_debug(logger, "Enviando path al servidor");
 	enviar(socket, size, sizeof(int));
 	enviar(socket, path, size);
+	log_debug(logger, "Recibiendo archivos del servidor");
 	recibir(socket, tamanio, sizeof(int));
 	osada_file* files = calloc(*tamanio, sizeof(osada_file));
 	recibir(socket, files, (*tamanio) * sizeof(osada_file));
