@@ -12,6 +12,11 @@
  */
 #define DEFAULT_FILE_PATH "/" DEFAULT_FILE_NAME
 
+t_log_level logLevel = LOG_LEVEL_DEBUG;
+t_log * logger;
+int socketPokedexServer;
+
+
 /*
  * @DESC
  *  Esta función va a ser llamada cuando a la biblioteca de FUSE le llege un pedido
@@ -26,8 +31,8 @@
  * 	@RETURN
  * 		O archivo/directorio fue encontrado. -ENOENT archivo/directorio no encontrado
  */
-/*
- static int tp_getattr(const char *path, struct stat *stbuf) {
+
+ static int tp_getattr(const char *path, struct stat *stbuf) {/*
  int res = 0;
  int link;
  int permisos;
@@ -57,7 +62,8 @@
  }else{
  res = -ENOENT;
  }
- return res;
+ return res;*/
+	return 0;
  }
 
 
@@ -78,33 +84,25 @@
  * 		O directorio fue encontrado. -ENOENT directorio no encontrado
  */
 
-/*
+
  static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
  (void) offset;
  (void) fi;
- char* nombre;
- int i=0;
- char* V[];
+ int i;
  //recibo vector con todos los nombres y itero y voy completando
- enviar(); //path + readdir
+ int * cantArchivos;
+ osada_file* vector = listarDirServer(path,socketPokedexServer, cantArchivos);
 
- //Necesito: Vector, con todos los nombres de los elementos
- //Envio: path
-
-
- recibir(); //Vector
-
- while(V[i] != NULL){
- filler(buf, V[i], NULL, 0);
- i++;
- }
+ for (i = 0; i < cantArchivos; i++) {
+	 filler(buf, vector[i].fname, NULL, 0);
+}
 
  return 0;
  }
 
  static int tp_read(const char *path, char *buf, size_t size, off_t offset,
  struct fuse_file_info *fi) {
- char* archivo;
+ /*char* archivo;
 
  enviar(); //Read + size + path
  recibir(); //Archivo
@@ -113,12 +111,13 @@
  //Envio: Path + size
 
  memcpy(buf,archivo,size);
- return size;
+ return size;*/
+	 return 0;
  }
 
  static int tp_unlink(const char *path)
  {
- enviar(); //Eliminar + path
+ /*enviar(); //Eliminar + path
  recibir();//0(bien), -1(error)
 
  //Necesito: Eliminar un archivo del fs + confirmacion
@@ -127,7 +126,7 @@
 
  if(recibir() == -1){
  return -errno;
- }
+ }*/
 
  return 0;
  }
@@ -137,39 +136,37 @@
  * biblioteca que funciones tiene que invocar segun que se le pida a FUSE.
  * Como se observa la estructura contiene punteros a funciones.
  */
-/*
- static struct fuse_operations funciones = {
- .getattr = tp_getattr,
- .readdir = tp_readdir,
- .read = tp_read,
- .unlink	= tp_unlink,
- };
- */
 
-t_log_level logLevel = LOG_LEVEL_DEBUG;
-t_log * logger;
+ static struct fuse_operations funciones = {
+ //.getattr = tp_getattr,
+ .readdir = tp_readdir,
+ //.read = tp_read,
+ //.unlink= tp_unlink,
+ };
+
+
 
 int main(int argc, char *argv[]) {
 	logger = log_create("log.txt", "PokedexCliente", true, logLevel);
-	int socket1;
+
 	char* ruta;
 	int n;
 	int* tamanio = calloc(1, sizeof(int));
 	log_debug(logger, "Creando socket");
-	socket1 = crearSocket();
+	socketPokedexServer = crearSocket();
 	log_debug(logger, "Conectando al servidor");
-	conectarSocket(socket1, DEST_PORT, IP_LOCAL);
-	ruta = calloc(9, sizeof(char));
+	conectarSocket(socketPokedexServer, DEST_PORT, IP_LOCAL);
+	/*ruta = calloc(9, sizeof(char));
 	puts("Ingrese una ruta");
 	scanf("%s", ruta);
-	osada_file* vector = listarDirServer(ruta, socket1, tamanio);
+	osada_file* vector = listarDirServer(ruta, socket, tamanio);
 	free(ruta);
 	for (n = 0; n < *tamanio; n++) {
 		printf("Elemento numero %d: fname: %s fsize: %d \n", n,
 				(vector[n]).fname, (vector[n]).file_size);
-	}
-	//return fuse_main(argc, argv, &funciones, NULL);
-	return 0;
+	}*/
+	return fuse_main(argc, argv, &funciones, NULL);
+	//return 0;
 }
 
 osada_file* listarDirServer(char* path, int socket, int* tamanio) {
