@@ -146,9 +146,11 @@
  };
  */
 
+t_log_level logLevel = LOG_LEVEL_DEBUG;
+t_log * logger;
+
 int main(int argc, char *argv[]) {
-	t_log_level logLevel = LOG_LEVEL_DEBUG;
-	t_log * logger = log_create("log.txt", "PokedexCliente", true, logLevel);
+	logger = log_create("log.txt", "PokedexCliente", true, logLevel);
 	int socket1;
 	char* ruta;
 	int n;
@@ -160,7 +162,7 @@ int main(int argc, char *argv[]) {
 	ruta = calloc(9, sizeof(char));
 	puts("Ingrese una ruta");
 	scanf("%s", ruta);
-	osada_file* vector = listarDirServer(ruta, socket1, tamanio, logger);
+	osada_file* vector = listarDirServer(ruta, socket1, tamanio);
 	free(ruta);
 	for (n = 0; n < *tamanio; n++) {
 		printf("Elemento numero %d: fname: %s fsize: %d \n", n,
@@ -170,7 +172,7 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 
-osada_file* listarDirServer(char* path, int socket, int* tamanio, t_log* logger) {
+osada_file* listarDirServer(char* path, int socket, int* tamanio) {
 	int* size = calloc(1, sizeof(int));
 	*size = string_length(path);
 	log_debug(logger, "Enviando path al servidor");

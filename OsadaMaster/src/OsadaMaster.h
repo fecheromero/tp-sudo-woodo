@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <commons/bitarray.h>
+#include <commons/log.h>
 #include <osada.h>
 #include <commons/string.h>
 #include <unistd.h>

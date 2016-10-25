@@ -11,6 +11,10 @@
 #include "OsadaMaster.h"
 
 #define MYPORT 4555
+
+t_log_level logLevel = LOG_LEVEL_DEBUG;
+t_log * logger;
+
 void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
 	printf("%.*s\n\n", 7, osadaHeader->magic_number);
@@ -412,24 +416,22 @@ void enviarOsadaFile(osada* FS,int fd ){
 
 void enviarFilesContenidos(osada* FS,int fd){
 	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
+	log_debug(logger, "recibiendo ruta");
 		recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
 		char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
-		puts("antes de recibir");
 		recibir(fd,ruta,*size); //recibo la ruta
-		puts("despues de recibir");
-		printf("%s \n",ruta);
-		printf("%d",  *size);
+		log_debug(logger, "recibida ruta: ");
+		log_debug(logger, ruta);
 		osada_file* vector=calloc(2048,sizeof(osada_file));
 		int* i = calloc(1,sizeof(int));
+		log_debug(logger, "Buscando archivos");
 		listarContenido(ruta,FS,vector,i);
+		log_debug(logger, "enviando archivos");
 		enviar(fd, i, sizeof(int));
-		printf("Ruta: %d \n", *i);
 		enviar(fd,vector,sizeof(osada_file)*(*i)); //mando el file
-		puts("antes de free");
 		free(vector);
 		free(size); //libero
 		free(ruta);
-		puts("despues");
 
 }
 
@@ -439,12 +441,11 @@ typedef struct base{
 }base;
 
 void* hilo_atendedor(base* bas){
-	puts("antes de todo ok");
 	enviarFilesContenidos(bas->FS,bas->fd);
-	puts("todo ok");
 	return 0;
 }
 int main(void) {
+	logger = log_create("log.txt", "PokedexServer", true, logLevel);
 	int pagesize;
 	osada_block * data;
 	osada* osadaDisk=calloc(1,sizeof(osada));

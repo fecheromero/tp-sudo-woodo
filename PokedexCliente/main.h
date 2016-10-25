@@ -23,6 +23,6 @@
 #include <commons/log.h>
 #define DEST_PORT 4555
 
-osada_file* listarDirServer(char* path, int socket, int* tamanio, t_log* logger);
+osada_file* listarDirServer(char* path, int socket, int* tamanio);
 
 #endif /* MAIN_H_ */
