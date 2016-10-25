@@ -32,37 +32,38 @@ int socketPokedexServer;
  * 		O archivo/directorio fue encontrado. -ENOENT archivo/directorio no encontrado
  */
 
- static int tp_getattr(const char *path, struct stat *stbuf) {/*
+static int tp_getattr(const char *path, struct stat *stbuf) {
  int res = 0;
- int link;
- int permisos;
- char* tipo;
- int size;
 
  memset(stbuf, 0, sizeof(struct stat));
 
- //Si path es igual a "/" nos estan pidiendo los atributos del punto de montaje
-
- enviar(); //path + getattr
+ int* size = calloc(1, sizeof(int));
+ *size = string_length(path);
+ enviar(socketPokedexServer, size, sizeof(int));
+ enviar(socketPokedexServer, path, *size);
 
  //Neceisto: tipo, tamaño, link
  //envio: path de archivo
 
- recibir(); //tipo de archivo (S_IFDIR/S_IFREG) + tamaño archivo (size) + link (cantidad de carpetas que hay que entrar para llegar al
+ //recibir(); //tipo de archivo (S_IFDIR/S_IFREG) + tamaño archivo (size) + link (cantidad de carpetas que hay que entrar para llegar al
  //Transformar lo que devuelva el server a los parametros tipo, permisos, link y size que necesito
 
- if(tipo=="S_IFDIR"){
+ osada_file* file = calloc(1, sizeof(osada_file));
+ recibir(socketPokedexServer, file, sizeof(osada_file));
+
+ if(file[0].state==2){
  //Le damos los permisos nosotros
- stbuf->st_mode = tipo | 0755;
- stbuf->st_nlink = link;
- }else if(tipo=="S_IFREG"){
- stbuf->st_mode = tipo | 0755;
- stbuf->st_nlink = link;
- stbuf->st_size = size;
+ stbuf->st_mode = S_IFDIR| 0755;
+ //Para el link, tendriamos que iterar en el parent directory hasta que llegue a / y eso es lo que ponemos. Aunque no se si es necesario
+ //stbuf->st_nlink = link;
+ }else if(file[0].state == 1){
+ stbuf->st_mode = S_IFREG | 0755;
+ //stbuf->st_nlink = link;
+ stbuf->st_size = file->file_size;
  }else{
  res = -ENOENT;
  }
- return res;*/
+ return res;
 	return 0;
  }
 
@@ -174,7 +175,7 @@ osada_file* listarDirServer(char* path, int socket, int* tamanio) {
 	*size = string_length(path);
 	log_debug(logger, "Enviando path al servidor");
 	enviar(socket, size, sizeof(int));
-	enviar(socket, path, size);
+	enviar(socket, path, *size);
 	log_debug(logger, "Recibiendo archivos del servidor");
 	recibir(socket, tamanio, sizeof(int));
 	osada_file* files = calloc(*tamanio, sizeof(osada_file));
