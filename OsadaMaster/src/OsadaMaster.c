@@ -492,9 +492,9 @@ void borrarGenerico(osada* FS,int fd){
 	recibir(fd,ruta,*size);
 	log_debug(logger, ruta);
 	osada_file* file = findFileWithPath(ruta,FS,NULL);
-	if(file->state==2){
+	if(file->state==DIRECTORY){
 		borrarDirectorio(ruta,FS);
-	}else{
+	}else if(file->state==REGULAR){
 		borrarArchivo(ruta,FS);
 	}
 	free(size);
@@ -514,8 +514,8 @@ void* hilo_atendedor(base* bas){
 		free(disc);
 		switch(d->enumerable){
 			case UNLINKF:
-						puts("Borrar");
-						borrarGenerico(bas->fd,bas->FS);
+						puts("unlinkF");
+						borrarGenerico(bas->FS,bas->fd);
 						break;
 			case LISTDIR:
 				puts("listDir");
@@ -539,7 +539,7 @@ void* hilo_atendedor(base* bas){
 		*ok=1;
 		enviar(bas->fd,ok,sizeof(int));
 		log_debug(logger,"dado el OK");
-	;
+
 		free(ok);
 	}
 	return 0;
@@ -561,7 +561,10 @@ int main(void) {
 		d->string="envCont";
 		d->enumerable=ENVCONT;
 		list_add(discriminators,d);
-
+		d=calloc(1,sizeof(discriminator));
+			d->string="unlinkF";
+			d->enumerable=UNLINKF;
+			list_add(discriminators,d);
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
 	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
