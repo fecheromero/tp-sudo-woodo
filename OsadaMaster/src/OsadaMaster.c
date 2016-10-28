@@ -479,6 +479,7 @@ typedef enum {
 	RCBFILE,
 	ENVCONT,
 	UNLINKF,
+	MAKEDIR,
 }discriEnum;
 typedef struct discriminator{
 	char* string;
@@ -500,7 +501,16 @@ void borrarGenerico(osada* FS,int fd){
 	free(size);
 	free(ruta);
 }
-
+void makeDir(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int));
+	recibir(fd,size,sizeof(int));
+	char* ruta=calloc(*size,sizeof(char));
+	recibir(fd,ruta,*size);
+	log_debug(logger, ruta);
+	crearDirectorio(ruta,FS);
+	free(size);
+	free(ruta);
+}
 void* hilo_atendedor(base* bas){
 	while(true){
 		puts("arranca un while");
@@ -534,6 +544,10 @@ void* hilo_atendedor(base* bas){
 				puts(basurero);
 				free(basurero);
 				break;
+			case MAKEDIR:
+				puts("makeDir");
+				makeDir(bas->FS,bas->fd);
+
 		}
 		int* ok=calloc(1,sizeof(int));
 		*ok=1;
@@ -565,6 +579,10 @@ int main(void) {
 			d->string="unlinkF";
 			d->enumerable=UNLINKF;
 			list_add(discriminators,d);
+			d=calloc(1,sizeof(discriminator));
+					d->string="makeDir";
+					d->enumerable=MAKEDIR;
+					list_add(discriminators,d);
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
 	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
