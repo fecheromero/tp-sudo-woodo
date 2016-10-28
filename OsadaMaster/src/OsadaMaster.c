@@ -464,7 +464,7 @@ void enviarContenido(osada* FS,int fd){
 	log_debug(logger,"lei");
 
 	enviar(fd,contenidoApuntado,*size);
-	//free(contenido);
+	free(contenido);
 	free(offset);
 	free(size);
 }

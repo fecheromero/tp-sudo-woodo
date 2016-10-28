@@ -11,7 +11,7 @@
  * Este es el path de nuestro, relativo al punto de montaje, archivo dentro del FS
  */
 #define DEFAULT_FILE_PATH "/" DEFAULT_FILE_NAME
-
+pthread_mutex_t SEM_EXEC;
 t_log_level logLevel = LOG_LEVEL_DEBUG;
 t_log * logger;
 int socketPokedexServer;
@@ -33,6 +33,7 @@ int socketPokedexServer;
  */
 
 static int tp_getattr(const char *path, struct stat *stbuf) {
+	pthread_mutex_lock(&SEM_EXEC);
 	log_info(logger,"ejecutando getattr: %s",path);
  int res = 0;
 
@@ -65,6 +66,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  int* ok=calloc(1,sizeof(int));
  recibir(socketPokedexServer,ok,sizeof(int));
  free(ok);
+ pthread_mutex_unlock(&SEM_EXEC);
  return res;
  }
 
@@ -88,7 +90,8 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 
 
  static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
- int i;
+	 pthread_mutex_lock(&SEM_EXEC);
+	 int i;
  log_info(logger,"ejecutando readdir: %s",path);
 
  //recibo vector con todos los nombres y itero y voy completando
@@ -102,13 +105,13 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  int* ok=calloc(1,sizeof(int));
  recibir(socketPokedexServer,ok,sizeof(int));
  free(ok);
-
+ pthread_mutex_unlock(&SEM_EXEC);
  return 0;
  }
 
  static int tp_read(const char *path, char *buf, size_t size, off_t offset,
  struct fuse_file_info *fi) {
-
+	 pthread_mutex_lock(&SEM_EXEC);
 		log_info(logger,"ejecutando read: %s",path);
 		 char* discriminator=calloc(7,sizeof(char));
 		 string_append(&discriminator,"envCont");
@@ -130,6 +133,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 		int* ok=calloc(1,sizeof(int));
 		recibir(socketPokedexServer,ok,sizeof(int));
 		free(ok);
+		pthread_mutex_unlock(&SEM_EXEC);
 	 return size;
  }
 
@@ -196,7 +200,7 @@ osada_file* recibirFile(char* path,int socket){
 }
 int main(int argc, char *argv[]) {
 	logger = log_create("log.txt", "PokedexCliente", true, logLevel);
-
+	pthread_mutex_init(&SEM_EXEC,NULL);
 	char* ruta;
 	int n;
 	int* tamanio = calloc(1, sizeof(int));

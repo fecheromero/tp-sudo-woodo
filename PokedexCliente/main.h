@@ -21,6 +21,8 @@
 #include <socketes.h>
 #include <osada.h>
 #include <commons/log.h>
+#include <semaphore.h>
+#include <pthread.h>
 #define DEST_PORT 4555
 
 osada_file* listarDirServer(char* path, int socket, int* tamanio);
