@@ -40,23 +40,14 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  memset(stbuf, 0, sizeof(struct stat));
 
  osada_file* file=recibirFile(path,socketPokedexServer);
- //Neceisto: tipo, tamaño, link
- //envio: path de archivo
-
- //recibir(); //tipo de archivo (S_IFDIR/S_IFREG) + tamaño archivo (size) + link (cantidad de carpetas que hay que entrar para llegar al
- //Transformar lo que devuelva el server a los parametros tipo, permisos, link y size que necesito
- if(file->state==DIRECTORY){
- //Le damos los permisos nosotros
+  if(file->state==DIRECTORY){
  stbuf->st_mode = S_IFDIR | 0755;
  stbuf->st_nlink=2;
  log_debug(logger,"directorio: %s", file->fname);
- //Para el link, tendriamos que iterar en el parent directory hasta que llegue a / y eso es lo que ponemos. Aunque no se si es necesario
- //stbuf->st_nlink = link;
- }else if(file->state == REGULAR){
+  }else if(file->state == REGULAR){
  stbuf->st_mode = S_IFREG | 0444;
  stbuf->st_nlink=1;
- //stbuf->st_nlink = link;
- stbuf->st_size = file->file_size;
+  stbuf->st_size = file->file_size;
  log_debug(logger,"archivo: %s tamaño: %d", file->fname,file->file_size);
  }else{
 
@@ -65,6 +56,8 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  }
  int* ok=calloc(1,sizeof(int));
  recibir(socketPokedexServer,ok,sizeof(int));
+ log_info(logger,"recibi el ok: %d",*ok);
+
  free(ok);
  pthread_mutex_unlock(&SEM_EXEC);
  return res;
@@ -104,6 +97,8 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  free(cantArchivos);
  int* ok=calloc(1,sizeof(int));
  recibir(socketPokedexServer,ok,sizeof(int));
+ log_info(logger,"recibi el ok: %d",*ok);
+
  free(ok);
  pthread_mutex_unlock(&SEM_EXEC);
  return 0;
@@ -116,6 +111,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 		 char* discriminator=calloc(7,sizeof(char));
 		 string_append(&discriminator,"envCont");
 		 enviar(socketPokedexServer,discriminator,7);
+
 		 free(discriminator);
 		int* sizePath = calloc(1, sizeof(int));
 	 	*sizePath = string_length(path);
@@ -132,6 +128,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 		free(contenido);
 		int* ok=calloc(1,sizeof(int));
 		recibir(socketPokedexServer,ok,sizeof(int));
+		log_info(logger,"recibi el ok: %d",*ok);
 		free(ok);
 		pthread_mutex_unlock(&SEM_EXEC);
 	 return size;
@@ -178,7 +175,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  .getattr = tp_getattr,
  .readdir = tp_readdir,
  .read = tp_read,
- .unlink= tp_unlink,
+ //.unlink= tp_unlink,
  };
  osada_file* listarDirServer(char* path, int socket, int* tamanio) {
 	 char* discriminator=calloc(7,sizeof(char));
@@ -201,6 +198,7 @@ osada_file* recibirFile(char* path,int socket){
 	char* discriminator=calloc(7,sizeof(char));
 		 string_append(&discriminator,"rcbFile");
 		 enviar(socket,discriminator,7);
+		 log_info(logger,"envie");
 		 free(discriminator);
 		 int* size = calloc(1, sizeof(int));
 		  	*size = string_length(path);
