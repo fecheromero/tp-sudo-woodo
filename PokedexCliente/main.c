@@ -137,8 +137,23 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 	 return size;
  }
 
- static int tp_unlink(const char *path)
- {
+ static int tp_unlink(const char *path){
+	pthread_mutex_lock(&SEM_EXEC);
+	log_info(logger,"Borrando: %s",path);
+	char* discriminator=calloc(7,sizeof(char));
+	string_append(&discriminator,"UnlinkF");
+	enviar(socketPokedexServer,discriminator,7);
+	free(discriminator);
+	int* sizePath = calloc(1, sizeof(int));
+	*sizePath = string_length(path);
+	enviar(socketPokedexServer, sizePath, sizeof(int));
+	enviar(socketPokedexServer, path, *sizePath);
+	free(sizePath);
+	int* ok=calloc(1,sizeof(int));
+	recibir(socketPokedexServer,ok,sizeof(int));
+	free(ok);
+
+
  /*enviar(); //Eliminar + path
  recibir();//0(bien), -1(error)
 
@@ -163,7 +178,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  .getattr = tp_getattr,
  .readdir = tp_readdir,
  .read = tp_read,
- //.unlink= tp_unlink,
+ .unlink= tp_unlink,
  };
  osada_file* listarDirServer(char* path, int socket, int* tamanio) {
 	 char* discriminator=calloc(7,sizeof(char));

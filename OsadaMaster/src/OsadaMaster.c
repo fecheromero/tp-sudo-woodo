@@ -476,11 +476,28 @@ typedef enum {
 	LISTDIR,
 	RCBFILE,
 	ENVCONT,
+	UNLINKF,
 }discriEnum;
 typedef struct discriminator{
 	char* string;
 	discriEnum enumerable;
 }discriminator;
+
+void borrarGenerico(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int));
+	recibir(fd,size,sizeof(int));
+	char* ruta=calloc(*size,sizeof(char));
+	recibir(fd,ruta,*size);
+	log_debug(logger, ruta);
+	osada_file* file = findFileWithPath(ruta,FS,NULL);
+	if(file->state==2){
+		borrarDirectorio(ruta,FS);
+	}else{
+		borrarArchivo(ruta,FS);
+	}
+	free(size);
+	free(ruta);
+}
 
 void* hilo_atendedor(base* bas){
 	while(true){
@@ -494,6 +511,10 @@ void* hilo_atendedor(base* bas){
 		discriminator* d=list_find(discriminators,criteria);
 		free(disc);
 		switch(d->enumerable){
+			case UNLINKF:
+						puts("Borrar");
+						borrarGenerico(bas->fd,bas->FS);
+						break;
 			case LISTDIR:
 				puts("listDir");
 				enviarFilesContenidos(bas->FS,bas->fd);
