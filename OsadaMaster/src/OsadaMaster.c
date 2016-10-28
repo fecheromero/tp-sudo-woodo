@@ -14,7 +14,7 @@
 
 t_log_level logLevel = LOG_LEVEL_DEBUG;
 t_log * logger;
-
+t_list* discriminators;
 void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
 	printf("%.*s\n\n", 7, osadaHeader->magic_number);
@@ -30,10 +30,13 @@ void printHeader(osada_header* osadaHeader) {
 	printf("%d\n\n", osadaHeader->data_blocks);
 }
 
-void* leerArchivo(char* ruta,osada* FS){ //no se puede hacer free al puntero resultante D:
+void* leerArchivo(char* ruta,osada* FS,int tamanio){ //no se puede hacer free al puntero resultante D:
 	if(findFileWithPath(ruta,FS, NULL)!=NULL){
 		osada_file* archivo=findFileWithPath(ruta,FS,NULL);
-		char* file=calloc(255,sizeof(char));
+		tamanio=archivo->file_size;
+		puts("asigne el tamanio");
+		char* file=calloc(1600,sizeof(char));
+		puts("pedi memoria");
 	uint32_t siguienteBloque=FS->asignaciones[archivo->first_block];
 	printf("%d \n", archivo->file_size);
 	int i=0;
@@ -57,7 +60,7 @@ void* leerArchivo(char* ruta,osada* FS){ //no se puede hacer free al puntero res
 		}
 			siguienteBloque=FS->asignaciones[siguienteBloque];
 	}
-
+	puts("devolvi");
 	return file;
 	}
 	else{
@@ -398,59 +401,141 @@ void listarContenido(char* ruta, osada* FS,osada_file* vector, int* size){
 void enviarOsadaFile(osada* FS,int fd ){
 	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
 	recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
-	printf("%d \n",  *size);
 	char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
-	puts("antes de recibir");
 	recibir(fd,ruta,*size); //recibo la ruta
-	puts("despues de recibir");
-	printf("probando %s \n",ruta);
-	printf("%d \n",  *size);
-	osada_file* file=findFileWithPath(ruta,FS,NULL); //encuentro el file
-	printf("%s \n",file->fname);
+	osada_file* file=NULL;
+
+		file=findFileWithPath(ruta,FS,NULL); //encuentro el file
+	if(file==NULL){
+		file=calloc(1,sizeof(osada_file));
+		if(strcmp(ruta,"/")==0){
+			strcpy(&file->fname,"/");
+			file->state=DIRECTORY;
+		}
+		else{
+			strcpy(&file->fname,"noFound");
+				file->state=DELETED;
+
+		}
+
+	}
+	printf("enviado:%s \n",file->fname);
 	enviar(fd,file,sizeof(osada_file)); //mando el file
-	puts("antes de free");
+if(strcmp(file->fname,"noFound")==0 || (strcmp(file->fname,"/")==0)){free(file);}
 	free(size); //libero
 	free(ruta);
-	puts("despues");
 }
 
 void enviarFilesContenidos(osada* FS,int fd){
 	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
-	log_debug(logger, "recibiendo ruta");
 		recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
 		char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
 		recibir(fd,ruta,*size); //recibo la ruta
-		log_debug(logger, "recibida ruta: ");
 		log_debug(logger, ruta);
 		osada_file* vector=calloc(2048,sizeof(osada_file));
 		int* i = calloc(1,sizeof(int));
-		log_debug(logger, "Buscando archivos");
 		listarContenido(ruta,FS,vector,i);
-		log_debug(logger, "enviando archivos");
 		enviar(fd, i, sizeof(int));
 		enviar(fd,vector,sizeof(osada_file)*(*i)); //mando el file
+		log_debug(logger, "enviados");
 		free(vector);
 		free(size); //libero
 		free(ruta);
 
 }
+void enviarContenido(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
+	int* offset=calloc(1,sizeof(int));
 
+			recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
+			char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
+			recibir(fd,ruta,*size); //recibo la ruta
+			log_debug(logger, ruta);
+		int tamanioMaximo;
+		void* contenido=leerArchivo(ruta,FS,&tamanioMaximo);
+		free(ruta);
+		puts("pase");
+		recibir(fd,size,sizeof(int)); //reutilizo el size para el size de lectura
+		puts("recibi el size");
+		printf("size: %d",*size);
+		recibir(fd,offset,sizeof(int));
+		printf("offset: %d",*offset);
+	void* contenidoApuntado=contenido+(*offset);
+	log_debug(logger,"lei");
+
+	enviar(fd,contenidoApuntado,*size);
+	//free(contenido);
+	free(offset);
+	free(size);
+}
 typedef struct base{
 	int fd;
 	osada* FS;
 }base;
+typedef enum {
+	LISTDIR,
+	RCBFILE,
+	ENVCONT,
+}discriEnum;
+typedef struct discriminator{
+	char* string;
+	discriEnum enumerable;
+}discriminator;
 
 void* hilo_atendedor(base* bas){
-	enviarFilesContenidos(bas->FS,bas->fd);
+	while(true){
+		puts("arranca un while");
+		char* disc=calloc(7,sizeof(char));
+		recibir(bas->fd,disc,7);
+		bool criteria(discriminator* d){
+			return strcmp(disc,d->string)==0;
+		}
+		log_debug(logger,"ejecutando: %s",disc);
+		discriminator* d=list_find(discriminators,criteria);
+		free(disc);
+		switch(d->enumerable){
+			case LISTDIR:
+				puts("listDir");
+				enviarFilesContenidos(bas->FS,bas->fd);
+					break;
+			case RCBFILE:
+				puts("rcbFile");
+				enviarOsadaFile(bas->FS,bas->fd);
+				break;
+			case ENVCONT:
+				puts("envCont");
+				enviarContenido(bas->FS,bas->fd);
+				break;
+		}
+		log_debug(logger,"dando el OK");
+		int* ok=calloc(1,sizeof(int));
+		*ok=1;
+		enviar(bas->fd,ok,sizeof(int));
+		free(ok);
+	}
 	return 0;
 }
 int main(void) {
 	logger = log_create("log.txt", "PokedexServer", true, logLevel);
 	int pagesize;
 	osada_block * data;
+	discriminators=list_create();
+	discriminator* d=calloc(1,sizeof(discriminator));
+	d->string="listDir";
+	d->enumerable=LISTDIR;
+	list_add(discriminators,d);
+	d=calloc(1,sizeof(discriminator));
+	d->string="rcbFile";
+	d->enumerable=RCBFILE;
+	list_add(discriminators,d);
+	d=calloc(1,sizeof(discriminator));
+		d->string="envCont";
+		d->enumerable=ENVCONT;
+		list_add(discriminators,d);
+
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
-	int fd = open("challenge.bin", O_RDWR, 0);
+	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();
@@ -508,9 +593,9 @@ int main(void) {
 						base* bas=calloc(1,sizeof(base));
 						bas->FS=osadaDisk;
 						bas->fd=direccionNuevo.fd;
-						 pthread_t thread_conector;
+						 pthread_t thread_atendedor;
 
-					int rd=pthread_create(&thread_conector,NULL,hilo_atendedor,bas);
+					int rd=pthread_create(&thread_atendedor,NULL,hilo_atendedor,bas);
 					if(rd!=0){puts("fallo");};
 
 }
@@ -560,6 +645,7 @@ osada_file* findFile(char ** route, osada * disk, int pathQuantity, uint32_t * p
 }
 
 osada_file* findFileWithPath(char * path, osada * disk, uint32_t * position) {
+	if(strcmp(path,"/")==0){return NULL;};
 	char** route = string_split(path, "/");
 	int pathQuantity = getFilesQuantity(route);
 	osada_file* file= findFile(route, disk, pathQuantity, position);

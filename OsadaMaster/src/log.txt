@@ -1,0 +1,1465 @@
+[DEBUG] 02:44:26:739 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:26:740 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:26:740 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:26:780 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:26:820 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:26:860 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:26:900 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:26:940 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:26:980 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:27:20 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:27:20 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:27:20 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:61 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:100 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:140 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:181 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:221 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:260 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:300 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:340 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:380 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:420 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:460 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:500 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:540 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:580 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:620 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:660 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:700 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:740 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:780 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:820 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:860 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:27:900 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:27:940 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:27:980 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:27:980 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:27:980 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:21 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:28:60 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:28:60 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:28:60 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:101 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:28:140 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:28:140 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:28:140 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:181 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:220 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:260 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:300 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:340 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:380 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:420 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:460 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:500 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:540 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:581 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:620 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:660 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:700 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:740 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:780 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:820 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:860 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:900 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:28:940 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:28:980 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:20 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:60 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:100 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:140 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:180 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:220 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:29:260 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:29:260 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:29:260 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:301 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:340 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:380 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:420 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:460 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:500 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:540 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:580 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:620 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:660 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:700 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:740 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:780 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:820 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:860 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:29:900 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:29:941 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:29:980 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:29:980 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:29:980 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:21 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:60 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:101 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:140 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:180 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:220 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:260 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:300 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:340 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:380 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:420 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:30:460 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:30:460 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:30:460 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:501 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:540 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:581 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:620 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:660 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:700 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:740 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:780 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:820 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:861 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:901 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:30:940 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:30:980 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:20 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:60 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:100 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:140 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:31:180 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:31:180 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:31:181 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:221 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:260 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:300 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:340 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:380 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:420 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:461 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:500 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:540 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:580 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:621 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:31:660 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:31:660 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:31:660 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:701 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:740 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:781 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:820 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:860 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:900 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:31:940 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:31:980 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:20 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:60 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:100 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:140 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:181 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:220 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:260 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:300 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:341 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:32:380 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:32:380 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:32:380 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:421 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:460 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:500 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:540 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:580 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:620 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:660 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:700 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:741 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:780 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:820 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:32:860 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:32:860 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:32:860 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:905 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:32:944 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:32:985 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:24 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:65 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:104 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:144 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:184 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:224 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:264 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:304 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:344 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:384 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:424 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:464 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:504 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:544 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:33:584 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:33:584 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:33:584 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:625 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:664 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:704 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:744 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:784 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:823 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:864 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:904 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:33:944 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:33:984 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:24 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:34:64 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:34:65 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:34:65 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:105 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:144 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:184 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:224 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:264 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:304 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:344 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:384 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:424 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:464 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:504 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:544 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:584 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:624 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:664 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:704 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:745 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:34:784 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:34:784 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:34:784 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:825 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:864 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:904 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:34:944 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:34:985 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:24 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:64 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:104 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:144 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:184 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:224 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:35:264 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:35:264 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:35:264 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:305 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:344 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:384 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:424 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:465 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:504 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:544 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:584 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:624 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:665 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:704 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:744 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:784 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:824 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:864 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:35:904 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:35:944 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:35:984 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:35:984 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:35:984 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:25 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:65 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:104 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:144 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:184 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:224 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:264 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:305 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:344 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:384 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:424 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:36:464 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:36:464 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:36:464 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:505 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:544 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:584 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:624 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:664 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:704 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:744 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:784 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:824 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:864 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:905 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:36:944 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:36:984 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:24 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:64 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:104 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:144 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:37:184 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:37:184 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:37:184 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:225 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:264 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:304 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:344 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:384 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:424 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:464 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:504 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:545 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:584 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:625 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:37:664 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:37:664 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:37:664 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:705 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:744 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:784 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:824 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:864 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:904 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:37:944 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:37:984 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:25 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:64 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:104 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:144 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:184 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:224 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:264 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:304 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:345 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:38:384 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:38:384 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:38:384 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:425 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:464 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:504 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:544 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:585 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:624 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:664 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:704 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:744 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:784 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:824 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:38:864 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:38:864 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:38:864 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:904 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:38:943 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:38:984 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:23 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:64 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:103 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:144 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:184 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:224 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:264 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:304 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:344 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:385 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:424 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:465 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:504 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:546 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:39:584 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:39:584 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:39:584 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:624 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:664 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:704 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:744 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:784 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:824 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:864 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:904 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:39:944 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:39:985 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:40:24 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:40:64 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:40:104 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:40:144 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:40:184 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:40:224 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:40:265 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:40:304 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:40:345 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:40:385 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:51:342 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:51:380 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:52:367 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:52:404 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:52:404 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:52:404 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:52:405 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:52:444 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:52:484 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:52:524 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:52:565 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:52:604 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:52:644 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:52:684 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:52:724 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:52:763 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:52:804 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:52:844 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:52:884 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:52:923 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:52:964 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:53:4 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:53:45 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:53:84 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:53:125 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:53:164 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:53:205 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:53:244 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:53:285 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:53:324 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:55:681 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:55:720 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:55:721 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:55:760 PokedexServer/(17244:17256): /Celadon City
+[DEBUG] 02:44:55:771 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:55:771 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:55:808 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:55:848 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:55:889 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:44:55:928 PokedexServer/(17244:17256): /
+[DEBUG] 02:44:55:928 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:44:55:928 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:55:968 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:8 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:48 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:88 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:128 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:168 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:208 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:248 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:289 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:328 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:368 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:408 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:448 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:488 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:528 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:568 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:608 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:648 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:688 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:728 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:44:56:768 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:44:56:808 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:196 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:235 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:236 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:276 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:316 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:45:01:356 PokedexServer/(17244:17256): /
+[DEBUG] 02:45:01:356 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:45:01:356 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:396 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:436 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:476 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:516 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:556 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:596 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:636 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:676 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:716 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:756 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:796 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:836 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:876 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:916 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:01:957 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:01:996 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:02:36 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:02:76 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:02:116 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:02:156 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:02:196 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:02:236 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:03:387 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:03:424 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:03:425 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:45:03:464 PokedexServer/(17244:17256): /Pokemons
+[DEBUG] 02:45:03:468 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:45:03:468 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:03:510 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:03:548 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:03:588 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:03:628 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:03:668 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:03:708 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:03:749 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:03:788 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:03:828 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:03:868 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:03:908 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:03:948 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:03:988 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:28 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:68 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:108 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:148 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:188 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:228 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:268 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:308 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:348 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:388 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:428 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:468 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:508 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:548 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:588 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:628 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:668 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:708 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:748 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:788 PokedexServer/(17244:17256): ejecutando: listDir
+[DEBUG] 02:45:04:828 PokedexServer/(17244:17256): /
+[DEBUG] 02:45:04:828 PokedexServer/(17244:17256): enviados
+[DEBUG] 02:45:04:828 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:868 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:908 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:04:949 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:04:989 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:28 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:68 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:109 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:148 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:188 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:228 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:268 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:308 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:348 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:387 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:428 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:468 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:508 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:548 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:588 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:628 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:668 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:708 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:748 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:788 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:828 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:869 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:908 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:05:948 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:05:988 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:28 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:68 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:108 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:148 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:188 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:228 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:268 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:308 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:348 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:388 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:428 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:468 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:508 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:548 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:588 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:628 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:668 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:709 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:748 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:788 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:828 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:868 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:908 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:06:948 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:06:988 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:28 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:68 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:109 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:148 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:188 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:228 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:268 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:308 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:348 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:388 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:428 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:468 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:508 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:548 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:589 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:628 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:668 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:708 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:748 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:788 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:828 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:868 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:908 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:07:948 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:07:988 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:28 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:68 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:108 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:148 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:188 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:228 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:268 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:308 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:348 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:388 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:428 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:468 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:508 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:549 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:588 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:628 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:668 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:708 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:748 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:788 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:828 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:868 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:908 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:08:948 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:08:988 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:28 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:68 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:108 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:148 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:188 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:228 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:268 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:308 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:348 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:388 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:428 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:468 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:508 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:548 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:588 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:628 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:668 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:708 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:748 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:788 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:828 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:868 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:908 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:09:948 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:09:988 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:28 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:68 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:108 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:148 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:188 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:228 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:268 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:308 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:348 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:388 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:427 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:468 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:508 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:548 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:588 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:628 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:672 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:712 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:752 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:793 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:832 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:872 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:912 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:10:952 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:10:992 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:32 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:72 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:112 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:152 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:192 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:232 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:272 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:312 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:353 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:392 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:432 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:472 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:512 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:552 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:592 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:632 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:672 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:712 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:752 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:792 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:832 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:872 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:913 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:11:952 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:11:992 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:32 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:73 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:112 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:152 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:192 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:233 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:272 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:312 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:352 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:392 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:432 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:472 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:512 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:552 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:592 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:633 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:672 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:712 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:752 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:792 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:832 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:872 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:913 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:12:952 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:12:992 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:32 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:72 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:113 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:152 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:193 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:232 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:272 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:312 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:352 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:392 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:432 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:472 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:512 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:552 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:593 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:632 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:672 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:712 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:752 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:792 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:832 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:872 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:912 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:13:952 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:13:992 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:32 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:73 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:112 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:152 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:192 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:233 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:272 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:313 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:352 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:393 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:432 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:472 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:512 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:552 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:592 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:632 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:672 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:712 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:752 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:792 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:832 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:872 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:912 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:14:953 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:14:992 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:32 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:72 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:112 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:152 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:192 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:232 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:272 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:312 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:353 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:392 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:432 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:472 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:513 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:552 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:592 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:632 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:672 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:711 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:752 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:791 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:832 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:871 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:912 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:15:952 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:15:992 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:16:32 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:16:72 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:16:112 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:18:114 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:18:152 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:18:152 PokedexServer/(17244:17256): ejecutando: rcbFile
+[DEBUG] 02:45:18:192 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:18:352 PokedexServer/(17244:17256): ejecutando: envCont
+[DEBUG] 02:45:18:392 PokedexServer/(17244:17256): /Pokemons/001.txt
+[DEBUG] 02:45:18:392 PokedexServer/(17244:17256): lei
+[DEBUG] 02:45:18:392 PokedexServer/(17244:17256): dando el OK
+[DEBUG] 02:45:18:392 PokedexServer/(17244:17256): ejecutando: 
+[DEBUG] 02:48:53:440 PokedexServer/(17355:17376): ejecutando: rcbFile
+[DEBUG] 02:48:53:478 PokedexServer/(17355:17376): dando el OK
+[DEBUG] 02:49:30:956 PokedexServer/(17403:17412): ejecutando: 
+[DEBUG] 02:49:44:770 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:44:808 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:44:809 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:44:812 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:44:853 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:44:896 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:44:935 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:44:975 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:13 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:45:56 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:45:68 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:45:76 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:104 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:145 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:184 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:225 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:264 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:304 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:344 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:384 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:424 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:464 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:504 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:544 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:585 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:625 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:665 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:706 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:746 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:785 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:825 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:865 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:905 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:45:945 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:45:985 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:46:24 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:46:31 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:46:32 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:70 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:46:108 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:46:136 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:46:137 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:165 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:46:204 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:46:206 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:46:206 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:244 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:46:284 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:325 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:46:365 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:405 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:46:445 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:484 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:46:525 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:565 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:46:605 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:644 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:46:686 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:725 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:46:765 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:804 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:46:845 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:885 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:46:925 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:46:965 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:4 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:44 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:84 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:125 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:47:164 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:47:170 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:47:171 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:210 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:47:248 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:47:254 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:47:262 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:292 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:47:332 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:47:336 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:47:337 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:373 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:413 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:453 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:492 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:533 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:573 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:613 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:653 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:693 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:732 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:772 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:812 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:853 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:893 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:47:932 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:47:973 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:12 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:48:52 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:93 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:48:132 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:173 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:48:213 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:252 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:48:292 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:48:293 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:48:294 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:333 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:48:372 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:48:374 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:48:375 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:412 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:48:452 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:48:459 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:48:460 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:496 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:48:536 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:576 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:48:616 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:657 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:48:697 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:737 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:48:777 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:817 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:48:858 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:896 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:48:936 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:48:976 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:16 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:56 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:97 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:136 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:177 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:220 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:260 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:300 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:340 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:381 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:49:420 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:49:422 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:49:422 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:460 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:49:500 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:49:507 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:49:508 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:544 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:49:584 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:49:591 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:49:592 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:629 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:668 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:708 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:749 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:788 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:829 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:869 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:908 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:49:949 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:49:989 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:29 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:50:68 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:109 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:50:149 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:189 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:50:228 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:268 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:50:309 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:349 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:50:389 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:428 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:50:469 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:513 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:50:552 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:50:554 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:50:554 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:592 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:50:632 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:50:634 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:50:634 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:672 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:50:712 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:50:714 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:50:715 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:752 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:50:792 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:832 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:50:872 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:912 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:50:953 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:50:993 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:51:33 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:73 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:51:113 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:152 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:51:192 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:232 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:51:272 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:312 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:51:352 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:393 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:51:433 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:472 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:51:513 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:552 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:51:593 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:633 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:51:672 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:51:679 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:51:680 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:718 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:51:756 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:51:763 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:51:764 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:801 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:51:840 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:51:847 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:51:848 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:884 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:51:924 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:51:965 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:5 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:45 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:85 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:124 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:164 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:205 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:245 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:285 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:325 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:365 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:405 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:445 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:485 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:525 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:565 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:605 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:644 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:684 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:52:725 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:764 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:52:804 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:52:806 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:52:806 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:844 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:52:884 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:52:886 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:52:886 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:52:925 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:52:964 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:52:965 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:52:965 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:5 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:47 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:84 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:125 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:165 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:204 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:245 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:285 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:325 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:365 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:404 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:445 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:484 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:524 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:564 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:605 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:644 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:685 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:724 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:765 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:805 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:845 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:885 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:53:925 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:53:965 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:54:5 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:54:45 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:54:85 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:54:125 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:54:165 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:54:205 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:54:245 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:55:450 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:55:488 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:57:823 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:57:860 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:57:862 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:57:903 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:57:941 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:49:57:980 PokedexServer/(17422:17439): /
+[DEBUG] 02:49:57:982 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:49:57:982 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:21 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:60 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:101 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:140 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:180 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:220 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:260 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:301 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:340 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:381 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:421 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:461 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:501 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:541 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:581 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:620 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:660 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:700 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:741 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:781 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:49:58:821 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:49:58:861 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:80 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:120 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:123 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:50:02:160 PokedexServer/(17422:17439): /Pokemons
+[DEBUG] 02:50:02:239 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:50:02:240 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:281 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:285 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:325 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:364 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:405 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:445 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:485 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:525 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:565 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:605 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:644 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:684 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:726 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:765 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:806 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:845 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:886 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:02:925 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:02:965 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:5 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:45 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:84 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:124 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:164 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:204 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:247 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:285 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:325 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:364 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:404 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:444 PokedexServer/(17422:17439): ejecutando: listDir
+[DEBUG] 02:50:03:484 PokedexServer/(17422:17439): /
+[DEBUG] 02:50:03:491 PokedexServer/(17422:17439): enviados
+[DEBUG] 02:50:03:493 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:529 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:568 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:609 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:649 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:689 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:729 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:768 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:808 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:849 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:889 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:03:929 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:03:969 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:9 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:48 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:88 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:128 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:168 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:208 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:248 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:288 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:328 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:369 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:408 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:448 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:488 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:529 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:568 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:608 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:648 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:688 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:728 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:768 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:808 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:849 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:889 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:04:929 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:04:968 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:9 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:48 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:88 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:128 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:169 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:208 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:248 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:289 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:328 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:369 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:408 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:449 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:488 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:529 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:568 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:609 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:648 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:689 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:729 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:769 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:809 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:849 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:888 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:05:929 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:05:969 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:9 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:49 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:88 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:128 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:168 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:208 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:248 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:288 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:328 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:368 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:408 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:448 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:488 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:528 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:569 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:609 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:648 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:689 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:729 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:769 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:809 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:848 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:889 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:06:929 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:06:969 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:9 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:48 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:88 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:129 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:169 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:209 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:249 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:289 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:329 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:369 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:409 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:449 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:489 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:529 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:569 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:609 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:649 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:689 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:729 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:768 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:808 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:849 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:889 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:07:928 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:07:968 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:9 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:48 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:88 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:129 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:169 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:209 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:249 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:288 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:329 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:369 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:409 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:449 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:489 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:529 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:569 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:609 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:649 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:689 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:729 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:769 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:809 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:849 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:889 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:08:928 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:08:969 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:9 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:49 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:88 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:128 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:168 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:210 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:249 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:289 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:329 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:369 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:409 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:449 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:489 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:528 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:569 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:609 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:649 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:689 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:729 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:769 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:809 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:849 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:889 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:09:929 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:09:968 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:9 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:48 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:89 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:129 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:169 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:209 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:248 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:289 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:329 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:369 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:408 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:449 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:489 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:529 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:569 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:609 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:649 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:689 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:729 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:769 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:809 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:848 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:889 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:10:929 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:10:969 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:9 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:49 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:88 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:129 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:169 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:209 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:249 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:289 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:329 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:369 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:409 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:449 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:489 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:528 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:568 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:609 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:648 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:688 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:728 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:768 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:809 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:849 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:889 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:11:929 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:11:969 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:9 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:49 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:89 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:129 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:169 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:209 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:248 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:288 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:329 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:369 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:409 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:449 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:488 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:528 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:569 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:608 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:649 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:689 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:729 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:769 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:809 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:849 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:889 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:12:929 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:12:969 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:9 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:48 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:88 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:129 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:168 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:208 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:248 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:288 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:328 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:369 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:408 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:449 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:489 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:529 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:569 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:609 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:649 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:689 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:729 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:769 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:808 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:849 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:889 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:13:929 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:13:969 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:9 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:48 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:88 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:128 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:169 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:209 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:249 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:289 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:329 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:369 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:408 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:449 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:489 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:528 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:569 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:609 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:649 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:689 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:729 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:769 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:14:809 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:14:849 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:17:206 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:17:244 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:17:246 PokedexServer/(17422:17439): ejecutando: rcbFile
+[DEBUG] 02:50:17:285 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:17:427 PokedexServer/(17422:17439): ejecutando: envCont
+[DEBUG] 02:50:17:464 PokedexServer/(17422:17439): /Pokemons/001.txt
+[DEBUG] 02:50:17:471 PokedexServer/(17422:17439): lei
+[DEBUG] 02:50:17:473 PokedexServer/(17422:17439): dando el OK
+[DEBUG] 02:50:17:474 PokedexServer/(17422:17439): ejecutando: 

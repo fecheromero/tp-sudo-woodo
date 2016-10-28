@@ -24,5 +24,5 @@
 #define DEST_PORT 4555
 
 osada_file* listarDirServer(char* path, int socket, int* tamanio);
-
+osada_file* recibirFile(char* path,int socket);
 #endif /* MAIN_H_ */

@@ -33,38 +33,39 @@ int socketPokedexServer;
  */
 
 static int tp_getattr(const char *path, struct stat *stbuf) {
+	log_info(logger,"ejecutando getattr: %s",path);
  int res = 0;
 
  memset(stbuf, 0, sizeof(struct stat));
 
- int* size = calloc(1, sizeof(int));
- *size = string_length(path);
- enviar(socketPokedexServer, size, sizeof(int));
- enviar(socketPokedexServer, path, *size);
-
+ osada_file* file=recibirFile(path,socketPokedexServer);
  //Neceisto: tipo, tamaño, link
  //envio: path de archivo
 
  //recibir(); //tipo de archivo (S_IFDIR/S_IFREG) + tamaño archivo (size) + link (cantidad de carpetas que hay que entrar para llegar al
  //Transformar lo que devuelva el server a los parametros tipo, permisos, link y size que necesito
-
- osada_file* file = calloc(1, sizeof(osada_file));
- recibir(socketPokedexServer, file, sizeof(osada_file));
-
- if(file[0].state==2){
+ if(file->state==DIRECTORY){
  //Le damos los permisos nosotros
- stbuf->st_mode = S_IFDIR| 0755;
+ stbuf->st_mode = S_IFDIR | 0755;
+ stbuf->st_nlink=2;
+ log_debug(logger,"directorio: %s", file->fname);
  //Para el link, tendriamos que iterar en el parent directory hasta que llegue a / y eso es lo que ponemos. Aunque no se si es necesario
  //stbuf->st_nlink = link;
- }else if(file[0].state == 1){
- stbuf->st_mode = S_IFREG | 0755;
+ }else if(file->state == REGULAR){
+ stbuf->st_mode = S_IFREG | 0444;
+ stbuf->st_nlink=1;
  //stbuf->st_nlink = link;
  stbuf->st_size = file->file_size;
+ log_debug(logger,"archivo: %s tamaño: %d", file->fname,file->file_size);
  }else{
+
+	 log_debug(logger,"IGNORED: %s", file->fname);
  res = -ENOENT;
  }
+ int* ok=calloc(1,sizeof(int));
+ recibir(socketPokedexServer,ok,sizeof(int));
+ free(ok);
  return res;
-	return 0;
  }
 
 
@@ -87,33 +88,49 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 
 
  static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
- (void) offset;
- (void) fi;
  int i;
- //recibo vector con todos los nombres y itero y voy completando
- int * cantArchivos;
- osada_file* vector = listarDirServer(path,socketPokedexServer, cantArchivos);
+ log_info(logger,"ejecutando readdir: %s",path);
 
- for (i = 0; i < cantArchivos; i++) {
+ //recibo vector con todos los nombres y itero y voy completando
+ int * cantArchivos=calloc(1,sizeof(int));
+ osada_file* vector = listarDirServer(path,socketPokedexServer, cantArchivos);
+ for (i = 0; i < (*cantArchivos); i++) {
+	 log_debug(logger,"cargo: %s",vector[i].fname);
 	 filler(buf, vector[i].fname, NULL, 0);
-}
+ }
+ free(cantArchivos);
+ int* ok=calloc(1,sizeof(int));
+ recibir(socketPokedexServer,ok,sizeof(int));
+ free(ok);
 
  return 0;
  }
 
  static int tp_read(const char *path, char *buf, size_t size, off_t offset,
  struct fuse_file_info *fi) {
- /*char* archivo;
 
- enviar(); //Read + size + path
- recibir(); //Archivo
-
- //Necesito: Archivo char*
- //Envio: Path + size
-
- memcpy(buf,archivo,size);
- return size;*/
-	 return 0;
+		log_info(logger,"ejecutando read: %s",path);
+		 char* discriminator=calloc(7,sizeof(char));
+		 string_append(&discriminator,"envCont");
+		 enviar(socketPokedexServer,discriminator,7);
+		 free(discriminator);
+		int* sizePath = calloc(1, sizeof(int));
+	 	*sizePath = string_length(path);
+	 	enviar(socketPokedexServer, sizePath, sizeof(int));
+	 	enviar(socketPokedexServer, path, *sizePath);
+	 	free(sizePath);
+	 	log_debug(logger,"pidiendo: %d desde %d",size,offset);
+	 	enviar(socketPokedexServer,&size,sizeof(size_t));
+	 	enviar(socketPokedexServer,&offset,sizeof(off_t));
+	 	void* contenido=malloc(size);
+	 	recibir(socketPokedexServer,contenido,size);
+		memcpy(buf,contenido,size);
+		log_debug(logger,"leido: %s", contenido);
+		free(contenido);
+		int* ok=calloc(1,sizeof(int));
+		recibir(socketPokedexServer,ok,sizeof(int));
+		free(ok);
+	 return size;
  }
 
  static int tp_unlink(const char *path)
@@ -139,14 +156,44 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  */
 
  static struct fuse_operations funciones = {
- //.getattr = tp_getattr,
+ .getattr = tp_getattr,
  .readdir = tp_readdir,
- //.read = tp_read,
+ .read = tp_read,
  //.unlink= tp_unlink,
  };
+ osada_file* listarDirServer(char* path, int socket, int* tamanio) {
+	 char* discriminator=calloc(7,sizeof(char));
+	 string_append(&discriminator,"listDir");
+	 enviar(socket,discriminator,7);
+	 free(discriminator);
+	int* size = calloc(1, sizeof(int));
+ 	*size = string_length(path);
+ 	enviar(socket, size, sizeof(int));
+ 	enviar(socket, path, *size);
+ 	recibir(socket, tamanio, sizeof(int));
+ 	osada_file* files = calloc(*tamanio, sizeof(osada_file));
+ 	recibir(socket, files, (*tamanio) * sizeof(osada_file));
+ 	free(size);
+ 	log_debug(logger,"recibidos");
+ 	return files;
+ }
 
-
-
+osada_file* recibirFile(char* path,int socket){
+	char* discriminator=calloc(7,sizeof(char));
+		 string_append(&discriminator,"rcbFile");
+		 enviar(socket,discriminator,7);
+		 free(discriminator);
+		 int* size = calloc(1, sizeof(int));
+		  	*size = string_length(path);
+		  	enviar(socket, size, sizeof(int));
+		  	enviar(socket, path, *size);
+		 osada_file* file=calloc(1,sizeof(osada_file));
+		 recibir(socket,file,sizeof(osada_file));
+		 log_debug(logger,"recibido el file");
+		 free(size);
+		 //q hachemo con el osada_file* ?=
+		 return file;
+}
 int main(int argc, char *argv[]) {
 	logger = log_create("log.txt", "PokedexCliente", true, logLevel);
 
@@ -170,16 +217,4 @@ int main(int argc, char *argv[]) {
 	//return 0;
 }
 
-osada_file* listarDirServer(char* path, int socket, int* tamanio) {
-	int* size = calloc(1, sizeof(int));
-	*size = string_length(path);
-	log_debug(logger, "Enviando path al servidor");
-	enviar(socket, size, sizeof(int));
-	enviar(socket, path, *size);
-	log_debug(logger, "Recibiendo archivos del servidor");
-	recibir(socket, tamanio, sizeof(int));
-	osada_file* files = calloc(*tamanio, sizeof(osada_file));
-	recibir(socket, files, (*tamanio) * sizeof(osada_file));
 
-	return files;
-}

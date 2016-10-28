@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <commons/bitarray.h>
 #include <commons/log.h>
+#include <commons/collections/list.h>
 #include <osada.h>
 #include <commons/string.h>
 #include <unistd.h>
@@ -38,7 +39,7 @@ osada_file* findFile(char ** route, osada * disk, int pathQuantity, uint32_t * p
 
 void printHeader(osada_header* osadaHeader);
 
-void* leerArchivo(char* ruta,osada* FS);
+void* leerArchivo(char* ruta,osada* FS,int tamanio);
 
 uint32_t encontrarPosicionEnTablaDeArchivos(char* ruta,osada* FS);
 
@@ -68,6 +69,6 @@ _Bool borrarDirectorio(char* ruta,osada* FS);
 
 void listarContenido(char* ruta, osada* FS,osada_file* vector, int* size);
 
-
+ void enviarContenido(osada* FS,int fd);
 
 #endif /* OSADAMASTER_H_ */
