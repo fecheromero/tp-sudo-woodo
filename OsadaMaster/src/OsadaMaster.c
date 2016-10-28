@@ -468,19 +468,7 @@ void enviarContenido(osada* FS,int fd){
 	free(offset);
 	free(size);
 }
-typedef struct base{
-	int fd;
-	osada* FS;
-}base;
-typedef enum {
-	LISTDIR,
-	RCBFILE,
-	ENVCONT,
-}discriEnum;
-typedef struct discriminator{
-	char* string;
-	discriEnum enumerable;
-}discriminator;
+
 
 void* hilo_atendedor(base* bas){
 	while(true){
@@ -517,6 +505,7 @@ void* hilo_atendedor(base* bas){
 }
 int main(void) {
 	logger = log_create("log.txt", "PokedexServer", true, logLevel);
+	initOsadaSync();
 	int pagesize;
 	osada_block * data;
 	discriminators=list_create();
@@ -535,8 +524,7 @@ int main(void) {
 
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
-	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
-	//CAMBIAR ESTA RUTA WACHIN
+	int fd = open("challenge.bin", O_RDWR, 0);
 	if (fd != -1) {
 		pagesize = getpagesize();
 		off_t fsize;

@@ -12,6 +12,7 @@
 #include <commons/bitarray.h>
 #include <commons/log.h>
 #include <commons/collections/list.h>
+#include <commons/collections/dictionary.h>
 #include <osada.h>
 #include <commons/string.h>
 #include <unistd.h>
@@ -30,6 +31,25 @@ typedef struct osada {
 	uint32_t* asignaciones;
 	osada_block* datos;
 } osada;
+
+typedef enum{
+	READ,
+	WRITE,
+	FREE
+}osada_operation;
+//Recibe la poisicion en la tabla de archivos y la operacion que se quiere hacer/hizo "READ O WRITE"
+void waitFileSemaphore(int file, osada_operation operation);
+void freeFileSemaphore(int file, osada_operation operation);
+void initOsadaSync();
+
+
+
+typedef struct{
+	osada_operation operation;
+	pthread_cond_t * condition;
+	pthread_mutex_t * mutex;
+	int reading;
+}osada_sync_struct;
 
 bool isTheFile(osada_file * file, char** route, int pathQuantity, osada * disk);
 
@@ -70,5 +90,19 @@ _Bool borrarDirectorio(char* ruta,osada* FS);
 void listarContenido(char* ruta, osada* FS,osada_file* vector, int* size);
 
  void enviarContenido(osada* FS,int fd);
+
+ typedef struct base{
+ 	int fd;
+ 	osada* FS;
+ }base;
+ typedef enum {
+ 	LISTDIR,
+ 	RCBFILE,
+ 	ENVCONT,
+ }discriEnum;
+ typedef struct discriminator{
+ 	char* string;
+ 	discriEnum enumerable;
+ }discriminator;
 
 #endif /* OSADAMASTER_H_ */
