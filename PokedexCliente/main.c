@@ -17,20 +17,6 @@ t_log * logger;
 int socketPokedexServer;
 
 
-/*
- * @DESC
- *  Esta función va a ser llamada cuando a la biblioteca de FUSE le llege un pedido
- * para obtener la metadata de un archivo/directorio. Esto puede ser tamaño, tipo,
- * permisos, dueño, etc ...
- *
- * @PARAMETROS
- * 		path - El path es relativo al punto de montaje y es la forma mediante la cual debemos
- * 		       encontrar el archivo o directorio que nos solicitan
- * 		stbuf - Esta esta estructura es la que debemos completar
- *
- * 	@RETURN
- * 		O archivo/directorio fue encontrado. -ENOENT archivo/directorio no encontrado
- */
 
 static int tp_getattr(const char *path, struct stat *stbuf) {
 	pthread_mutex_lock(&SEM_EXEC);
@@ -40,23 +26,14 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  memset(stbuf, 0, sizeof(struct stat));
 
  osada_file* file=recibirFile(path,socketPokedexServer);
- //Neceisto: tipo, tamaño, link
- //envio: path de archivo
-
- //recibir(); //tipo de archivo (S_IFDIR/S_IFREG) + tamaño archivo (size) + link (cantidad de carpetas que hay que entrar para llegar al
- //Transformar lo que devuelva el server a los parametros tipo, permisos, link y size que necesito
- if(file->state==DIRECTORY){
- //Le damos los permisos nosotros
+  if(file->state==DIRECTORY){
  stbuf->st_mode = S_IFDIR | 0755;
  stbuf->st_nlink=2;
  log_debug(logger,"directorio: %s", file->fname);
- //Para el link, tendriamos que iterar en el parent directory hasta que llegue a / y eso es lo que ponemos. Aunque no se si es necesario
- //stbuf->st_nlink = link;
- }else if(file->state == REGULAR){
+  }else if(file->state == REGULAR){
  stbuf->st_mode = S_IFREG | 0444;
  stbuf->st_nlink=1;
- //stbuf->st_nlink = link;
- stbuf->st_size = file->file_size;
+  stbuf->st_size = file->file_size;
  log_debug(logger,"archivo: %s tamaño: %d", file->fname,file->file_size);
  }else{
 
@@ -65,28 +42,13 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  }
  int* ok=calloc(1,sizeof(int));
  recibir(socketPokedexServer,ok,sizeof(int));
+ log_info(logger,"recibi el ok: %d",*ok);
+
  free(ok);
  pthread_mutex_unlock(&SEM_EXEC);
  return res;
  }
 
-
- /*
- * @DESC
- *  Esta función va a ser llamada cuando a la biblioteca de FUSE le llege un pedido
- * para obtener la lista de archivos o directorios que se encuentra dentro de un directorio
- *
- * @PARAMETROS
- * 		path - El path es relativo al punto de montaje y es la forma mediante la cual debemos
- * 		       encontrar el archivo o directorio que nos solicitan
- * 		buf - Este es un buffer donde se colocaran los nombres de los archivos y directorios
- * 		      que esten dentro del directorio indicado por el path
- * 		filler - Este es un puntero a una función, la cual sabe como guardar una cadena dentro
- * 		         del campo buf
- *
- * 	@RETURN
- * 		O directorio fue encontrado. -ENOENT directorio no encontrado
- */
 
 
  static int tp_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
@@ -98,12 +60,14 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  int * cantArchivos=calloc(1,sizeof(int));
  osada_file* vector = listarDirServer(path,socketPokedexServer, cantArchivos);
  for (i = 0; i < (*cantArchivos); i++) {
-	 log_debug(logger,"cargo: %s",vector[i].fname);
+	 log_debug(logger,"cargo: %s tipo: %d size: %d",vector[i].fname,vector[i].state,vector[i].file_size);
 	 filler(buf, vector[i].fname, NULL, 0);
  }
  free(cantArchivos);
  int* ok=calloc(1,sizeof(int));
  recibir(socketPokedexServer,ok,sizeof(int));
+ log_info(logger,"recibi el ok: %d",*ok);
+
  free(ok);
  pthread_mutex_unlock(&SEM_EXEC);
  return 0;
@@ -116,6 +80,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 		 char* discriminator=calloc(7,sizeof(char));
 		 string_append(&discriminator,"envCont");
 		 enviar(socketPokedexServer,discriminator,7);
+
 		 free(discriminator);
 		int* sizePath = calloc(1, sizeof(int));
 	 	*sizePath = string_length(path);
@@ -132,38 +97,68 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 		free(contenido);
 		int* ok=calloc(1,sizeof(int));
 		recibir(socketPokedexServer,ok,sizeof(int));
+		log_info(logger,"recibi el ok: %d",*ok);
 		free(ok);
 		pthread_mutex_unlock(&SEM_EXEC);
 	 return size;
  }
 
- static int tp_unlink(const char *path)
- {
- /*enviar(); //Eliminar + path
- recibir();//0(bien), -1(error)
+ static int tp_unlink(const char *path){
+	pthread_mutex_lock(&SEM_EXEC);
+	log_info(logger,"Borrando: %s",path);
+	char* discriminator=calloc(7,sizeof(char));
+	string_append(&discriminator,"unlinkF");
+	enviar(socketPokedexServer,discriminator,7);
+	free(discriminator);
+	int* sizePath = calloc(1, sizeof(int));
+	*sizePath = string_length(path);
+	enviar(socketPokedexServer, sizePath, sizeof(int));
+	enviar(socketPokedexServer, path, *sizePath);
+	free(sizePath);
+	int* ok=calloc(1,sizeof(int));
+	recibir(socketPokedexServer,ok,sizeof(int));
+	free(ok);
+	pthread_mutex_unlock(&SEM_EXEC);
 
- //Necesito: Eliminar un archivo del fs + confirmacion
- //Envio: Path
 
 
- if(recibir() == -1){
- return -errno;
- }*/
 
  return 0;
  }
+int tp_opendir (const char * path, struct fuse_file_info * filler){
+	return 1;
+};
+int tp_open(const char * path, struct fuse_file_info * filler){
+	return 1;
+};
+int tp_mkdir (const char * path, mode_t mod){
+	pthread_mutex_lock(&SEM_EXEC);
+	log_info(logger,"Borrando: %s",path);
+	char* discriminator=calloc(7,sizeof(char));
+	string_append(&discriminator,"makeDir");
+	enviar(socketPokedexServer,discriminator,7);
+	free(discriminator);
+	int* sizePath = calloc(1, sizeof(int));
+	*sizePath = string_length(path);
+	enviar(socketPokedexServer, sizePath, sizeof(int));
+	enviar(socketPokedexServer, path, *sizePath);
+	free(sizePath);
+	int* ok=calloc(1,sizeof(int));
+	recibir(socketPokedexServer,ok,sizeof(int));
+	free(ok);
+	pthread_mutex_unlock(&SEM_EXEC);
 
- /*
- * Esta es la estructura principal de FUSE con la cual nosotros le decimos a
- * biblioteca que funciones tiene que invocar segun que se le pida a FUSE.
- * Como se observa la estructura contiene punteros a funciones.
- */
+}
 
  static struct fuse_operations funciones = {
  .getattr = tp_getattr,
  .readdir = tp_readdir,
  .read = tp_read,
- //.unlink= tp_unlink,
+ .unlink= tp_unlink,
+ //.open=tp_open,
+ //.opendir=tp_opendir,
+ .mkdir=tp_mkdir,
+
  };
  osada_file* listarDirServer(char* path, int socket, int* tamanio) {
 	 char* discriminator=calloc(7,sizeof(char));
@@ -186,6 +181,7 @@ osada_file* recibirFile(char* path,int socket){
 	char* discriminator=calloc(7,sizeof(char));
 		 string_append(&discriminator,"rcbFile");
 		 enviar(socket,discriminator,7);
+		 log_info(logger,"envie");
 		 free(discriminator);
 		 int* size = calloc(1, sizeof(int));
 		  	*size = string_length(path);

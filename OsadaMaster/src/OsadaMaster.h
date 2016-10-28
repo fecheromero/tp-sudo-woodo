@@ -99,6 +99,8 @@ void listarContenido(char* ruta, osada* FS,osada_file* vector, int* size);
  	LISTDIR,
  	RCBFILE,
  	ENVCONT,
+ 	UNLINKF,
+ 	MAKEDIR,
  }discriEnum;
  typedef struct discriminator{
  	char* string;

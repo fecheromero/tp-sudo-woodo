@@ -35,7 +35,7 @@ void* leerArchivo(char* ruta,osada* FS,int tamanio){ //no se puede hacer free al
 		osada_file* archivo=findFileWithPath(ruta,FS,NULL);
 		tamanio=archivo->file_size;
 		puts("asigne el tamanio");
-		char* file=calloc(1600,sizeof(char));
+		char* file=calloc(5000,sizeof(char));
 		puts("pedi memoria");
 	uint32_t siguienteBloque=FS->asignaciones[archivo->first_block];
 	printf("%d \n", archivo->file_size);
@@ -445,7 +445,7 @@ void enviarFilesContenidos(osada* FS,int fd){
 }
 void enviarContenido(osada* FS,int fd){
 	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
-	int* offset=calloc(1,sizeof(int));
+	off_t* offset=calloc(1,sizeof(off_t));
 
 			recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
 			char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
@@ -454,22 +454,48 @@ void enviarContenido(osada* FS,int fd){
 		int tamanioMaximo;
 		void* contenido=leerArchivo(ruta,FS,&tamanioMaximo);
 		free(ruta);
+		free(size);
+		size_t* otroSize=calloc(1,sizeof(size_t));
 		puts("pase");
-		recibir(fd,size,sizeof(int)); //reutilizo el size para el size de lectura
+		recibir(fd,otroSize,sizeof(size_t)); //reutilizo el size para el size de lectura
 		puts("recibi el size");
-		printf("size: %d",*size);
-		recibir(fd,offset,sizeof(int));
+		printf("size: %d",*otroSize);
+		recibir(fd,offset,sizeof(off_t));
 		printf("offset: %d",*offset);
 	void* contenidoApuntado=contenido+(*offset);
 	log_debug(logger,"lei");
 
-	enviar(fd,contenidoApuntado,*size);
+	enviar(fd,contenidoApuntado,*otroSize);
 	free(contenido);
 	free(offset);
-	free(size);
+	free(otroSize);
 }
 
-
+void borrarGenerico(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int));
+	recibir(fd,size,sizeof(int));
+	char* ruta=calloc(*size,sizeof(char));
+	recibir(fd,ruta,*size);
+	log_debug(logger, ruta);
+	osada_file* file = findFileWithPath(ruta,FS,NULL);
+	if(file->state==DIRECTORY){
+		borrarDirectorio(ruta,FS);
+	}else if(file->state==REGULAR){
+		borrarArchivo(ruta,FS);
+	}
+	free(size);
+	free(ruta);
+}
+void makeDir(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int));
+	recibir(fd,size,sizeof(int));
+	char* ruta=calloc(*size,sizeof(char));
+	recibir(fd,ruta,*size);
+	log_debug(logger, ruta);
+	crearDirectorio(ruta,FS);
+	free(size);
+	free(ruta);
+}
 void* hilo_atendedor(base* bas){
 	while(true){
 		puts("arranca un while");
@@ -482,6 +508,10 @@ void* hilo_atendedor(base* bas){
 		discriminator* d=list_find(discriminators,criteria);
 		free(disc);
 		switch(d->enumerable){
+			case UNLINKF:
+						puts("unlinkF");
+						borrarGenerico(bas->FS,bas->fd);
+						break;
 			case LISTDIR:
 				puts("listDir");
 				enviarFilesContenidos(bas->FS,bas->fd);
@@ -493,19 +523,29 @@ void* hilo_atendedor(base* bas){
 			case ENVCONT:
 				puts("envCont");
 				enviarContenido(bas->FS,bas->fd);
+				char* basurero=malloc(2500);
+
+				printf("basurero: %d",recibir(bas->fd,basurero,2500));
+				puts(basurero);
+				free(basurero);
 				break;
+			case MAKEDIR:
+				puts("makeDir");
+				makeDir(bas->FS,bas->fd);
+
 		}
 		log_debug(logger,"dando el OK");
 		int* ok=calloc(1,sizeof(int));
 		*ok=1;
 		enviar(bas->fd,ok,sizeof(int));
+		log_debug(logger,"dado el OK");
+
 		free(ok);
 	}
 	return 0;
 }
 int main(void) {
 	logger = log_create("log.txt", "PokedexServer", true, logLevel);
-	initOsadaSync();
 	int pagesize;
 	osada_block * data;
 	discriminators=list_create();
@@ -521,7 +561,14 @@ int main(void) {
 		d->string="envCont";
 		d->enumerable=ENVCONT;
 		list_add(discriminators,d);
-
+		d=calloc(1,sizeof(discriminator));
+			d->string="unlinkF";
+			d->enumerable=UNLINKF;
+			list_add(discriminators,d);
+			d=calloc(1,sizeof(discriminator));
+					d->string="makeDir";
+					d->enumerable=MAKEDIR;
+					list_add(discriminators,d);
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
 	int fd = open("challenge.bin", O_RDWR, 0);
