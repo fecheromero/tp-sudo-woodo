@@ -32,7 +32,11 @@ void printHeader(osada_header* osadaHeader) {
 
 void* leerArchivo(char* ruta,osada* FS,int tamanio){ //no se puede hacer free al puntero resultante D:
 	if(findFileWithPath(ruta,FS, NULL)!=NULL){
-		osada_file* archivo=findFileWithPath(ruta,FS,NULL);
+		uint32_t* posicion;
+		log_debug(logger, "Buscando archivo para leer");
+		osada_file* archivo=findFileWithPath(ruta,FS,posicion);
+		log_debug(logger, "Archivo encontrado");
+		waitFileSemaphore(*posicion, READ);
 		tamanio=archivo->file_size;
 		puts("asigne el tamanio");
 		char* file=calloc(5000,sizeof(char));
@@ -61,6 +65,7 @@ void* leerArchivo(char* ruta,osada* FS,int tamanio){ //no se puede hacer free al
 			siguienteBloque=FS->asignaciones[siguienteBloque];
 	}
 	puts("devolvi");
+	freeFileSemaphore(*posicion,READ);
 	return file;
 	}
 	else{
@@ -546,6 +551,7 @@ void* hilo_atendedor(base* bas){
 }
 int main(void) {
 	logger = log_create("log.txt", "PokedexServer", true, logLevel);
+	initOsadaSync();
 	int pagesize;
 	osada_block * data;
 	discriminators=list_create();

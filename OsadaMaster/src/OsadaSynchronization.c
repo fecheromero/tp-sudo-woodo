@@ -7,10 +7,13 @@
 
 #include "OsadaMaster.h"
 
+t_log_level logLevelSync = LOG_LEVEL_DEBUG;
+t_log * loggerSync;
 t_dictionary * syncMap;
 pthread_mutex_t * mapMutex = PTHREAD_MUTEX_INITIALIZER;
 
 void initOsadaSync() {
+	loggerSync = log_create("log.txt", "PokedexServerSync", true, logLevelSync);
 	syncMap = dictionary_create();
 	pthread_mutex_init(mapMutex, NULL);
 
@@ -75,6 +78,7 @@ int internalWaitSemaphore(int file, osada_operation operation){
 }
 
 void waitFileSemaphore(int file, osada_operation operation) {
+	log_debug(loggerSync, "Waiting semaphore");
 	while(internalWaitSemaphore(file, operation)==-1){
 
 	}
@@ -84,6 +88,7 @@ void waitFileSemaphore(int file, osada_operation operation) {
 
 
 void freeFileSemaphore(int file, osada_operation operation) {
+	log_debug(loggerSync, "Releasing Semaphore");
 	char * filePositionString;
 	sprintf(filePositionString, "%d", file);
 	pthread_mutex_lock(mapMutex);

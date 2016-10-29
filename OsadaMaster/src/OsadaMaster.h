@@ -24,6 +24,7 @@
 #define filesQuantity 2048
 #define BLOCKSIZE 64
 typedef  osada_file tablaDeArchivos[filesQuantity];
+
 typedef struct osada {
 	osada_header* header;
 	t_bitarray* bitmap;
