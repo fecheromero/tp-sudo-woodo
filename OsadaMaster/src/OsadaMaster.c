@@ -118,10 +118,13 @@ _Bool validarContenedor(char* ruta, osada* FS) {
 	size--;
 	size--;
 	char* rutaAnterior = calloc(255, sizeof(char));
-
-	while (size >= 0) {
-		string_append(&rutaAnterior, vectorRuta[size]);
-		size--;
+	int h=0;
+	while (h<=size) {
+		string_append(&rutaAnterior, vectorRuta[h]);
+		if(h!=size){
+			string_append(&rutaAnterior,"/");
+		}
+	h++;
 	}
 	osada_file* rdo = findFileWithPath(rutaAnterior, FS, NULL);
 	free(rutaAnterior);
@@ -349,7 +352,7 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 	}
 }
 _Bool crearDirectorio(char* ruta, osada* FS) {
-	if (findFileWithPath(ruta, FS, NULL)) {
+	if (findFileWithPath(ruta, FS, NULL)!=NULL) {
 		return false;
 	};
 	if (validarContenedor(ruta, FS)) {
@@ -785,6 +788,9 @@ int main(void) {
 
 	}
 	printHeader(osadaDisk->header);
+	//crearDirectorio("/a6",osadaDisk);
+	//crearDirectorio("/a6/b6",osadaDisk);
+	//crearDirectorio("/a6/b6/c6",osadaDisk);
 	mostrarContenido("/", osadaDisk);
 
 	int listener;
