@@ -36,7 +36,7 @@ void* leerArchivo(char* ruta,osada* FS,int tamanio){ //no se puede hacer free al
 		log_debug(logger, "Buscando archivo para leer");
 		osada_file* archivo=findFileWithPath(ruta,FS,posicion);
 		log_debug(logger, "Archivo encontrado");
-		waitFileSemaphore(*posicion, READ);
+		//waitFileSemaphore(*posicion, READ);
 		tamanio=archivo->file_size;
 		puts("asigne el tamanio");
 		char* file=calloc(5000,sizeof(char));
@@ -65,7 +65,7 @@ void* leerArchivo(char* ruta,osada* FS,int tamanio){ //no se puede hacer free al
 			siguienteBloque=FS->asignaciones[siguienteBloque];
 	}
 	puts("devolvi");
-	freeFileSemaphore(*posicion,READ);
+	//freeFileSemaphore(*posicion,READ);
 	return file;
 	}
 	else{
@@ -248,6 +248,40 @@ _Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS){
 	if(file!=NULL){
 		strcpy(&file->fname,nombreNuevo);//ojota
 	return true;
+	}
+	else{return false;}
+}
+_Bool reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS){
+	osada_file* file=findFileWithPath(ruta,FS, NULL);
+	if(file!=NULL){
+		char** vectorRuta=string_split(nuevaRuta,"/");
+				int j=0;
+				while(vectorRuta[j]!=NULL){
+					j++;
+				}
+				j--; //Hay que restarle, porque el valor actual ya es NULL
+				memcpy(file->fname,vectorRuta[j],17);
+				j--;
+				puts(file->fname);
+				char* padre=calloc(255,sizeof(char));
+				if(j<=-1){
+					string_append(&padre,"/");
+				}
+				int h=0;
+				printf("%d \n",j);
+				while(h<=j){
+					string_append(&padre,vectorRuta[h]);
+					if(h!=j){
+						string_append(&padre,"/");
+						}
+					h++;
+				}
+				puts(padre);
+		if(validarContenedor(padre,FS)){
+			file->parent_directory=encontrarPosicionEnTablaDeArchivos(padre,FS);
+			return true;
+		}
+		else{return false;}
 	}
 	else{return false;}
 }
@@ -462,7 +496,7 @@ void enviarContenido(osada* FS,int fd){
 		free(size);
 		size_t* otroSize=calloc(1,sizeof(size_t));
 		puts("pase");
-		recibir(fd,otroSize,sizeof(size_t)); //reutilizo el size para el size de lectura
+		recibir(fd,otroSize,sizeof(size_t));
 		puts("recibi el size");
 		printf("size: %d",*otroSize);
 		recibir(fd,offset,sizeof(off_t));
@@ -475,6 +509,27 @@ void enviarContenido(osada* FS,int fd){
 	free(offset);
 	free(otroSize);
 }
+
+typedef struct base{
+	int fd;
+	osada* FS;
+}base;
+
+typedef enum {
+	LISTDIR,
+	RCBFILE,
+	ENVCONT,
+	UNLINKF,
+	MAKEDIR,
+	WRITEFI,
+	MAKEFIL,
+	REALLOC,
+	REMVDIR,
+}discriEnum;
+typedef struct discriminator{
+	char* string;
+	discriEnum enumerable;
+}discriminator;
 
 void borrarGenerico(osada* FS,int fd){
 	int* size=calloc(1,sizeof(int));
@@ -501,6 +556,57 @@ void makeDir(osada* FS,int fd){
 	free(size);
 	free(ruta);
 }
+void writeFi(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
+	off_t* offset=calloc(1,sizeof(off_t));
+	recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
+	char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
+	recibir(fd,ruta,*size); //recibo la ruta
+	log_debug(logger, ruta);
+   	size_t* sizeBuf=calloc(1,sizeof(size_t));
+	recibir(fd,sizeBuf,sizeof(size_t));
+	printf("size: %d",*sizeBuf);
+	void* buf=calloc(*sizeBuf,sizeof(char));
+	recibir(fd,buf,*sizeBuf);
+	recibir(fd,offset,sizeof(off_t));
+	printf("offset: %d",*offset);
+	agregarContenidoAArchivo(ruta,FS,buf,*sizeBuf);
+	log_debug(logger,"escribi");
+		free(ruta);
+		free(size);
+		free(buf);
+		free(offset);
+		free(sizeBuf);
+
+}
+void makeFi(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
+	recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
+	char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
+	recibir(fd,ruta,*size); //recibo la ruta
+	log_debug(logger, ruta);
+	crearArchivo(ruta,NULL,0,FS);
+   	free(ruta);
+	free(size);
+}
+void reubicar(osada* FS,int fd){
+	int* size=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
+	recibir(fd,size,sizeof(int)); //recibo la cantidad de bytes de la ruta
+	char* ruta=calloc(*size,sizeof(char)); //pido memoria para la ruta
+	recibir(fd,ruta,*size); //recibo la ruta
+	log_debug(logger, ruta);
+	int* sizeNew=calloc(1,sizeof(int)); //pido memoria para el size de la ruta
+	recibir(fd,sizeNew,sizeof(int)); //recibo la cantidad de bytes de la ruta
+	char* rutaNew=calloc(*sizeNew,sizeof(char)); //pido memoria para la ruta
+	recibir(fd,rutaNew,*sizeNew); //recibo la ruta
+	log_debug(logger, rutaNew);
+	reubicarArchivo(ruta,rutaNew,FS);
+   	free(ruta);
+   	free(rutaNew);
+	free(size);
+	free(sizeNew);
+}
+
 void* hilo_atendedor(base* bas){
 	while(true){
 		puts("arranca un while");
@@ -512,6 +618,7 @@ void* hilo_atendedor(base* bas){
 		log_debug(logger,"ejecutando: %s",disc);
 		discriminator* d=list_find(discriminators,criteria);
 		free(disc);
+		char* basurero;
 		switch(d->enumerable){
 			case UNLINKF:
 						puts("unlinkF");
@@ -528,8 +635,7 @@ void* hilo_atendedor(base* bas){
 			case ENVCONT:
 				puts("envCont");
 				enviarContenido(bas->FS,bas->fd);
-				char* basurero=malloc(2500);
-
+				basurero=malloc(2500);
 				printf("basurero: %d",recibir(bas->fd,basurero,2500));
 				puts(basurero);
 				free(basurero);
@@ -537,7 +643,28 @@ void* hilo_atendedor(base* bas){
 			case MAKEDIR:
 				puts("makeDir");
 				makeDir(bas->FS,bas->fd);
+				break;
+			case WRITEFI:
+				puts("writeFi");
+				writeFi(bas->FS,bas->fd);
+				basurero=malloc(2500);
+				printf("basurero: %d",recibir(bas->fd,basurero,2500));
+				puts(basurero);
+				free(basurero);
 
+				break;
+			case MAKEFIL:
+				puts("makeFil");
+				makeFi(bas->FS,bas->fd);
+				break;
+			case REALLOC:
+				puts("realloc");
+				reubicar(bas->FS,bas->fd);
+				break;
+			case REMVDIR:
+				puts("remvDir");
+				borrarGenerico(bas->FS,bas->fd);
+				break;
 		}
 		log_debug(logger,"dando el OK");
 		int* ok=calloc(1,sizeof(int));
@@ -551,7 +678,7 @@ void* hilo_atendedor(base* bas){
 }
 int main(void) {
 	logger = log_create("log.txt", "PokedexServer", true, logLevel);
-	initOsadaSync();
+	//initOsadaSync();
 	int pagesize;
 	osada_block * data;
 	discriminators=list_create();
@@ -564,20 +691,37 @@ int main(void) {
 	d->enumerable=RCBFILE;
 	list_add(discriminators,d);
 	d=calloc(1,sizeof(discriminator));
-		d->string="envCont";
-		d->enumerable=ENVCONT;
-		list_add(discriminators,d);
-		d=calloc(1,sizeof(discriminator));
-			d->string="unlinkF";
-			d->enumerable=UNLINKF;
-			list_add(discriminators,d);
-			d=calloc(1,sizeof(discriminator));
-					d->string="makeDir";
-					d->enumerable=MAKEDIR;
-					list_add(discriminators,d);
+	d->string="envCont";
+	d->enumerable=ENVCONT;
+	list_add(discriminators,d);
+	d=calloc(1,sizeof(discriminator));
+	d->string="unlinkF";
+	d->enumerable=UNLINKF;
+	list_add(discriminators,d);
+	d=calloc(1,sizeof(discriminator));
+	d->string="makeDir";
+	d->enumerable=MAKEDIR;
+	list_add(discriminators,d);
+	d=calloc(1,sizeof(discriminator));
+	d->string="writeFi";
+	d->enumerable=WRITEFI;
+	list_add(discriminators,d);
+	d=calloc(1,sizeof(discriminator));
+	d->string="makeFil";
+	d->enumerable=MAKEFIL;
+	list_add(discriminators,d);
+	d=calloc(1,sizeof(discriminator));
+	d->string="realloc";
+	d->enumerable=REALLOC;
+	list_add(discriminators,d);
+	d=calloc(1,sizeof(discriminator));
+	d->string="remvDir";
+	d->enumerable=REMVDIR;
+	list_add(discriminators,d);
 	osada* osadaDisk=calloc(1,sizeof(osada));
 
-	int fd = open("challenge.bin", O_RDWR, 0);
+	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
+	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();
 		off_t fsize;

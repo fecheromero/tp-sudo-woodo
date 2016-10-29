@@ -92,20 +92,4 @@ void listarContenido(char* ruta, osada* FS,osada_file* vector, int* size);
 
  void enviarContenido(osada* FS,int fd);
 
- typedef struct base{
- 	int fd;
- 	osada* FS;
- }base;
- typedef enum {
- 	LISTDIR,
- 	RCBFILE,
- 	ENVCONT,
- 	UNLINKF,
- 	MAKEDIR,
- }discriEnum;
- typedef struct discriminator{
- 	char* string;
- 	discriEnum enumerable;
- }discriminator;
-
 #endif /* OSADAMASTER_H_ */
