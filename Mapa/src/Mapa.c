@@ -130,7 +130,7 @@ void cargarMetaData(char* mapa){
 	DIR *dire;
 	dire = opendir(file);
  while((dt=readdir(dire))!=NULL){
- if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)&&(strcmp(dt->d_name,"PokeNests")!=0)&&(strcmp(dt->d_name,"metadata")!=0)){
+ if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)&&(strcmp(dt->d_name,"PokeNests")!=0)&&(strcmp(dt->d_name,"metadata")!=0)&&(strcmp(dt->d_name,"log")!=0)){
 
 	 if(string_length(MAPA->medalla)==0){
 		 string_append(&MAPA->medalla,dt->d_name);
@@ -216,16 +216,16 @@ void capt(entrenador* ent,void* buf){
 
 				pokemon* instancia=list_remove(poke->pokeNest->instancias,0);
 
-				char* dirDePokemon=string_new();
+				char* dirDePokemon=calloc(500,sizeof(char));
 				string_append(&dirDePokemon,poke->pokeNest->nombre);
 				string_append(&dirDePokemon,"/");
 				string_append(&dirDePokemon,instancia->nombre);
-				int* size=malloc(sizeof(int));
+				int* size=calloc(1,sizeof(int));
 				*size=string_length(dirDePokemon);
 				ent->pasosHastaLaPN=-1;
 				enviar(ent->fd,size,sizeof(int));
 				enviar(ent->fd,dirDePokemon,*size);
-
+				free(dirDePokemon);
 
 				nest->quantity--;
 				list_add(ent->pokemonsCapturados,instancia);
@@ -292,25 +292,25 @@ entrenador* sacarProximo(){
 
 
 void cumplirAccion(entrenador* ent,void* buf){
-	char* buff=calloc(7,sizeof(char));
-	buff=string_substring_until(buf,7);
+	char* buff=string_substring_until(buf,7);
 	bool criterio(accion* acc){
 
 		return (strcmp(acc->string,buff)==0);
 	};
 	accion* act=list_find(acciones,criterio);
-
+	free(buff);
 	char* arg=malloc(sizeof(char)*255);
 	switch(act->enumerable){
 	case mover:
 
-		arg=string_new();
+		arg=calloc(1,sizeof(char));
 		recibir(ent->fd,arg,1);
 		bool crit(sentido* sent){
 			return (arg[0]==sent->caracter);
 		};
 
 		sentido* sent=list_find(sentidos,crit);
+		free(arg);
 			switch(sent->enumerable){
 			case IZQ:
 				movIz(items,ent->id,mapaNombre);
@@ -337,12 +337,13 @@ void cumplirAccion(entrenador* ent,void* buf){
 			capt(ent,buf);
 		break;
 	case conocer:
-			arg=string_new();
+			arg=calloc(1,sizeof(char));
 		recibir(ent->fd,arg,1);
 
 		int total=0;
 		ITEM_NIVEL* item=buscarItemXId(arg[0]);
 		ITEM_NIVEL* itemEntr=buscarItemXId(ent->id);
+		free(arg);
 		int* coord=malloc(sizeof(int));
 		*coord=item->posx;
 		total=(total+modulo((itemEntr->posx-item->posx)));
@@ -363,13 +364,14 @@ void cumplirAccion(entrenador* ent,void* buf){
 		break;
 	case medalla:
 
-		arg=string_new();
+		arg=calloc(255,sizeof(char));
 		int* size=malloc(sizeof(int));
 		*size=string_length(MAPA->medalla);
 		string_append(&arg,MAPA->medalla);
 		enviar(ent->fd,size,sizeof(int));
 		enviar(ent->fd,arg,*size);
 		free(size);
+		free(arg);
 		break;
 	};
 }; //switch con las posibles acciones que puede hacer el entrenador
@@ -491,10 +493,11 @@ int darPasoA(entrenador* entrenador,char* respuesta){
 };
 //agarra al primero de la cola de READY y le cumple una accion (la idea es que cada accion sepa lo q tiene q hacer incluido modificar los semaforos que correspondan)
 void ejecutar(entrenador* entr){
-	char* pedido=string_new();
+	char* pedido=calloc(7,sizeof(char));
 	if(darPasoA(entr,pedido)){
 
 							cumplirAccion(entr,pedido);
+							free(pedido);
 							if(atendido!=NULL){
 
 								pthread_mutex_lock(&SEM_ATENDIDO);
@@ -572,7 +575,7 @@ void* hilo_Planificador(void* sarlompa){
 void* hilo_Conector(void* sarlompa){
 	int listener;
 		listener=crearSocket();
-		bindearSocket(listener,MYPORT,IP_LOCAL);
+		bindearSocket(listener,MAPA->puerto,MAPA->ip);
 		socketEscucha(listener,5);
 		fd_set read_fds;
 		fd_set master;
@@ -600,14 +603,13 @@ void* hilo_Conector(void* sarlompa){
 								int* size=calloc(1,sizeof(int));
 								recibir(nuevoFd,size,sizeof(int));
 								char* nombre=calloc(*size,sizeof(char));
-									nombre=string_new();
 								recibir(nuevoFd,nombre,*size);
 								nombre=string_substring_until(nombre,*size);
 								free(size);
 								nuevoEntrenador->nombre=nombre;
 								nuevoEntrenador->quantum=MAPA->quantum;
 								nuevoEntrenador->pokemonsCapturados=list_create();
-								char* id=string_new();
+								char* id=calloc(1,sizeof(char));
 								recibir(nuevoFd,id,1);
 								nuevoEntrenador->id=id[0];
 								nuevoEntrenador->pedido=NULL;
@@ -832,9 +834,8 @@ while(true){
 };
 void cargarPokemons(char *mapa){
 
- char* direccionVariable=malloc(sizeof(char)*255);
+ char* direccionVariable=calloc(500,sizeof(char));
  	   string_append(&direccionVariable,POKEDEX);
-
 
  string_append(&direccionVariable,"/Mapas/");
 
@@ -848,63 +849,55 @@ DIR *dire;
  //Recorrer directorio
  while((dt=readdir(dire))!=NULL){
  if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)){
-
-	 pokeNest* nests=malloc(sizeof(pokeNest));
+	 pokeNest* nests=calloc(1,sizeof(pokeNest));
 	 int x;
 	 int y;
 	 int cantidadDePokemons=0;
-    nests->instancias=malloc(sizeof(pokemon)*15);
     nests->instancias=list_create();
-    nests->nombre=malloc(sizeof(char)*100);
-    nests->nombre=string_new();
-    string_append(&nests->nombre,dt->d_name);
+    nests->nombre=calloc(100,sizeof(char));
+    strcpy(nests->nombre,dt->d_name);
  //Cargar pokemons
  		   struct dirent *dt2;
  		   DIR *dire2;
- 		   	char* direccionDeNests=string_new();
+ 		   	char* direccionDeNests=calloc(800,sizeof(char));
  		   	string_append(&direccionDeNests,direccionVariable);
  		 string_append(&direccionDeNests,"/");
  		 string_append(&direccionDeNests,nests->nombre);
  		   dire2 = opendir(direccionDeNests);
-
- 		   while((dt2=readdir(dire2))!=NULL){
+ 			   while((dt2=readdir(dire2))!=NULL){
  			if((strcmp(dt2->d_name,".")!=0)&&(strcmp(dt2->d_name,"..")!=0)){
- 				 char* direccionDeArchivo=string_new();
+ 				 char* direccionDeArchivo=calloc(800,sizeof(char));
  					string_append(&direccionDeArchivo,direccionDeNests);
  					 string_append(&direccionDeArchivo,"/");
  				 	string_append(&direccionDeArchivo,dt2->d_name);
  				if(strcmp(dt2->d_name,"metadata")!=0){
-
- 			   	   pokemon* nuevoPokemon=malloc(sizeof(pokemon));
+ 			   	   pokemon* nuevoPokemon=calloc(1,sizeof(pokemon));
  			   	   cantidadDePokemons++;
- 			   	   	  nuevoPokemon->nombre=malloc(sizeof(char)*255);
- 			   	   	  nuevoPokemon->nombre=string_new();
+ 			   	   	  nuevoPokemon->nombre=calloc(255,sizeof(char));
  			   	  string_append(&nuevoPokemon->nombre,dt2->d_name);
-
- 			   	   t_config* archivo=malloc(sizeof(t_config));
+ 			   	   t_config* archivo=calloc(1,sizeof(t_config));
  			   	   archivo=config_create(direccionDeArchivo);
  			   	    nuevoPokemon->nivel=config_get_int_value(archivo,"Nivel");
  			   	    free(archivo);
  			   	   list_add(nests->instancias,nuevoPokemon);
+
  			   }
  				else{
- 					t_config* metadata=malloc(sizeof(t_config));
-
- 					metadata=config_create(direccionDeArchivo);
- 					nests->id=config_get_string_value(metadata,"Identificador")[0];
- 					nests->tipo=malloc(sizeof(char)*50);
- 					nests->tipo=string_new();
- 					nests->tipo=config_get_string_value(metadata,"Tipo");
- 					char* pos=config_get_string_value(metadata,"Posicion");
-
+ 					t_config* metadata=config_create(direccionDeArchivo);
+				    nests->id=config_get_string_value(metadata,"Identificador")[0];
+ 					nests->tipo=calloc(100,sizeof(char));
+ 					strcpy(nests->tipo,config_get_string_value(metadata,"Tipo"));
+ 					char* pos=calloc(60,sizeof(char));
+ 					strcpy(pos,config_get_string_value(metadata,"Posicion"));
 
  		 		   char** posiciones=string_split(pos,";");
  		 		    x=atoi(posiciones[0]);
  		 		    y=atoi(posiciones[1]);
-
- 					free(metadata);
+ 		 		    free(pos);
+					free(metadata);
 
  				}
+ 					free(direccionDeArchivo);
 		 		   void rellenarIds(pokemon* poke){
 		 			   poke->id=nests->id;
 		 			 };
@@ -913,9 +906,10 @@ DIR *dire;
 
  			}
  		   }
+ 		   free(direccionDeNests);
 
 			 CrearCaja(items,nests->id,x,y,list_size(nests->instancias));
-bloqueadosXPokemon* elem=malloc(sizeof(bloqueadosXPokemon));
+bloqueadosXPokemon* elem=calloc(1,sizeof(bloqueadosXPokemon));
  		   elem->pokeNest=nests;
  		   elem->liberados=0;
  		   elem->bloqueados=queue_create();
@@ -948,12 +942,10 @@ void crearLog(char* nombreMapa){
 int main(int cant,char* argumentos[]) {
 	signal(SIGUSR2,recargarMetaData);
 	signal(SIGPIPE,signalIgnore);
-	/*char* nom=malloc(sizeof(char)*100);
-	puts("ingrese nombre del mapa");
-	scanf("%s",nom);*/
+
 	mapaNombre=malloc(sizeof(char)*100);
 		string_append(&mapaNombre,argumentos[1]);
-		/*free(nom);*/
+
 	puts("ingrese direccion de la pokeDex");
 	//inicializaciones D:
 	MAPA=malloc(sizeof(map));
@@ -968,6 +960,7 @@ int main(int cant,char* argumentos[]) {
 	  atendido=NULL;
 	  POKEDEX=malloc(sizeof(char)*255);
 	  string_append(&POKEDEX,"/home/utnso/tp-2016-2c-Sudo-woodo/PokedexCliente/tmp/PokeDex");
+	  puts(POKEDEX);
 	 acciones=list_create();
 	  pokemons=malloc(sizeof(bloqueadosXPokemon)*50);
 	  pokemons=list_create();
@@ -1007,8 +1000,9 @@ int main(int cant,char* argumentos[]) {
 		  list_add(sentidos,sent);
 		  //carga de metadata
 	  crearLog(mapaNombre);
+	  puts("antes del meta");
 		  cargarMetaData(mapaNombre);
-
+		  puts("despues del meta");
 	  	int rows, cols;
 
 	  	items = list_create();
@@ -1020,16 +1014,15 @@ int main(int cant,char* argumentos[]) {
 		  int rd2=pthread_create(&thread_planificador,NULL,hilo_Planificador,NULL);
 		  if(rd2!=0){puts("fallo");};
 		  pthread_t thread_deadLock;
-		  int rd3=pthread_create(&thread_deadLock,NULL,hilo_DeadLock,NULL);
-				  if(rd3!=0){puts("fallo");};
+		  //int rd3=pthread_create(&thread_deadLock,NULL,hilo_DeadLock,NULL);
+			//	  if(rd3!=0){puts("fallo");};
 		//inicializar mapa
 	  	nivel_gui_inicializar();
 
 	  	//tamaño del mapa
 	  	nivel_gui_get_area_nivel(&rows, &cols);
 	   //carga de pokemons (recorre directorio)
-	  cargarPokemons(mapaNombre);
-
+					  cargarPokemons(mapaNombre);
 	  /*bloqueadosXPokemon* bloq=list_get(pokemons,2);
 	  	  	  pokemon* poke=list_get(bloq->pokeNest->instancias,0);
 	  	  	  puts(poke->nombre);*/

@@ -30,14 +30,16 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  stbuf->st_mode = S_IFDIR | 0755;
  stbuf->st_nlink=2;
  log_debug(logger,"directorio: %s", file->fname);
+ free(file);
   }else if(file->state == REGULAR){
  stbuf->st_mode = S_IFREG | 0666;
  stbuf->st_nlink=1;
   stbuf->st_size = file->file_size;
  log_debug(logger,"archivo: %s tamaño: %d", file->fname,file->file_size);
- }else{
-
+ free(file);
+  }else{
 	 log_debug(logger,"IGNORED: %s", file->fname);
+	 free(file);
  res = -ENOENT;
  }
  int* ok=calloc(1,sizeof(int));
@@ -64,6 +66,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 	 filler(buf, vector[i].fname, NULL, 0);
  }
  free(cantArchivos);
+ free(vector);
  int* ok=calloc(1,sizeof(int));
  recibir(socketPokedexServer,ok,sizeof(int));
  log_info(logger,"recibi el ok: %d",*ok);
@@ -295,17 +298,8 @@ int main(int argc, char *argv[]) {
 	socketPokedexServer = crearSocket();
 	log_debug(logger, "Conectando al servidor");
 	conectarSocket(socketPokedexServer, DEST_PORT, IP_LOCAL);
-	/*ruta = calloc(9, sizeof(char));
-	puts("Ingrese una ruta");
-	scanf("%s", ruta);
-	osada_file* vector = listarDirServer(ruta, socket, tamanio);
-	free(ruta);
-	for (n = 0; n < *tamanio; n++) {
-		printf("Elemento numero %d: fname: %s fsize: %d \n", n,
-				(vector[n]).fname, (vector[n]).file_size);
-	}*/
+
 	return fuse_main(argc, argv, &funciones, NULL);
-	//return 0;
 }
 
 

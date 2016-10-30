@@ -295,8 +295,11 @@ _Bool reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS) {
 		if (validarContenedor(padre, FS)) {
 			file->parent_directory = encontrarPosicionEnTablaDeArchivos(padre,
 					FS);
+			free(padre);
 			return true;
 		} else {
+
+			free(padre);
 			return false;
 		}
 	} else {
@@ -356,47 +359,6 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 			memcpy(FS->datos[bloque], (data+offset), (size-offset));
 
 		}
-		/*int resto = size-file->file_size;
-		char* agregado=calloc(resto,sizeof(char));
-			memcpy(agregado,(data+file->file_size),resto);
-		int offset=0;
-		int offsetDelBloque;
-		int restante = (cantidadDeBloques * 64-file->file_size );
-		if (restante > 0) {
-			int cantidadACopiar;
-			if(resto<restante){
-				cantidadACopiar=resto;
-			}
-			else{
-				cantidadACopiar=restante;
-			}
-			offsetDelBloque=64-restante;
-			memcpy((FS->datos[ultimoBloque]+offsetDelBloque), (agregado + offset), cantidadACopiar);
-			offset=offset + cantidadACopiar;
-			resto = resto - cantidadACopiar;
-		}
-		while (resto >= 64) {
-			int bloque = bloqueDisponible(FS);
-			memcpy(FS->datos[bloque], (agregado+offset), 64);
-			bitarray_set_bit(FS->bitmap, bloque);
-			offset=offset+64;
-			resto = resto - 64;
-			FS->asignaciones[ultimoBloque] = bloque;
-			ultimoBloque = bloque;
-			FS->asignaciones[ultimoBloque] = 0xFFFFFFFF;
-		}
-		if (resto > 0) {
-			int bloque = bloqueDisponible(FS);
-			memcpy(FS->datos[bloque], (agregado + offset), resto);
-			bitarray_set_bit(FS->bitmap, bloque);
-			offset=offset+resto;
-			resto = 0;
-			FS->asignaciones[ultimoBloque] = bloque;
-			ultimoBloque = bloque;
-			FS->asignaciones[ultimoBloque] = 0xFFFFFFFF;
-
-		}
-		free(agregado);*/
 		file->file_size = size;
 		return true;
 
@@ -518,6 +480,7 @@ void enviarOsadaFile(osada* FS, int fd) {
 	ruta = string_substring_until(ruta, *size);
 	osada_file* file = NULL;
 	file = findFileWithPath(ruta, FS, NULL); //encuentro el file
+
 	if (file == NULL) {
 		file = calloc(1, sizeof(osada_file));
 		if (strcmp(ruta, "/") == 0) {
@@ -556,6 +519,7 @@ void enviarFilesContenidos(osada* FS, int fd) {
 	free(vector);
 	free(size); //libero
 	free(ruta);
+	free(i);
 
 }
 void enviarContenido(osada* FS, int fd) {
