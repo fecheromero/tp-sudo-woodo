@@ -130,7 +130,7 @@ void cargarMetaData(char* mapa){
 	DIR *dire;
 	dire = opendir(file);
  while((dt=readdir(dire))!=NULL){
- if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)&&(strcmp(dt->d_name,"PokeNests")!=0)){
+ if((strcmp(dt->d_name,".")!=0)&&(strcmp(dt->d_name,"..")!=0)&&(strcmp(dt->d_name,"PokeNests")!=0)&&(strcmp(dt->d_name,"metadata")!=0)){
 
 	 if(string_length(MAPA->medalla)==0){
 		 string_append(&MAPA->medalla,dt->d_name);
@@ -967,7 +967,7 @@ int main(int cant,char* argumentos[]) {
 	READY=queue_create();
 	  atendido=NULL;
 	  POKEDEX=malloc(sizeof(char)*255);
-	  string_append(&POKEDEX,"/home/utnso/PokeDex");
+	  string_append(&POKEDEX,"/home/utnso/tp-2016-2c-Sudo-woodo/PokedexCliente/tmp/PokeDex");
 	 acciones=list_create();
 	  pokemons=malloc(sizeof(bloqueadosXPokemon)*50);
 	  pokemons=list_create();

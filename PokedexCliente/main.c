@@ -90,7 +90,8 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 	 	log_debug(logger,"pidiendo: %d desde %d",size,offset);
 	 	enviar(socketPokedexServer,&size,sizeof(size_t));
 	 	enviar(socketPokedexServer,&offset,sizeof(off_t));
-	 	void* contenido=malloc(size);
+	 	log_debug(logger,"paso1");
+	 		void* contenido=malloc(size);
 	 	recibir(socketPokedexServer,contenido,size);
 		memcpy(buf,contenido,size);
 		log_debug(logger,"leido: %s", contenido);
@@ -290,9 +291,6 @@ osada_file* recibirFile(char* path,int socket){
 int main(int argc, char *argv[]) {
 	logger = log_create("log.txt", "PokedexCliente", true, logLevel);
 	pthread_mutex_init(&SEM_EXEC,NULL);
-	char* ruta;
-	int n;
-	int* tamanio = calloc(1, sizeof(int));
 	log_debug(logger, "Creando socket");
 	socketPokedexServer = crearSocket();
 	log_debug(logger, "Conectando al servidor");

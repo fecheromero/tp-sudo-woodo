@@ -60,7 +60,7 @@ osada_file* findFile(char ** route, osada * disk, int pathQuantity, uint32_t * p
 
 void printHeader(osada_header* osadaHeader);
 
-void* leerArchivo(char* ruta,osada* FS,int tamanio);
+void* leerArchivo(char* ruta,osada* FS,int* tamanio);
 
 uint32_t encontrarPosicionEnTablaDeArchivos(char* ruta,osada* FS);
 

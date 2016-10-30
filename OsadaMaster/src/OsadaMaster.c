@@ -30,16 +30,16 @@ void printHeader(osada_header* osadaHeader) {
 	printf("%d\n\n", osadaHeader->data_blocks);
 }
 
-void* leerArchivo(char* ruta, osada* FS, int tamanio) { //no se puede hacer free al puntero resultante D:
+void* leerArchivo(char* ruta, osada* FS, int* tamanio) { //no se puede hacer free al puntero resultante D:
 	uint32_t* posicion;
 	osada_file* archivo = findFileWithPath(ruta, FS, posicion);
 	if (archivo != NULL) {
 		log_debug(logger, "Buscando archivo para leer");
 		log_debug(logger, "Archivo encontrado");
 		//waitFileSemaphore(*posicion, READ);
-		tamanio = archivo->file_size;
+		*tamanio = archivo->file_size;
 		puts("asigne el tamanio");
-		char* file = calloc(5000, sizeof(char));
+		char* file = calloc(archivo->file_size, sizeof(char));
 		puts("pedi memoria");
 		uint32_t siguienteBloque = FS->asignaciones[archivo->first_block];
 		printf("%d \n", archivo->file_size);
@@ -138,7 +138,8 @@ uint32_t bloqueDisponible(osada* FS) {
 	int max = FS->header->bitmap_blocks * 64 * 8;
 	while (i <= max && flag) {
 		flag = bitarray_test_bit(FS->bitmap, i);
-		i++;
+		printf("%d",flag);
+		if(flag){i++;}
 	}
 	if (i != 0) {
 		return i;
@@ -181,7 +182,8 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 		file->file_size = size;
 		puts("paso");
 		file->first_block = bloqueLibre;
-
+		if(size==0){
+			bitarray_set_bit(FS->bitmap, bloqueLibre);}
 		char** vectorRuta = string_split(ruta, "/");
 		int j = 0;
 		while (vectorRuta[j] != NULL) {
@@ -317,19 +319,67 @@ int encontrarUltimoBloque(char* ruta, osada* FS) {
 _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size) {
 	osada_file* file = findFileWithPath(ruta, FS, NULL);
 	if (file != NULL) {
-		char* data = contenido; //esto lo hago para manejar bytes (1 char 1 byte)
-		int ultimoBloque = encontrarUltimoBloque(ruta, FS);
-		int cantidadDeBloques = file->file_size / 64;
-		int resto = size;
-		int i = 0;
-		int restante = (file->file_size - cantidadDeBloques * 64);
+		char* data = contenido;
+		//esto lo hago para manejar bytes (1 char 1 byte)
+		int offset=0;
+		int ultimoBloque;
+		int bloque=file->first_block;
+		while(bloque!=0xFFFFFFFF ){
+				if((size-offset)>64){
+			memcpy(FS->datos[bloque], (data+offset), 64);
+					offset=offset+64;
+					ultimoBloque=bloque;
+					bloque=FS->asignaciones[bloque];
+				}
+				else{
+					memcpy(FS->datos[bloque], (data+offset), (size-offset));
+									file->file_size=size;
+										return true;
+				}
+		}
+		bloque=ultimoBloque;
+		while((size-offset)>64){
+			int bloqueNuevo=bloqueDisponible(FS);
+			bitarray_set_bit(FS->bitmap,bloqueNuevo);
+			FS->asignaciones[bloque]=bloqueNuevo;
+			bloque=bloqueNuevo;
+			FS->asignaciones[bloque]=0xFFFFFFFF;
+			memcpy(FS->datos[bloque], (data+offset), 64);
+			offset=offset+64;
+		}
+		if((size-offset)>0){
+			int bloqueNuevo=bloqueDisponible(FS);
+			bitarray_set_bit(FS->bitmap,bloqueNuevo);
+			FS->asignaciones[bloque]=bloqueNuevo;
+			bloque=bloqueNuevo;
+			FS->asignaciones[bloque]=0xFFFFFFFF;
+			memcpy(FS->datos[bloque], (data+offset), (size-offset));
+
+		}
+		/*int resto = size-file->file_size;
+		char* agregado=calloc(resto,sizeof(char));
+			memcpy(agregado,(data+file->file_size),resto);
+		int offset=0;
+		int offsetDelBloque;
+		int restante = (cantidadDeBloques * 64-file->file_size );
 		if (restante > 0) {
-			memcpy(FS->datos[ultimoBloque], data, (64 - restante));
-			resto = resto - restante;
+			int cantidadACopiar;
+			if(resto<restante){
+				cantidadACopiar=resto;
+			}
+			else{
+				cantidadACopiar=restante;
+			}
+			offsetDelBloque=64-restante;
+			memcpy((FS->datos[ultimoBloque]+offsetDelBloque), (agregado + offset), cantidadACopiar);
+			offset=offset + cantidadACopiar;
+			resto = resto - cantidadACopiar;
 		}
 		while (resto >= 64) {
 			int bloque = bloqueDisponible(FS);
-			memcpy(FS->datos[bloque], data, 64);
+			memcpy(FS->datos[bloque], (agregado+offset), 64);
+			bitarray_set_bit(FS->bitmap, bloque);
+			offset=offset+64;
 			resto = resto - 64;
 			FS->asignaciones[ultimoBloque] = bloque;
 			ultimoBloque = bloque;
@@ -337,14 +387,17 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 		}
 		if (resto > 0) {
 			int bloque = bloqueDisponible(FS);
-			memcpy(FS->datos[bloque], data, resto);
+			memcpy(FS->datos[bloque], (agregado + offset), resto);
+			bitarray_set_bit(FS->bitmap, bloque);
+			offset=offset+resto;
 			resto = 0;
 			FS->asignaciones[ultimoBloque] = bloque;
 			ultimoBloque = bloque;
 			FS->asignaciones[ultimoBloque] = 0xFFFFFFFF;
 
 		}
-		file->file_size = file->file_size + size;
+		free(agregado);*/
+		file->file_size = size;
 		return true;
 
 	} else {
@@ -519,17 +572,20 @@ void enviarContenido(osada* FS, int fd) {
 	free(ruta);
 	free(size);
 	size_t* otroSize = calloc(1, sizeof(size_t));
-	puts("pase");
 	recibir(fd, otroSize, sizeof(size_t));
-	puts("recibi el size");
-	printf("size: %d", *otroSize);
 	recibir(fd, offset, sizeof(off_t));
-	printf("offset: %d", *offset);
-	void* contenidoApuntado = contenido + (*offset);
 	log_debug(logger, "lei");
-
-	enviar(fd, contenidoApuntado, *otroSize);
+	void* contenidoFinal=malloc(*otroSize);
+	if(tamanioMaximo<*otroSize){
+		memcpy(contenidoFinal,contenido,tamanioMaximo);
+	}
+	if(tamanioMaximo>*otroSize){
+	memcpy(contenidoFinal,contenido,*otroSize);
+	}
 	free(contenido);
+	void* contenidoApuntado = contenidoFinal + (*offset);
+	enviar(fd, contenidoApuntado, *otroSize);
+	free(contenidoFinal);
 	free(offset);
 	free(otroSize);
 }
@@ -751,7 +807,7 @@ int main(void) {
 	list_add(discriminators, d);
 	osada* osadaDisk = calloc(1, sizeof(osada));
 
-	int fd = open("challenge.bin", O_RDWR, 0);
+	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();

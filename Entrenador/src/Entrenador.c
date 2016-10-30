@@ -520,7 +520,7 @@ int main(){
 		  POKEDEX=malloc(sizeof(char)*255);
 		  POKEDEX=string_new();
 
-		  string_append(&POKEDEX,"/home/utnso/PokeDex");
+		  string_append(&POKEDEX,"/home/utnso/tp-2016-2c-Sudo-woodo/PokedexCliente/tmp/PokeDex");
 		  ENTRENADOR=malloc(sizeof(entrenador));
 		  RUTA=malloc(sizeof(char)*255);
 		  RUTA=string_new();
