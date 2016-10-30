@@ -49,24 +49,32 @@ typedef struct entrenador{
 }entrenador;
 
 entrenador* ENTRENADOR;
-
-void limpiarDirectorios(int senial){
+void limpiarDirDeBill(){
 	char* comando=calloc(255,sizeof(char));
-	string_append(&comando,"rm -rf ");
-	char* rutaBorrado=calloc(255,sizeof(char));
-	string_append(&rutaBorrado,RUTA);
-	string_append(&rutaBorrado,"/Dir\\ de\\ Bill/*");
-	string_append(&comando,rutaBorrado);
-	system(comando);
-	comando=string_new();
-	rutaBorrado=string_new();
-	string_append(&comando,"rm -rf ");
-	string_append(&rutaBorrado,RUTA);
-	string_append(&rutaBorrado,"/Medallas/*");
-	string_append(&comando,rutaBorrado);
-	system(comando);
+		string_append(&comando,"rm -rf ");
+		char* rutaBorrado=calloc(255,sizeof(char));
+		string_append(&rutaBorrado,RUTA);
+		string_append(&rutaBorrado,"/Dir\\ de\\ Bill/*");
+		string_append(&comando,rutaBorrado);
+		system(comando);
 		free(comando);
-	free(rutaBorrado);
+		free(rutaBorrado);
+}
+void limpiarMedallas(){
+	char* comando=calloc(255,sizeof(char));
+		char* rutaBorrado=calloc(255,sizeof(char));
+		string_append(&comando,"rm -rf ");
+		string_append(&rutaBorrado,RUTA);
+		string_append(&rutaBorrado,"/Medallas/*");
+		string_append(&comando,rutaBorrado);
+		system(comando);
+			free(comando);
+		free(rutaBorrado);
+
+}
+void limpiarDirectorios(int senial){
+	limpiarDirDeBill();
+	limpiarMedallas();
 };
 void suicidate(int senial){
 	limpiarDirectorios(4);
@@ -77,27 +85,32 @@ void suicidate(int senial){
 void ganarVida(int signal){
 	ENTRENADOR->vidas=ENTRENADOR->vidas+1;
 };
+int muerte;
+void controlarMuerte(){
+	if(muerte){
+		close(mapa);
+	char rta;
+	while(rta!='Y' && rta!='N'){
+		puts("¿Desea reiniciar el juego? Y/N");
+		scanf(" %c",&rta);
 
+	};
+	if(rta=='Y'){
+		limpiarDirDeBill(4);
+		reiniciar();
+			rta='/0';
+	}
+	else{
+
+		suicidate(4);
+	};
+	}
+
+}
 void perderVida(int signal){
 		ENTRENADOR->vidas=ENTRENADOR->vidas-1;
 		if(ENTRENADOR->vidas<=0){
-			close(mapa);
-			char rta;
-			while(rta!='Y' && rta!='N'){
-				puts("¿Desea reiniciar el juego? Y/N");
-				scanf(" %c",&rta);
-
-			};
-			if(rta=='Y'){
-				//limpiarDirectorios(4);
-				reiniciar();
-					rta='/0';
-			}
-			else{
-
-				suicidate(4);
-			};
-
+			muerte=1;
 		};
 };
 
@@ -153,8 +166,7 @@ free(CONFIG);
 
 void   correr(char* nom)
    {
-
-
+		muerte=0;
 	  cargarMetadata();
 	  void closure(objetivos* obj){
 		  completarMapa(obj->mapa);
@@ -282,6 +294,7 @@ void llegarA(point* nest,int mapa){
 	sentido* sent=malloc(sizeof(sentido));
 	int horizontal=1;
 	while((posicion->x!=nest->x) || (posicion->y!=nest->y)){
+		controlarMuerte();
 		int paso=1;
 		if(((posicion->x-nest->x)>0) && horizontal && paso){
 				*sent=IZQ;
@@ -358,8 +371,7 @@ void copiar(char* origen,char* destino){
 		free(comando);
 }
 void efectivizarCaptura(int mapa,char* nombreMapa){
-
-	char* ruta=calloc(255,sizeof(char));
+		char* ruta=calloc(255,sizeof(char));
 	string_append(&ruta,POKEDEX);
 	string_append(&ruta,"/Mapas/");
 	string_append(&ruta,nombreMapa);
@@ -443,6 +455,7 @@ void efectivizarCaptura(int mapa,char* nombreMapa){
 
 }
 void capturar(int mapa,char* nombreMapa){
+	controlarMuerte();
 	char* buffer=calloc(7,sizeof(char));
 	puts("capturando");
 	string_append(&buffer,"captura");
@@ -452,6 +465,7 @@ void capturar(int mapa,char* nombreMapa){
 };
 
 void pedirMedalla(int mapa,char* nombreMapa){
+	controlarMuerte();
 	char* buffer=string_new();
 
 	string_append(&buffer,"medalla");
@@ -501,6 +515,7 @@ void completarMapa(char* nombre){
 	};
 	pedirMedalla(mapa,nombre);
 	close(mapa);
+	limpiarDirDeBill();
 };
 
 int main(){
