@@ -1015,8 +1015,8 @@ int main(int cant,char* argumentos[]) {
 		  int rd2=pthread_create(&thread_planificador,NULL,hilo_Planificador,NULL);
 		  if(rd2!=0){puts("fallo");};
 		  pthread_t thread_deadLock;
-		  int rd3=pthread_create(&thread_deadLock,NULL,hilo_DeadLock,NULL);
-				  if(rd3!=0){puts("fallo");};
+		 // int rd3=pthread_create(&thread_deadLock,NULL,hilo_DeadLock,NULL);
+			//	  if(rd3!=0){puts("fallo");};
 		//inicializar mapa
 	  	nivel_gui_inicializar();
 

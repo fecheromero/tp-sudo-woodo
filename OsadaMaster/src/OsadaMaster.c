@@ -247,10 +247,14 @@ _Bool borrarArchivo(char* ruta, osada* FS) {
 	if (file != NULL) {
 		file->state = DELETED;
 		file->lastmod = time(NULL);
+		file->fname="";
+		file->parent_directory=0xFFFF;
 		int bloque = file->first_block;
 		while (bloque != 0xFFFFFFFF) {
 			bitarray_clean_bit(FS->bitmap, bloque);
-			bloque = FS->asignaciones[bloque];
+			int bloqueViejo= bloque;
+			bloque= FS->asignaciones[bloque];
+			FS->asignaciones[bloqueViejo]=0xFFFFFFFF;
 		}
 		return true;
 	} else {
