@@ -390,7 +390,10 @@ int efectivizarCaptura(int mapa,char* nombreMapa){
 		if(*size!=-1){ //-1 es la señal de deadlock
 	    char* dirPoke=calloc((*size),sizeof(char));
 	    recibir(mapa,dirPoke,*size);
-		puts(dirPoke);
+	    char* apuntador=dirPoke;
+		dirPoke=string_substring_until(dirPoke,(*size));
+		free(apuntador);
+	    puts(dirPoke);
 		string_append_with_format(&ruta,"%s",dirPoke);
 		char* dirDeBill=calloc(255,sizeof(char));
 		string_append(&dirDeBill,RUTA);

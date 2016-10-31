@@ -539,16 +539,21 @@ void enviarContenido(osada* FS, int fd) {
 	recibir(fd, otroSize, sizeof(size_t));
 	recibir(fd, offset, sizeof(off_t));
 	log_debug(logger, "lei");
-	void* contenidoFinal=malloc(*otroSize);
-	if(tamanioMaximo<*otroSize){
-		memcpy(contenidoFinal,contenido,tamanioMaximo);
+	void* contenidoApuntado = contenido + (*offset);
+	void* contenidoFinal=calloc(*otroSize,sizeof(char));
+	int diferencia=(tamanioMaximo-*offset);
+	if(diferencia<0){
+	diferencia=diferencia*(-1);
 	}
-	if(tamanioMaximo>*otroSize){
-	memcpy(contenidoFinal,contenido,*otroSize);
+	if(diferencia<*otroSize){
+		memcpy(contenidoFinal,contenidoApuntado,diferencia);
 	}
+	else{
+	memcpy(contenidoFinal,contenidoApuntado,*otroSize);
+	}
+
+	enviar(fd, contenidoFinal, *otroSize);
 	free(contenido);
-	void* contenidoApuntado = contenidoFinal + (*offset);
-	enviar(fd, contenidoApuntado, *otroSize);
 	free(contenidoFinal);
 	free(offset);
 	free(otroSize);
@@ -771,7 +776,7 @@ int main(void) {
 	list_add(discriminators, d);
 	osada* osadaDisk = calloc(1, sizeof(osada));
 
-	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/challenge.bin", O_RDWR, 0);
+	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/osadaPrueba.bin", O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();

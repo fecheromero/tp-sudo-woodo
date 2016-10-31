@@ -649,8 +649,9 @@ void informarContrincante(entrenador* ent1, entrenador* ent2){
 	free(lvl);
 };
 entrenador* efectuarEncuentro(entrenador* ent1, entrenador* ent2){
+	log_info(logger,"efectuandoEncuetro entre: %s y su %s y %s y su %s",ent1->nombre,ent1->pokemonMasFuerte->species,ent2->nombre,ent2->pokemonMasFuerte->species);
 	t_pokemon* poke=pkmn_battle(ent1->pokemonMasFuerte,ent2->pokemonMasFuerte);
-
+	log_info(logger,"gano el %s",poke->species);
 	entrenador* perdedor;
 	entrenador* ganador;
 	if(ent1->pokemonMasFuerte==poke){
@@ -661,6 +662,7 @@ entrenador* efectuarEncuentro(entrenador* ent1, entrenador* ent2){
 		perdedor=ent2;
 		ganador=ent1;
 	}
+	log_info(logger,"%s perdio contra %s",perdedor->nombre,ganador->nombre);
 	int* rdo=calloc(1,sizeof(int));
 		*rdo=0;
 		enviar(perdedor->fd,rdo,sizeof(int));
@@ -795,6 +797,8 @@ while(true){
 					list_sort(listaEntrenadoresParaDeadLock,ordernarPorAcceso);
 					entrenador* ent1=list_get(listaEntrenadoresParaDeadLock,0);
 					entrenador* ent2=list_get(listaEntrenadoresParaDeadLock,1);
+					log_info(logger,"cargue la lista");
+
 					while(ent1!=NULL&&ent2!=NULL){
 						entrenador* ganador=efectuarEncuentro(ent1,ent2);
 						if(ganador==ent2){
@@ -928,10 +932,10 @@ void signalIgnore(int signal){
 };
 void crearLog(char* nombreMapa){
 	char* file=calloc(255,sizeof(char));
-			string_append(&file,POKEDEX);
-			string_append(&file,"/Mapas/");
-			string_append(&file,nombreMapa);
-			string_append(&file,"/");
+		//	string_append(&file,POKEDEX);
+			//string_append(&file,"/Mapas/");
+		//	string_append(&file,nombreMapa);
+		//	string_append(&file,"/");
 			string_append(&file,"log");
 
 	logger=calloc(1,sizeof(t_log));
@@ -945,8 +949,6 @@ int main(int cant,char* argumentos[]) {
 
 	mapaNombre=malloc(sizeof(char)*100);
 		string_append(&mapaNombre,argumentos[1]);
-
-	puts("ingrese direccion de la pokeDex");
 	//inicializaciones D:
 	MAPA=malloc(sizeof(map));
 	MAPA->medalla=calloc(100,sizeof(char));
@@ -1000,9 +1002,8 @@ int main(int cant,char* argumentos[]) {
 		  list_add(sentidos,sent);
 		  //carga de metadata
 	  crearLog(mapaNombre);
-	  puts("antes del meta");
 		  cargarMetaData(mapaNombre);
-		  puts("despues del meta");
+
 	  	int rows, cols;
 
 	  	items = list_create();
@@ -1014,8 +1015,8 @@ int main(int cant,char* argumentos[]) {
 		  int rd2=pthread_create(&thread_planificador,NULL,hilo_Planificador,NULL);
 		  if(rd2!=0){puts("fallo");};
 		  pthread_t thread_deadLock;
-		  //int rd3=pthread_create(&thread_deadLock,NULL,hilo_DeadLock,NULL);
-			//	  if(rd3!=0){puts("fallo");};
+		  int rd3=pthread_create(&thread_deadLock,NULL,hilo_DeadLock,NULL);
+				  if(rd3!=0){puts("fallo");};
 		//inicializar mapa
 	  	nivel_gui_inicializar();
 
