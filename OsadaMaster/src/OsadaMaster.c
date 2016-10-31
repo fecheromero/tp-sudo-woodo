@@ -31,12 +31,12 @@ void printHeader(osada_header* osadaHeader) {
 }
 
 void* leerArchivo(char* ruta, osada* FS, int* tamanio) { //no se puede hacer free al puntero resultante D:
-	uint32_t* posicion;
+	uint32_t* posicion =calloc(1,sizeof(uint32_t));
 	osada_file* archivo = findFileWithPath(ruta, FS, posicion);
 	if (archivo != NULL) {
 		log_debug(logger, "Buscando archivo para leer");
 		log_debug(logger, "Archivo encontrado");
-		//waitFileSemaphore(*posicion, READ);
+		waitFileSemaphore(*posicion, READ);
 		*tamanio = archivo->file_size;
 		puts("asigne el tamanio");
 		char* file = calloc(archivo->file_size, sizeof(char));
@@ -65,7 +65,7 @@ void* leerArchivo(char* ruta, osada* FS, int* tamanio) { //no se puede hacer fre
 			siguienteBloque = FS->asignaciones[siguienteBloque];
 		}
 		puts("devolvi");
-		//freeFileSemaphore(*posicion,READ);
+		freeFileSemaphore(*posicion,READ);
 		return file;
 	} else {
 		return NULL;
@@ -738,7 +738,7 @@ void* hilo_atendedor(base* bas) {
 }
 int main(void) {
 	logger = log_create("log.txt", "PokedexServer", true, logLevel);
-	//initOsadaSync();
+	initOsadaSync();
 	int pagesize;
 	osada_block * data;
 	discriminators = list_create();
@@ -780,7 +780,7 @@ int main(void) {
 	list_add(discriminators, d);
 	osada* osadaDisk = calloc(1, sizeof(osada));
 
-	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/osadaPrueba.bin", O_RDWR, 0);
+	int fd = open("osadaPrueba.bin", O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();
@@ -817,10 +817,10 @@ int main(void) {
 
 	}
 	printHeader(osadaDisk->header);
-	//crearDirectorio("/a6",osadaDisk);
-	//crearDirectorio("/a6/b6",osadaDisk);
-	//crearDirectorio("/a6/b6/c6",osadaDisk);
 	mostrarContenido("/", osadaDisk);
+
+	//int * fSize;
+	//leerArchivo("directorio/archivo.txt",osadaDisk, fSize);
 
 	int listener;
 	listener = crearSocket();
