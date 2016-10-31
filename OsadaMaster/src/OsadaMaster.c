@@ -247,7 +247,7 @@ _Bool borrarArchivo(char* ruta, osada* FS) {
 	if (file != NULL) {
 		file->state = DELETED;
 		file->lastmod = time(NULL);
-		file->fname="";
+		strcpy(&file->fname,"");
 		file->parent_directory=0xFFFF;
 		int bloque = file->first_block;
 		while (bloque != 0xFFFFFFFF) {

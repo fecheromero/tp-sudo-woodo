@@ -377,8 +377,21 @@ void copiar(char* origen,char* destino){
 		system(comando);
 		free(comando);
 }
+int darSenialesDeVida(int mapa){
+	int* rdo=calloc(1,sizeof(int));
+	*rdo=1;
+	enviar(mapa,rdo,sizeof(int));
+	free(rdo);
+	rdo=calloc(1,sizeof(int));
+	recibir(mapa,rdo,sizeof(int));
+	int devolver=*rdo;
+	free(rdo);
+	return devolver;
+}
 int efectivizarCaptura(int mapa,char* nombreMapa){
-		char* ruta=calloc(255,sizeof(char));
+	while(!darSenialesDeVida(mapa)){
+		}
+	char* ruta=calloc(255,sizeof(char));
 	string_append(&ruta,POKEDEX);
 	string_append(&ruta,"/Mapas/");
 	string_append(&ruta,nombreMapa);
@@ -447,7 +460,7 @@ int efectivizarCaptura(int mapa,char* nombreMapa){
 									recibir(mapa,lvl,sizeof(int));
 					printf("gane contra %s y su %s nivel: %d \n",contrincante,pokemonEnemigo,*lvl);
 							efectivizarCaptura(mapa,ruta);
-
+								return 1;
 							}
 				if(*rdo==-1){
 					perderVida(4);
@@ -467,7 +480,8 @@ int efectivizarCaptura(int mapa,char* nombreMapa){
 		free(ruta);
 		free(size);
 
-}
+};
+
 int capturar(int mapa,char* nombreMapa){
 	controlarMuerte();
 	char* buffer=calloc(7,sizeof(char));
@@ -475,7 +489,9 @@ int capturar(int mapa,char* nombreMapa){
 	string_append(&buffer,"captura");
 	enviar(mapa,buffer,7);
 	free(buffer);
+
 	return efectivizarCaptura(mapa,nombreMapa);
+
 };
 
 void pedirMedalla(int mapa,char* nombreMapa){
