@@ -36,7 +36,8 @@ typedef struct osada {
 typedef enum{
 	READ,
 	WRITE,
-	FREE
+	FREE,
+	DELETE
 }osada_operation;
 //Recibe la poisicion en la tabla de archivos y la operacion que se quiere hacer/hizo "READ O WRITE"
 void waitFileSemaphore(int file, osada_operation operation);

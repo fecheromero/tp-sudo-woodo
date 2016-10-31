@@ -31,7 +31,7 @@ int internalWaitSemaphore(int file, osada_operation operation){
 					syncData->reading++;
 					pthread_mutex_unlock(&mapMutex);
 					return 1;
-				} else if (operation == WRITE) {
+				} else if (operation == WRITE || operation == DELETE) {
 					pthread_mutex_unlock(&mapMutex);
 					pthread_mutex_lock(syncData->mutex);
 					return -1;
@@ -45,10 +45,10 @@ int internalWaitSemaphore(int file, osada_operation operation){
 					syncData->operation = READ;
 					pthread_mutex_unlock(&mapMutex);
 					return 1;
-				} else if (operation == WRITE) {
+				} else if (operation == WRITE || operation == DELETE) {
 					pthread_mutex_t fileMutex = PTHREAD_MUTEX_INITIALIZER;
 					pthread_mutex_lock(&fileMutex);
-					syncData->operation = WRITE;
+					syncData->operation = operation;
 					pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 					syncData->condition = &cond;
 					pthread_cond_init(&cond, NULL);
@@ -60,11 +60,13 @@ int internalWaitSemaphore(int file, osada_operation operation){
 				if (operation == READ) {
 					pthread_mutex_unlock(&mapMutex);
 					pthread_cond_wait(syncData->condition, syncData->mutex);
-				} else if (operation == WRITE) {
+				} else if (operation == WRITE || operation == DELETE) {
 					pthread_mutex_unlock(&mapMutex);
 					pthread_mutex_lock(syncData->mutex);
 				}
 				return -1;
+			}else if (syncData->operation == DELETE){
+				return -2;
 			}
 		} else {
 			osada_sync_struct * newSyncStruct = calloc(1,sizeof(osada_sync_struct));
@@ -77,11 +79,13 @@ int internalWaitSemaphore(int file, osada_operation operation){
 		return -1;
 }
 
-void waitFileSemaphore(int file, osada_operation operation) {
+int waitFileSemaphore(int file, osada_operation operation) {
 	log_debug(loggerSync, "Waiting semaphore");
-	while(internalWaitSemaphore(file, operation)==-1){
-
+	int status = -1;
+	while(status==-1){
+		status = internalWaitSemaphore(file, operation);
 	}
+	return status;
 
 }
 
@@ -109,7 +113,7 @@ void freeFileSemaphore(int file, osada_operation operation) {
 				pthread_mutex_unlock(syncData->mutex);
 			}
 		}
-		else if (operation == WRITE) {
+		else if (operation == WRITE || operation == DELETE) {
 			syncData->operation = FREE;
 			pthread_cond_broadcast(syncData->condition);
 		}
