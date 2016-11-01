@@ -10,7 +10,7 @@
 t_log_level logLevelSync = LOG_LEVEL_DEBUG;
 t_log * loggerSync;
 t_dictionary * syncMap;
-pthread_mutex_t mapMutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t mapMutex;; // = PTHREAD_MUTEX_INITIALIZER; hacer esto o hacer el init es lo mismo hasta donde yo se
 
 void initOsadaSync() {
 	loggerSync = log_create("log.txt", "PokedexServerSync", true, logLevelSync);

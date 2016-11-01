@@ -260,10 +260,6 @@ void desconeccionXDeadLock(entrenador* muerto){
 	pthread_mutex_lock(&SEM_BLOCKED);
 	quitarElementoDeCola(pok->bloqueados,encontrarEnt);
 	pthread_mutex_unlock(&SEM_BLOCKED);
-	}else if(atendido==muerto){
-		atendido=NULL;
-	}else{
-		quitarElementoDeCola(READY,encontrarEnt);
 	}
 	liberarPokemonsYBorrarDelGui(muerto);
 	logearCambioDeEstado(muerto->nombre,"bloqueado","fuera");
@@ -272,7 +268,6 @@ void desconeccionXDeadLock(entrenador* muerto){
 int darSenialDePaso(entrenador* ent,int flag){
 	int* rta=calloc(1,sizeof(int));
 	if(recibir(ent->fd,rta,sizeof(int))==0){
-		desconeccionXDeadLock(ent);
 		free(rta);
 		return 1;
 	}
@@ -320,8 +315,8 @@ void capt(entrenador* ent,void* buf){
 
 			}
 			else{
-				ent->pedido=poke->pokeNest->id;
 				pthread_mutex_lock(&SEM_BLOCKED);
+				ent->pedido=poke->pokeNest->id;
 				queue_push(poke->bloqueados,ent);
 				pthread_mutex_unlock(&SEM_BLOCKED);
 				pthread_mutex_lock(&SEM_ATENDIDO);
@@ -720,26 +715,57 @@ while(true){
 	void mostrar(entrenador* ent){
 								log_info(logger,ent->nombre);
 							}
+
 	int cantDeNest=list_size(pokemons);
 	pokemonDL vectorDisponible[cantDeNest];
+
+
 	t_list* listaEntrenadoresParaDeadLock=list_create();
 
-	pthread_mutex_lock(&controlDeFlujo);
-	pthread_mutex_lock(&SEM_ATENDIDO);
-	pthread_mutex_lock(&SEM_BLOCKED);
-	pthread_mutex_lock(&SEM_READY);
-	if(atendido!=NULL){
-			list_add(listaEntrenadoresParaDeadLock,atendido);}
+	void simularLiberado(pokemon* poke){
+		int t;
+		for(t=0;t<cantDeNest;t++){
+			if(vectorDisponible[t].pokemonID==poke->id){
+				vectorDisponible[t].instancias=vectorDisponible[t].instancias+1;
+			}
+		}
+	};
+	void liberarPokemons(entrenador* ent){
+		list_iterate(ent->pokemonsCapturados,simularLiberado);
+	}
 	void cargarALista(entrenador* ent){
 		if(ent!=NULL){
 			list_add(listaEntrenadoresParaDeadLock,ent);
 		};
 
 	};
-	list_iterate(READY->elements,cargarALista);
+	//empieza el snapshot del sistema
+	pthread_mutex_lock(&SEM_ATENDIDO);
+	pthread_mutex_lock(&SEM_BLOCKED);
+	pthread_mutex_lock(&SEM_READY);
+
+	//carga en cada posicion del vector la cantidad de recursos disponibles
+	int i;
+		for(i=0;i<cantDeNest;i++){
+		bloqueadosXPokemon* bloq=list_get(pokemons,i);
+		vectorDisponible[i].instancias=list_size(bloq->pokeNest->instancias);
+		vectorDisponible[i].pokemonID=bloq->pokeNest->id;
+			}
+
+		//simula el liberado de los recursos del atendido
+	if(atendido!=NULL){
+		liberarPokemons(atendido);
+	}
+
+	//siimula el liberado de los recursos de los readys
+	list_iterate(READY->elements,liberarPokemons);
 	void controlarDesconeccion(entrenador* ent){
 		if(ent!=NULL){
-		darSenialDePaso(ent,0);
+		if(darSenialDePaso(ent,0)){
+			liberarPokemons(ent);
+			desconeccionXDeadLock(ent);
+
+		};
 
 		}
 	}
@@ -761,27 +787,14 @@ while(true){
 		};
 
 }
+	//carga a los bloqueados en la lista
 	list_iterate(pokemons,iterarBlockedControlandoDesconeccion);
-
-
 	list_iterate(pokemons,iterarBlocked);
 	pthread_mutex_unlock(&SEM_READY);
 	pthread_mutex_unlock(&SEM_BLOCKED);
 	pthread_mutex_unlock(&SEM_ATENDIDO);
-	if(list_size(listaEntrenadoresParaDeadLock)>0){
-		int i;
-		log_info(logger,"vector de disponibles:");
-		pthread_mutex_unlock(&controlDeFlujo);
-		pthread_mutex_lock(&SEM_BLOCKED);
-		for(i=0;i<cantDeNest;i++){
-		bloqueadosXPokemon* bloq=list_get(pokemons,i);
-		vectorDisponible[i].instancias=list_size(bloq->pokeNest->instancias);
-		vectorDisponible[i].pokemonID=bloq->pokeNest->id;
-		log_info(logger,"%d %s",vectorDisponible[i].instancias,bloq->pokeNest->nombre);
+//termina el snapShot del sistema
 
-		};
-
-		pthread_mutex_unlock(&SEM_BLOCKED);
 	_Bool puedeTerminar(entrenador*ent){
 		int j=0;
 		if(ent==NULL){return true;};
@@ -805,14 +818,7 @@ while(true){
 				};
 		//if(!ent->pedido==NULL){vectorDisponible[j].instancias=vectorDisponible[j].instancias-1;
 		//};
-		void simularLiberado(pokemon* poke){
-			int t;
-			for(t=0;t<cantDeNest;t++){
-				if(vectorDisponible[t].pokemonID==poke->id){
-					vectorDisponible[t].instancias=vectorDisponible[t].instancias+1;
-				}
-			}
-		};
+
 		list_iterate(ent->pokemonsCapturados,simularLiberado);
 		_Bool esEnt(entrenador* unEntrenador){
 			return (unEntrenador==ent);
@@ -820,6 +826,14 @@ while(true){
 		list_remove_by_condition(listaEntrenadoresParaDeadLock,esEnt);
 
 	};
+	void mostrarVector(){
+	 int h;
+	 for(h=0;h<cantDeNest;h++){
+		 log_info(logger,"%c disponibles= %d ",vectorDisponible[h].pokemonID,vectorDisponible[h].instancias);
+	 }
+	}
+	log_info(logger,"vector de Disponibles:");
+	mostrarVector();
 	log_info(logger,"todos los entrenadores");
 	list_iterate(listaEntrenadoresParaDeadLock,mostrar);
 	entrenador* unEntrenadorQuePuedeTerminar=list_find(listaEntrenadoresParaDeadLock,puedeTerminar);
@@ -834,6 +848,8 @@ while(true){
 				if(list_size(listaEntrenadoresParaDeadLock)<=1){}
 			else{
 
+				log_info(logger,"vector de Disponibles:");
+				mostrarVector();
 				log_info(logger,"HAY DEADLOCK!");
 				list_iterate(listaEntrenadoresParaDeadLock,mostrar);
 				bool noEstasEnInanicion(entrenador* ent){
@@ -911,17 +927,13 @@ while(true){
 					*rdo=-1;
 					enviar(ent1->fd,rdo,sizeof(int));
 					log_info(logger,"la victima es: %s",ent1->nombre);
-					pthread_mutex_lock(&controlDeFlujo);
 					desconeccionXDeadLock(ent1);
-					pthread_mutex_unlock(&controlDeFlujo);
 					free(rdo);
 					list_remove(listaEntrenadoresParaDeadLock,0);
 					log_info(logger,"deadlock terminado");
 			};
 			}
-	};
 
-	pthread_mutex_unlock(&controlDeFlujo);
 	list_destroy(listaEntrenadoresParaDeadLock);
 	struct timespec* ret=malloc(sizeof(struct timespec));
 		ret->tv_nsec=(MAPA->tiempoDeCheckeo)*1000000;
@@ -1098,9 +1110,8 @@ int main(int cant,char* argumentos[]) {
 		  list_add(sentidos,sent);
 		  //carga de metadata
 	  crearLog(mapaNombre);
-		  cargarMetaData(mapaNombre);
-
-	  	int rows, cols;
+	  cargarMetaData(mapaNombre);
+	  int rows, cols;
 
 	  	items = list_create();
 		  pthread_t thread_conector;
