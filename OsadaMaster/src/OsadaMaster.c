@@ -37,7 +37,7 @@ void* leerArchivo(char* ruta, osada* FS, int* tamanio) { //no se puede hacer fre
 		log_debug(logger, "Buscando archivo para leer");
 		log_debug(logger, "Archivo encontrado");
 		int semaphore = waitFileSemaphore(*posicion, READ);
-		if(semaphore!=0){
+		if(semaphore<0){
 					return NULL;
 				}
 		*tamanio = archivo->file_size;
@@ -251,7 +251,7 @@ _Bool borrarArchivo(char* ruta, osada* FS) {
 
 	if (file != NULL) {
 		int semaphore = waitFileSemaphore(*posicion, DELETE);
-		if(semaphore!=0){
+		if(semaphore<0){
 					return false;
 				}
 		file->state = DELETED;
@@ -276,7 +276,7 @@ _Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS) {
 	osada_file* file = findFileWithPath(ruta, FS, posicion);
 	if (file != NULL) {
 		int semaphore = waitFileSemaphore(*posicion, WRITE);
-		if(semaphore!=0){
+		if(semaphore<0){
 					return false;
 				}
 		strcpy(&file->fname, nombreNuevo); //ojota
@@ -292,7 +292,7 @@ _Bool reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS) {
 	osada_file* file = findFileWithPath(ruta, FS, posicion);
 	if (file != NULL) {
 		int semaphore = waitFileSemaphore(*posicion, WRITE);
-		if(semaphore!=0){
+		if(semaphore<0){
 					return false;
 				}
 		char** vectorRuta = string_split(nuevaRuta, "/");
@@ -351,7 +351,7 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 	osada_file* file = findFileWithPath(ruta, FS, posicion);
 	if (file != NULL) {
 		int semaphore = waitFileSemaphore(*posicion, WRITE);
-		if(semaphore!=0){
+		if(semaphore<0){
 			return false;
 		}
 		char* data = contenido;
