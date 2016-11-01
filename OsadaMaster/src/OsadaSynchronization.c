@@ -47,7 +47,8 @@ int internalWaitSemaphore(int file, osada_operation operation){
 					return 1;
 				} else if (operation == WRITE || operation == DELETE) {
 					pthread_mutex_t fileMutex = PTHREAD_MUTEX_INITIALIZER;
-					pthread_mutex_lock(&fileMutex);
+					syncData->mutex=&fileMutex;
+					pthread_mutex_lock(syncData->mutex);
 					syncData->operation = operation;
 					pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 					syncData->condition = &cond;
@@ -111,14 +112,17 @@ void freeFileSemaphore(int file, osada_operation operation) {
 			if (syncData->reading <= 0) {
 				syncData->operation = FREE;
 				pthread_mutex_unlock(syncData->mutex);
+				pthread_mutex_destroy(syncData->mutex);
 			}
 		}
 		else if (operation == WRITE || operation == DELETE) {
 			syncData->operation = FREE;
 			pthread_cond_broadcast(syncData->condition);
+			pthread_cond_destroy(syncData->condition);
 		}
+		pthread_mutex_unlock(&mapMutex);
+		return;
 	}
-	pthread_mutex_unlock(&mapMutex);
 }
 ;
 
