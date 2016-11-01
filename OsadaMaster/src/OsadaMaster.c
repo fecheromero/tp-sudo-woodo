@@ -31,12 +31,15 @@ void printHeader(osada_header* osadaHeader) {
 }
 
 void* leerArchivo(char* ruta, osada* FS, int* tamanio) { //no se puede hacer free al puntero resultante D:
-	uint32_t* posicion;
+	uint32_t* posicion =calloc(1,sizeof(uint32_t));
 	osada_file* archivo = findFileWithPath(ruta, FS, posicion);
 	if (archivo != NULL) {
 		log_debug(logger, "Buscando archivo para leer");
 		log_debug(logger, "Archivo encontrado");
-		//waitFileSemaphore(*posicion, READ);
+		int semaphore = waitFileSemaphore(*posicion, READ);
+		if(semaphore<0){
+					return NULL;
+				}
 		*tamanio = archivo->file_size;
 		puts("asigne el tamanio");
 		char* file = calloc(archivo->file_size, sizeof(char));
@@ -65,7 +68,7 @@ void* leerArchivo(char* ruta, osada* FS, int* tamanio) { //no se puede hacer fre
 			siguienteBloque = FS->asignaciones[siguienteBloque];
 		}
 		puts("devolvi");
-		//freeFileSemaphore(*posicion,READ);
+		freeFileSemaphore(*posicion,READ);
 		return file;
 	} else {
 		return NULL;
@@ -243,8 +246,14 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 }
 
 _Bool borrarArchivo(char* ruta, osada* FS) {
-	osada_file* file = findFileWithPath(ruta, FS, NULL);
+	uint32_t* posicion =calloc(1,sizeof(uint32_t));
+	osada_file* file = findFileWithPath(ruta, FS, posicion);
+
 	if (file != NULL) {
+		int semaphore = waitFileSemaphore(*posicion, DELETE);
+		if(semaphore<0){
+					return false;
+				}
 		file->state = DELETED;
 		file->lastmod = time(NULL);
 		strcpy(&file->fname,"");
@@ -256,23 +265,36 @@ _Bool borrarArchivo(char* ruta, osada* FS) {
 			bloque= FS->asignaciones[bloque];
 			FS->asignaciones[bloqueViejo]=0xFFFFFFFF;
 		}
+		freeFileSemaphore(*posicion, DELETE);
 		return true;
 	} else {
 		return false;
 	}
 }
 _Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS) {
-	osada_file* file = findFileWithPath(ruta, FS, NULL);
+	uint32_t* posicion =calloc(1,sizeof(uint32_t));
+	osada_file* file = findFileWithPath(ruta, FS, posicion);
 	if (file != NULL) {
+		int semaphore = waitFileSemaphore(*posicion, WRITE);
+		if(semaphore<0){
+					return false;
+				}
 		strcpy(&file->fname, nombreNuevo); //ojota
+		freeFileSemaphore(*posicion, WRITE);
 		return true;
 	} else {
 		return false;
 	}
 }
 _Bool reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS) {
-	osada_file* file = findFileWithPath(ruta, FS, NULL);
+
+	uint32_t* posicion =calloc(1,sizeof(uint32_t));
+	osada_file* file = findFileWithPath(ruta, FS, posicion);
 	if (file != NULL) {
+		int semaphore = waitFileSemaphore(*posicion, WRITE);
+		if(semaphore<0){
+					return false;
+				}
 		char** vectorRuta = string_split(nuevaRuta, "/");
 		int j = 0;
 		while (vectorRuta[j] != NULL) {
@@ -296,6 +318,7 @@ _Bool reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS) {
 			h++;
 		}
 		puts(padre);
+		freeFileSemaphore(*posicion, WRITE);
 		if (validarContenedor(padre, FS)) {
 			file->parent_directory = encontrarPosicionEnTablaDeArchivos(padre,
 					FS);
@@ -324,8 +347,13 @@ int encontrarUltimoBloque(char* ruta, osada* FS) {
 	}
 }
 _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size) {
-	osada_file* file = findFileWithPath(ruta, FS, NULL);
+	uint32_t* posicion =calloc(1,sizeof(uint32_t));
+	osada_file* file = findFileWithPath(ruta, FS, posicion);
 	if (file != NULL) {
+		int semaphore = waitFileSemaphore(*posicion, WRITE);
+		if(semaphore<0){
+			return false;
+		}
 		char* data = contenido;
 		//esto lo hago para manejar bytes (1 char 1 byte)
 		int offset=0;
@@ -341,6 +369,7 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 				else{
 					memcpy(FS->datos[bloque], (data+offset), (size-offset));
 									file->file_size=size;
+									freeFileSemaphore(*posicion, WRITE);
 										return true;
 				}
 		}
@@ -364,6 +393,7 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 
 		}
 		file->file_size = size;
+		freeFileSemaphore(*posicion, WRITE);
 		return true;
 
 	} else {
@@ -738,7 +768,7 @@ void* hilo_atendedor(base* bas) {
 }
 int main(void) {
 	logger = log_create("log.txt", "PokedexServer", true, logLevel);
-	//initOsadaSync();
+	initOsadaSync();
 	int pagesize;
 	osada_block * data;
 	discriminators = list_create();
@@ -780,7 +810,7 @@ int main(void) {
 	list_add(discriminators, d);
 	osada* osadaDisk = calloc(1, sizeof(osada));
 
-	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/osadaPrueba.bin", O_RDWR, 0);
+	int fd = open("osadaPrueba.bin", O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();
@@ -817,10 +847,10 @@ int main(void) {
 
 	}
 	printHeader(osadaDisk->header);
-	//crearDirectorio("/a6",osadaDisk);
-	//crearDirectorio("/a6/b6",osadaDisk);
-	//crearDirectorio("/a6/b6/c6",osadaDisk);
 	mostrarContenido("/", osadaDisk);
+
+	//int * fSize;
+	//leerArchivo("directorio/archivo.txt",osadaDisk, fSize);
 
 	int listener;
 	listener = crearSocket();
