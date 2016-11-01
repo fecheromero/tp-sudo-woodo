@@ -369,6 +369,7 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 				else{
 					memcpy(FS->datos[bloque], (data+offset), (size-offset));
 									file->file_size=size;
+									freeFileSemaphore(*posicion, WRITE);
 										return true;
 				}
 		}
