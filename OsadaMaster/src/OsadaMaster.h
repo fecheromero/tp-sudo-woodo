@@ -82,7 +82,7 @@ _Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS);
 
 int encontrarUltimoBloque(char* ruta, osada* FS);
 
-_Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido,int size);
+_Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido,int size, off_t offset);
 
 _Bool crearDirectorio(char* ruta, osada* FS);
 

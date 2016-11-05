@@ -33,7 +33,17 @@ void printHeader(osada_header* osadaHeader) {
 }
 
 
-
+int getBlockPositionInFile(uint32_t fileBlock, osada_file * file, osada* FS){
+	int i=0;
+	uint32_t findedBlock=file->first_block;
+	for(i=0;i<fileBlock;i++){
+		findedBlock=FS->asignaciones[findedBlock];
+		if(findedBlock==0xFFFFFFFF){
+			perror("invalid block");
+		}
+	}
+	return findedBlock;
+}
 
 
 void* leerArchivo(char* ruta, osada* FS, int* tamanio) {
@@ -53,20 +63,20 @@ void* leerArchivo(char* ruta, osada* FS, int* tamanio) {
 		printf("%d \n", archivo->file_size);
 		int i = 0;
 		if (archivo->file_size <= 64) {
-			memcpy(file, FS->datos[archivo->first_block], archivo->file_size);
+			memcpy(file, FS->datos[siguienteBloque], archivo->file_size);
 			i += archivo->file_size;
 		} else {
-			memcpy(file, FS->datos[archivo->first_block], 64);
+			memcpy(file, FS->datos[siguienteBloque], 64);
 			i += 64;
 		}
-		while (siguienteBloque != 0xFFFFFFFF) {
+		while (siguienteBloque != 0xFFFFFFFF && archivo->file_size-i != 0) {
 			if ((archivo->file_size - i) <= 64) {
-				memcpy(file, FS->datos[archivo->first_block],
+				memcpy(file+i, FS->datos[siguienteBloque],
 						archivo->file_size);
 				i += archivo->file_size - i;
 
-			} else {
-				memcpy(file, FS->datos[archivo->first_block], 64);
+			} else{
+				memcpy(file+i, FS->datos[siguienteBloque], 64);
 				i += 64;
 
 			}
@@ -352,7 +362,7 @@ int encontrarUltimoBloque(char* ruta, osada* FS) {
 		return -1;
 	}
 }
-_Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size) {
+_Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size, off_t offsetFile) {
 	uint32_t* posicion =calloc(1,sizeof(uint32_t));
 	osada_file* file = findFileWithPath(ruta, FS, posicion);
 	if (file != NULL) {
@@ -361,8 +371,9 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 		char* data = contenido;
 		//esto lo hago para manejar bytes (1 char 1 byte)
 		int offset=0;
+		uint32_t offsetBloque = offsetFile/BLOCKSIZE;
 		int ultimoBloque;
-		int bloque=file->first_block;
+		int bloque=getBlockPositionInFile(offsetBloque, file,FS);
 		while(bloque!=0xFFFFFFFF ){
 				if((size-offset)>64){
 			memcpy(FS->datos[bloque], (data+offset), 64);
@@ -372,7 +383,7 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 				}
 				else{
 					memcpy(FS->datos[bloque], (data+offset), (size-offset));
-									file->file_size=size;
+									file->file_size=size+offsetFile;
 								freeFileSemaphore(*posicion);
 										return true;
 				}
@@ -396,7 +407,7 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, int size)
 			memcpy(FS->datos[bloque], (data+offset), (size-offset));
 
 		}
-		file->file_size = size;
+		file->file_size=size+offsetFile;
 		puts("aca");
 		freeFileSemaphore(*posicion);
 		free(posicion);
@@ -665,7 +676,7 @@ void writeFi(osada* FS, int fd) {
 	buf = string_substring_until(buf, *sizeBuf);
 	recibir(fd, offset, sizeof(off_t));
 	printf("offset: %d", *offset);
-	agregarContenidoAArchivo(ruta, FS, buf, *sizeBuf);
+	agregarContenidoAArchivo(ruta, FS, buf, *sizeBuf, *offset);
 	log_debug(logger, "escribi");
 	free(ruta);
 	free(size);
@@ -818,7 +829,7 @@ int main(void) {
 	list_add(discriminators, d);
 	osada* osadaDisk = calloc(1, sizeof(osada));
 
-	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/osadaPrueba.bin", O_RDWR, 0);
+	int fd = open("osadaPrueba.bin", O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();

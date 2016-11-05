@@ -19,7 +19,7 @@ void initOsadaSync() {
 }
 
 void waitFileSemaphore(int filePosition, osada_operation operation){
-
+		return;
 		log_debug(loggerSync, "tomando semaforo: %d",filePosition);
 		pthread_mutex_lock(&mapMutex);
 		if (vectorSemaforos[filePosition]!=NULL) {
@@ -42,6 +42,7 @@ void waitFileSemaphore(int filePosition, osada_operation operation){
 }
 
 void freeFileSemaphore(int filePosition) {
+	return;
 	log_debug(loggerSync, "liberando semaforo: %d",filePosition);
 
 	pthread_mutex_lock(&mapMutex);
