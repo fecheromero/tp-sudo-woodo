@@ -46,7 +46,7 @@ int getBlockPositionInFile(uint32_t fileBlock, osada_file * file, osada* FS){
 }
 
 
-void* leerArchivo(char* ruta, osada* FS, int* tamanio) {
+void* leerArchivo(char* ruta, osada* FS, int* tamanio, size_t* otroSize,off_t offset) {
 	uint32_t* posicion =calloc(1,sizeof(uint32_t));
 	osada_file* archivo = findFileWithPath(ruta, FS, posicion);
 	int filePos=*posicion;
@@ -58,22 +58,24 @@ void* leerArchivo(char* ruta, osada* FS, int* tamanio) {
 		*tamanio = archivo->file_size;
 		puts("asigne el tamanio");
 		char* file = calloc(archivo->file_size, sizeof(char));
+		uint32_t offsetBloque = offset/BLOCKSIZE;
 		puts("pedi memoria");
-		uint32_t siguienteBloque = FS->asignaciones[archivo->first_block];
+		uint32_t siguienteBloque = getBlockPositionInFile(offsetBloque, archivo,FS);
 		printf("%d \n", archivo->file_size);
 		int i = 0;
-		if (archivo->file_size <= 64) {
+		if (otroSize <= 64 || archivo->file_size <=64) {
 			memcpy(file, FS->datos[siguienteBloque], archivo->file_size);
 			i += archivo->file_size;
 		} else {
 			memcpy(file, FS->datos[siguienteBloque], 64);
 			i += 64;
 		}
-		while (siguienteBloque != 0xFFFFFFFF && archivo->file_size-i != 0) {
-			if ((archivo->file_size - i) <= 64) {
+		while (siguienteBloque != 0xFFFFFFFF) {
+			if ((otroSize - i) <= 64 || archivo->file_size <=64) {
 				memcpy(file+i, FS->datos[siguienteBloque],
-						archivo->file_size);
-				i += archivo->file_size - i;
+						otroSize);
+				i += otroSize - i;
+				break;
 
 			} else{
 				memcpy(file+i, FS->datos[siguienteBloque], 64);
@@ -81,6 +83,7 @@ void* leerArchivo(char* ruta, osada* FS, int* tamanio) {
 
 			}
 			siguienteBloque = FS->asignaciones[siguienteBloque];
+
 		}
 		puts("devolvi");
 		freeFileSemaphore(filePos);
@@ -584,12 +587,13 @@ void enviarContenido(osada* FS, int fd) {
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
 	int* tamanioMaximo=calloc(1,sizeof(int));
-	void* contenido = leerArchivo(ruta, FS, tamanioMaximo);
-	free(ruta);
-	free(size);
 	size_t* otroSize = calloc(1, sizeof(size_t));
 	recibir(fd, otroSize, sizeof(size_t));
 	recibir(fd, offset, sizeof(off_t));
+	void* contenido = leerArchivo(ruta, FS, tamanioMaximo, otroSize, *offset);
+	free(ruta);
+	free(size);
+
 	log_debug(logger, "lei");
 	void* contenidoApuntado = contenido + (*offset);
 	void* contenidoFinal=calloc(*otroSize,sizeof(char));
@@ -829,7 +833,7 @@ int main(void) {
 	list_add(discriminators, d);
 	osada* osadaDisk = calloc(1, sizeof(osada));
 
-	int fd = open("osadaPrueba.bin", O_RDWR, 0);
+	int fd = open("challenge.bin", O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();
