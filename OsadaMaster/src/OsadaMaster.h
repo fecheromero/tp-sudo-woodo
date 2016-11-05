@@ -60,7 +60,7 @@ osada_file* findFile(char ** route, osada * disk, int pathQuantity, uint32_t * p
 
 void printHeader(osada_header* osadaHeader);
 
-void* leerArchivo(char* ruta,osada* FS,int* tamanio);
+void* leerArchivo(char* ruta,osada* FS,size_t* size,off_t offset);
 
 uint32_t encontrarPosicionEnTablaDeArchivos(char* ruta,osada* FS);
 
@@ -82,7 +82,7 @@ _Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS);
 
 int encontrarUltimoBloque(char* ruta, osada* FS);
 
-_Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido,int size);
+_Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido,size_t size,off_t offset);
 
 _Bool crearDirectorio(char* ruta, osada* FS);
 
