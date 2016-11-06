@@ -15,9 +15,6 @@
 t_log_level logLevel = LOG_LEVEL_DEBUG;
 t_log * logger;
 t_list* discriminators;
-int bloquesEscritos;
-int bloquesLeidos;
-int bloquesTruncados ;
 void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
 	printf("%.*s\n\n", 7, osadaHeader->magic_number);
@@ -32,22 +29,24 @@ void printHeader(osada_header* osadaHeader) {
 	puts("Tamaño de la tabla de datos:");
 	printf("%d\n\n", osadaHeader->data_blocks);
 }
-void truncar(osada_file* file,osada* FS,size_t size,off_t offset){
+bool truncar(osada_file* file,osada* FS,size_t size,off_t offset){
 	int restante=offset+size-64;
-	int bloque=file->first_block;
+	uint32_t bloque=file->first_block;
 	while(FS->asignaciones[bloque]!=0xFFFFFFFF){
 			restante-=64;
 			bloque=FS->asignaciones[bloque];
 	}
 	if(restante>0){
 	while(restante>0){
-		int bloqueNuevo=bloqueDisponible(FS);
+		uint32_t bloqueNuevo=bloqueDisponible(FS);
+		if(bloqueNuevo==-1){
+			return false;
+		}
 		bitarray_set_bit(FS->bitmap,bloqueNuevo);
 		restante-=64;
 		FS->asignaciones[bloqueNuevo]=0xFFFFFFFF;
 		FS->asignaciones[bloque]=bloqueNuevo;
 		bloque=bloqueNuevo;
-		bloquesTruncados++;
 	}
 	}
 	else{
@@ -63,7 +62,7 @@ void truncar(osada_file* file,osada* FS,size_t size,off_t offset){
 	file->file_size=(offset+size);
 	}
 	file->lastmod=time(NULL);
-	return;
+	return true;
 }
 
 
@@ -76,7 +75,6 @@ void* leerArchivo(char* ruta, osada* FS, size_t* size,off_t offset) {
 	free(posicion);
 	if (archivo != NULL) {
 		waitFileSemaphore(filePos,READ);
-		log_debug(logger, "Buscando archivo para leer");
 		log_debug(logger, "Archivo encontrado");
 		int bloque=archivo->first_block;
 		int resto;
@@ -107,12 +105,10 @@ void* leerArchivo(char* ruta, osada* FS, size_t* size,off_t offset) {
 			offsetDeLectura+=64;
 			seek=0;
 			bloque=FS->asignaciones[bloque];
-			bloquesLeidos++;
 		}
 		if(resto>0){
 			memcpy(lectura+offsetDeLectura,FS->datos[bloque]+seek,resto);
 			bloque=FS->asignaciones[bloque];
-			bloquesLeidos++;
 		}
 
 		/**tamanio = archivo->file_size;
@@ -225,8 +221,7 @@ uint32_t bloqueDisponible(osada* FS) {
 	if (i != 0) {
 		return i;
 	} else {
-		perror("disco lleno");
-		return 0;
+		return -1;
 	}
 }
 osada_file* encontrarOsadaFileLibre(osada* FS) {
@@ -259,10 +254,7 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 		if (file == NULL) {
 			puts("fallo");
 		};
-		printf("%d  %d \n", bloqueLibre, size);
-		printf("%u \n", file->file_size);
 		file->file_size = size;
-		puts("paso");
 		file->first_block = bloqueLibre;
 		if(size==0){
 			bitarray_set_bit(FS->bitmap, bloqueLibre);}
@@ -272,11 +264,9 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 			j++;
 		}
 		j--;
-		printf("%d \n", file->file_size);
 		memcpy(file->fname, vectorRuta[j], 17);
 		j--;
-		printf("%s \n", file->fname);
-		char* padre = string_new();
+		char* padre = calloc(250,sizeof(char));
 		if (j != -1) {
 			int h = 0;
 			while (h <= j) {
@@ -288,16 +278,12 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 
 			}
 		} else {
-			padre = "/";
+			memcpy(padre,"/",sizeof(char));
 		};
-		puts(padre);
-		file->parent_directory = encontrarPosicionEnTablaDeArchivos(padre, FS);
-
-		printf("%d \n", file->parent_directory);
+			file->parent_directory = encontrarPosicionEnTablaDeArchivos(padre, FS);
+			free(padre);
 		file->state = REGULAR;
 		file->lastmod = (uint32_t) time(NULL);
-		printf("%u \n", file->lastmod);
-		printf("cantDeBloques=%d resto=%d \n", cantDeBloques, resto);
 		while (i < cantDeBloques && resto > 64) { //ojota
 			memcpy(FS->datos[bloqueLibre], datos, 64);
 			i++;
@@ -378,13 +364,11 @@ _Bool reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS) {
 		j--; //Hay que restarle, porque el valor actual ya es NULL
 		memcpy(file->fname, vectorRuta[j], 17);
 		j--;
-		puts(file->fname);
 		char* padre = calloc(255, sizeof(char));
 		if (j <= -1) {
 			string_append(&padre, "/");
 		}
 		int h = 0;
-		printf("%d \n", j);
 		while (h <= j) {
 			string_append(&padre, vectorRuta[h]);
 			if (h != j) {
@@ -392,7 +376,6 @@ _Bool reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS) {
 			}
 			h++;
 		}
-		puts(padre);
 		if (validarContenedor(padre, FS)) {
 			file->parent_directory = encontrarPosicionEnTablaDeArchivos(padre,
 					FS);
@@ -419,7 +402,6 @@ int encontrarUltimoBloque(char* ruta, osada* FS) {
 		while (FS->asignaciones[bloque] != 0xFFFFFFFF) {
 			bloque = FS->asignaciones[bloque];
 		}
-		printf("%d \n", bloque);
 		return bloque;
 	} else {
 		return -1;
@@ -432,7 +414,13 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 		 waitFileSemaphore(*posicion, WRITE);
 
 		void* data = contenido;
-		truncar(file,FS,size,offset);
+		uint32_t rdo=truncar(file,FS,size,offset);
+		if(!truncar){
+			freeFileSemaphore(*posicion);
+			free(posicion);
+			log_info(logger,"no entra en el disco");
+			return false;
+		}
 		int bloque=file->first_block;
 		int cantDeBloques=ceil(offset/64.0f);
 		int i;
@@ -452,14 +440,12 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 			resto=0;
 			seek+=size;
 			offsetDeContenido+=size;
-			bloquesEscritos++;
 			}else{
 				memcpy(FS->datos[bloque]+seek,data,(64-seek));
 				resto-=(64-seek);
 				offsetDeContenido+=(64-seek);
 				seek=0;
 				bloque=FS->asignaciones[bloque];
-				bloquesEscritos++;
 			}
 			while(resto>=64){
 				memcpy(FS->datos[bloque]+seek,data+offsetDeContenido,64);
@@ -467,7 +453,6 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 				offsetDeContenido+=64;
 				seek=0;
 				bloque=FS->asignaciones[bloque];
-				bloquesEscritos++;
 			}
 			if(resto>0){
 				memcpy(FS->datos[bloque]+seek,data+offsetDeContenido,resto);
@@ -475,7 +460,6 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 				offsetDeContenido+=resto;
 				seek=0;
 				bloque=FS->asignaciones[bloque];
-				bloquesEscritos++;
 
 			}
 		//esto lo hago para manejar bytes (1 char 1 byte)
@@ -521,7 +505,6 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 		free(posicion);
 		return true;*/
 			freeFileSemaphore(*posicion);
-			log_debug(logger,data);
 			return true;
 	} else {
 		free(posicion);
@@ -533,7 +516,6 @@ _Bool crearDirectorio(char* ruta, osada* FS) {
 		return false;
 	};
 	if (validarContenedor(ruta, FS)) {
-		puts("un paso");
 		osada_file* file = encontrarOsadaFileLibre(FS);
 		file->file_size = 0;
 		file->first_block = 0xFFFFFFFF;
@@ -545,7 +527,6 @@ _Bool crearDirectorio(char* ruta, osada* FS) {
 		j--; //Hay que restarle, porque el valor actual ya es NULL
 		memcpy(file->fname, vectorRuta[j], 17);
 		j--;
-		puts(file->fname);
 		char* padre = calloc(255, sizeof(char));
 		if (j <= -1) {
 			string_append(&padre, "/");
@@ -560,7 +541,6 @@ _Bool crearDirectorio(char* ruta, osada* FS) {
 			h++;
 
 		}
-		puts(padre);
 		file->parent_directory = encontrarPosicionEnTablaDeArchivos(padre, FS);
 		free(padre);
 		file->state = DIRECTORY;
@@ -766,14 +746,10 @@ void writeFi(osada* FS, int fd) {
 	log_debug(logger, ruta);
 	size_t* sizeBuf = calloc(1, sizeof(size_t));
 	recibir(fd, sizeBuf, sizeof(size_t));
-	printf("size: %d", *sizeBuf);
 	void* buf = calloc(*sizeBuf, sizeof(char));
 	recibir(fd, buf, *sizeBuf);
-	buf = string_substring_until(buf, *sizeBuf);
 	recibir(fd, offset, sizeof(off_t));
-	printf("offset: %d", *offset);
 	agregarContenidoAArchivo(ruta, FS, buf, *sizeBuf,*offset);
-	log_debug(logger, "escribi");
 	free(ruta);
 	free(size);
 	free(buf);
@@ -882,9 +858,6 @@ void* hilo_atendedor(base* bas) {
 	return 0;
 }
 int main(void) {
-	bloquesEscritos=1;
-	bloquesLeidos=1;
-	bloquesTruncados=1;
 
 	logger = log_create("log.txt", "PokedexServer", true, logLevel);
 	initOsadaSync();
