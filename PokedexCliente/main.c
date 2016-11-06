@@ -95,7 +95,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 	 	enviar(socketPokedexServer,&offset,sizeof(off_t));
 	 	size_t* sizeRecibido=calloc(1,sizeof(size_t));
 	 	recibir(socketPokedexServer,sizeRecibido,sizeof(size_t));
- 		void* contenido=calloc(*sizeRecibido,sizeof(char));
+	 	void* contenido=calloc(*sizeRecibido,sizeof(char));
 	 	recibir(socketPokedexServer,contenido,*sizeRecibido);
 		memcpy(buf,contenido,*sizeRecibido);
 		log_debug(logger,"leidos: %d resultado: %s",*sizeRecibido,contenido);
