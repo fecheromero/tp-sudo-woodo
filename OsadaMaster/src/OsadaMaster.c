@@ -15,6 +15,7 @@
 t_log_level logLevel = LOG_LEVEL_DEBUG;
 t_log * logger;
 t_list* discriminators;
+int tamanioDeNoDatos;
 void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
 	printf("%.*s\n\n", 7, osadaHeader->magic_number);
@@ -40,10 +41,9 @@ bool truncar(osada_file* file,osada* FS,size_t size,off_t offset){
 	while(restante>0){
 		uint32_t bloqueNuevo=bloqueDisponible(FS);
 		if(bloqueNuevo==0xFFFFFFFF){
-			puts("fallo el truncado");
 			return false;
 		}
-		bitarray_set_bit(FS->bitmap,bloqueNuevo);
+		bitarray_set_bit(FS->bitmap,tamanioDeNoDatos+bloqueNuevo);
 		restante-=64;
 		FS->asignaciones[bloqueNuevo]=0xFFFFFFFF;
 		FS->asignaciones[bloque]=bloqueNuevo;
@@ -255,15 +255,16 @@ _Bool validarContenedor(char* ruta, osada* FS) {
 ;
 
 uint32_t bloqueDisponible(osada* FS) {
-	uint32_t i = 0;
+	uint32_t i = tamanioDeNoDatos;
 	int flag = 1;
+	int bloqueInicialDeDatos=tamanioDeNoDatos;
 	int max = FS->header->bitmap_blocks * 64 * 8;
-	while (i < max && flag) {
+	while ( i< max && flag) {
 		flag = bitarray_test_bit(FS->bitmap, i);
 			if(flag){i++;}
 	}
 	if (!flag || i>=max) {
-		return i;
+		return (i-tamanioDeNoDatos);
 	} else {
 		puts("no lo encontre");
 		return 0xFFFFFFFF;
@@ -302,7 +303,7 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 		file->file_size = size;
 		file->first_block = bloqueLibre;
 		if(size==0){
-			bitarray_set_bit(FS->bitmap, bloqueLibre);}
+			bitarray_set_bit(FS->bitmap, (tamanioDeNoDatos+bloqueLibre));}
 		char** vectorRuta = string_split(ruta, "/");
 		int j = 0;
 		while (vectorRuta[j] != NULL) {
@@ -333,7 +334,7 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 			memcpy(FS->datos[bloqueLibre], datos, 64);
 			i++;
 			resto = resto - 64;
-			bitarray_set_bit(FS->bitmap, bloqueLibre);
+			bitarray_set_bit(FS->bitmap, tamanioDeNoDatos+bloqueLibre);
 			int bloqViejo = bloqueLibre;
 			if (i == cantDeBloques && resto <= 0) {
 				bloqueLibre = 0xFFFFFFFF;
@@ -343,7 +344,7 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 			FS->asignaciones[bloqViejo] = bloqueLibre;
 		}
 		if (resto > 0) {
-			bitarray_set_bit(FS->bitmap, bloqueLibre);
+			bitarray_set_bit(FS->bitmap, tamanioDeNoDatos+bloqueLibre);
 			memcpy(FS->datos[bloqueLibre], datos, resto);
 			FS->asignaciones[bloqueLibre] = 0xFFFFFFFF;
 			resto = 0;
@@ -459,7 +460,6 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 		 waitFileSemaphore(*posicion, WRITE);
 
 		void* data = contenido;
-		log_debug(logger,"0");
 		bool rdo=truncar(file,FS,size,offset);
 		if(!rdo){
 			freeFileSemaphore(*posicion);
@@ -468,7 +468,6 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 			log_debug(logger,"no entra en el disco");
 			return false;
 		}
-		log_debug(logger,"1");
 		int bloque=file->first_block;
 		int cantDeBloques=ceil(offset/64.0f);
 		int i;
@@ -510,8 +509,8 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 				bloque=FS->asignaciones[bloque];
 
 			}
-			log_debug(logger,"2");
 			freeFileSemaphore(*posicion);
+			free(posicion);
 			return true;
 	} else {
 		free(posicion);
@@ -909,7 +908,7 @@ int main(void) {
 	list_add(discriminators, d);
 	osada* osadaDisk = calloc(1, sizeof(osada));
 
-	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/osadaPrueba.bin", O_RDWR, 0);
+	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/unOsada.bin", O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();
@@ -940,9 +939,10 @@ int main(void) {
 				data[osadaDisk->header->allocations_table_offset];
 		osadaDisk->datos = calloc(osadaDisk->header->data_blocks,
 				sizeof(osada_block));
+
 		osadaDisk->datos = data[osadaDisk->header->allocations_table_offset
 				+ tamanioDeTablaDeAsignaciones];
-
+		tamanioDeNoDatos=1+osadaDisk->header->bitmap_blocks+1024+tamanioDeTablaDeAsignaciones;
 	}
 	printHeader(osadaDisk->header);
 	mostrarContenido("/", osadaDisk);
