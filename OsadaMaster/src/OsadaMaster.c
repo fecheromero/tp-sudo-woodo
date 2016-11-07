@@ -33,7 +33,7 @@ void printHeader(osada_header* osadaHeader) {
 bool truncar(osada_file* file,osada* FS,size_t size,off_t offset){
 	int restante=offset+size-64;
 	uint32_t bloque=file->first_block;
-	while(FS->asignaciones[bloque]!=0xFFFFFFFF){
+	while(FS->asignaciones[bloque]!=0xFFFFFFFF && restante>0){
 			restante-=64;
 			bloque=FS->asignaciones[bloque];
 	}
@@ -49,18 +49,21 @@ bool truncar(osada_file* file,osada* FS,size_t size,off_t offset){
 		FS->asignaciones[bloque]=bloqueNuevo;
 		bloque=bloqueNuevo;
 	}
+	if(file->file_size<(offset+size)){
+	file->file_size=(offset+size);
+	}
+
 	}
 	else{
 	int bloqueAuxiliar;
 	while(FS->asignaciones[bloque]!=0xFFFFFFFF){
 		bloqueAuxiliar=bloque;
 		bloque=FS->asignaciones[bloque];
-		bitarray_clean_bit(FS->bitmap,bloque);
+		bitarray_clean_bit(FS->bitmap,tamanioDeNoDatos+bloque);
+		file->file_size-=64;
 		FS->asignaciones[bloqueAuxiliar]=0xFFFFFFFF;
+
 	}
-	}
-	if(file->file_size<(offset+size)){
-	file->file_size=(offset+size);
 	}
 	file->lastmod=time(NULL);
 	return true;
@@ -98,8 +101,8 @@ void* leerArchivo(char* ruta, osada* FS, size_t* size,off_t offset) {
 				if((64-seek)>*size){
 							memcpy(lectura+offsetDeLectura,FS->datos[bloque]+seek,*size);
 							resto=0;
-							seek+=size;
-							offsetDeLectura+=size;
+							seek+=*size;
+							offsetDeLectura+=*size;
 							}else{
 								memcpy(lectura+offsetDeLectura,FS->datos[bloque]+seek,(64-seek));
 								resto-=(64-seek);
@@ -124,69 +127,6 @@ void* leerArchivo(char* ruta, osada* FS, size_t* size,off_t offset) {
 
 							}
 
-
-/*		int resto;
-		if(*size>archivo->file_size){resto=archivo->file_size;
-			}
-		else{resto=*size;}
-		int seek;
-		if(offset<=64){
-			seek=offset;
-		}
-		else{
-			seek=offset-64; //xq ya agarre el primer bloque
-		while(seek>=64){ //avanzo en bloques hasta llegar al offset
-			seek-=64;
-			bloque=FS->asignaciones[bloque];
-		}
-		}
-		off_t offsetDeLectura=0; //para manejar la posicion en el puntero de retorno
-		void* lectura=calloc(*size,sizeof(char)); //para trabajar con 1 byte
-		if(resto<=(64-seek)){ //si lo que tengo que leer no sale del primer bloque de lectura
-			memcpy(lectura,FS->datos[bloque]+seek,resto);
-			resto=0;
-			offsetDeLectura+=resto;
-		}
-		while(resto>=64){ //si lo que tengo que leer sale del primer bloque de lectura
-			memcpy(lectura+offsetDeLectura,FS->datos[bloque]+seek,64);
-			resto-=64;
-			offsetDeLectura+=64;
-			seek=0;
-			bloque=FS->asignaciones[bloque];
-		}
-		if(resto>0){
-			memcpy(lectura+offsetDeLectura,FS->datos[bloque]+seek,resto);
-			bloque=FS->asignaciones[bloque];
-		}
-
-		/**tamanio = archivo->file_size;
-		puts("asigne el tamanio");
-		char* file = calloc(archivo->file_size, sizeof(char));
-		puts("pedi memoria");
-		uint32_t siguienteBloque = FS->asignaciones[archivo->first_block];
-		printf("%d \n", archivo->file_size);
-		int i = 0;
-		if (archivo->file_size <= 64) {
-			memcpy(file, FS->datos[archivo->first_block], archivo->file_size);
-			i += archivo->file_size;
-		} else {
-			memcpy(file, FS->datos[archivo->first_block], 64);
-			i += 64;
-		}
-		while (siguienteBloque != 0xFFFFFFFF) {
-			if ((archivo->file_size - i) <= 64) {
-				memcpy(file, FS->datos[archivo->first_block],
-						archivo->file_size);
-				i += archivo->file_size - i;
-
-			} else {
-				memcpy(file, FS->datos[archivo->first_block], 64);
-				i += 64;
-
-			}
-			siguienteBloque = FS->asignaciones[siguienteBloque];
-		}
-		puts("devolvi");*/
 		freeFileSemaphore(filePos);
 		return lectura;
 	} else {
@@ -229,6 +169,7 @@ void mostrarContenido(char* ruta, osada* FS) {
 	mostrarContenidoDir(encontrarPosicionEnTablaDeArchivos(ruta, FS), FS, 1);
 }
 _Bool validarContenedor(char* ruta, osada* FS) {
+	if(strcmp(ruta,"/")==0){return true;}
 	char** vectorRuta = string_split(ruta, "/");
 	if (vectorRuta[1] == NULL) {
 		return true;
@@ -368,7 +309,7 @@ _Bool borrarArchivo(char* ruta, osada* FS) {
 		file->parent_directory=0xFFFF;
 		int bloque = file->first_block;
 		while (bloque != 0xFFFFFFFF) {
-			bitarray_clean_bit(FS->bitmap, bloque);
+			bitarray_clean_bit(FS->bitmap, tamanioDeNoDatos+bloque);
 			int bloqueViejo= bloque;
 			bloque= FS->asignaciones[bloque];
 			FS->asignaciones[bloqueViejo]=0xFFFFFFFF;
@@ -823,7 +764,7 @@ void* hilo_atendedor(base* bas) {
 			puts("envCont");
 			enviarContenido(bas->FS, bas->fd);
 			basurero = malloc(2500);
-			printf("basurero: %d", recibir(bas->fd, basurero, 4));
+			printf("basurero: %d", recibir(bas->fd, basurero,7000));
 			puts(basurero);
 			free(basurero);
 			break;
@@ -835,7 +776,7 @@ void* hilo_atendedor(base* bas) {
 			puts("writeFi");
 			writeFi(bas->FS, bas->fd);
 			basurero = malloc(2500);
-			printf("basurero: %d", recibir(bas->fd, basurero, 2500));
+			printf("basurero: %d", recibir(bas->fd, basurero, 7000));
 			puts(basurero);
 			free(basurero);
 
