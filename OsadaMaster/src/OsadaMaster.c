@@ -16,6 +16,50 @@ t_log_level logLevel = LOG_LEVEL_DEBUG;
 t_log * logger;
 t_list* discriminators;
 int tamanioDeNoDatos;
+
+t_log_level logLevelSync = LOG_LEVEL_DEBUG;
+t_log * loggerSync;
+pthread_rwlock_t vectorSemaforos[2048];
+pthread_mutex_t mapMutex= PTHREAD_MUTEX_INITIALIZER;
+void initOsadaSync() {
+	loggerSync = log_create("logSems.txt", "PokedexServerSync", true, logLevelSync);
+	int i;
+	for(i=0;i<2048;i++){
+		pthread_rwlock_init(&vectorSemaforos[i],NULL);
+	}
+
+}
+
+void waitFileSemaphore(int filePosition, osada_operation operation){
+
+		log_debug(loggerSync, "tomando semaforo: %d",filePosition);
+		pthread_mutex_lock(&mapMutex);
+			if(operation==READ){
+				int j=pthread_rwlock_rdlock(&vectorSemaforos[filePosition]);
+
+			}
+			if(operation==WRITE){
+				int h=pthread_rwlock_wrlock(&vectorSemaforos[filePosition]);
+			}
+
+pthread_mutex_unlock(&mapMutex);
+
+		return;
+}
+
+void freeFileSemaphore(int filePosition) {
+	log_debug(loggerSync, "liberando semaforo: %d",filePosition);
+
+	pthread_mutex_lock(&mapMutex);
+		int i=pthread_rwlock_unlock(&vectorSemaforos[filePosition]);
+	pthread_mutex_unlock(&mapMutex);
+
+		printf("%d \n",i);
+	return;
+
+}
+
+
 void printHeader(osada_header* osadaHeader) {
 	puts("Identificador:");
 	printf("%.*s\n\n", 7, osadaHeader->magic_number);
@@ -211,18 +255,19 @@ uint32_t bloqueDisponible(osada* FS) {
 		return 0xFFFFFFFF;
 	}
 }
-osada_file* encontrarOsadaFileLibre(osada* FS) {
+osada_file* encontrarOsadaFileLibre(osada* FS,int* pos) {
 	int i = 0;
 
 	while (i < 2048) {
 		osada_file* file = &(*FS->archivos)[i];
 		if (file->state == NULL || file->state == DELETED) {
+
+			*pos=i;
 			return file;
 		}
 
 		i++;
 	}
-
 	return NULL;
 }
 
@@ -237,10 +282,15 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 		int resto = size;
 		int i = 0;
 		uint32_t bloqueLibre = bloqueDisponible(FS);
-		osada_file* file = encontrarOsadaFileLibre(FS);
+		int* pos=calloc(1,sizeof(int));
+		osada_file* file = encontrarOsadaFileLibre(FS,pos);
 		if (file == NULL) {
-			puts("fallo");
+			free(pos);
+			log_info(logger,"no hay mas osadaFiles disponibles");
+			return false;
 		};
+		waitFileSemaphore(*pos,WRITE);
+
 		file->file_size = size;
 		file->first_block = bloqueLibre;
 		if(size==0){
@@ -290,6 +340,8 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 			FS->asignaciones[bloqueLibre] = 0xFFFFFFFF;
 			resto = 0;
 		}
+		freeFileSemaphore(*pos);
+		free(pos);
 		return true;
 	} else {
 		return false;
@@ -463,7 +515,9 @@ _Bool crearDirectorio(char* ruta, osada* FS) {
 		return false;
 	};
 	if (validarContenedor(ruta, FS)) {
-		osada_file* file = encontrarOsadaFileLibre(FS);
+		int* pos=calloc(1,sizeof(int));
+		osada_file* file = encontrarOsadaFileLibre(FS,pos);
+		waitFileSemaphore(*pos,WRITE);
 		file->file_size = 0;
 		file->first_block = 0xFFFFFFFF;
 		char** vectorRuta = string_split(ruta, "/");
@@ -492,6 +546,8 @@ _Bool crearDirectorio(char* ruta, osada* FS) {
 		free(padre);
 		file->state = DIRECTORY;
 		file->lastmod = time(NULL);
+		freeFileSemaphore(*pos);
+		free(pos);
 		return true;
 
 	} else {
@@ -804,7 +860,7 @@ void* hilo_atendedor(base* bas) {
 	}
 	return 0;
 }
-int main(void) {
+int main(int cant,char* argumentos[]) {
 
 	logger = log_create("log.txt", "PokedexServer", true, logLevel);
 	initOsadaSync();
@@ -849,7 +905,7 @@ int main(void) {
 	list_add(discriminators, d);
 	osada* osadaDisk = calloc(1, sizeof(osada));
 
-	int fd = open("/home/utnso/tp-2016-2c-Sudo-woodo/OsadaMaster/unOsada.bin", O_RDWR, 0);
+	int fd = open(argumentos[1], O_RDWR, 0);
 	//CAMBIAR ESTA RUTA WACHIN
 	if (fd != -1) {
 		pagesize = getpagesize();
@@ -893,7 +949,7 @@ int main(void) {
 
 	int listener;
 	listener = crearSocket();
-	bindearSocket(listener, MYPORT, IP_LOCAL);
+	bindearSocket(listener, 4555, IP_LOCAL);
 	socketEscucha(listener, 5);
 	fd_set read_fds;
 	fd_set master;

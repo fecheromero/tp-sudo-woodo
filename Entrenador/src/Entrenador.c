@@ -562,7 +562,7 @@ int main(int cant,char* argumentos[]){
 		  free(nom);
 		  POKEDEX=malloc(sizeof(char)*255);
 
-		  string_append(&POKEDEX,"/home/utnso/tp-2016-2c-Sudo-woodo/PokedexCliente/tmp/PokeDex");
+		  string_append(&POKEDEX,argumentos[2]);
 		  ENTRENADOR=malloc(sizeof(entrenador));
 		  RUTA=malloc(sizeof(char)*255);
 		  string_append(&RUTA,POKEDEX);

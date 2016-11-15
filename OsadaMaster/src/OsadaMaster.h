@@ -43,8 +43,6 @@ void waitFileSemaphore(int file, osada_operation operation);
 void freeFileSemaphore(int file);
 void initOsadaSync();
 
-
-
 typedef struct{
 	osada_operation operation;
 	pthread_cond_t * condition;
@@ -72,7 +70,7 @@ _Bool validarContenedor(char* ruta, osada* FS);
 
 uint32_t bloqueDisponible(osada* FS);
 
-osada_file* encontrarOsadaFileLibre(osada* FS);
+osada_file* encontrarOsadaFileLibre(osada* FS,int* pos);
 
 _Bool crearArchivo(char* ruta, void* contenido,uint32_t size,osada* FS);
 

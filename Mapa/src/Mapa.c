@@ -1069,7 +1069,7 @@ int main(int cant,char* argumentos[]) {
 	READY=queue_create();
 	  atendido=NULL;
 	  POKEDEX=malloc(sizeof(char)*255);
-	  string_append(&POKEDEX,"/home/utnso/tp-2016-2c-Sudo-woodo/PokedexCliente/tmp/PokeDex");
+	  string_append(&POKEDEX,argumentos[2]);
 	  puts(POKEDEX);
 	 acciones=list_create();
 	  pokemons=malloc(sizeof(bloqueadosXPokemon)*50);

@@ -299,7 +299,9 @@ int main(int argc, char *argv[]) {
 	log_debug(logger, "Creando socket");
 	socketPokedexServer = crearSocket();
 	log_debug(logger, "Conectando al servidor");
-	conectarSocket(socketPokedexServer, DEST_PORT, IP_LOCAL);
+	char* IP=getenv("IP");
+	int Puerto=atoi(getenv("Puerto"));
+	conectarSocket(socketPokedexServer, Puerto, IP);
 
 	return fuse_main(argc, argv, &funciones, NULL);
 }
