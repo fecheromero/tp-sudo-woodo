@@ -77,9 +77,9 @@ direccion aceptarConexion(int socketEscucha) {
 }
 ;
 
-int recibir(int socket, void* guardeAqui, size_t lenght) {
+int recibir(int socket, void* guardeAqui, size_t length) {
 	int rdo;
-	rdo = recv(socket, guardeAqui, lenght, 0);
+	rdo = recv(socket, guardeAqui, length, 0);
 	if (rdo == -1) {
 		perror("Fallo al recibir paquete");
 	};
@@ -91,9 +91,9 @@ int recibir(int socket, void* guardeAqui, size_t lenght) {
 }
 ;
 
-int enviar(int socket, void * sacaDeAca, size_t lenght) {
+int enviar(int socket, void * sacaDeAca, size_t length) {
 	int rdo;
-	rdo = send(socket, sacaDeAca, lenght, 0);
+	rdo = send(socket, sacaDeAca, length, 0);
 	if (rdo == -1) {
 		perror("Fallo el envio");
 	};
