@@ -34,16 +34,6 @@ item->quantity = item->quantity + 1;
 printf("WARN: Item %c no existente\n", id);
 }
 }
-//capturar pokemon recibe un nest y un entrenador, compara su posicion y si estan en el mismo lugar captura
-int capturarPokemon(t_list* items, char entid, char nestid){
-ITEM_NIVEL* nest = _search_item_by_id(items, nestid);
-ITEM_NIVEL* entrenador = _search_item_by_id(items, entid);
-if(nest->posx == entrenador->posx && nest->posy == entrenador->posy){
-restarRecurso(items, nestid);
-return 0; //Capturo al Pokemon.
-}
-return -1; //No se encuentran en la misma posicion.
-}
 void finalizarGUI(t_list* items){
 int n;
 n = list_size(items);

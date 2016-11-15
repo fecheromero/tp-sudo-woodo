@@ -1,0 +1,2355 @@
+[DEBUG] 01:38:12:870 PokedexCliente/(22343:22343): Creando socket
+[DEBUG] 01:38:12:870 PokedexCliente/(22343:22343): Conectando al servidor
+[DEBUG] 01:38:28:324 PokedexCliente/(22353:22353): Creando socket
+[DEBUG] 01:38:28:324 PokedexCliente/(22353:22353): Conectando al servidor
+[INFO] 01:38:28:682 PokedexCliente/(22353:22361): ejecutando getattr: /.Trash
+[INFO] 01:38:28:682 PokedexCliente/(22353:22361): envie
+[DEBUG] 01:38:28:683 PokedexCliente/(22353:22361): recibido el file
+[DEBUG] 01:38:28:683 PokedexCliente/(22353:22361): IGNORED: noFound
+[INFO] 01:38:28:683 PokedexCliente/(22353:22361): recibi el ok: 1
+[INFO] 01:38:28:683 PokedexCliente/(22353:22362): ejecutando getattr: /.Trash-1000
+[INFO] 01:38:28:683 PokedexCliente/(22353:22362): envie
+[DEBUG] 01:38:28:722 PokedexCliente/(22353:22362): recibido el file
+[DEBUG] 01:38:28:722 PokedexCliente/(22353:22362): IGNORED: noFound
+[INFO] 01:38:28:759 PokedexCliente/(22353:22362): recibi el ok: 1
+[INFO] 01:38:28:760 PokedexCliente/(22353:22363): ejecutando getattr: /.xdg-volume-info
+[INFO] 01:38:28:760 PokedexCliente/(22353:22363): envie
+[DEBUG] 01:38:28:799 PokedexCliente/(22353:22363): recibido el file
+[DEBUG] 01:38:28:799 PokedexCliente/(22353:22363): IGNORED: noFound
+[INFO] 01:38:28:839 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:28:839 PokedexCliente/(22353:22361): ejecutando getattr: /autorun.inf
+[INFO] 01:38:28:839 PokedexCliente/(22353:22361): envie
+[DEBUG] 01:38:28:879 PokedexCliente/(22353:22361): recibido el file
+[DEBUG] 01:38:28:879 PokedexCliente/(22353:22361): IGNORED: noFound
+[INFO] 01:38:28:919 PokedexCliente/(22353:22361): recibi el ok: 1
+[INFO] 01:38:28:919 PokedexCliente/(22353:22362): ejecutando readdir: /
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): recibidos
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:28:999 PokedexCliente/(22353:22362): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:28:999 PokedexCliente/(22353:22362): recibi el ok: 1
+[INFO] 01:38:28:0 PokedexCliente/(22353:22361): ejecutando getattr: /PokeDex
+[INFO] 01:38:28:0 PokedexCliente/(22353:22361): envie
+[DEBUG] 01:38:29:39 PokedexCliente/(22353:22361): recibido el file
+[DEBUG] 01:38:29:40 PokedexCliente/(22353:22361): directorio: PokeDex
+[INFO] 01:38:29:79 PokedexCliente/(22353:22361): recibi el ok: 1
+[INFO] 01:38:29:79 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:159 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:159 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:160 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:239 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:239 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:240 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:319 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:319 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:319 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:319 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:320 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:320 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:320 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:320 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:320 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:320 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:320 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:320 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:320 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:399 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:399 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:399 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:399 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:399 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:400 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:400 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:400 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:400 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:400 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:400 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:400 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:400 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:479 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:479 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:480 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:480 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:480 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:480 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:480 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:480 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:480 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:480 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:480 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:480 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:480 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:559 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:559 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:560 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:639 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:639 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:640 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:719 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:719 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:720 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:799 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:800 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:800 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:879 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:879 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:879 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:879 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:880 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:880 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:880 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:880 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:880 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:880 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:880 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:880 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:880 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:29:959 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:29:959 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:29:959 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:959 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:29:959 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:959 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:29:959 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:29:960 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:29:960 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:29:960 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:29:960 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:29:960 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:29:960 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:39 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:39 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:30:40 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:119 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:119 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:30:120 PokedexCliente/(22353:22361): ejecutando getattr: /PokeDex
+[INFO] 01:38:30:120 PokedexCliente/(22353:22361): envie
+[DEBUG] 01:38:30:159 PokedexCliente/(22353:22361): recibido el file
+[DEBUG] 01:38:30:159 PokedexCliente/(22353:22361): directorio: PokeDex
+[INFO] 01:38:30:199 PokedexCliente/(22353:22361): recibi el ok: 1
+[INFO] 01:38:30:199 PokedexCliente/(22353:22361): ejecutando readdir: /
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): recibidos
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:279 PokedexCliente/(22353:22361): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:279 PokedexCliente/(22353:22361): recibi el ok: 1
+[INFO] 01:38:30:280 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:359 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:359 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:30:360 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:439 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:439 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:30:440 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:30:519 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:520 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:520 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:30:521 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:30:603 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:604 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:604 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:30:605 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:30:683 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:30:683 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:683 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:684 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:684 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:684 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:684 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:684 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:684 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:684 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:684 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:684 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:30:684 PokedexCliente/(22353:22363): ejecutando readdir: /
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:764 PokedexCliente/(22353:22363): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:764 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:30:835 PokedexCliente/(22353:22362): ejecutando readdir: /
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): recibidos
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo:  tipo: 2 size: 0
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:38:30:885 PokedexCliente/(22353:22362): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:38:30:885 PokedexCliente/(22353:22362): recibi el ok: 1
+[INFO] 01:38:30:885 PokedexCliente/(22353:22363): ejecutando getattr: /
+[INFO] 01:38:30:885 PokedexCliente/(22353:22363): envie
+[DEBUG] 01:38:30:923 PokedexCliente/(22353:22363): recibido el file
+[DEBUG] 01:38:30:923 PokedexCliente/(22353:22363): directorio: /
+[INFO] 01:38:30:963 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:30:963 PokedexCliente/(22353:22361): ejecutando getattr: /
+[INFO] 01:38:30:963 PokedexCliente/(22353:22361): envie
+[DEBUG] 01:38:31:3 PokedexCliente/(22353:22361): recibido el file
+[DEBUG] 01:38:31:3 PokedexCliente/(22353:22361): directorio: /
+[INFO] 01:38:31:43 PokedexCliente/(22353:22361): recibi el ok: 1
+[INFO] 01:38:31:43 PokedexCliente/(22353:22362): ejecutando getattr: /autorun.inf
+[INFO] 01:38:31:43 PokedexCliente/(22353:22362): envie
+[DEBUG] 01:38:31:83 PokedexCliente/(22353:22362): recibido el file
+[DEBUG] 01:38:31:83 PokedexCliente/(22353:22362): IGNORED: noFound
+[INFO] 01:38:31:123 PokedexCliente/(22353:22362): recibi el ok: 1
+[INFO] 01:38:51:97 PokedexCliente/(22353:22363): ejecutando getattr: /PokeDex
+[INFO] 01:38:51:98 PokedexCliente/(22353:22363): envie
+[DEBUG] 01:38:51:135 PokedexCliente/(22353:22363): recibido el file
+[DEBUG] 01:38:51:135 PokedexCliente/(22353:22363): directorio: PokeDex
+[INFO] 01:38:51:136 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:51:136 PokedexCliente/(22353:22361): ejecutando getattr: /PokeDex/Mapas
+[INFO] 01:38:51:136 PokedexCliente/(22353:22361): envie
+[DEBUG] 01:38:51:175 PokedexCliente/(22353:22361): recibido el file
+[DEBUG] 01:38:51:175 PokedexCliente/(22353:22361): directorio: Mapas
+[INFO] 01:38:51:215 PokedexCliente/(22353:22361): recibi el ok: 1
+[INFO] 01:38:51:215 PokedexCliente/(22353:22366): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta
+[INFO] 01:38:51:215 PokedexCliente/(22353:22366): envie
+[DEBUG] 01:38:51:255 PokedexCliente/(22353:22366): recibido el file
+[DEBUG] 01:38:51:255 PokedexCliente/(22353:22366): directorio: Pueblo Paleta
+[INFO] 01:38:51:295 PokedexCliente/(22353:22366): recibi el ok: 1
+[INFO] 01:38:51:295 PokedexCliente/(22353:22363): ejecutando readdir: /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:38:51:375 PokedexCliente/(22353:22363): recibidos
+[DEBUG] 01:38:51:375 PokedexCliente/(22353:22363): cargo: PokeNests tipo: 2 size: 0
+[DEBUG] 01:38:51:375 PokedexCliente/(22353:22363): cargo: PaletMedal.jpg tipo: 1 size: 0
+[DEBUG] 01:38:51:375 PokedexCliente/(22353:22363): cargo: metadata tipo: 1 size: 96
+[INFO] 01:38:51:375 PokedexCliente/(22353:22363): recibi el ok: 1
+[INFO] 01:38:51:375 PokedexCliente/(22353:22366): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/metadata
+[INFO] 01:38:51:376 PokedexCliente/(22353:22366): envie
+[DEBUG] 01:38:51:416 PokedexCliente/(22353:22366): recibido el file
+[DEBUG] 01:38:51:416 PokedexCliente/(22353:22366): archivo: metadata tamaÃ±o: 96
+[INFO] 01:38:51:455 PokedexCliente/(22353:22366): recibi el ok: 1
+[INFO] 01:38:51:455 PokedexCliente/(22353:22363): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:38:51:456 PokedexCliente/(22353:22363): pidiendo: 4096 desde 0
+[DEBUG] 01:38:51:535 PokedexCliente/(22353:22363): leidos: 96 resultado: TiempoCheckeoDeadlock=10000	
+Batalla=1
+algoritmo=RR
+quantum=3
+retardo=500
+IP=0.0.0.0
+Puerto=4556
+[DEBUG] 01:41:06:476 PokedexCliente/(22423:22423): Creando socket
+[DEBUG] 01:41:06:476 PokedexCliente/(22423:22423): Conectando al servidor
+[INFO] 01:41:06:488 PokedexCliente/(22423:22431): ejecutando getattr: /.Trash
+[INFO] 01:41:06:488 PokedexCliente/(22423:22431): envie
+[DEBUG] 01:41:06:490 PokedexCliente/(22423:22431): recibido el file
+[DEBUG] 01:41:06:490 PokedexCliente/(22423:22431): IGNORED: noFound
+[INFO] 01:41:06:490 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:06:491 PokedexCliente/(22423:22431): ejecutando getattr: /.Trash-1000
+[INFO] 01:41:06:491 PokedexCliente/(22423:22431): envie
+[DEBUG] 01:41:06:527 PokedexCliente/(22423:22431): recibido el file
+[DEBUG] 01:41:06:527 PokedexCliente/(22423:22431): IGNORED: noFound
+[INFO] 01:41:06:567 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:06:567 PokedexCliente/(22423:22432): ejecutando getattr: /.xdg-volume-info
+[INFO] 01:41:06:567 PokedexCliente/(22423:22432): envie
+[DEBUG] 01:41:06:607 PokedexCliente/(22423:22432): recibido el file
+[DEBUG] 01:41:06:607 PokedexCliente/(22423:22432): IGNORED: noFound
+[INFO] 01:41:06:647 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:06:648 PokedexCliente/(22423:22433): ejecutando getattr: /autorun.inf
+[INFO] 01:41:06:648 PokedexCliente/(22423:22433): envie
+[DEBUG] 01:41:06:687 PokedexCliente/(22423:22433): recibido el file
+[DEBUG] 01:41:06:688 PokedexCliente/(22423:22433): IGNORED: noFound
+[INFO] 01:41:06:727 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:06:728 PokedexCliente/(22423:22431): ejecutando readdir: /
+[DEBUG] 01:41:06:807 PokedexCliente/(22423:22431): recibidos
+[DEBUG] 01:41:06:807 PokedexCliente/(22423:22431): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:06:808 PokedexCliente/(22423:22431): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:06:808 PokedexCliente/(22423:22431): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:06:808 PokedexCliente/(22423:22431): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:06:808 PokedexCliente/(22423:22431): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:06:808 PokedexCliente/(22423:22431): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:06:808 PokedexCliente/(22423:22431): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:06:808 PokedexCliente/(22423:22431): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:06:808 PokedexCliente/(22423:22431): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:06:808 PokedexCliente/(22423:22431): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:06:808 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:06:808 PokedexCliente/(22423:22433): ejecutando getattr: /PokeDex
+[INFO] 01:41:06:809 PokedexCliente/(22423:22433): envie
+[DEBUG] 01:41:06:848 PokedexCliente/(22423:22433): recibido el file
+[DEBUG] 01:41:06:848 PokedexCliente/(22423:22433): directorio: PokeDex
+[INFO] 01:41:06:887 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:06:888 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:06:968 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:06:968 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:06:968 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:47 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:47 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:47 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:47 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:47 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:47 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:48 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:48 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:48 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:48 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:48 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:48 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:48 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:127 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:127 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:127 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:127 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:127 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:127 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:127 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:128 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:128 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:128 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:128 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:128 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:128 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:207 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:207 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:207 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:207 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:207 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:207 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:208 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:208 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:208 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:208 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:208 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:208 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:208 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:287 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:288 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:288 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:367 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:368 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:368 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:368 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:447 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:447 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:447 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:447 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:447 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:447 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:447 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:447 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:447 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:448 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:448 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:448 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:448 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:527 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:527 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:527 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:527 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:527 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:527 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:527 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:527 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:527 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:528 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:528 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:528 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:528 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:607 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:607 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:607 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:607 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:607 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:607 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:607 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:607 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:608 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:608 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:608 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:608 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:608 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:687 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:687 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:687 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:687 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:687 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:687 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:688 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:688 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:688 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:688 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:688 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:688 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:688 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:767 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:767 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:768 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:847 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:848 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:848 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:07:927 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:07:927 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:07:927 PokedexCliente/(22423:22432): ejecutando getattr: /PokeDex
+[INFO] 01:41:07:927 PokedexCliente/(22423:22432): envie
+[DEBUG] 01:41:07:967 PokedexCliente/(22423:22432): recibido el file
+[DEBUG] 01:41:07:967 PokedexCliente/(22423:22432): directorio: PokeDex
+[INFO] 01:41:08:7 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:08:7 PokedexCliente/(22423:22432): ejecutando readdir: /
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): recibidos
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:87 PokedexCliente/(22423:22432): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:08:87 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:08:88 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:08:167 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:168 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:08:168 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:08:169 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:08:247 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:248 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:08:248 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:08:249 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:08:327 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:08:327 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:08:327 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:327 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:327 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:327 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:08:328 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:08:328 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:08:328 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:08:328 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:328 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:08:328 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:08:328 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:08:407 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:08:407 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:08:407 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:407 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:407 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:407 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:08:408 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:08:408 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:08:408 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:08:408 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:408 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:08:408 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:08:408 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:487 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:08:487 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:08:488 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:08:567 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:568 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:08:568 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:08:569 PokedexCliente/(22423:22433): ejecutando readdir: /
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): recibidos
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo:  tipo: 2 size: 0
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:41:08:647 PokedexCliente/(22423:22433): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:41:08:647 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:08:647 PokedexCliente/(22423:22431): ejecutando getattr: /
+[INFO] 01:41:08:647 PokedexCliente/(22423:22431): envie
+[DEBUG] 01:41:08:687 PokedexCliente/(22423:22431): recibido el file
+[DEBUG] 01:41:08:687 PokedexCliente/(22423:22431): directorio: /
+[INFO] 01:41:08:728 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:08:728 PokedexCliente/(22423:22432): ejecutando getattr: /
+[INFO] 01:41:08:728 PokedexCliente/(22423:22432): envie
+[DEBUG] 01:41:08:767 PokedexCliente/(22423:22432): recibido el file
+[DEBUG] 01:41:08:767 PokedexCliente/(22423:22432): directorio: /
+[INFO] 01:41:08:808 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:08:808 PokedexCliente/(22423:22433): ejecutando getattr: /autorun.inf
+[INFO] 01:41:08:808 PokedexCliente/(22423:22433): envie
+[DEBUG] 01:41:08:847 PokedexCliente/(22423:22433): recibido el file
+[DEBUG] 01:41:08:847 PokedexCliente/(22423:22433): IGNORED: noFound
+[INFO] 01:41:08:888 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:11:283 PokedexCliente/(22423:22431): ejecutando getattr: /PokeDex
+[INFO] 01:41:11:283 PokedexCliente/(22423:22431): envie
+[DEBUG] 01:41:11:323 PokedexCliente/(22423:22431): recibido el file
+[DEBUG] 01:41:11:323 PokedexCliente/(22423:22431): directorio: PokeDex
+[INFO] 01:41:11:323 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:11:323 PokedexCliente/(22423:22432): ejecutando getattr: /PokeDex/Mapas
+[INFO] 01:41:11:323 PokedexCliente/(22423:22432): envie
+[DEBUG] 01:41:11:363 PokedexCliente/(22423:22432): recibido el file
+[DEBUG] 01:41:11:363 PokedexCliente/(22423:22432): directorio: Mapas
+[INFO] 01:41:11:404 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:11:404 PokedexCliente/(22423:22436): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta
+[INFO] 01:41:11:404 PokedexCliente/(22423:22436): envie
+[DEBUG] 01:41:11:444 PokedexCliente/(22423:22436): recibido el file
+[DEBUG] 01:41:11:444 PokedexCliente/(22423:22436): directorio: Pueblo Paleta
+[INFO] 01:41:11:483 PokedexCliente/(22423:22436): recibi el ok: 1
+[INFO] 01:41:11:484 PokedexCliente/(22423:22431): ejecutando readdir: /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:41:11:563 PokedexCliente/(22423:22431): recibidos
+[DEBUG] 01:41:11:563 PokedexCliente/(22423:22431): cargo: PokeNests tipo: 2 size: 0
+[DEBUG] 01:41:11:563 PokedexCliente/(22423:22431): cargo: PaletMedal.jpg tipo: 1 size: 0
+[DEBUG] 01:41:11:563 PokedexCliente/(22423:22431): cargo: metadata tipo: 1 size: 96
+[INFO] 01:41:11:563 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:11:563 PokedexCliente/(22423:22436): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/metadata
+[INFO] 01:41:11:564 PokedexCliente/(22423:22436): envie
+[DEBUG] 01:41:11:603 PokedexCliente/(22423:22436): recibido el file
+[DEBUG] 01:41:11:603 PokedexCliente/(22423:22436): archivo: metadata tamaÃ±o: 96
+[INFO] 01:41:11:643 PokedexCliente/(22423:22436): recibi el ok: 1
+[INFO] 01:41:11:644 PokedexCliente/(22423:22431): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:41:11:644 PokedexCliente/(22423:22431): pidiendo: 4096 desde 0
+[DEBUG] 01:41:11:723 PokedexCliente/(22423:22431): leidos: 96 resultado: TiempoCheckeoDeadlock=10000	
+Batalla=1
+algoritmo=RR
+quantum=3
+retardo=500
+IP=0.0.0.0
+Puerto=4556
+[INFO] 01:41:11:723 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:11:728 PokedexCliente/(22423:22436): cerrando archivo
+[INFO] 01:41:11:757 PokedexCliente/(22423:22433): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests
+[INFO] 01:41:11:757 PokedexCliente/(22423:22433): envie
+[DEBUG] 01:41:11:796 PokedexCliente/(22423:22433): recibido el file
+[DEBUG] 01:41:11:796 PokedexCliente/(22423:22433): directorio: PokeNests
+[INFO] 01:41:11:836 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:11:836 PokedexCliente/(22423:22432): ejecutando readdir: /PokeDex/Mapas/Pueblo Paleta/PokeNests
+[DEBUG] 01:41:11:916 PokedexCliente/(22423:22432): recibidos
+[DEBUG] 01:41:11:916 PokedexCliente/(22423:22432): cargo: Bulbasaur tipo: 2 size: 0
+[DEBUG] 01:41:11:916 PokedexCliente/(22423:22432): cargo: Pikachu tipo: 2 size: 0
+[INFO] 01:41:11:916 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:11:916 PokedexCliente/(22423:22436): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur
+[INFO] 01:41:11:916 PokedexCliente/(22423:22436): envie
+[DEBUG] 01:41:11:955 PokedexCliente/(22423:22436): recibido el file
+[DEBUG] 01:41:11:955 PokedexCliente/(22423:22436): directorio: Bulbasaur
+[INFO] 01:41:11:995 PokedexCliente/(22423:22436): recibi el ok: 1
+[INFO] 01:41:11:995 PokedexCliente/(22423:22431): ejecutando readdir: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur
+[DEBUG] 01:41:12:75 PokedexCliente/(22423:22431): recibidos
+[DEBUG] 01:41:12:75 PokedexCliente/(22423:22431): cargo: Bulbasaur001.dat tipo: 1 size: 8
+[DEBUG] 01:41:12:75 PokedexCliente/(22423:22431): cargo: Bulbasaur002.dat tipo: 1 size: 8
+[DEBUG] 01:41:12:75 PokedexCliente/(22423:22431): cargo: Bulbasaur003.dat tipo: 1 size: 8
+[DEBUG] 01:41:12:75 PokedexCliente/(22423:22431): cargo: metadata tipo: 1 size: 42
+[INFO] 01:41:12:75 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:12:75 PokedexCliente/(22423:22432): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur001.dat
+[INFO] 01:41:12:75 PokedexCliente/(22423:22432): envie
+[DEBUG] 01:41:12:115 PokedexCliente/(22423:22432): recibido el file
+[DEBUG] 01:41:12:115 PokedexCliente/(22423:22432): archivo: Bulbasaur001.dat tamaÃ±o: 8
+[INFO] 01:41:12:155 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:12:155 PokedexCliente/(22423:22433): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur001.dat
+[DEBUG] 01:41:12:155 PokedexCliente/(22423:22433): pidiendo: 4096 desde 0
+[DEBUG] 01:41:12:235 PokedexCliente/(22423:22433): leidos: 8 resultado: Nivel=44
+[INFO] 01:41:12:235 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:12:235 PokedexCliente/(22423:22431): cerrando archivo
+[INFO] 01:41:12:235 PokedexCliente/(22423:22432): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur002.dat
+[INFO] 01:41:12:235 PokedexCliente/(22423:22432): envie
+[DEBUG] 01:41:12:275 PokedexCliente/(22423:22432): recibido el file
+[DEBUG] 01:41:12:275 PokedexCliente/(22423:22432): archivo: Bulbasaur002.dat tamaÃ±o: 8
+[INFO] 01:41:12:315 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:12:315 PokedexCliente/(22423:22433): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur002.dat
+[DEBUG] 01:41:12:315 PokedexCliente/(22423:22433): pidiendo: 4096 desde 0
+[DEBUG] 01:41:12:395 PokedexCliente/(22423:22433): leidos: 8 resultado: Nivel=01
+[INFO] 01:41:12:396 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:12:396 PokedexCliente/(22423:22431): cerrando archivo
+[INFO] 01:41:12:396 PokedexCliente/(22423:22432): ejecutando getattr: /PokeDex
+[INFO] 01:41:12:396 PokedexCliente/(22423:22432): envie
+[DEBUG] 01:41:12:435 PokedexCliente/(22423:22432): recibido el file
+[DEBUG] 01:41:12:435 PokedexCliente/(22423:22432): directorio: PokeDex
+[INFO] 01:41:12:475 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:12:475 PokedexCliente/(22423:22436): ejecutando getattr: /PokeDex/Mapas
+[INFO] 01:41:12:475 PokedexCliente/(22423:22436): envie
+[DEBUG] 01:41:12:516 PokedexCliente/(22423:22436): recibido el file
+[DEBUG] 01:41:12:516 PokedexCliente/(22423:22436): directorio: Mapas
+[INFO] 01:41:12:555 PokedexCliente/(22423:22436): recibi el ok: 1
+[INFO] 01:41:12:555 PokedexCliente/(22423:22433): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta
+[INFO] 01:41:12:556 PokedexCliente/(22423:22433): envie
+[DEBUG] 01:41:12:595 PokedexCliente/(22423:22433): recibido el file
+[DEBUG] 01:41:12:595 PokedexCliente/(22423:22433): directorio: Pueblo Paleta
+[INFO] 01:41:12:635 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:12:636 PokedexCliente/(22423:22431): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur003.dat
+[INFO] 01:41:12:636 PokedexCliente/(22423:22431): envie
+[DEBUG] 01:41:12:676 PokedexCliente/(22423:22431): recibido el file
+[DEBUG] 01:41:12:676 PokedexCliente/(22423:22431): archivo: Bulbasaur003.dat tamaÃ±o: 8
+[INFO] 01:41:12:715 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:12:715 PokedexCliente/(22423:22436): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur003.dat
+[DEBUG] 01:41:12:715 PokedexCliente/(22423:22436): pidiendo: 4096 desde 0
+[DEBUG] 01:41:12:795 PokedexCliente/(22423:22436): leidos: 8 resultado: Nivel=55
+[INFO] 01:41:12:795 PokedexCliente/(22423:22436): recibi el ok: 1
+[INFO] 01:41:12:795 PokedexCliente/(22423:22433): cerrando archivo
+[INFO] 01:41:12:795 PokedexCliente/(22423:22431): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/metadata
+[INFO] 01:41:12:795 PokedexCliente/(22423:22431): envie
+[DEBUG] 01:41:12:835 PokedexCliente/(22423:22431): recibido el file
+[DEBUG] 01:41:12:835 PokedexCliente/(22423:22431): archivo: metadata tamaÃ±o: 42
+[INFO] 01:41:12:875 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:12:875 PokedexCliente/(22423:22436): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests
+[INFO] 01:41:12:875 PokedexCliente/(22423:22436): envie
+[DEBUG] 01:41:12:915 PokedexCliente/(22423:22436): recibido el file
+[DEBUG] 01:41:12:915 PokedexCliente/(22423:22436): directorio: PokeNests
+[INFO] 01:41:12:955 PokedexCliente/(22423:22436): recibi el ok: 1
+[INFO] 01:41:12:955 PokedexCliente/(22423:22433): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/metadata
+[DEBUG] 01:41:12:955 PokedexCliente/(22423:22433): pidiendo: 4096 desde 0
+[DEBUG] 01:41:13:35 PokedexCliente/(22423:22433): leidos: 42 resultado: Tipo=Planta
+Posicion=12;19
+Identificador=B
+[INFO] 01:41:13:35 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:13:35 PokedexCliente/(22423:22431): cerrando archivo
+[INFO] 01:41:13:36 PokedexCliente/(22423:22433): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu
+[INFO] 01:41:13:36 PokedexCliente/(22423:22433): envie
+[DEBUG] 01:41:13:75 PokedexCliente/(22423:22433): recibido el file
+[DEBUG] 01:41:13:75 PokedexCliente/(22423:22433): directorio: Pikachu
+[INFO] 01:41:13:115 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:13:115 PokedexCliente/(22423:22432): ejecutando readdir: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu
+[DEBUG] 01:41:13:195 PokedexCliente/(22423:22432): recibidos
+[DEBUG] 01:41:13:195 PokedexCliente/(22423:22432): cargo: metadata tipo: 1 size: 44
+[DEBUG] 01:41:13:195 PokedexCliente/(22423:22432): cargo: Pikachu001.dat tipo: 1 size: 9
+[DEBUG] 01:41:13:195 PokedexCliente/(22423:22432): cargo: Pikachu002.dat tipo: 1 size: 8
+[INFO] 01:41:13:195 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:13:196 PokedexCliente/(22423:22436): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/metadata
+[INFO] 01:41:13:196 PokedexCliente/(22423:22436): envie
+[DEBUG] 01:41:13:235 PokedexCliente/(22423:22436): recibido el file
+[DEBUG] 01:41:13:236 PokedexCliente/(22423:22436): archivo: metadata tamaÃ±o: 44
+[INFO] 01:41:13:275 PokedexCliente/(22423:22436): recibi el ok: 1
+[INFO] 01:41:13:276 PokedexCliente/(22423:22431): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/metadata
+[DEBUG] 01:41:13:276 PokedexCliente/(22423:22431): pidiendo: 4096 desde 0
+[DEBUG] 01:41:13:355 PokedexCliente/(22423:22431): leidos: 44 resultado: Tipo=Electrico
+Posicion=20;4
+Identificador=P
+[INFO] 01:41:13:355 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:13:356 PokedexCliente/(22423:22432): cerrando archivo
+[INFO] 01:41:13:356 PokedexCliente/(22423:22436): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu001.dat
+[INFO] 01:41:13:356 PokedexCliente/(22423:22436): envie
+[DEBUG] 01:41:13:396 PokedexCliente/(22423:22436): recibido el file
+[DEBUG] 01:41:13:396 PokedexCliente/(22423:22436): archivo: Pikachu001.dat tamaÃ±o: 9
+[INFO] 01:41:13:435 PokedexCliente/(22423:22436): recibi el ok: 1
+[INFO] 01:41:13:436 PokedexCliente/(22423:22431): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu001.dat
+[DEBUG] 01:41:13:436 PokedexCliente/(22423:22431): pidiendo: 4096 desde 0
+[DEBUG] 01:41:13:515 PokedexCliente/(22423:22431): leidos: 9 resultado: Nivel=33
+
+[INFO] 01:41:13:515 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:13:515 PokedexCliente/(22423:22432): cerrando archivo
+[INFO] 01:41:13:515 PokedexCliente/(22423:22436): ejecutando getattr: /PokeDex
+[INFO] 01:41:13:515 PokedexCliente/(22423:22436): envie
+[DEBUG] 01:41:13:555 PokedexCliente/(22423:22436): recibido el file
+[DEBUG] 01:41:13:555 PokedexCliente/(22423:22436): directorio: PokeDex
+[INFO] 01:41:13:595 PokedexCliente/(22423:22436): recibi el ok: 1
+[INFO] 01:41:13:595 PokedexCliente/(22423:22433): ejecutando getattr: /PokeDex/Mapas
+[INFO] 01:41:13:595 PokedexCliente/(22423:22433): envie
+[DEBUG] 01:41:13:635 PokedexCliente/(22423:22433): recibido el file
+[DEBUG] 01:41:13:635 PokedexCliente/(22423:22433): directorio: Mapas
+[INFO] 01:41:13:675 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:13:675 PokedexCliente/(22423:22431): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta
+[INFO] 01:41:13:675 PokedexCliente/(22423:22431): envie
+[DEBUG] 01:41:13:715 PokedexCliente/(22423:22431): recibido el file
+[DEBUG] 01:41:13:715 PokedexCliente/(22423:22431): directorio: Pueblo Paleta
+[INFO] 01:41:13:755 PokedexCliente/(22423:22431): recibi el ok: 1
+[INFO] 01:41:13:755 PokedexCliente/(22423:22432): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu002.dat
+[INFO] 01:41:13:755 PokedexCliente/(22423:22432): envie
+[DEBUG] 01:41:13:795 PokedexCliente/(22423:22432): recibido el file
+[DEBUG] 01:41:13:795 PokedexCliente/(22423:22432): archivo: Pikachu002.dat tamaÃ±o: 8
+[INFO] 01:41:13:835 PokedexCliente/(22423:22432): recibi el ok: 1
+[INFO] 01:41:13:835 PokedexCliente/(22423:22433): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu002.dat
+[DEBUG] 01:41:13:835 PokedexCliente/(22423:22433): pidiendo: 4096 desde 0
+[DEBUG] 01:41:13:915 PokedexCliente/(22423:22433): leidos: 8 resultado: Nivel=22
+[INFO] 01:41:13:915 PokedexCliente/(22423:22433): recibi el ok: 1
+[INFO] 01:41:13:916 PokedexCliente/(22423:22431): cerrando archivo
+[DEBUG] 01:50:54:70 PokedexCliente/(22541:22541): Creando socket
+[DEBUG] 01:50:54:70 PokedexCliente/(22541:22541): Conectando al servidor
+[INFO] 01:50:54:82 PokedexCliente/(22541:22548): ejecutando getattr: /.Trash
+[INFO] 01:50:54:82 PokedexCliente/(22541:22548): envie
+[DEBUG] 01:50:54:83 PokedexCliente/(22541:22548): recibido el file
+[DEBUG] 01:50:54:83 PokedexCliente/(22541:22548): IGNORED: noFound
+[INFO] 01:50:54:83 PokedexCliente/(22541:22548): recibi el ok: 1
+[INFO] 01:50:54:84 PokedexCliente/(22541:22549): ejecutando getattr: /.Trash-1000
+[INFO] 01:50:54:85 PokedexCliente/(22541:22549): envie
+[DEBUG] 01:50:54:123 PokedexCliente/(22541:22549): recibido el file
+[DEBUG] 01:50:54:123 PokedexCliente/(22541:22549): IGNORED: noFound
+[INFO] 01:50:54:163 PokedexCliente/(22541:22549): recibi el ok: 1
+[INFO] 01:50:54:163 PokedexCliente/(22541:22550): ejecutando getattr: /.xdg-volume-info
+[INFO] 01:50:54:163 PokedexCliente/(22541:22550): envie
+[DEBUG] 01:50:54:204 PokedexCliente/(22541:22550): recibido el file
+[DEBUG] 01:50:54:204 PokedexCliente/(22541:22550): IGNORED: noFound
+[INFO] 01:50:54:243 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:54:243 PokedexCliente/(22541:22548): ejecutando getattr: /autorun.inf
+[INFO] 01:50:54:243 PokedexCliente/(22541:22548): envie
+[DEBUG] 01:50:54:284 PokedexCliente/(22541:22548): recibido el file
+[DEBUG] 01:50:54:284 PokedexCliente/(22541:22548): IGNORED: noFound
+[INFO] 01:50:54:323 PokedexCliente/(22541:22548): recibi el ok: 1
+[INFO] 01:50:54:323 PokedexCliente/(22541:22549): ejecutando readdir: /
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): recibidos
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:403 PokedexCliente/(22541:22549): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:54:403 PokedexCliente/(22541:22549): recibi el ok: 1
+[INFO] 01:50:54:404 PokedexCliente/(22541:22548): ejecutando getattr: /PokeDex
+[INFO] 01:50:54:404 PokedexCliente/(22541:22548): envie
+[DEBUG] 01:50:54:444 PokedexCliente/(22541:22548): recibido el file
+[DEBUG] 01:50:54:444 PokedexCliente/(22541:22548): directorio: PokeDex
+[INFO] 01:50:54:483 PokedexCliente/(22541:22548): recibi el ok: 1
+[INFO] 01:50:54:484 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:563 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:54:563 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:54:564 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:644 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:54:644 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:54:644 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:724 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:54:724 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:54:724 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:803 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:54:803 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:54:804 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:54:883 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:54:883 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:54:883 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:884 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:884 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:884 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:54:884 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:54:884 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:54:884 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:54:884 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:884 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:54:884 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:54:885 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:54:963 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:54:963 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:54:963 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:963 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:54:963 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:963 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:54:963 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:54:964 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:54:964 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:54:964 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:54:964 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:54:964 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:54:964 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:43 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:43 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:44 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:124 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:124 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:125 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:203 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:203 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:204 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:283 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:283 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:284 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:363 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:363 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:364 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:444 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:444 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:445 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:523 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:523 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:524 PokedexCliente/(22541:22548): ejecutando getattr: /PokeDex
+[INFO] 01:50:55:524 PokedexCliente/(22541:22548): envie
+[DEBUG] 01:50:55:563 PokedexCliente/(22541:22548): recibido el file
+[DEBUG] 01:50:55:563 PokedexCliente/(22541:22548): directorio: PokeDex
+[INFO] 01:50:55:603 PokedexCliente/(22541:22548): recibi el ok: 1
+[INFO] 01:50:55:604 PokedexCliente/(22541:22548): ejecutando readdir: /
+[DEBUG] 01:50:55:683 PokedexCliente/(22541:22548): recibidos
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:684 PokedexCliente/(22541:22548): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:684 PokedexCliente/(22541:22548): recibi el ok: 1
+[INFO] 01:50:55:685 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:763 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:763 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:763 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:764 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:764 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:764 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:764 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:764 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:764 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:764 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:764 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:764 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:764 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:843 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:843 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:843 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:843 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:843 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:843 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:843 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:844 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:844 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:844 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:844 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:844 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:844 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:55:923 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:55:923 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:55:924 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:56:3 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:56:3 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:56:4 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:56:83 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:56:83 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:56:84 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:56:163 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:56:163 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:56:164 PokedexCliente/(22541:22550): ejecutando readdir: /
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): recibidos
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo:  tipo: 2 size: 0
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:50:56:243 PokedexCliente/(22541:22550): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:50:56:243 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:50:56:243 PokedexCliente/(22541:22549): ejecutando getattr: /
+[INFO] 01:50:56:243 PokedexCliente/(22541:22549): envie
+[DEBUG] 01:50:56:284 PokedexCliente/(22541:22549): recibido el file
+[DEBUG] 01:50:56:284 PokedexCliente/(22541:22549): directorio: /
+[INFO] 01:50:56:323 PokedexCliente/(22541:22549): recibi el ok: 1
+[INFO] 01:50:56:323 PokedexCliente/(22541:22548): ejecutando getattr: /
+[INFO] 01:50:56:323 PokedexCliente/(22541:22548): envie
+[DEBUG] 01:50:56:363 PokedexCliente/(22541:22548): recibido el file
+[DEBUG] 01:50:56:364 PokedexCliente/(22541:22548): directorio: /
+[INFO] 01:50:56:403 PokedexCliente/(22541:22548): recibi el ok: 1
+[INFO] 01:50:56:403 PokedexCliente/(22541:22550): ejecutando getattr: /autorun.inf
+[INFO] 01:50:56:404 PokedexCliente/(22541:22550): envie
+[DEBUG] 01:50:56:443 PokedexCliente/(22541:22550): recibido el file
+[DEBUG] 01:50:56:443 PokedexCliente/(22541:22550): IGNORED: noFound
+[INFO] 01:50:56:483 PokedexCliente/(22541:22550): recibi el ok: 1
+[INFO] 01:51:16:768 PokedexCliente/(22541:22549): ejecutando getattr: /PokeDex
+[INFO] 01:51:16:768 PokedexCliente/(22541:22549): envie
+[DEBUG] 01:51:16:807 PokedexCliente/(22541:22549): recibido el file
+[DEBUG] 01:51:16:807 PokedexCliente/(22541:22549): directorio: PokeDex
+[INFO] 01:51:16:807 PokedexCliente/(22541:22549): recibi el ok: 1
+[INFO] 01:51:16:807 PokedexCliente/(22541:22548): ejecutando getattr: /PokeDex/Mapas
+[INFO] 01:51:16:808 PokedexCliente/(22541:22548): envie
+[DEBUG] 01:51:16:847 PokedexCliente/(22541:22548): recibido el file
+[DEBUG] 01:51:16:847 PokedexCliente/(22541:22548): directorio: Mapas
+[INFO] 01:51:16:887 PokedexCliente/(22541:22548): recibi el ok: 1
+[INFO] 01:51:16:888 PokedexCliente/(22541:22553): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta
+[INFO] 01:51:16:888 PokedexCliente/(22541:22553): envie
+[DEBUG] 01:51:16:928 PokedexCliente/(22541:22553): recibido el file
+[DEBUG] 01:51:16:928 PokedexCliente/(22541:22553): directorio: Pueblo Paleta
+[INFO] 01:51:16:967 PokedexCliente/(22541:22553): recibi el ok: 1
+[INFO] 01:51:16:967 PokedexCliente/(22541:22549): ejecutando readdir: /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:51:17:47 PokedexCliente/(22541:22549): recibidos
+[DEBUG] 01:51:17:47 PokedexCliente/(22541:22549): cargo: PokeNests tipo: 2 size: 0
+[DEBUG] 01:51:17:47 PokedexCliente/(22541:22549): cargo: PaletMedal.jpg tipo: 1 size: 0
+[DEBUG] 01:51:17:47 PokedexCliente/(22541:22549): cargo: metadata tipo: 1 size: 96
+[INFO] 01:51:17:47 PokedexCliente/(22541:22549): recibi el ok: 1
+[INFO] 01:51:17:47 PokedexCliente/(22541:22553): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/metadata
+[INFO] 01:51:17:47 PokedexCliente/(22541:22553): envie
+[DEBUG] 01:51:17:87 PokedexCliente/(22541:22553): recibido el file
+[DEBUG] 01:51:17:87 PokedexCliente/(22541:22553): archivo: metadata tamaÃ±o: 96
+[INFO] 01:51:17:127 PokedexCliente/(22541:22553): recibi el ok: 1
+[INFO] 01:51:17:128 PokedexCliente/(22541:22549): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:51:17:128 PokedexCliente/(22541:22549): pidiendo: 4096 desde 0
+[DEBUG] 01:51:17:207 PokedexCliente/(22541:22549): leidos: 96 resultado: TiempoCheckeoDeadlock=10000	
+Batalla=1
+algoritmo=RR
+quantum=3
+retardo=500
+IP=0.0.0.0
+Puerto=4556
+[DEBUG] 01:52:50:160 PokedexCliente/(22600:22600): Creando socket
+[DEBUG] 01:52:50:160 PokedexCliente/(22600:22600): Conectando al servidor
+[INFO] 01:52:50:170 PokedexCliente/(22600:22607): ejecutando getattr: /.Trash
+[INFO] 01:52:50:170 PokedexCliente/(22600:22607): envie
+[DEBUG] 01:52:50:170 PokedexCliente/(22600:22607): recibido el file
+[DEBUG] 01:52:50:170 PokedexCliente/(22600:22607): IGNORED: noFound
+[INFO] 01:52:50:170 PokedexCliente/(22600:22607): recibi el ok: 1
+[INFO] 01:52:50:170 PokedexCliente/(22600:22608): ejecutando getattr: /.Trash-1000
+[INFO] 01:52:50:170 PokedexCliente/(22600:22608): envie
+[DEBUG] 01:52:50:207 PokedexCliente/(22600:22608): recibido el file
+[DEBUG] 01:52:50:207 PokedexCliente/(22600:22608): IGNORED: noFound
+[INFO] 01:52:50:247 PokedexCliente/(22600:22608): recibi el ok: 1
+[INFO] 01:52:50:248 PokedexCliente/(22600:22609): ejecutando getattr: /.xdg-volume-info
+[INFO] 01:52:50:248 PokedexCliente/(22600:22609): envie
+[DEBUG] 01:52:50:288 PokedexCliente/(22600:22609): recibido el file
+[DEBUG] 01:52:50:288 PokedexCliente/(22600:22609): IGNORED: noFound
+[INFO] 01:52:50:327 PokedexCliente/(22600:22609): recibi el ok: 1
+[INFO] 01:52:50:328 PokedexCliente/(22600:22607): ejecutando getattr: /autorun.inf
+[INFO] 01:52:50:328 PokedexCliente/(22600:22607): envie
+[DEBUG] 01:52:50:368 PokedexCliente/(22600:22607): recibido el file
+[DEBUG] 01:52:50:368 PokedexCliente/(22600:22607): IGNORED: noFound
+[INFO] 01:52:50:407 PokedexCliente/(22600:22607): recibi el ok: 1
+[INFO] 01:52:50:408 PokedexCliente/(22600:22608): ejecutando readdir: /
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): recibidos
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:488 PokedexCliente/(22600:22608): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:50:488 PokedexCliente/(22600:22608): recibi el ok: 1
+[INFO] 01:52:50:488 PokedexCliente/(22600:22607): ejecutando getattr: /PokeDex
+[INFO] 01:52:50:488 PokedexCliente/(22600:22607): envie
+[DEBUG] 01:52:50:528 PokedexCliente/(22600:22607): recibido el file
+[DEBUG] 01:52:50:528 PokedexCliente/(22600:22607): directorio: PokeDex
+[INFO] 01:52:50:567 PokedexCliente/(22600:22607): recibi el ok: 1
+[INFO] 01:52:50:568 PokedexCliente/(22600:22609): ejecutando readdir: /
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): recibidos
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:651 PokedexCliente/(22600:22609): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:50:651 PokedexCliente/(22600:22609): recibi el ok: 1
+[INFO] 01:52:50:652 PokedexCliente/(22600:22609): ejecutando readdir: /
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): recibidos
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:731 PokedexCliente/(22600:22609): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:50:731 PokedexCliente/(22600:22609): recibi el ok: 1
+[INFO] 01:52:50:732 PokedexCliente/(22600:22609): ejecutando readdir: /
+[DEBUG] 01:52:50:811 PokedexCliente/(22600:22609): recibidos
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:812 PokedexCliente/(22600:22609): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:50:812 PokedexCliente/(22600:22609): recibi el ok: 1
+[INFO] 01:52:50:813 PokedexCliente/(22600:22609): ejecutando readdir: /
+[DEBUG] 01:52:50:891 PokedexCliente/(22600:22609): recibidos
+[DEBUG] 01:52:50:891 PokedexCliente/(22600:22609): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:50:891 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:892 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:892 PokedexCliente/(22600:22609): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:892 PokedexCliente/(22600:22609): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:50:892 PokedexCliente/(22600:22609): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:50:892 PokedexCliente/(22600:22609): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:50:892 PokedexCliente/(22600:22609): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:50:892 PokedexCliente/(22600:22609): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:892 PokedexCliente/(22600:22609): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:50:892 PokedexCliente/(22600:22609): recibi el ok: 1
+[INFO] 01:52:50:893 PokedexCliente/(22600:22609): ejecutando readdir: /
+[DEBUG] 01:52:50:971 PokedexCliente/(22600:22609): recibidos
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:50:972 PokedexCliente/(22600:22609): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:50:972 PokedexCliente/(22600:22609): recibi el ok: 1
+[INFO] 01:52:50:973 PokedexCliente/(22600:22607): ejecutando readdir: /
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): recibidos
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:51 PokedexCliente/(22600:22607): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:52 PokedexCliente/(22600:22607): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:52 PokedexCliente/(22600:22607): recibi el ok: 1
+[INFO] 01:52:51:52 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:131 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:131 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:132 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:211 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:211 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:212 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:291 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:292 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:292 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:371 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:371 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:371 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:451 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:451 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:452 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:531 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:531 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:531 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:612 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:612 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:612 PokedexCliente/(22600:22608): ejecutando getattr: /PokeDex
+[INFO] 01:52:51:612 PokedexCliente/(22600:22608): envie
+[DEBUG] 01:52:51:651 PokedexCliente/(22600:22608): recibido el file
+[DEBUG] 01:52:51:652 PokedexCliente/(22600:22608): directorio: PokeDex
+[INFO] 01:52:51:691 PokedexCliente/(22600:22608): recibi el ok: 1
+[INFO] 01:52:51:691 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:771 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:771 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:772 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:852 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:852 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:852 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:51:931 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:51:931 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:51:931 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:931 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:51:931 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:931 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:51:931 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:51:931 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:51:932 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:51:932 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:51:932 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:51:932 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:51:932 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:52:11 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:52:11 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:52:11 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:12 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:12 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:12 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:52:12 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:52:12 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:52:12 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:52:12 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:12 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:52:12 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:52:13 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:52:91 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:52:91 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:52:92 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:92 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:92 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:92 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:52:92 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:52:92 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:52:92 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:52:92 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:92 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:52:92 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:52:93 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:52:171 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:52:171 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:52:171 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:171 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:171 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:172 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:52:172 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:52:172 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:52:172 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:52:172 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:172 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:52:172 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:52:172 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:52:251 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:52:251 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:52:251 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:251 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:251 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:252 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:52:252 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:52:252 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:52:252 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:52:252 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:252 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:52:252 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:52:253 PokedexCliente/(22600:22610): ejecutando readdir: /
+[DEBUG] 01:52:52:331 PokedexCliente/(22600:22610): recibidos
+[DEBUG] 01:52:52:331 PokedexCliente/(22600:22610): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:52:52:331 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:331 PokedexCliente/(22600:22610): cargo:  tipo: 2 size: 0
+[DEBUG] 01:52:52:331 PokedexCliente/(22600:22610): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:331 PokedexCliente/(22600:22610): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:52:52:331 PokedexCliente/(22600:22610): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:52:52:332 PokedexCliente/(22600:22610): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:52:52:332 PokedexCliente/(22600:22610): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:52:52:332 PokedexCliente/(22600:22610): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:52:52:332 PokedexCliente/(22600:22610): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:52:52:332 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:52:52:332 PokedexCliente/(22600:22608): ejecutando getattr: /
+[INFO] 01:52:52:332 PokedexCliente/(22600:22608): envie
+[DEBUG] 01:52:52:372 PokedexCliente/(22600:22608): recibido el file
+[DEBUG] 01:52:52:372 PokedexCliente/(22600:22608): directorio: /
+[INFO] 01:52:52:411 PokedexCliente/(22600:22608): recibi el ok: 1
+[INFO] 01:52:52:411 PokedexCliente/(22600:22607): ejecutando getattr: /
+[INFO] 01:52:52:411 PokedexCliente/(22600:22607): envie
+[DEBUG] 01:52:52:451 PokedexCliente/(22600:22607): recibido el file
+[DEBUG] 01:52:52:451 PokedexCliente/(22600:22607): directorio: /
+[INFO] 01:52:52:491 PokedexCliente/(22600:22607): recibi el ok: 1
+[INFO] 01:52:52:491 PokedexCliente/(22600:22609): ejecutando getattr: /autorun.inf
+[INFO] 01:52:52:492 PokedexCliente/(22600:22609): envie
+[DEBUG] 01:52:52:532 PokedexCliente/(22600:22609): recibido el file
+[DEBUG] 01:52:52:532 PokedexCliente/(22600:22609): IGNORED: noFound
+[INFO] 01:52:52:571 PokedexCliente/(22600:22609): recibi el ok: 1
+[INFO] 01:53:32:759 PokedexCliente/(22600:22608): ejecutando getattr: /PokeDex
+[INFO] 01:53:32:759 PokedexCliente/(22600:22608): envie
+[DEBUG] 01:53:32:800 PokedexCliente/(22600:22608): recibido el file
+[DEBUG] 01:53:32:800 PokedexCliente/(22600:22608): directorio: PokeDex
+[INFO] 01:53:32:800 PokedexCliente/(22600:22608): recibi el ok: 1
+[INFO] 01:53:32:800 PokedexCliente/(22600:22607): ejecutando getattr: /PokeDex/Mapas
+[INFO] 01:53:32:800 PokedexCliente/(22600:22607): envie
+[DEBUG] 01:53:32:839 PokedexCliente/(22600:22607): recibido el file
+[DEBUG] 01:53:32:839 PokedexCliente/(22600:22607): directorio: Mapas
+[INFO] 01:53:32:879 PokedexCliente/(22600:22607): recibi el ok: 1
+[INFO] 01:53:32:879 PokedexCliente/(22600:22610): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta
+[INFO] 01:53:32:879 PokedexCliente/(22600:22610): envie
+[DEBUG] 01:53:32:919 PokedexCliente/(22600:22610): recibido el file
+[DEBUG] 01:53:32:919 PokedexCliente/(22600:22610): directorio: Pueblo Paleta
+[INFO] 01:53:32:959 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:53:32:959 PokedexCliente/(22600:22608): ejecutando readdir: /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:53:33:39 PokedexCliente/(22600:22608): recibidos
+[DEBUG] 01:53:33:39 PokedexCliente/(22600:22608): cargo: PokeNests tipo: 2 size: 0
+[DEBUG] 01:53:33:39 PokedexCliente/(22600:22608): cargo: PaletMedal.jpg tipo: 1 size: 0
+[DEBUG] 01:53:33:39 PokedexCliente/(22600:22608): cargo: metadata tipo: 1 size: 96
+[INFO] 01:53:33:39 PokedexCliente/(22600:22608): recibi el ok: 1
+[INFO] 01:53:33:40 PokedexCliente/(22600:22610): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/metadata
+[INFO] 01:53:33:40 PokedexCliente/(22600:22610): envie
+[DEBUG] 01:53:33:79 PokedexCliente/(22600:22610): recibido el file
+[DEBUG] 01:53:33:79 PokedexCliente/(22600:22610): archivo: metadata tamaÃ±o: 96
+[INFO] 01:53:33:119 PokedexCliente/(22600:22610): recibi el ok: 1
+[INFO] 01:53:33:119 PokedexCliente/(22600:22608): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:53:33:119 PokedexCliente/(22600:22608): pidiendo: 4096 desde 0
+[DEBUG] 01:53:33:200 PokedexCliente/(22600:22608): leidos: 96 resultado: TiempoCheckeoDeadlock=10000	
+Batalla=1
+algoritmo=RR
+quantum=3
+retardo=500
+IP=0.0.0.0
+Puerto=4556
+[DEBUG] 01:55:16:561 PokedexCliente/(22651:22651): Creando socket
+[DEBUG] 01:55:16:561 PokedexCliente/(22651:22651): Conectando al servidor
+[INFO] 01:55:16:572 PokedexCliente/(22651:22658): ejecutando getattr: /.Trash
+[INFO] 01:55:16:572 PokedexCliente/(22651:22658): envie
+[DEBUG] 01:55:16:573 PokedexCliente/(22651:22658): recibido el file
+[DEBUG] 01:55:16:573 PokedexCliente/(22651:22658): IGNORED: noFound
+[INFO] 01:55:16:573 PokedexCliente/(22651:22658): recibi el ok: 1
+[INFO] 01:55:16:573 PokedexCliente/(22651:22659): ejecutando getattr: /.Trash-1000
+[INFO] 01:55:16:573 PokedexCliente/(22651:22659): envie
+[DEBUG] 01:55:16:611 PokedexCliente/(22651:22659): recibido el file
+[DEBUG] 01:55:16:611 PokedexCliente/(22651:22659): IGNORED: noFound
+[INFO] 01:55:16:651 PokedexCliente/(22651:22659): recibi el ok: 1
+[INFO] 01:55:16:652 PokedexCliente/(22651:22660): ejecutando getattr: /.xdg-volume-info
+[INFO] 01:55:16:652 PokedexCliente/(22651:22660): envie
+[DEBUG] 01:55:16:691 PokedexCliente/(22651:22660): recibido el file
+[DEBUG] 01:55:16:691 PokedexCliente/(22651:22660): IGNORED: noFound
+[INFO] 01:55:16:731 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:16:731 PokedexCliente/(22651:22658): ejecutando getattr: /autorun.inf
+[INFO] 01:55:16:731 PokedexCliente/(22651:22658): envie
+[DEBUG] 01:55:16:772 PokedexCliente/(22651:22658): recibido el file
+[DEBUG] 01:55:16:772 PokedexCliente/(22651:22658): IGNORED: noFound
+[INFO] 01:55:16:812 PokedexCliente/(22651:22658): recibi el ok: 1
+[INFO] 01:55:16:812 PokedexCliente/(22651:22659): ejecutando readdir: /
+[DEBUG] 01:55:16:891 PokedexCliente/(22651:22659): recibidos
+[DEBUG] 01:55:16:891 PokedexCliente/(22651:22659): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:16:891 PokedexCliente/(22651:22659): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:16:891 PokedexCliente/(22651:22659): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:16:891 PokedexCliente/(22651:22659): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:16:891 PokedexCliente/(22651:22659): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:16:891 PokedexCliente/(22651:22659): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:16:892 PokedexCliente/(22651:22659): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:16:892 PokedexCliente/(22651:22659): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:16:892 PokedexCliente/(22651:22659): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:16:892 PokedexCliente/(22651:22659): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:16:892 PokedexCliente/(22651:22659): recibi el ok: 1
+[INFO] 01:55:16:892 PokedexCliente/(22651:22658): ejecutando getattr: /PokeDex
+[INFO] 01:55:16:892 PokedexCliente/(22651:22658): envie
+[DEBUG] 01:55:16:931 PokedexCliente/(22651:22658): recibido el file
+[DEBUG] 01:55:16:931 PokedexCliente/(22651:22658): directorio: PokeDex
+[INFO] 01:55:16:971 PokedexCliente/(22651:22658): recibi el ok: 1
+[INFO] 01:55:16:971 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:51 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:51 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:51 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:51 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:51 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:51 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:51 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:52 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:52 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:52 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:52 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:52 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:52 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:132 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:132 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:133 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:212 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:212 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:213 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:291 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:291 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:291 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:291 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:291 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:291 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:292 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:292 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:292 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:292 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:292 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:292 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:292 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:371 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:371 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:371 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:371 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:371 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:371 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:371 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:371 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:371 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:372 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:372 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:372 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:372 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:452 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:452 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:453 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:531 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:531 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:531 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:531 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:531 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:531 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:532 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:532 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:532 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:532 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:532 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:532 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:532 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:611 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:611 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:612 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:691 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:691 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:692 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:771 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:771 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:772 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:851 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:851 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:851 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:851 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:851 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:851 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:851 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:852 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:852 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:852 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:852 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:852 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:852 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:17:931 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:17:932 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:17:932 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:17:932 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:11 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:18:11 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:18:11 PokedexCliente/(22651:22658): ejecutando getattr: /PokeDex
+[INFO] 01:55:18:11 PokedexCliente/(22651:22658): envie
+[DEBUG] 01:55:18:51 PokedexCliente/(22651:22658): recibido el file
+[DEBUG] 01:55:18:51 PokedexCliente/(22651:22658): directorio: PokeDex
+[INFO] 01:55:18:91 PokedexCliente/(22651:22658): recibi el ok: 1
+[INFO] 01:55:18:91 PokedexCliente/(22651:22658): ejecutando readdir: /
+[DEBUG] 01:55:18:171 PokedexCliente/(22651:22658): recibidos
+[DEBUG] 01:55:18:171 PokedexCliente/(22651:22658): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:18:172 PokedexCliente/(22651:22658): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:172 PokedexCliente/(22651:22658): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:172 PokedexCliente/(22651:22658): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:172 PokedexCliente/(22651:22658): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:18:172 PokedexCliente/(22651:22658): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:18:172 PokedexCliente/(22651:22658): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:18:172 PokedexCliente/(22651:22658): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:18:172 PokedexCliente/(22651:22658): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:172 PokedexCliente/(22651:22658): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:18:172 PokedexCliente/(22651:22658): recibi el ok: 1
+[INFO] 01:55:18:172 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:251 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:18:251 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:18:252 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:18:331 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:18:331 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:18:331 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:331 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:332 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:332 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:18:332 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:18:332 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:18:332 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:18:332 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:332 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:18:332 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:18:332 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:18:411 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:18:411 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:18:411 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:411 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:411 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:411 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:18:411 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:18:411 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:18:411 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:18:412 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:412 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:18:412 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:18:412 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:491 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:18:491 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:18:492 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:18:571 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:18:571 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:18:572 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:572 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:572 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:572 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:18:572 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:18:572 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:18:572 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:18:572 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:572 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:18:572 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:18:573 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:18:651 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:18:651 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:18:652 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:652 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:652 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:652 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:18:652 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:18:652 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:18:652 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:18:652 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:652 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:18:652 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:18:653 PokedexCliente/(22651:22660): ejecutando readdir: /
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): recibidos
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo:  tipo: 2 size: 0
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:55:18:731 PokedexCliente/(22651:22660): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:55:18:731 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:18:731 PokedexCliente/(22651:22659): ejecutando getattr: /
+[INFO] 01:55:18:731 PokedexCliente/(22651:22659): envie
+[DEBUG] 01:55:18:771 PokedexCliente/(22651:22659): recibido el file
+[DEBUG] 01:55:18:771 PokedexCliente/(22651:22659): directorio: /
+[INFO] 01:55:18:811 PokedexCliente/(22651:22659): recibi el ok: 1
+[INFO] 01:55:18:812 PokedexCliente/(22651:22658): ejecutando getattr: /
+[INFO] 01:55:18:812 PokedexCliente/(22651:22658): envie
+[DEBUG] 01:55:18:851 PokedexCliente/(22651:22658): recibido el file
+[DEBUG] 01:55:18:851 PokedexCliente/(22651:22658): directorio: /
+[INFO] 01:55:18:891 PokedexCliente/(22651:22658): recibi el ok: 1
+[INFO] 01:55:18:891 PokedexCliente/(22651:22660): ejecutando getattr: /autorun.inf
+[INFO] 01:55:18:891 PokedexCliente/(22651:22660): envie
+[DEBUG] 01:55:18:931 PokedexCliente/(22651:22660): recibido el file
+[DEBUG] 01:55:18:931 PokedexCliente/(22651:22660): IGNORED: noFound
+[INFO] 01:55:18:971 PokedexCliente/(22651:22660): recibi el ok: 1
+[INFO] 01:55:21:791 PokedexCliente/(22651:22659): ejecutando getattr: /PokeDex
+[INFO] 01:55:21:791 PokedexCliente/(22651:22659): envie
+[DEBUG] 01:55:21:831 PokedexCliente/(22651:22659): recibido el file
+[DEBUG] 01:55:21:831 PokedexCliente/(22651:22659): directorio: PokeDex
+[INFO] 01:55:21:831 PokedexCliente/(22651:22659): recibi el ok: 1
+[INFO] 01:55:21:832 PokedexCliente/(22651:22658): ejecutando getattr: /PokeDex/Mapas
+[INFO] 01:55:21:832 PokedexCliente/(22651:22658): envie
+[DEBUG] 01:55:21:871 PokedexCliente/(22651:22658): recibido el file
+[DEBUG] 01:55:21:871 PokedexCliente/(22651:22658): directorio: Mapas
+[INFO] 01:55:21:911 PokedexCliente/(22651:22658): recibi el ok: 1
+[INFO] 01:55:21:911 PokedexCliente/(22651:22664): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta
+[INFO] 01:55:21:911 PokedexCliente/(22651:22664): envie
+[DEBUG] 01:55:21:952 PokedexCliente/(22651:22664): recibido el file
+[DEBUG] 01:55:21:952 PokedexCliente/(22651:22664): directorio: Pueblo Paleta
+[INFO] 01:55:21:992 PokedexCliente/(22651:22664): recibi el ok: 1
+[INFO] 01:55:21:992 PokedexCliente/(22651:22659): ejecutando readdir: /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:55:22:71 PokedexCliente/(22651:22659): recibidos
+[DEBUG] 01:55:22:71 PokedexCliente/(22651:22659): cargo: PokeNests tipo: 2 size: 0
+[DEBUG] 01:55:22:71 PokedexCliente/(22651:22659): cargo: PaletMedal.jpg tipo: 1 size: 0
+[DEBUG] 01:55:22:71 PokedexCliente/(22651:22659): cargo: metadata tipo: 1 size: 96
+[INFO] 01:55:22:71 PokedexCliente/(22651:22659): recibi el ok: 1
+[INFO] 01:55:22:72 PokedexCliente/(22651:22664): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/metadata
+[INFO] 01:55:22:72 PokedexCliente/(22651:22664): envie
+[DEBUG] 01:55:22:112 PokedexCliente/(22651:22664): recibido el file
+[DEBUG] 01:55:22:112 PokedexCliente/(22651:22664): archivo: metadata tamaÃ±o: 96
+[INFO] 01:55:22:152 PokedexCliente/(22651:22664): recibi el ok: 1
+[INFO] 01:55:22:152 PokedexCliente/(22651:22659): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:55:22:152 PokedexCliente/(22651:22659): pidiendo: 4096 desde 0
+[DEBUG] 01:55:22:231 PokedexCliente/(22651:22659): leidos: 96 resultado: TiempoCheckeoDeadlock=10000	
+Batalla=1
+algoritmo=RR
+quantum=3
+retardo=500
+IP=0.0.0.0
+Puerto=4556
+[DEBUG] 01:56:19:845 PokedexCliente/(22697:22697): Creando socket
+[DEBUG] 01:56:19:845 PokedexCliente/(22697:22697): Conectando al servidor
+[INFO] 01:56:19:856 PokedexCliente/(22697:22704): ejecutando getattr: /.Trash
+[INFO] 01:56:19:856 PokedexCliente/(22697:22704): envie
+[DEBUG] 01:56:19:857 PokedexCliente/(22697:22704): recibido el file
+[DEBUG] 01:56:19:857 PokedexCliente/(22697:22704): IGNORED: noFound
+[INFO] 01:56:19:857 PokedexCliente/(22697:22704): recibi el ok: 1
+[INFO] 01:56:19:857 PokedexCliente/(22697:22705): ejecutando getattr: /.Trash-1000
+[INFO] 01:56:19:857 PokedexCliente/(22697:22705): envie
+[DEBUG] 01:56:19:895 PokedexCliente/(22697:22705): recibido el file
+[DEBUG] 01:56:19:895 PokedexCliente/(22697:22705): IGNORED: noFound
+[INFO] 01:56:19:935 PokedexCliente/(22697:22705): recibi el ok: 1
+[INFO] 01:56:19:935 PokedexCliente/(22697:22706): ejecutando getattr: /.xdg-volume-info
+[INFO] 01:56:19:935 PokedexCliente/(22697:22706): envie
+[DEBUG] 01:56:19:975 PokedexCliente/(22697:22706): recibido el file
+[DEBUG] 01:56:19:975 PokedexCliente/(22697:22706): IGNORED: noFound
+[INFO] 01:56:20:15 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:15 PokedexCliente/(22697:22704): ejecutando getattr: /autorun.inf
+[INFO] 01:56:20:15 PokedexCliente/(22697:22704): envie
+[DEBUG] 01:56:20:55 PokedexCliente/(22697:22704): recibido el file
+[DEBUG] 01:56:20:55 PokedexCliente/(22697:22704): IGNORED: noFound
+[INFO] 01:56:20:95 PokedexCliente/(22697:22704): recibi el ok: 1
+[INFO] 01:56:20:95 PokedexCliente/(22697:22705): ejecutando readdir: /
+[DEBUG] 01:56:20:175 PokedexCliente/(22697:22705): recibidos
+[DEBUG] 01:56:20:175 PokedexCliente/(22697:22705): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:175 PokedexCliente/(22697:22705): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:176 PokedexCliente/(22697:22705): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:176 PokedexCliente/(22697:22705): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:176 PokedexCliente/(22697:22705): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:176 PokedexCliente/(22697:22705): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:176 PokedexCliente/(22697:22705): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:176 PokedexCliente/(22697:22705): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:176 PokedexCliente/(22697:22705): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:176 PokedexCliente/(22697:22705): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:176 PokedexCliente/(22697:22705): recibi el ok: 1
+[INFO] 01:56:20:176 PokedexCliente/(22697:22704): ejecutando getattr: /PokeDex
+[INFO] 01:56:20:176 PokedexCliente/(22697:22704): envie
+[DEBUG] 01:56:20:220 PokedexCliente/(22697:22704): recibido el file
+[DEBUG] 01:56:20:220 PokedexCliente/(22697:22704): directorio: PokeDex
+[INFO] 01:56:20:259 PokedexCliente/(22697:22704): recibi el ok: 1
+[INFO] 01:56:20:260 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:20:339 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:20:339 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:340 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:340 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:340 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:340 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:340 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:340 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:340 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:340 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:340 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:340 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:340 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:419 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:419 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:420 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:499 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:499 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:500 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:579 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:579 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:580 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:659 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:659 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:660 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:739 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:739 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:740 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:819 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:819 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:819 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:899 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:899 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:900 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:20:979 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:20:980 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:20:980 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:20:980 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:59 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:59 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:60 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:139 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:139 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:140 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:219 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:219 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:220 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:299 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:299 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:299 PokedexCliente/(22697:22704): ejecutando getattr: /PokeDex
+[INFO] 01:56:21:299 PokedexCliente/(22697:22704): envie
+[DEBUG] 01:56:21:340 PokedexCliente/(22697:22704): recibido el file
+[DEBUG] 01:56:21:340 PokedexCliente/(22697:22704): directorio: PokeDex
+[INFO] 01:56:21:379 PokedexCliente/(22697:22704): recibi el ok: 1
+[INFO] 01:56:21:379 PokedexCliente/(22697:22704): ejecutando readdir: /
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): recibidos
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:459 PokedexCliente/(22697:22704): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:459 PokedexCliente/(22697:22704): recibi el ok: 1
+[INFO] 01:56:21:460 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:539 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:539 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:540 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:620 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:620 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:621 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:699 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:699 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:699 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:699 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:700 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:700 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:700 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:700 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:700 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:700 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:700 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:700 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:701 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:779 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:779 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:779 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:779 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:779 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:779 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:780 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:780 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:780 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:780 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:780 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:780 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:781 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:859 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:859 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:859 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:859 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:859 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:859 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:860 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:860 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:860 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:860 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:860 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:860 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:861 PokedexCliente/(22697:22706): ejecutando readdir: /
+[DEBUG] 01:56:21:940 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:21:940 PokedexCliente/(22697:22706): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:21:940 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:940 PokedexCliente/(22697:22706): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:21:940 PokedexCliente/(22697:22706): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:940 PokedexCliente/(22697:22706): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:21:940 PokedexCliente/(22697:22706): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:21:940 PokedexCliente/(22697:22706): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:21:941 PokedexCliente/(22697:22706): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:21:941 PokedexCliente/(22697:22706): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:21:941 PokedexCliente/(22697:22706): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:21:941 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:21:943 PokedexCliente/(22697:22705): ejecutando readdir: /
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): recibidos
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo: PokeDex tipo: 2 size: 0
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo:  tipo: 2 size: 0
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo: .goutputstream-60ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo: tutuca tipo: 1 size: 0
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo: sarlompa tipo: 1 size: 9
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo: saraza tipo: 1 size: 0
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo: SARAZA tipo: 1 size: 7
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo: .goutputstream-Q7ÿÿ tipo: 1 size: 0
+[DEBUG] 01:56:22:23 PokedexCliente/(22697:22705): cargo: .goutputstream-XBÿÿ tipo: 1 size: 0
+[INFO] 01:56:22:24 PokedexCliente/(22697:22705): recibi el ok: 1
+[INFO] 01:56:22:24 PokedexCliente/(22697:22706): ejecutando getattr: /
+[INFO] 01:56:22:24 PokedexCliente/(22697:22706): envie
+[DEBUG] 01:56:22:63 PokedexCliente/(22697:22706): recibido el file
+[DEBUG] 01:56:22:63 PokedexCliente/(22697:22706): directorio: /
+[INFO] 01:56:22:103 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:22:103 PokedexCliente/(22697:22704): ejecutando getattr: /
+[INFO] 01:56:22:103 PokedexCliente/(22697:22704): envie
+[DEBUG] 01:56:22:144 PokedexCliente/(22697:22704): recibido el file
+[DEBUG] 01:56:22:144 PokedexCliente/(22697:22704): directorio: /
+[INFO] 01:56:22:183 PokedexCliente/(22697:22704): recibi el ok: 1
+[INFO] 01:56:22:183 PokedexCliente/(22697:22705): ejecutando getattr: /autorun.inf
+[INFO] 01:56:22:183 PokedexCliente/(22697:22705): envie
+[DEBUG] 01:56:22:223 PokedexCliente/(22697:22705): recibido el file
+[DEBUG] 01:56:22:223 PokedexCliente/(22697:22705): IGNORED: noFound
+[INFO] 01:56:22:264 PokedexCliente/(22697:22705): recibi el ok: 1
+[INFO] 01:56:24:679 PokedexCliente/(22697:22706): ejecutando getattr: /PokeDex
+[INFO] 01:56:24:679 PokedexCliente/(22697:22706): envie
+[DEBUG] 01:56:24:715 PokedexCliente/(22697:22706): recibido el file
+[DEBUG] 01:56:24:715 PokedexCliente/(22697:22706): directorio: PokeDex
+[INFO] 01:56:24:715 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:24:715 PokedexCliente/(22697:22704): ejecutando getattr: /PokeDex/Mapas
+[INFO] 01:56:24:715 PokedexCliente/(22697:22704): envie
+[DEBUG] 01:56:24:755 PokedexCliente/(22697:22704): recibido el file
+[DEBUG] 01:56:24:755 PokedexCliente/(22697:22704): directorio: Mapas
+[INFO] 01:56:24:795 PokedexCliente/(22697:22704): recibi el ok: 1
+[INFO] 01:56:24:795 PokedexCliente/(22697:22709): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta
+[INFO] 01:56:24:795 PokedexCliente/(22697:22709): envie
+[DEBUG] 01:56:24:835 PokedexCliente/(22697:22709): recibido el file
+[DEBUG] 01:56:24:835 PokedexCliente/(22697:22709): directorio: Pueblo Paleta
+[INFO] 01:56:24:875 PokedexCliente/(22697:22709): recibi el ok: 1
+[INFO] 01:56:24:875 PokedexCliente/(22697:22706): ejecutando readdir: /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:56:24:956 PokedexCliente/(22697:22706): recibidos
+[DEBUG] 01:56:24:956 PokedexCliente/(22697:22706): cargo: PokeNests tipo: 2 size: 0
+[DEBUG] 01:56:24:956 PokedexCliente/(22697:22706): cargo: PaletMedal.jpg tipo: 1 size: 0
+[DEBUG] 01:56:24:956 PokedexCliente/(22697:22706): cargo: metadata tipo: 1 size: 96
+[INFO] 01:56:24:956 PokedexCliente/(22697:22706): recibi el ok: 1
+[INFO] 01:56:24:956 PokedexCliente/(22697:22709): ejecutando getattr: /PokeDex/Mapas/Pueblo Paleta/metadata
+[INFO] 01:56:24:956 PokedexCliente/(22697:22709): envie
+[DEBUG] 01:56:24:995 PokedexCliente/(22697:22709): recibido el file
+[DEBUG] 01:56:24:995 PokedexCliente/(22697:22709): archivo: metadata tamaÃ±o: 96
+[INFO] 01:56:25:35 PokedexCliente/(22697:22709): recibi el ok: 1
+[INFO] 01:56:25:35 PokedexCliente/(22697:22706): ejecutando read: /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:56:25:35 PokedexCliente/(22697:22706): pidiendo: 4096 desde 0
+[DEBUG] 01:56:25:115 PokedexCliente/(22697:22706): leidos: 96 resultado: TiempoCheckeoDeadlock=10000	
+Batalla=1
+algoritmo=RR
+quantum=3
+retardo=500
+IP=0.0.0.0
+Puerto=4556

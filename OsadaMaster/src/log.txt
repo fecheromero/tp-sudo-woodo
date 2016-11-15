@@ -1,0 +1,2417 @@
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): PokeDex 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):  /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Entrenadores 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):   /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Ash 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Dir de Bill 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Medallas 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):      
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): GhostMedal.jpg 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Nuevo 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):   /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Jasmine 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Dir de Bill 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Medallas 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):   /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Brock 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Dir de Bill 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): Medallas 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):      
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): GhostMedal.jpg 
+
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:132 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):   /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Mysti 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Dir de Bill 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Medallas 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):   /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Red 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Dir de Bill 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Medallas 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):      
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): GhostMedal.jpg 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):   /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Lorelei 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Dir de Bill 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Medallas 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):      
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): GhostMedal.jpg 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):  /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Mapas 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):   /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Pueblo Paleta 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): PokeNests 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):     /
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Bulbasaur 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Bulbasaur001.dat 
+
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:133 PokedexServer/(22342:22342): Bulbasaur002.dat 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Bulbasaur003.dat 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):     /
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Pikachu 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Pikachu001.dat 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Pikachu002.dat 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): PaletMedal.jpg 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):   /
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Ecruteak City 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):    /
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): PokeNests 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):     /
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Gengar 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Gengar001.dat 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):     /
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Haunter 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Haunter001.dat 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342):     /
+[DEBUG] 01:38:08:134 PokedexServer/(22342:22342): Weezing 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): Weezing001.dat 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):       
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): GhostMedal.jpg 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):     
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): metadata 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):   
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): sarlompa 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):   
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): index.jpeg 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): /
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):  
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): /
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):  
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):  
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): .goutputstream-60ÿÿ 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):  
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): tutuca 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):  
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): sarlompa 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):  
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): saraza 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):  
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): SARAZA 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):  
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): .goutputstream-Q7ÿÿ 
+
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342):  
+[DEBUG] 01:38:08:135 PokedexServer/(22342:22342): .goutputstream-XBÿÿ 
+
+[DEBUG] 01:38:28:682 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:28:682 PokedexServer/(22342:22354): ruta: /.Trash 
+[DEBUG] 01:38:28:683 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:28:683 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:28:683 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:28:722 PokedexServer/(22342:22354): ruta: /.Trash-1000 
+[DEBUG] 01:38:28:722 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:28:722 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:28:760 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:28:799 PokedexServer/(22342:22354): ruta: /.xdg-volume-info 
+[DEBUG] 01:38:28:800 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:28:800 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:28:839 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:28:879 PokedexServer/(22342:22354): ruta: /autorun.inf 
+[DEBUG] 01:38:28:880 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:28:880 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:28:919 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:28:959 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:28:961 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:28:961 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:28:961 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:28:0 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:29:39 PokedexServer/(22342:22354): ruta: /PokeDex 
+[DEBUG] 01:38:29:40 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:40 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:80 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:119 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:121 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:121 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:121 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:160 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:199 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:201 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:201 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:201 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:240 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:279 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:281 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:281 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:281 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:320 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:359 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:361 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:361 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:361 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:400 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:439 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:441 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:441 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:441 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:480 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:519 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:521 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:521 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:521 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:560 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:599 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:601 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:601 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:601 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:640 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:679 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:681 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:681 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:681 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:720 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:759 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:761 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:761 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:761 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:800 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:843 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:843 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:843 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:843 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:880 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:919 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:921 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:921 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:921 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:29:961 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:29:999 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:29:1 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:29:1 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:29:1 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:40 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:30:80 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:30:83 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:30:83 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:84 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:120 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:30:159 PokedexServer/(22342:22354): ruta: /PokeDex 
+[DEBUG] 01:38:30:160 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:160 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:200 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:30:239 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:30:241 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:30:241 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:241 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:280 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:30:319 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:30:321 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:30:321 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:321 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:360 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:30:399 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:30:401 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:30:401 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:401 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:440 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:30:479 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:30:481 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:30:481 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:481 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:525 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:30:563 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:30:565 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:30:565 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:565 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:605 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:30:643 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:30:645 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:30:645 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:645 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:684 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:30:723 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:30:726 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:30:726 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:726 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:843 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:30:883 PokedexServer/(22342:22354): /
+[DEBUG] 01:38:30:885 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:30:885 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:886 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:886 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:30:923 PokedexServer/(22342:22354): ruta: / 
+[DEBUG] 01:38:30:923 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:30:924 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:30:964 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:31:3 PokedexServer/(22342:22354): ruta: / 
+[DEBUG] 01:38:31:3 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:31:4 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:31:44 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:31:83 PokedexServer/(22342:22354): ruta: /autorun.inf 
+[DEBUG] 01:38:31:84 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:31:84 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:51:98 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:51:135 PokedexServer/(22342:22354): ruta: /PokeDex 
+[DEBUG] 01:38:51:135 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:51:136 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:51:136 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:51:175 PokedexServer/(22342:22354): ruta: /PokeDex/Mapas 
+[DEBUG] 01:38:51:175 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:51:176 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:51:215 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:51:255 PokedexServer/(22342:22354): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:38:51:255 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:51:256 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:51:295 PokedexServer/(22342:22354): ejecutando: listDir
+[DEBUG] 01:38:51:335 PokedexServer/(22342:22354): /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:38:51:335 PokedexServer/(22342:22354): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:38:51:336 PokedexServer/(22342:22354): enviados
+[DEBUG] 01:38:51:336 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:51:336 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:51:376 PokedexServer/(22342:22354): ejecutando: rcbFile
+[DEBUG] 01:38:51:415 PokedexServer/(22342:22354): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:38:51:416 PokedexServer/(22342:22354): dando el OK
+[DEBUG] 01:38:51:416 PokedexServer/(22342:22354): dado el OK
+[DEBUG] 01:38:51:456 PokedexServer/(22342:22354): ejecutando: envCont
+[DEBUG] 01:38:51:495 PokedexServer/(22342:22354): /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:38:51:495 PokedexServer/(22342:22354): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:38:51:496 PokedexServer/(22342:22354): Archivo encontrado
+[DEBUG] 01:38:51:496 PokedexServer/(22342:22354): lei
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): /
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): PokeDex 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):  /
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): Entrenadores 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):   /
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): Ash 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): Dir de Bill 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): Medallas 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):      
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): GhostMedal.jpg 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): Nuevo 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):   /
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): Jasmine 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): Dir de Bill 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): Medallas 
+
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:790 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):   /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Brock 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Dir de Bill 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Medallas 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):      
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): GhostMedal.jpg 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):   /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Mysti 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Dir de Bill 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Medallas 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):   /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Red 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Dir de Bill 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Medallas 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):      
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): GhostMedal.jpg 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):   /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Lorelei 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Dir de Bill 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): Medallas 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):      
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): GhostMedal.jpg 
+
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:791 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):  /
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Mapas 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):   /
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Pueblo Paleta 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): PokeNests 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):     /
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Bulbasaur 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Bulbasaur001.dat 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Bulbasaur002.dat 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Bulbasaur003.dat 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):     /
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Pikachu 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Pikachu001.dat 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Pikachu002.dat 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): PaletMedal.jpg 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):   /
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Ecruteak City 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):    /
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): PokeNests 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):     /
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Gengar 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): Gengar001.dat 
+
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:792 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):     /
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): Haunter 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): Haunter001.dat 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):     /
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): Weezing 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): Weezing001.dat 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):       
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): GhostMedal.jpg 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):     
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): metadata 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):   
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): sarlompa 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):   
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): index.jpeg 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): /
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):  
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): /
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):  
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):  
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): .goutputstream-60ÿÿ 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):  
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): tutuca 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):  
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): sarlompa 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):  
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): saraza 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):  
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): SARAZA 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):  
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): .goutputstream-Q7ÿÿ 
+
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422):  
+[DEBUG] 01:41:02:793 PokedexServer/(22422:22422): .goutputstream-XBÿÿ 
+
+[DEBUG] 01:41:06:488 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:06:488 PokedexServer/(22422:22424): ruta: /.Trash 
+[DEBUG] 01:41:06:488 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:06:488 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:06:491 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:06:527 PokedexServer/(22422:22424): ruta: /.Trash-1000 
+[DEBUG] 01:41:06:527 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:06:527 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:06:567 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:06:607 PokedexServer/(22422:22424): ruta: /.xdg-volume-info 
+[DEBUG] 01:41:06:607 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:06:607 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:06:648 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:06:687 PokedexServer/(22422:22424): ruta: /autorun.inf 
+[DEBUG] 01:41:06:687 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:06:687 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:06:728 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:06:767 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:06:768 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:06:768 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:06:768 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:06:808 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:06:848 PokedexServer/(22422:22424): ruta: /PokeDex 
+[DEBUG] 01:41:06:848 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:06:848 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:06:888 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:06:927 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:06:928 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:06:928 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:06:928 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:06:969 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:8 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:8 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:8 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:8 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:48 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:87 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:87 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:87 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:87 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:128 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:167 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:168 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:168 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:168 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:208 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:247 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:247 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:247 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:247 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:288 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:327 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:328 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:328 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:328 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:368 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:407 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:407 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:407 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:407 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:448 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:487 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:487 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:487 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:487 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:528 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:567 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:567 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:567 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:567 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:608 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:647 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:648 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:648 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:648 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:688 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:727 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:727 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:727 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:727 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:768 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:807 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:807 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:807 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:807 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:848 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:07:887 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:07:887 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:07:887 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:887 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:07:928 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:07:967 PokedexServer/(22422:22424): ruta: /PokeDex 
+[DEBUG] 01:41:07:967 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:07:967 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:8 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:08:47 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:08:47 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:08:47 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:47 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:88 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:08:127 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:08:127 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:08:127 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:127 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:169 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:08:207 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:08:208 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:08:208 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:208 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:249 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:08:287 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:08:288 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:08:288 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:288 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:329 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:08:367 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:08:367 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:08:367 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:368 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:409 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:08:447 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:08:447 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:08:447 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:447 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:488 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:08:527 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:08:527 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:08:528 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:528 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:569 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:08:607 PokedexServer/(22422:22424): /
+[DEBUG] 01:41:08:607 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:08:607 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:607 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:648 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:08:687 PokedexServer/(22422:22424): ruta: / 
+[DEBUG] 01:41:08:687 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:687 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:728 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:08:767 PokedexServer/(22422:22424): ruta: / 
+[DEBUG] 01:41:08:767 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:767 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:08:808 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:08:847 PokedexServer/(22422:22424): ruta: /autorun.inf 
+[DEBUG] 01:41:08:847 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:08:847 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:283 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:11:323 PokedexServer/(22422:22424): ruta: /PokeDex 
+[DEBUG] 01:41:11:323 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:11:323 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:323 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:11:363 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas 
+[DEBUG] 01:41:11:363 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:11:363 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:404 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:11:444 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:41:11:444 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:11:444 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:484 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:11:523 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:41:11:523 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:41:11:524 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:11:524 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:11:524 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:564 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:11:603 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:41:11:603 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:11:603 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:644 PokedexServer/(22422:22424): ejecutando: envCont
+[DEBUG] 01:41:11:683 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:41:11:683 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:41:11:684 PokedexServer/(22422:22424): Archivo encontrado
+[DEBUG] 01:41:11:684 PokedexServer/(22422:22424): lei
+[DEBUG] 01:41:11:684 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:11:684 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:757 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:11:795 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests 
+[DEBUG] 01:41:11:796 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:11:796 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:836 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:11:876 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests
+[DEBUG] 01:41:11:876 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests 
+[DEBUG] 01:41:11:876 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:11:876 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:11:876 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:916 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:11:955 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur 
+[DEBUG] 01:41:11:955 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:11:955 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:11:995 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:12:35 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur
+[DEBUG] 01:41:12:35 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur 
+[DEBUG] 01:41:12:35 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:12:35 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:35 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:75 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:12:115 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur001.dat 
+[DEBUG] 01:41:12:115 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:115 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:155 PokedexServer/(22422:22424): ejecutando: envCont
+[DEBUG] 01:41:12:195 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur001.dat
+[DEBUG] 01:41:12:195 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur001.dat 
+[DEBUG] 01:41:12:195 PokedexServer/(22422:22424): Archivo encontrado
+[DEBUG] 01:41:12:195 PokedexServer/(22422:22424): lei
+[DEBUG] 01:41:12:195 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:195 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:236 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:12:275 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur002.dat 
+[DEBUG] 01:41:12:275 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:275 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:315 PokedexServer/(22422:22424): ejecutando: envCont
+[DEBUG] 01:41:12:355 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur002.dat
+[DEBUG] 01:41:12:355 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur002.dat 
+[DEBUG] 01:41:12:356 PokedexServer/(22422:22424): Archivo encontrado
+[DEBUG] 01:41:12:356 PokedexServer/(22422:22424): lei
+[DEBUG] 01:41:12:356 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:356 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:396 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:12:435 PokedexServer/(22422:22424): ruta: /PokeDex 
+[DEBUG] 01:41:12:435 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:435 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:475 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:12:515 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas 
+[DEBUG] 01:41:12:515 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:515 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:556 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:12:595 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:41:12:595 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:595 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:636 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:12:676 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur003.dat 
+[DEBUG] 01:41:12:676 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:676 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:715 PokedexServer/(22422:22424): ejecutando: envCont
+[DEBUG] 01:41:12:755 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur003.dat
+[DEBUG] 01:41:12:755 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/Bulbasaur003.dat 
+[DEBUG] 01:41:12:755 PokedexServer/(22422:22424): Archivo encontrado
+[DEBUG] 01:41:12:755 PokedexServer/(22422:22424): lei
+[DEBUG] 01:41:12:755 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:755 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:795 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:12:835 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/metadata 
+[DEBUG] 01:41:12:835 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:835 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:875 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:12:915 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests 
+[DEBUG] 01:41:12:915 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:915 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:12:955 PokedexServer/(22422:22424): ejecutando: envCont
+[DEBUG] 01:41:12:995 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/metadata
+[DEBUG] 01:41:12:995 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Bulbasaur/metadata 
+[DEBUG] 01:41:12:995 PokedexServer/(22422:22424): Archivo encontrado
+[DEBUG] 01:41:12:995 PokedexServer/(22422:22424): lei
+[DEBUG] 01:41:12:995 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:12:995 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:36 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:13:75 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu 
+[DEBUG] 01:41:13:75 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:75 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:115 PokedexServer/(22422:22424): ejecutando: listDir
+[DEBUG] 01:41:13:155 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu
+[DEBUG] 01:41:13:155 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu 
+[DEBUG] 01:41:13:155 PokedexServer/(22422:22424): enviados
+[DEBUG] 01:41:13:155 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:155 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:196 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:13:235 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/metadata 
+[DEBUG] 01:41:13:235 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:235 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:276 PokedexServer/(22422:22424): ejecutando: envCont
+[DEBUG] 01:41:13:315 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/metadata
+[DEBUG] 01:41:13:315 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/metadata 
+[DEBUG] 01:41:13:315 PokedexServer/(22422:22424): Archivo encontrado
+[DEBUG] 01:41:13:316 PokedexServer/(22422:22424): lei
+[DEBUG] 01:41:13:316 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:316 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:356 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:13:395 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu001.dat 
+[DEBUG] 01:41:13:396 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:396 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:436 PokedexServer/(22422:22424): ejecutando: envCont
+[DEBUG] 01:41:13:475 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu001.dat
+[DEBUG] 01:41:13:475 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu001.dat 
+[DEBUG] 01:41:13:475 PokedexServer/(22422:22424): Archivo encontrado
+[DEBUG] 01:41:13:475 PokedexServer/(22422:22424): lei
+[DEBUG] 01:41:13:475 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:475 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:515 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:13:555 PokedexServer/(22422:22424): ruta: /PokeDex 
+[DEBUG] 01:41:13:555 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:555 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:595 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:13:635 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas 
+[DEBUG] 01:41:13:635 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:635 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:675 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:13:715 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:41:13:715 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:715 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:755 PokedexServer/(22422:22424): ejecutando: rcbFile
+[DEBUG] 01:41:13:795 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu002.dat 
+[DEBUG] 01:41:13:795 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:795 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:41:13:836 PokedexServer/(22422:22424): ejecutando: envCont
+[DEBUG] 01:41:13:875 PokedexServer/(22422:22424): /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu002.dat
+[DEBUG] 01:41:13:875 PokedexServer/(22422:22424): ruta: /PokeDex/Mapas/Pueblo Paleta/PokeNests/Pikachu/Pikachu002.dat 
+[DEBUG] 01:41:13:875 PokedexServer/(22422:22424): Archivo encontrado
+[DEBUG] 01:41:13:875 PokedexServer/(22422:22424): lei
+[DEBUG] 01:41:13:875 PokedexServer/(22422:22424): dando el OK
+[DEBUG] 01:41:13:875 PokedexServer/(22422:22424): dado el OK
+[DEBUG] 01:50:50:100 PokedexServer/(22536:22536): /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): PokeDex 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):  /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Entrenadores 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):   /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Ash 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Dir de Bill 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Medallas 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):      
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): GhostMedal.jpg 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Nuevo 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):   /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Jasmine 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Dir de Bill 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Medallas 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):   /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Brock 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Dir de Bill 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Medallas 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):      
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): GhostMedal.jpg 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):   /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Mysti 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Dir de Bill 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Medallas 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):   /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Red 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Dir de Bill 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Medallas 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):      
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): GhostMedal.jpg 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):   /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Lorelei 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Dir de Bill 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): Medallas 
+
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536):      
+[DEBUG] 01:50:50:101 PokedexServer/(22536:22536): GhostMedal.jpg 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):  /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Mapas 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):   /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Pueblo Paleta 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): PokeNests 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Bulbasaur 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Bulbasaur001.dat 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Bulbasaur002.dat 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Bulbasaur003.dat 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Pikachu 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Pikachu001.dat 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Pikachu002.dat 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): PaletMedal.jpg 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):   /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Ecruteak City 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):    /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): PokeNests 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Gengar 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Gengar001.dat 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Haunter 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Haunter001.dat 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Weezing 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): Weezing001.dat 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):       
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): GhostMedal.jpg 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):     
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): metadata 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):   
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): sarlompa 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):   
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): index.jpeg 
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):  
+
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536): /
+[DEBUG] 01:50:50:102 PokedexServer/(22536:22536):  
+
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536):  
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536): .goutputstream-60ÿÿ 
+
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536):  
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536): tutuca 
+
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536):  
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536): sarlompa 
+
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536):  
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536): saraza 
+
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536):  
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536): SARAZA 
+
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536):  
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536): .goutputstream-Q7ÿÿ 
+
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536):  
+[DEBUG] 01:50:50:103 PokedexServer/(22536:22536): .goutputstream-XBÿÿ 
+
+[DEBUG] 01:50:54:82 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:50:54:82 PokedexServer/(22536:22542): ruta: /.Trash 
+[DEBUG] 01:50:54:82 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:82 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:85 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:50:54:123 PokedexServer/(22536:22542): ruta: /.Trash-1000 
+[DEBUG] 01:50:54:123 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:123 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:163 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:50:54:203 PokedexServer/(22536:22542): ruta: /.xdg-volume-info 
+[DEBUG] 01:50:54:203 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:203 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:243 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:50:54:284 PokedexServer/(22536:22542): ruta: /autorun.inf 
+[DEBUG] 01:50:54:284 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:284 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:324 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:54:363 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:54:363 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:54:364 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:364 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:404 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:50:54:443 PokedexServer/(22536:22542): ruta: /PokeDex 
+[DEBUG] 01:50:54:443 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:443 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:484 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:54:523 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:54:523 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:54:523 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:523 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:564 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:54:603 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:54:604 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:54:604 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:604 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:645 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:54:684 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:54:684 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:54:684 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:684 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:725 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:54:763 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:54:764 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:54:764 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:764 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:804 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:54:843 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:54:844 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:54:844 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:844 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:885 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:54:923 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:54:923 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:54:923 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:54:923 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:54:964 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:3 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:3 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:3 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:3 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:44 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:83 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:83 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:84 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:84 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:125 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:163 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:163 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:164 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:164 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:204 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:243 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:243 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:243 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:243 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:284 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:323 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:323 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:323 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:323 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:364 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:403 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:403 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:403 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:403 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:445 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:483 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:484 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:484 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:484 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:524 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:50:55:563 PokedexServer/(22536:22542): ruta: /PokeDex 
+[DEBUG] 01:50:55:563 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:563 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:604 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:643 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:643 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:643 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:643 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:685 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:723 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:724 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:724 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:724 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:764 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:803 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:803 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:803 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:803 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:844 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:883 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:883 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:883 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:883 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:55:924 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:55:963 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:55:964 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:55:964 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:55:964 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:56:4 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:56:43 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:56:43 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:56:43 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:56:43 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:56:84 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:56:123 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:56:123 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:56:123 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:56:123 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:56:164 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:50:56:203 PokedexServer/(22536:22542): /
+[DEBUG] 01:50:56:203 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:50:56:203 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:56:203 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:56:243 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:50:56:283 PokedexServer/(22536:22542): ruta: / 
+[DEBUG] 01:50:56:283 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:56:283 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:56:323 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:50:56:363 PokedexServer/(22536:22542): ruta: / 
+[DEBUG] 01:50:56:363 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:56:363 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:50:56:404 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:50:56:443 PokedexServer/(22536:22542): ruta: /autorun.inf 
+[DEBUG] 01:50:56:443 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:50:56:443 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:51:16:768 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:51:16:807 PokedexServer/(22536:22542): ruta: /PokeDex 
+[DEBUG] 01:51:16:807 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:51:16:807 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:51:16:808 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:51:16:847 PokedexServer/(22536:22542): ruta: /PokeDex/Mapas 
+[DEBUG] 01:51:16:847 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:51:16:847 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:51:16:888 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:51:16:927 PokedexServer/(22536:22542): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:51:16:928 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:51:16:928 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:51:16:967 PokedexServer/(22536:22542): ejecutando: listDir
+[DEBUG] 01:51:17:7 PokedexServer/(22536:22542): /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:51:17:7 PokedexServer/(22536:22542): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:51:17:7 PokedexServer/(22536:22542): enviados
+[DEBUG] 01:51:17:8 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:51:17:8 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:51:17:47 PokedexServer/(22536:22542): ejecutando: rcbFile
+[DEBUG] 01:51:17:87 PokedexServer/(22536:22542): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:51:17:87 PokedexServer/(22536:22542): dando el OK
+[DEBUG] 01:51:17:87 PokedexServer/(22536:22542): dado el OK
+[DEBUG] 01:51:17:128 PokedexServer/(22536:22542): ejecutando: envCont
+[DEBUG] 01:51:17:167 PokedexServer/(22536:22542): /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:51:17:167 PokedexServer/(22536:22542): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:51:17:167 PokedexServer/(22536:22542): Archivo encontrado
+[DEBUG] 01:51:17:167 PokedexServer/(22536:22542): lei
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596): /
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596): PokeDex 
+
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596):  /
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596): Entrenadores 
+
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596):   /
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596): Ash 
+
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596): Dir de Bill 
+
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596): Medallas 
+
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596):      
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596): GhostMedal.jpg 
+
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596): Nuevo 
+
+[DEBUG] 01:52:43:157 PokedexServer/(22596:22596):   /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Jasmine 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Dir de Bill 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Medallas 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):   /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Brock 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Dir de Bill 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Medallas 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):      
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): GhostMedal.jpg 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):   /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Mysti 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Dir de Bill 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Medallas 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):   /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Red 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Dir de Bill 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Medallas 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):      
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): GhostMedal.jpg 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):   /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Lorelei 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Dir de Bill 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Medallas 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):      
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): GhostMedal.jpg 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):  /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Mapas 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):   /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Pueblo Paleta 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): PokeNests 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):     /
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Bulbasaur 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Bulbasaur001.dat 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Bulbasaur002.dat 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): Bulbasaur003.dat 
+
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:158 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):     /
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Pikachu 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Pikachu001.dat 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Pikachu002.dat 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): PaletMedal.jpg 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):   /
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Ecruteak City 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):    /
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): PokeNests 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):     /
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Gengar 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Gengar001.dat 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):     /
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Haunter 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Haunter001.dat 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):     /
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Weezing 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): Weezing001.dat 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):       
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): GhostMedal.jpg 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):     
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): metadata 
+
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596):   
+[DEBUG] 01:52:43:159 PokedexServer/(22596:22596): sarlompa 
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):   
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): index.jpeg 
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): /
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):  
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): /
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):  
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):  
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): .goutputstream-60ÿÿ 
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):  
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): tutuca 
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):  
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): sarlompa 
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):  
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): saraza 
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):  
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): SARAZA 
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):  
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): .goutputstream-Q7ÿÿ 
+
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596):  
+[DEBUG] 01:52:43:160 PokedexServer/(22596:22596): .goutputstream-XBÿÿ 
+
+[DEBUG] 01:52:50:170 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:52:50:170 PokedexServer/(22596:22601): ruta: /.Trash 
+[DEBUG] 01:52:50:170 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:170 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:170 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:52:50:207 PokedexServer/(22596:22601): ruta: /.Trash-1000 
+[DEBUG] 01:52:50:207 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:207 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:248 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:52:50:287 PokedexServer/(22596:22601): ruta: /.xdg-volume-info 
+[DEBUG] 01:52:50:287 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:288 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:328 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:52:50:367 PokedexServer/(22596:22601): ruta: /autorun.inf 
+[DEBUG] 01:52:50:367 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:367 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:408 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:50:447 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:50:448 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:50:448 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:448 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:489 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:52:50:527 PokedexServer/(22596:22601): ruta: /PokeDex 
+[DEBUG] 01:52:50:527 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:528 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:568 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:50:611 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:50:612 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:50:612 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:612 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:652 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:50:691 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:50:691 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:50:691 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:691 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:732 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:50:771 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:50:772 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:50:772 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:772 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:813 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:50:851 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:50:852 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:50:852 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:852 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:893 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:50:931 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:50:932 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:50:932 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:50:932 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:50:973 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:11 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:11 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:11 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:11 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:52 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:91 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:91 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:91 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:91 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:132 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:171 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:171 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:171 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:171 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:212 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:251 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:252 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:252 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:252 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:292 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:331 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:331 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:331 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:331 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:371 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:411 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:411 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:411 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:411 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:452 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:492 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:492 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:492 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:492 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:531 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:571 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:572 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:572 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:572 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:612 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:52:51:651 PokedexServer/(22596:22601): ruta: /PokeDex 
+[DEBUG] 01:52:51:651 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:651 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:691 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:731 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:731 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:731 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:731 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:772 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:811 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:811 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:811 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:811 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:852 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:891 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:891 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:891 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:892 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:51:932 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:51:971 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:51:971 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:51:971 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:51:971 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:52:13 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:52:51 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:52:52 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:52:52 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:52:52 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:52:93 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:52:132 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:52:132 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:52:133 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:52:133 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:52:172 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:52:211 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:52:211 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:52:211 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:52:211 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:52:253 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:52:52:291 PokedexServer/(22596:22601): /
+[DEBUG] 01:52:52:291 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:52:52:291 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:52:291 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:52:332 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:52:52:372 PokedexServer/(22596:22601): ruta: / 
+[DEBUG] 01:52:52:372 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:52:372 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:52:412 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:52:52:451 PokedexServer/(22596:22601): ruta: / 
+[DEBUG] 01:52:52:451 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:52:451 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:52:52:492 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:52:52:531 PokedexServer/(22596:22601): ruta: /autorun.inf 
+[DEBUG] 01:52:52:532 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:52:52:532 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:53:32:759 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:53:32:800 PokedexServer/(22596:22601): ruta: /PokeDex 
+[DEBUG] 01:53:32:800 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:53:32:800 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:53:32:800 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:53:32:839 PokedexServer/(22596:22601): ruta: /PokeDex/Mapas 
+[DEBUG] 01:53:32:839 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:53:32:839 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:53:32:879 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:53:32:919 PokedexServer/(22596:22601): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:53:32:919 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:53:32:919 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:53:32:960 PokedexServer/(22596:22601): ejecutando: listDir
+[DEBUG] 01:53:32:999 PokedexServer/(22596:22601): /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:53:32:999 PokedexServer/(22596:22601): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:53:32:999 PokedexServer/(22596:22601): enviados
+[DEBUG] 01:53:32:999 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:53:32:999 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:53:33:40 PokedexServer/(22596:22601): ejecutando: rcbFile
+[DEBUG] 01:53:33:79 PokedexServer/(22596:22601): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:53:33:79 PokedexServer/(22596:22601): dando el OK
+[DEBUG] 01:53:33:79 PokedexServer/(22596:22601): dado el OK
+[DEBUG] 01:53:33:119 PokedexServer/(22596:22601): ejecutando: envCont
+[DEBUG] 01:53:33:159 PokedexServer/(22596:22601): /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:53:33:159 PokedexServer/(22596:22601): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:53:33:159 PokedexServer/(22596:22601): Archivo encontrado
+[DEBUG] 01:53:33:159 PokedexServer/(22596:22601): lei
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646): /
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646): PokeDex 
+
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646):  /
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646): Entrenadores 
+
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646):   /
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646): Ash 
+
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646): Dir de Bill 
+
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646): Medallas 
+
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646):      
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646): GhostMedal.jpg 
+
+[DEBUG] 01:55:11:515 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): Nuevo 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):   /
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): Jasmine 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): Dir de Bill 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): Medallas 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):   /
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): Brock 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): Dir de Bill 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): Medallas 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):      
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646): GhostMedal.jpg 
+
+[DEBUG] 01:55:11:516 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):   /
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): Mysti 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): Dir de Bill 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): Medallas 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):   /
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): Red 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): Dir de Bill 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): Medallas 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):      
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): GhostMedal.jpg 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):   /
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): Lorelei 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646): Dir de Bill 
+
+[DEBUG] 01:55:11:517 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646): Medallas 
+
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646):      
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646): GhostMedal.jpg 
+
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646):  /
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646): Mapas 
+
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646):   /
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646): Pueblo Paleta 
+
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:518 PokedexServer/(22646:22646): PokeNests 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):     /
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): Bulbasaur 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): Bulbasaur001.dat 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): Bulbasaur002.dat 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): Bulbasaur003.dat 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):     /
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): Pikachu 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): Pikachu001.dat 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): Pikachu002.dat 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): PaletMedal.jpg 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646):   /
+[DEBUG] 01:55:11:519 PokedexServer/(22646:22646): Ecruteak City 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):    /
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): PokeNests 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):     /
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): Gengar 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): Gengar001.dat 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):     /
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): Haunter 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): Haunter001.dat 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):     /
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): Weezing 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): Weezing001.dat 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):       
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): GhostMedal.jpg 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):     
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): metadata 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):   
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): sarlompa 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):   
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): index.jpeg 
+
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646): /
+[DEBUG] 01:55:11:520 PokedexServer/(22646:22646):  
+
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646): /
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646):  
+
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646):  
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646): .goutputstream-60ÿÿ 
+
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646):  
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646): tutuca 
+
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646):  
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646): sarlompa 
+
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646):  
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646): saraza 
+
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646):  
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646): SARAZA 
+
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646):  
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646): .goutputstream-Q7ÿÿ 
+
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646):  
+[DEBUG] 01:55:11:521 PokedexServer/(22646:22646): .goutputstream-XBÿÿ 
+
+[DEBUG] 01:55:16:572 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:16:572 PokedexServer/(22646:22652): ruta: /.Trash 
+[DEBUG] 01:55:16:572 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:16:572 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:16:573 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:16:611 PokedexServer/(22646:22652): ruta: /.Trash-1000 
+[DEBUG] 01:55:16:611 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:16:611 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:16:652 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:16:691 PokedexServer/(22646:22652): ruta: /.xdg-volume-info 
+[DEBUG] 01:55:16:691 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:16:691 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:16:731 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:16:772 PokedexServer/(22646:22652): ruta: /autorun.inf 
+[DEBUG] 01:55:16:772 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:16:772 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:16:812 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:16:852 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:16:852 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:16:852 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:16:852 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:16:892 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:16:931 PokedexServer/(22646:22652): ruta: /PokeDex 
+[DEBUG] 01:55:16:931 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:16:931 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:16:972 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:11 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:11 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:11 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:12 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:53 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:91 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:92 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:92 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:92 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:133 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:171 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:172 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:172 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:172 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:213 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:251 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:252 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:252 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:252 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:293 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:332 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:332 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:332 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:332 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:372 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:411 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:412 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:412 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:412 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:453 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:491 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:492 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:492 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:492 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:532 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:571 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:571 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:571 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:571 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:612 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:652 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:652 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:652 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:652 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:692 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:731 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:731 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:731 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:731 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:772 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:811 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:811 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:811 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:811 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:852 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:891 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:892 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:892 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:892 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:17:932 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:17:971 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:17:971 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:17:971 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:17:971 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:11 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:18:51 PokedexServer/(22646:22652): ruta: /PokeDex 
+[DEBUG] 01:55:18:51 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:51 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:92 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:18:131 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:18:131 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:18:131 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:131 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:172 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:18:211 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:18:211 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:18:211 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:211 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:252 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:18:291 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:18:291 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:18:291 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:291 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:333 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:18:372 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:18:372 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:18:372 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:372 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:412 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:18:451 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:18:452 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:18:452 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:452 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:492 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:18:531 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:18:532 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:18:532 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:532 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:573 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:18:611 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:18:612 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:18:612 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:612 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:653 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:18:691 PokedexServer/(22646:22652): /
+[DEBUG] 01:55:18:691 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:18:691 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:691 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:731 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:18:771 PokedexServer/(22646:22652): ruta: / 
+[DEBUG] 01:55:18:771 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:771 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:812 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:18:851 PokedexServer/(22646:22652): ruta: / 
+[DEBUG] 01:55:18:851 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:851 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:18:891 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:18:931 PokedexServer/(22646:22652): ruta: /autorun.inf 
+[DEBUG] 01:55:18:931 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:18:931 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:21:791 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:21:831 PokedexServer/(22646:22652): ruta: /PokeDex 
+[DEBUG] 01:55:21:831 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:21:831 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:21:832 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:21:871 PokedexServer/(22646:22652): ruta: /PokeDex/Mapas 
+[DEBUG] 01:55:21:871 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:21:871 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:21:911 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:21:951 PokedexServer/(22646:22652): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:55:21:951 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:21:952 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:21:992 PokedexServer/(22646:22652): ejecutando: listDir
+[DEBUG] 01:55:22:31 PokedexServer/(22646:22652): /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:55:22:31 PokedexServer/(22646:22652): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:55:22:31 PokedexServer/(22646:22652): enviados
+[DEBUG] 01:55:22:32 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:22:32 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:22:72 PokedexServer/(22646:22652): ejecutando: rcbFile
+[DEBUG] 01:55:22:111 PokedexServer/(22646:22652): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:55:22:111 PokedexServer/(22646:22652): dando el OK
+[DEBUG] 01:55:22:112 PokedexServer/(22646:22652): dado el OK
+[DEBUG] 01:55:22:152 PokedexServer/(22646:22652): ejecutando: envCont
+[DEBUG] 01:55:22:191 PokedexServer/(22646:22652): /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:55:22:192 PokedexServer/(22646:22652): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:55:22:192 PokedexServer/(22646:22652): Archivo encontrado
+[DEBUG] 01:55:22:192 PokedexServer/(22646:22652): lei
+[DEBUG] 01:56:16:612 PokedexServer/(22693:22693): /
+[DEBUG] 01:56:16:612 PokedexServer/(22693:22693): PokeDex 
+
+[DEBUG] 01:56:16:612 PokedexServer/(22693:22693):  /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Entrenadores 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):   /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Ash 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Dir de Bill 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Medallas 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):      
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): GhostMedal.jpg 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Nuevo 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):   /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Jasmine 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Dir de Bill 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Medallas 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):   /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Brock 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Dir de Bill 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Medallas 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):      
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): GhostMedal.jpg 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):   /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Mysti 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Dir de Bill 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693): Medallas 
+
+[DEBUG] 01:56:16:613 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:614 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:614 PokedexServer/(22693:22693):   /
+[DEBUG] 01:56:16:614 PokedexServer/(22693:22693): Red 
+
+[DEBUG] 01:56:16:614 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:614 PokedexServer/(22693:22693): Dir de Bill 
+
+[DEBUG] 01:56:16:614 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:614 PokedexServer/(22693:22693): Medallas 
+
+[DEBUG] 01:56:16:614 PokedexServer/(22693:22693):      
+[DEBUG] 01:56:16:614 PokedexServer/(22693:22693): GhostMedal.jpg 
+
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693):   /
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693): Lorelei 
+
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693): Dir de Bill 
+
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693): Medallas 
+
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693):      
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693): GhostMedal.jpg 
+
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693):  /
+[DEBUG] 01:56:16:615 PokedexServer/(22693:22693): Mapas 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):   /
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Pueblo Paleta 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): PokeNests 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):     /
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Bulbasaur 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Bulbasaur001.dat 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Bulbasaur002.dat 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Bulbasaur003.dat 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):     /
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Pikachu 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Pikachu001.dat 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Pikachu002.dat 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): PaletMedal.jpg 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):   /
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Ecruteak City 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):    /
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): PokeNests 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):     /
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Gengar 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): Gengar001.dat 
+
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:616 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):     /
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): Haunter 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): Haunter001.dat 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):     /
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): Weezing 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): Weezing001.dat 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):       
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): GhostMedal.jpg 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):     
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): metadata 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):   
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): sarlompa 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):   
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): index.jpeg 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): /
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):  
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): /
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):  
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):  
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): .goutputstream-60ÿÿ 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):  
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): tutuca 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):  
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): sarlompa 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):  
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): saraza 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):  
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): SARAZA 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):  
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): .goutputstream-Q7ÿÿ 
+
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693):  
+[DEBUG] 01:56:16:617 PokedexServer/(22693:22693): .goutputstream-XBÿÿ 
+
+[DEBUG] 01:56:19:856 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:19:856 PokedexServer/(22693:22698): ruta: /.Trash 
+[DEBUG] 01:56:19:857 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:19:857 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:19:857 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:19:895 PokedexServer/(22693:22698): ruta: /.Trash-1000 
+[DEBUG] 01:56:19:895 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:19:895 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:19:935 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:19:975 PokedexServer/(22693:22698): ruta: /.xdg-volume-info 
+[DEBUG] 01:56:19:975 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:19:975 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:15 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:20:55 PokedexServer/(22693:22698): ruta: /autorun.inf 
+[DEBUG] 01:56:20:55 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:55 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:95 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:135 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:135 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:135 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:135 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:176 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:20:220 PokedexServer/(22693:22698): ruta: /PokeDex 
+[DEBUG] 01:56:20:220 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:220 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:260 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:299 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:299 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:299 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:299 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:340 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:379 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:379 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:379 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:379 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:420 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:459 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:459 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:459 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:459 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:500 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:539 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:539 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:539 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:539 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:580 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:619 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:619 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:619 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:619 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:660 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:699 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:700 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:700 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:700 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:740 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:779 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:779 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:779 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:779 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:820 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:859 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:859 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:859 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:859 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:900 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:20:940 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:20:940 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:20:940 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:20:940 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:20:980 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:19 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:19 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:19 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:19 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:60 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:99 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:100 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:100 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:100 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:140 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:179 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:179 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:179 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:179 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:220 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:259 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:259 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:259 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:259 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:299 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:21:340 PokedexServer/(22693:22698): ruta: /PokeDex 
+[DEBUG] 01:56:21:340 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:340 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:379 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:419 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:419 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:419 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:419 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:460 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:499 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:499 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:499 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:499 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:540 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:579 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:579 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:579 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:579 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:621 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:659 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:660 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:660 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:660 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:701 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:739 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:740 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:740 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:740 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:781 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:819 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:820 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:820 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:820 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:861 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:899 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:900 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:900 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:900 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:21:943 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:21:983 PokedexServer/(22693:22698): /
+[DEBUG] 01:56:21:983 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:21:984 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:21:984 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:22:24 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:22:63 PokedexServer/(22693:22698): ruta: / 
+[DEBUG] 01:56:22:63 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:22:63 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:22:103 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:22:144 PokedexServer/(22693:22698): ruta: / 
+[DEBUG] 01:56:22:144 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:22:144 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:22:183 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:22:223 PokedexServer/(22693:22698): ruta: /autorun.inf 
+[DEBUG] 01:56:22:223 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:22:223 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:24:679 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:24:715 PokedexServer/(22693:22698): ruta: /PokeDex 
+[DEBUG] 01:56:24:715 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:24:715 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:24:715 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:24:755 PokedexServer/(22693:22698): ruta: /PokeDex/Mapas 
+[DEBUG] 01:56:24:755 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:24:755 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:24:795 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:24:835 PokedexServer/(22693:22698): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:56:24:835 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:24:835 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:24:875 PokedexServer/(22693:22698): ejecutando: listDir
+[DEBUG] 01:56:24:915 PokedexServer/(22693:22698): /PokeDex/Mapas/Pueblo Paleta
+[DEBUG] 01:56:24:915 PokedexServer/(22693:22698): ruta: /PokeDex/Mapas/Pueblo Paleta 
+[DEBUG] 01:56:24:915 PokedexServer/(22693:22698): enviados
+[DEBUG] 01:56:24:915 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:24:915 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:24:956 PokedexServer/(22693:22698): ejecutando: rcbFile
+[DEBUG] 01:56:24:995 PokedexServer/(22693:22698): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:56:24:995 PokedexServer/(22693:22698): dando el OK
+[DEBUG] 01:56:24:995 PokedexServer/(22693:22698): dado el OK
+[DEBUG] 01:56:25:35 PokedexServer/(22693:22698): ejecutando: envCont
+[DEBUG] 01:56:25:75 PokedexServer/(22693:22698): /PokeDex/Mapas/Pueblo Paleta/metadata
+[DEBUG] 01:56:25:75 PokedexServer/(22693:22698): ruta: /PokeDex/Mapas/Pueblo Paleta/metadata 
+[DEBUG] 01:56:25:75 PokedexServer/(22693:22698): Archivo encontrado
+[DEBUG] 01:56:25:75 PokedexServer/(22693:22698): lei
