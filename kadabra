@@ -6,8 +6,8 @@ mkdir Ejecutables/logs
 gcc OsadaMaster/src/OsadaMaster.c -lSupport -lcurses -lnivel-gui -lpthread -lcommons -lm -o Ejecutables/server
 echo "Compilamos server"
 
-gcc PokedexCliente/main.c -DFUSE_USE_VERSION=27 -D_FILE_OFFSET_BITS=64 -lpthread -lfuse -lcommons -lcurses -lSupport -lnivel-gui -o Ejecutables/cliente
+gcc PokedexCliente/main.c -DFUSE_USE_VERSION=27 -D_FILE_OFFSET_BITS=64 -lcommons -lnivel-gui -lcurses -lpthread -lfuse -lSupport  -o Ejecutables/cliente
 echo "Compilamos pokedex cliente"
 
-gcc Mapa/src/Mapa.c  -lpthread -lcommons -lcurses -lSupport -lnivel-gui -lpkmn-battle -o Ejecutables/mapa
+gcc Mapa/src/Mapa.c -lcommons -lnivel-gui -lcurses -lpthread -lSupport -lpkmn-battle -o Ejecutables/mapa
 echo "Compilamos mapa"
