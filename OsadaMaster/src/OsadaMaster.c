@@ -12,6 +12,7 @@
 
 #define MYPORT 4555
 
+/*
 t_log_level logLevelSync = LOG_LEVEL_DEBUG;
 t_log * loggerSync;
 pthread_rwlock_t vectorSemaforos[2048];
@@ -55,7 +56,7 @@ void freeFileSemaphore(int filePosition) {
 				return;
 
 }
-
+*/
 t_log_level logLevel = LOG_LEVEL_DEBUG;
 t_log * logger;
 t_list* discriminators;
@@ -119,6 +120,11 @@ void printHeader(osada_header* osadaHeader) {
 	printf("%d\n\n", osadaHeader->data_blocks);
 }
 bool truncar(osada_file* file,osada* FS,size_t size,off_t offset){
+	if(offset==0 && size<=64){
+		file->file_size=size;
+		file->lastmod=time(NULL);
+		return true;
+	}
 	int restante=offset+size-64;
 	uint32_t bloque=file->first_block;
 	while(FS->asignaciones[bloque]!=0xFFFFFFFF && restante>0){
@@ -295,7 +301,7 @@ uint32_t bloqueDisponible(osada* FS) {
 	if (!flag || i>=max) {
 		return (i-tamanioDeNoDatos);
 	} else {
-		puts("no lo encontre");
+		log_info(logger,"no hay mas bloques disponibles");
 		return 0xFFFFFFFF;
 	}
 }
@@ -312,15 +318,25 @@ osada_file* encontrarOsadaFileLibre(osada* FS,int* pos) {
 
 		i++;
 	}
+	log_info(logger,"no hay mas osadaFiles disponibles");
 	return NULL;
 }
 
-_Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
+int crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 
 	if (findFileWithPath(ruta, FS, NULL)) {
-		return false;
+		return 1;
 	};
 	if (validarContenedor(ruta, FS)) {
+		char** vectorRuta = string_split(ruta, "/");
+			int j = 0;
+			while (vectorRuta[j] != NULL) {
+				j++;
+			}
+			j--;
+		if(string_length(vectorRuta[j])>17){
+			return 36; //ENAMETOLONG
+		}
 		char* datos = contenido;
 		int cantDeBloques = size / 64;
 		int resto = size;
@@ -330,8 +346,7 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 		osada_file* file = encontrarOsadaFileLibre(FS,pos);
 		if (file == NULL) {
 			free(pos);
-			log_info(logger,"no hay mas osadaFiles disponibles");
-			return false;
+			return 122; //EDQUOT
 		};
 		waitFileSemaphore(*pos,WRITE);
 
@@ -339,12 +354,6 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 		file->first_block = bloqueLibre;
 		if(size==0){
 			bitarray_set_bit(FS->bitmap, (tamanioDeNoDatos+bloqueLibre));}
-		char** vectorRuta = string_split(ruta, "/");
-		int j = 0;
-		while (vectorRuta[j] != NULL) {
-			j++;
-		}
-		j--;
 		memcpy(file->fname, vectorRuta[j], 17);
 		j--;
 		char* padre = calloc(250,sizeof(char));
@@ -386,11 +395,11 @@ _Bool crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 		}
 		freeFileSemaphore(*pos);
 		free(pos);
-		return true;
+		return 0;
 	} else {
-		return false;
+		return 1;
 	}
-	return true;
+	return 1;
 }
 
 _Bool borrarArchivo(char* ruta, osada* FS) {
@@ -432,19 +441,22 @@ _Bool renombrarArchivo(char* ruta, char* nombreNuevo, osada* FS) {
 		return false;
 	}
 }
-_Bool reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS) {
+int reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS) {
 
 	uint32_t* posicion =calloc(1,sizeof(uint32_t));
 	osada_file* file = findFileWithPath(ruta, FS, posicion);
 	if (file != NULL) {
+		char** vectorRuta = string_split(nuevaRuta, "/");
+			int j = 0;
+			while (vectorRuta[j] != NULL) {
+				j++;
+			}
+			j--; //Hay que restarle, porque el valor actual ya es NULL
+			if(string_length(vectorRuta[j])>17){
+				return 36;
+			}
 		waitFileSemaphore(*posicion, WRITE);
 
-		char** vectorRuta = string_split(nuevaRuta, "/");
-		int j = 0;
-		while (vectorRuta[j] != NULL) {
-			j++;
-		}
-		j--; //Hay que restarle, porque el valor actual ya es NULL
 		memcpy(file->fname, vectorRuta[j], 17);
 		j--;
 		char* padre = calloc(255, sizeof(char));
@@ -465,17 +477,17 @@ _Bool reubicarArchivo(char* ruta, char* nuevaRuta, osada* FS) {
 			free(padre);
 			freeFileSemaphore(*posicion);
 			free(posicion);
-			return true;
+			return 0;
 		} else {
 
 			freeFileSemaphore(*posicion);
 			free(posicion);
 			free(padre);
-			return false;
+			return 1;
 		}
 	} else {
 		free(posicion);
-		return false;
+		return 1;
 	}
 }
 int encontrarUltimoBloque(char* ruta, osada* FS) {
@@ -497,14 +509,14 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 		 waitFileSemaphore(*posicion, WRITE);
 
 		void* data = contenido;
-		bool rdo=truncar(file,FS,size,offset);
+		/*bool rdo=truncar(file,FS,size,offset);
 		if(!rdo){
 			freeFileSemaphore(*posicion);
 			free(posicion);
 			borrarArchivo(ruta,FS);
 			log_debug(logger,"no entra en el disco");
 			return false;
-		}
+		}*/
 		int bloque=file->first_block;
 		int cantDeBloques=ceil(offset/64.0f);
 		int i;
@@ -554,22 +566,28 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 		return false;
 	}
 }
-_Bool crearDirectorio(char* ruta, osada* FS) {
+int crearDirectorio(char* ruta, osada* FS) {
 	if (findFileWithPath(ruta, FS, NULL)!=NULL) {
-		return false;
+		return 1;
 	};
 	if (validarContenedor(ruta, FS)) {
+		char** vectorRuta = string_split(ruta, "/");
+				int j = 0;
+				while (vectorRuta[j] != NULL) {
+					j++;
+				}
+				j--; //Hay que restarle, porque el valor actual ya es NULL
+				if(string_length(vectorRuta[j])>17){
+					return 36; //ENAMETOLONG
+				}
 		int* pos=calloc(1,sizeof(int));
 		osada_file* file = encontrarOsadaFileLibre(FS,pos);
+		if(file==NULL){
+			return 122; //EDQUOTE
+		}
 		waitFileSemaphore(*pos,WRITE);
 		file->file_size = 0;
 		file->first_block = 0xFFFFFFFF;
-		char** vectorRuta = string_split(ruta, "/");
-		int j = 0;
-		while (vectorRuta[j] != NULL) {
-			j++;
-		}
-		j--; //Hay que restarle, porque el valor actual ya es NULL
 		memcpy(file->fname, vectorRuta[j], 17);
 		j--;
 		char* padre = calloc(255, sizeof(char));
@@ -592,10 +610,10 @@ _Bool crearDirectorio(char* ruta, osada* FS) {
 		file->lastmod = time(NULL);
 		freeFileSemaphore(*pos);
 		free(pos);
-		return true;
+		return 0;
 
 	} else {
-		return false;
+		return 1;
 	}
 }
 _Bool borrarDirectorio(char* ruta, osada* FS) {
@@ -662,7 +680,7 @@ void listarContenido(char* ruta, osada* FS, osada_file* vector, int* size) {
 	}
 }
 
-void enviarOsadaFile(osada* FS, int fd) {
+int enviarOsadaFile(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
 	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
@@ -681,7 +699,6 @@ void enviarOsadaFile(osada* FS, int fd) {
 			file->state = DELETED;
 
 		}
-
 	}
 	printf("enviado:%s \n", file->fname);
 	enviar(fd, file, sizeof(osada_file)); //mando el file
@@ -691,9 +708,11 @@ void enviarOsadaFile(osada* FS, int fd) {
 	}
 	free(size); //libero
 	free(ruta);
+
+	return 0;
 }
 
-void enviarFilesContenidos(osada* FS, int fd) {
+int enviarFilesContenidos(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
 	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
@@ -710,9 +729,9 @@ void enviarFilesContenidos(osada* FS, int fd) {
 	free(size); //libero
 	free(ruta);
 	free(i);
-
+	return 0;
 }
-void enviarContenido(osada* FS, int fd) {
+int enviarContenido(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
 	off_t* offset = calloc(1, sizeof(off_t));
 
@@ -733,6 +752,7 @@ void enviarContenido(osada* FS, int fd) {
 	free(contenido);
 	free(offset);
 	free(sizeDeLectura);
+	return 0;
 }
 
 typedef struct base {
@@ -750,13 +770,14 @@ typedef enum {
 	MAKEFIL,
 	REALLOC,
 	REMVDIR,
+	TRUNCAR,
 } discriEnum;
 typedef struct discriminator {
 	char* string;
 	discriEnum enumerable;
 } discriminator;
 
-void borrarGenerico(osada* FS, int fd) {
+int borrarGenerico(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int));
 	recibir(fd, size, sizeof(int));
 	char* ruta = calloc(*size, sizeof(char));
@@ -771,17 +792,19 @@ void borrarGenerico(osada* FS, int fd) {
 	}
 	free(size);
 	free(ruta);
+	return 0;
 }
-void makeDir(osada* FS, int fd) {
+int makeDir(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int));
 	recibir(fd, size, sizeof(int));
 	char* ruta = calloc(*size, sizeof(char));
 	recibir(fd, ruta, *size);
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
-	crearDirectorio(ruta, FS);
+	int rdo=crearDirectorio(ruta, FS);
 	free(size);
 	free(ruta);
+	return rdo;
 }
 void writeFi(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
@@ -796,6 +819,7 @@ void writeFi(osada* FS, int fd) {
 	void* buf = calloc(*sizeBuf, sizeof(char));
 	recibir(fd, buf, *sizeBuf);
 	recibir(fd, offset, sizeof(off_t));
+	log_debug(logger,"agrego en %s apartir de %d %d bytes",ruta,*offset,*sizeBuf);
 	agregarContenidoAArchivo(ruta, FS, buf, *sizeBuf,*offset);
 	free(ruta);
 	free(size);
@@ -804,18 +828,19 @@ void writeFi(osada* FS, int fd) {
 	free(sizeBuf);
 
 }
-void makeFi(osada* FS, int fd) {
+int makeFi(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
 	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
 	recibir(fd, ruta, *size); //recibo la ruta
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
-	crearArchivo(ruta, NULL, 0, FS);
+	int rdo=crearArchivo(ruta, NULL, 0, FS);
 	free(ruta);
 	free(size);
+	return rdo;
 }
-void reubicar(osada* FS, int fd) {
+int reubicar(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
 	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
@@ -828,13 +853,37 @@ void reubicar(osada* FS, int fd) {
 	recibir(fd, rutaNew, *sizeNew); //recibo la ruta
 	rutaNew = string_substring_until(rutaNew, *sizeNew);
 	log_debug(logger, rutaNew);
-	reubicarArchivo(ruta, rutaNew, FS);
+	int rdo=reubicarArchivo(ruta, rutaNew, FS);
 	free(ruta);
 	free(rutaNew);
 	free(size);
 	free(sizeNew);
+	return rdo;
 }
-
+int truncador(osada* FS, int fd){
+	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
+		recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
+		char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
+		recibir(fd, ruta, *size); //recibo la ruta
+		ruta = string_substring_until(ruta, *size);
+		log_debug(logger, ruta);
+		off_t* nuevoTamanio=calloc(1,sizeof(off_t));
+		recibir(fd,nuevoTamanio,sizeof(off_t));
+		recibir(fd,nuevoTamanio,sizeof(off_t));
+		osada_file* file=findFileWithPath(ruta,FS,NULL);
+		int rdo;
+		if(!truncar(file,FS,*nuevoTamanio,0)){
+			borrarArchivo(ruta,FS);
+			rdo=27; //EFBIG
+		}
+		else{
+			rdo=0;
+		}
+		free(ruta);
+		free(size);
+		free(nuevoTamanio);
+		return rdo;
+}
 void* hilo_atendedor(base* bas) {
 	while (true) {
 		puts("arranca un while");
@@ -847,57 +896,63 @@ void* hilo_atendedor(base* bas) {
 		discriminator* d = list_find(discriminators, criteria);
 		free(disc);
 		char* basurero;
+		int rdo=0;
 		switch (d->enumerable) {
 		case UNLINKF:
 			puts("unlinkF");
-			borrarGenerico(bas->FS, bas->fd);
+			rdo=borrarGenerico(bas->FS, bas->fd);
 			break;
 		case LISTDIR:
 			puts("listDir");
-			enviarFilesContenidos(bas->FS, bas->fd);
+			rdo=enviarFilesContenidos(bas->FS, bas->fd);
 			break;
 		case RCBFILE:
 			puts("rcbFile");
-			enviarOsadaFile(bas->FS, bas->fd);
+			rdo=enviarOsadaFile(bas->FS, bas->fd);
 			break;
 		case ENVCONT:
 			puts("envCont");
-			enviarContenido(bas->FS, bas->fd);
-			basurero = malloc(2500);
-			printf("basurero: %d", recibir(bas->fd, basurero,7000));
+			rdo=enviarContenido(bas->FS, bas->fd);
+			basurero = malloc(4);
+			printf("basurero: %d", recibir(bas->fd, basurero,4));
 			puts(basurero);
 			free(basurero);
 			break;
 		case MAKEDIR:
 			puts("makeDir");
-			makeDir(bas->FS, bas->fd);
+			rdo=makeDir(bas->FS, bas->fd);
 			break;
 		case WRITEFI:
 			puts("writeFi");
 			writeFi(bas->FS, bas->fd);
-			basurero = malloc(2500);
-			printf("basurero: %d", recibir(bas->fd, basurero, 7000));
+			basurero = malloc(4);
+			printf("basurero: %d", recibir(bas->fd, basurero, 4));
 			puts(basurero);
 			free(basurero);
 
 			break;
+		case TRUNCAR:
+			puts("truncar");
+			rdo=truncador(bas->FS,bas->fd);
+			break;
 		case MAKEFIL:
 			puts("makeFil");
-			makeFi(bas->FS, bas->fd);
+			rdo=makeFi(bas->FS, bas->fd);
 			break;
 		case REALLOC:
 			puts("realloc");
-			reubicar(bas->FS, bas->fd);
+			rdo=reubicar(bas->FS, bas->fd);
 			break;
 		case REMVDIR:
 			puts("remvDir");
-			borrarGenerico(bas->FS, bas->fd);
+			rdo=borrarGenerico(bas->FS, bas->fd);
 			break;
 		}
 		log_debug(logger, "dando el OK");
 		int* ok = calloc(1, sizeof(int));
-		*ok = 1;
+		*ok = rdo;
 		enviar(bas->fd, ok, sizeof(int));
+		rdo=0;
 		log_debug(logger, "dado el OK");
 
 		free(ok);
@@ -946,6 +1001,10 @@ int main(int cant,char* argumentos[]) {
 	d = calloc(1, sizeof(discriminator));
 	d->string = "remvDir";
 	d->enumerable = REMVDIR;
+	list_add(discriminators, d);
+	d = calloc(1, sizeof(discriminator));
+	d->string = "truncar";
+	d->enumerable = TRUNCAR;
 	list_add(discriminators, d);
 	osada* osadaDisk = calloc(1, sizeof(osada));
 

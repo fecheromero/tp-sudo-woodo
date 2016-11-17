@@ -16,7 +16,15 @@ t_log_level logLevel = LOG_LEVEL_DEBUG;
 t_log * logger;
 int socketPokedexServer;
 
+int recibirOkey(){
+	 int* ok=calloc(1,sizeof(int));
+	 recibir(socketPokedexServer,ok,sizeof(int));
+	 log_info(logger,"recibi el ok: %d",*ok);
+	 int rdo=*ok;
+	 free(ok);
+	 return rdo;
 
+}
 
 static int tp_getattr(const char *path, struct stat *stbuf) {
 	pthread_mutex_lock(&SEM_EXEC);
@@ -42,12 +50,9 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 	 free(file);
  res = -ENOENT;
  }
- int* ok=calloc(1,sizeof(int));
- recibir(socketPokedexServer,ok,sizeof(int));
- log_info(logger,"recibi el ok: %d",*ok);
-
- free(ok);
+ recibirOkey();
  pthread_mutex_unlock(&SEM_EXEC);
+
  return res;
  }
 
@@ -67,13 +72,9 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  }
  free(cantArchivos);
  free(vector);
- int* ok=calloc(1,sizeof(int));
- recibir(socketPokedexServer,ok,sizeof(int));
- log_info(logger,"recibi el ok: %d",*ok);
-
- free(ok);
+ int rdo=recibirOkey();
  pthread_mutex_unlock(&SEM_EXEC);
- return 0;
+ return rdo;
  }
 
  static int tp_read(const char *path, char *buf, size_t size, off_t offset,
@@ -101,10 +102,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 		log_debug(logger,"leidos: %d resultado: %s",*sizeRecibido,contenido);
 		free(contenido);
 		free(sizeRecibido);
-		int* ok=calloc(1,sizeof(int));
-		recibir(socketPokedexServer,ok,sizeof(int));
-		log_info(logger,"recibi el ok: %d",*ok);
-		free(ok);
+		recibirOkey();
 		pthread_mutex_unlock(&SEM_EXEC);
 	 return size;
  }
@@ -121,12 +119,10 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
 	enviar(socketPokedexServer, sizePath, sizeof(int));
 	enviar(socketPokedexServer, path, *sizePath);
 	free(sizePath);
-	int* ok=calloc(1,sizeof(int));
-	recibir(socketPokedexServer,ok,sizeof(int));
-	free(ok);
-	pthread_mutex_unlock(&SEM_EXEC);
+	int rdo=recibirOkey();
+	 pthread_mutex_unlock(&SEM_EXEC);
+	 return rdo;
 
- return 0;
  }
 int tp_opendir (const char * path, struct fuse_file_info * filler){
 	return 0;
@@ -146,11 +142,9 @@ int tp_mkdir (const char * path, mode_t mod){
 	enviar(socketPokedexServer, sizePath, sizeof(int));
 	enviar(socketPokedexServer, path, *sizePath);
 	free(sizePath);
-	int* ok=calloc(1,sizeof(int));
-	recibir(socketPokedexServer,ok,sizeof(int));
-	free(ok);
-	pthread_mutex_unlock(&SEM_EXEC);
-	return 0;
+	int rdo=recibirOkey();
+	 pthread_mutex_unlock(&SEM_EXEC);
+	 return rdo;
 
 }
 int tp_write (const char *path, char *buf, size_t size, off_t offset,
@@ -169,9 +163,7 @@ int tp_write (const char *path, char *buf, size_t size, off_t offset,
 		enviar(socketPokedexServer,&size,sizeof(size_t));
 		enviar(socketPokedexServer,buf,size);
 		enviar(socketPokedexServer,&offset,sizeof(off_t));
-		int* ok=calloc(1,sizeof(int));
-		recibir(socketPokedexServer,ok,sizeof(int));
-		free(ok);
+		recibirOkey();
 		pthread_mutex_unlock(&SEM_EXEC);
 	return size;
 }
@@ -187,15 +179,29 @@ int tp_mknod (const char *path, mode_t mod , dev_t dev){
 			enviar(socketPokedexServer, sizePath, sizeof(int));
 			enviar(socketPokedexServer, path, *sizePath);
 			free(sizePath);
-			int* ok=calloc(1,sizeof(int));
-			recibir(socketPokedexServer,ok,sizeof(int));
-			free(ok);
-			pthread_mutex_unlock(&SEM_EXEC);
-			return 0;
-}
+			int rdo=recibirOkey();
+			 pthread_mutex_unlock(&SEM_EXEC);
+			 return rdo;
+			 }
+
+
 int tp_truncate (const char * path,  off_t off){
-	log_info(logger,"trancando");
-	return 0;
+	pthread_mutex_lock(&SEM_EXEC);
+	log_info(logger,"truncando archivo: %s",path);
+	char* discriminator=calloc(7,sizeof(char));
+	string_append(&discriminator,"truncar");
+	enviar(socketPokedexServer,discriminator,7);
+	free(discriminator);
+	int* sizePath = calloc(1, sizeof(int));
+	*sizePath = string_length(path);
+	enviar(socketPokedexServer, sizePath, sizeof(int));
+	enviar(socketPokedexServer, path, *sizePath);
+	free(sizePath);
+	log_info(logger, "%d",off);
+	enviar(socketPokedexServer,&off,sizeof(off_t));
+	int rdo=recibirOkey();
+	pthread_mutex_unlock(&SEM_EXEC);
+	return rdo;
 }
 int tp_release (const char * path, struct fuse_file_info * filer){
 	log_info(logger,"cerrando archivo");
@@ -218,11 +224,9 @@ int tp_rename (const char * path, const char * newPath){
 				enviar(socketPokedexServer, sizePathNew, sizeof(int));
 				enviar(socketPokedexServer, newPath, *sizePathNew);
 				free(sizePathNew);
-				int* ok=calloc(1,sizeof(int));
-				recibir(socketPokedexServer,ok,sizeof(int));
-				free(ok);
+				int rdo=recibirOkey();
 				pthread_mutex_unlock(&SEM_EXEC);
-				return 0;
+				return rdo;
 
 }
 int tp_rmdir(const char * path){
@@ -237,11 +241,9 @@ int tp_rmdir(const char * path){
 	enviar(socketPokedexServer, sizePath, sizeof(int));
 	enviar(socketPokedexServer, path, *sizePath);
 	free(sizePath);
-	int* ok=calloc(1,sizeof(int));
-	recibir(socketPokedexServer,ok,sizeof(int));
-	free(ok);
+	int rdo=recibirOkey();
 	pthread_mutex_unlock(&SEM_EXEC);
-	return 0;
+	return rdo;
 }
 
 static struct fuse_operations funciones = {
