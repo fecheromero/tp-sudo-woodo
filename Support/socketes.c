@@ -83,8 +83,8 @@ int recibir(int socket, void* guardeAqui, size_t length) {
 	if (rdo == -1) {
 		perror("Fallo al recibir paquete");
 	};
-		while(rdo<lenght){
-	rdo+=recv(socket,guardeAqui+rdo,(lenght-rdo),0);
+		while(rdo<length){
+	rdo+=recv(socket,guardeAqui+rdo,(length-rdo),0);
 	};
 	return rdo;
 
@@ -97,8 +97,8 @@ int enviar(int socket, void * sacaDeAca, size_t length) {
 	if (rdo == -1) {
 		perror("Fallo el envio");
 	};
-	while(rdo<lenght){
-	rdo+=send(socket,sacaDeAca+rdo,(lenght-rdo),0);
+	while(rdo<length){
+	rdo+=send(socket,sacaDeAca+rdo,(length-rdo),0);
 	};
 	return rdo;
 }
