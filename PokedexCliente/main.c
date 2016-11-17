@@ -186,7 +186,7 @@ int tp_mknod (const char *path, mode_t mod , dev_t dev){
 
 
 int tp_truncate (const char * path,  off_t off){
-	pthread_mutex_lock(&SEM_EXEC);
+	/*pthread_mutex_lock(&SEM_EXEC);
 	log_info(logger,"truncando archivo: %s",path);
 	char* discriminator=calloc(7,sizeof(char));
 	string_append(&discriminator,"truncar");
@@ -201,7 +201,8 @@ int tp_truncate (const char * path,  off_t off){
 	enviar(socketPokedexServer,&off,sizeof(off_t));
 	int rdo=recibirOkey();
 	pthread_mutex_unlock(&SEM_EXEC);
-	return rdo;
+	return rdo;*/
+	return 0;
 }
 int tp_release (const char * path, struct fuse_file_info * filer){
 	log_info(logger,"cerrando archivo");

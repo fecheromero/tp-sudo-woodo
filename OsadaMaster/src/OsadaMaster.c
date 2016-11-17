@@ -509,14 +509,14 @@ _Bool agregarContenidoAArchivo(char* ruta, osada* FS, void* contenido, size_t si
 		 waitFileSemaphore(*posicion, WRITE);
 
 		void* data = contenido;
-		/*bool rdo=truncar(file,FS,size,offset);
+		bool rdo=truncar(file,FS,size,offset);
 		if(!rdo){
 			freeFileSemaphore(*posicion);
 			free(posicion);
 			borrarArchivo(ruta,FS);
 			log_debug(logger,"no entra en el disco");
 			return false;
-		}*/
+		}
 		int bloque=file->first_block;
 		int cantDeBloques=ceil(offset/64.0f);
 		int i;
@@ -868,7 +868,6 @@ int truncador(osada* FS, int fd){
 		ruta = string_substring_until(ruta, *size);
 		log_debug(logger, ruta);
 		off_t* nuevoTamanio=calloc(1,sizeof(off_t));
-		recibir(fd,nuevoTamanio,sizeof(off_t));
 		recibir(fd,nuevoTamanio,sizeof(off_t));
 		osada_file* file=findFileWithPath(ruta,FS,NULL);
 		int rdo;
