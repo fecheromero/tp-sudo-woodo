@@ -297,7 +297,7 @@ osada_file* recibirFile(char* path,int socket){
 		 return file;
 }
 int main(int argc, char *argv[]) {
-	logger = log_create("log.txt", "PokedexCliente", true, logLevel);
+	logger = log_create("logCliente.txt", "PokedexCliente", true, logLevel);
 	pthread_mutex_init(&SEM_EXEC,NULL);
 	log_debug(logger, "Creando socket");
 	socketPokedexServer = crearSocket();
