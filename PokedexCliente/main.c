@@ -40,7 +40,7 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  log_debug(logger,"directorio: %s", file->fname);
  free(file);
   }else if(file->state == REGULAR){
- stbuf->st_mode = S_IFREG | 0666;
+ stbuf->st_mode = S_IFREG | 0777;
  stbuf->st_nlink=1;
   stbuf->st_size = file->file_size;
  log_debug(logger,"archivo: %s tamaño: %d", file->fname,file->file_size);
