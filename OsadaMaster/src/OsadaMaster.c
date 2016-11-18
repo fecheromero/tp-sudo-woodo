@@ -308,13 +308,12 @@ _Bool validarContenedor(char* ruta, osada* FS) {
 uint32_t bloqueDisponible(osada* FS) {
 	uint32_t i = tamanioDeNoDatos;
 	int flag = 1;
-	int bloqueInicialDeDatos=tamanioDeNoDatos;
 	int max = FS->header->bitmap_blocks * 64 * 8;
-	while ( i< max && flag) {
+	while ( i< max && i<FS->header->data_blocks && flag) {
 		flag = bitarray_test_bit(FS->bitmap, i);
 			if(flag){i++;}
 	}
-	if (!flag || i>=max) {
+	if (!flag) {
 		return (i-tamanioDeNoDatos);
 	} else {
 		log_info(logger,"no hay mas bloques disponibles");
