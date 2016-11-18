@@ -1,13 +1,17 @@
 #!/bin/bash  
 
-mkdir Ejecutables
-mkdir Ejecutables/logs
+rojo='\033[0;31m'
+normal='\033[0m'
+verde='\033[0;32m'
+mkdir ejecutables
+mkdir ejecutables/logs
 
-gcc OsadaMaster/src/OsadaMaster.c -lSupport -lcurses -lnivel-gui -lpthread -lcommons -lm -o Ejecutables/server
-echo "Compilamos server"
+gcc OsadaMaster/src/OsadaMaster.c -lSupport -lnivel-gui -lcurses  -lpthread -lcommons -lm -o ejecutables/server
+[ -f ejecutables/server ] && echo -e "${verde}Compilamos server${normal}" || echo -e "${rojo}No compilo server :(${normal}" 
 
-gcc PokedexCliente/main.c -DFUSE_USE_VERSION=27 -D_FILE_OFFSET_BITS=64 -lcommons -lnivel-gui -lcurses -lpthread -lfuse -lSupport  -o Ejecutables/cliente
-echo "Compilamos pokedex cliente"
 
-gcc Mapa/src/Mapa.c -lcommons -lnivel-gui -lcurses -lpthread -lSupport -lpkmn-battle -o Ejecutables/mapa
-echo "Compilamos mapa"
+gcc PokedexCliente/main.c -DFUSE_USE_VERSION=27 -D_FILE_OFFSET_BITS=64 -lcommons -lSupport -lnivel-gui -lcurses -lpthread -lfuse  -o ejecutables/cliente
+[ -f ejecutables/cliente ] && echo -e "${verde}Compilamos pokedex${normal}" || echo -e "${rojo}No compilo pokedex :(${normal}" 
+
+gcc Mapa/src/Mapa.c -lcommons -lnivel-gui -lcurses -lpthread -lSupport -lpkmn-battle -o ejecutables/mapa
+[ -f ejecutables/mapa ] && echo -e "${verde}Compilamos mapa${normal}" || echo -e "${rojo}No compilo mapa :(${normal}" 
