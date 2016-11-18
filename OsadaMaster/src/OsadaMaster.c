@@ -370,7 +370,7 @@ int crearArchivo(char* ruta, void* contenido, uint32_t size, osada* FS) {
 		file->first_block = bloqueLibre;
 		if(size==0){
 			bitarray_set_bit(FS->bitmap, (tamanioDeNoDatos+bloqueLibre));}
-		memcpy(file->fname, vectorRuta[j], 17);
+		strcpy(file->fname, vectorRuta[j]);
 		j--;
 		char* padre = calloc(250,sizeof(char));
 		if (j != -1) {
@@ -1156,7 +1156,9 @@ osada_file* findFileWithPath(char * path, osada * disk, uint32_t * position) {
 	return file;
 }
 bool isTheFile(osada_file * file, char** route, int pathQuantity, osada * disk) {
-	if (strcmp(file->fname, route[pathQuantity]) != 0) {
+	char * fullName = calloc(18, sizeof(char));
+	memcpy(fullName, file->fname,17);
+	if (strcmp(fullName, route[pathQuantity]) != 0) {
 		return false;
 	}
 	if (pathQuantity == 0) {
