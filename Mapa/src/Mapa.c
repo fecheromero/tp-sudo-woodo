@@ -140,7 +140,7 @@ void cargarMetaData(char* mapa){
 	string_append(&file,"/metadata");
 		CONFIG=config_create(file);
 		MAPA->puerto=config_get_int_value(CONFIG,"Puerto");
-		MAPA->ip=config_get_string_value(CONFIG,"IP");
+		MAPA->ip="0.0.0.0";
 		MAPA->tiempoDeCheckeo=config_get_int_value(CONFIG,"TiempoCheckeoDeadlock");
 		MAPA->batallaOn=config_get_int_value(CONFIG,"Batalla");
 		MAPA->quantum=config_get_int_value(CONFIG,"quantum");
