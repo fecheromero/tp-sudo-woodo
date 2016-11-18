@@ -119,9 +119,22 @@ void printHeader(osada_header* osadaHeader) {
 	puts("Tamaño de la tabla de datos:");
 	printf("%d\n\n", osadaHeader->data_blocks);
 }
+void desconectarCliente(){
+	log_info(logger, "desconecte a un chamaco");
+	  pthread_exit(NULL);
+}
+void controlarDesconeccion(int rdo){
+	if(rdo==0){
+		desconectarCliente();
+	}
+}
+void controlarRecibir(int socket,void* sacaDeAca,size_t length){
+	controlarDesconeccion(recibir(socket,sacaDeAca,length));
+}
 bool truncar(osada_file* file,osada* FS,size_t size,off_t offset){
+	int tamanioAntiguo=file->file_size;
+	file->file_size=size+offset;
 	if(offset==0 && size<=64){
-		file->file_size=size;
 		file->lastmod=time(NULL);
 		return true;
 	}
@@ -150,7 +163,10 @@ bool truncar(osada_file* file,osada* FS,size_t size,off_t offset){
 	}
 	else{
 	int bloqueAuxiliar;
-	while(FS->asignaciones[bloque]!=0xFFFFFFFF){
+	if(restante<=-64){
+	file->file_size=tamanioAntiguo;
+	}
+	while(restante<=-64 && FS->asignaciones[bloque]!=0xFFFFFFFF){
 		bloqueAuxiliar=bloque;
 		bloque=FS->asignaciones[bloque];
 		bitarray_clean_bit(FS->bitmap,tamanioDeNoDatos+bloque);
@@ -682,9 +698,9 @@ void listarContenido(char* ruta, osada* FS, osada_file* vector, int* size) {
 
 int enviarOsadaFile(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
-	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
+	controlarDesconeccion(recibir(fd, size, sizeof(int))); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
-	recibir(fd, ruta, *size); //recibo la ruta
+	controlarDesconeccion(recibir(fd, ruta, *size)); //recibo la ruta
 	ruta = string_substring_until(ruta, *size);
 	osada_file* file = NULL;
 	file = findFileWithPath(ruta, FS, NULL); //encuentro el file
@@ -714,9 +730,9 @@ int enviarOsadaFile(osada* FS, int fd) {
 
 int enviarFilesContenidos(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
-	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
+	controlarDesconeccion(recibir(fd, size, sizeof(int))); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
-	recibir(fd, ruta, *size); //recibo la ruta
+	controlarDesconeccion(recibir(fd, ruta, *size)); //recibo la ruta
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
 	osada_file* vector = calloc(2048, sizeof(osada_file));
@@ -735,14 +751,14 @@ int enviarContenido(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
 	off_t* offset = calloc(1, sizeof(off_t));
 
-	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
+	controlarRecibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
-	recibir(fd, ruta, *size); //recibo la ruta
+	controlarRecibir(fd, ruta, *size); //recibo la ruta
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
 	size_t* sizeDeLectura = calloc(1, sizeof(size_t));
-	recibir(fd, sizeDeLectura, sizeof(size_t));
-	recibir(fd, offset, sizeof(off_t));
+	controlarRecibir(fd, sizeDeLectura, sizeof(size_t));
+	controlarRecibir(fd, offset, sizeof(off_t));
 	void* contenido = leerArchivo(ruta, FS, sizeDeLectura,*offset);
 	log_debug(logger, "lei");
 	free(ruta);
@@ -779,9 +795,9 @@ typedef struct discriminator {
 
 int borrarGenerico(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int));
-	recibir(fd, size, sizeof(int));
+	controlarRecibir(fd, size, sizeof(int));
 	char* ruta = calloc(*size, sizeof(char));
-	recibir(fd, ruta, *size);
+	controlarRecibir(fd, ruta, *size);
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
 	osada_file* file = findFileWithPath(ruta, FS, NULL);
@@ -796,9 +812,9 @@ int borrarGenerico(osada* FS, int fd) {
 }
 int makeDir(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int));
-	recibir(fd, size, sizeof(int));
+	controlarRecibir(fd, size, sizeof(int));
 	char* ruta = calloc(*size, sizeof(char));
-	recibir(fd, ruta, *size);
+	controlarRecibir(fd, ruta, *size);
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
 	int rdo=crearDirectorio(ruta, FS);
@@ -809,16 +825,16 @@ int makeDir(osada* FS, int fd) {
 void writeFi(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
 	off_t* offset = calloc(1, sizeof(off_t));
-	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
+	controlarRecibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
-	recibir(fd, ruta, *size); //recibo la ruta
+	controlarRecibir(fd, ruta, *size); //recibo la ruta
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
 	size_t* sizeBuf = calloc(1, sizeof(size_t));
-	recibir(fd, sizeBuf, sizeof(size_t));
+	controlarRecibir(fd, sizeBuf, sizeof(size_t));
 	void* buf = calloc(*sizeBuf, sizeof(char));
-	recibir(fd, buf, *sizeBuf);
-	recibir(fd, offset, sizeof(off_t));
+	controlarRecibir(fd, buf, *sizeBuf);
+	controlarRecibir(fd, offset, sizeof(off_t));
 	log_debug(logger,"agrego en %s apartir de %d %d bytes",ruta,*offset,*sizeBuf);
 	agregarContenidoAArchivo(ruta, FS, buf, *sizeBuf,*offset);
 	free(ruta);
@@ -830,9 +846,9 @@ void writeFi(osada* FS, int fd) {
 }
 int makeFi(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
-	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
+	controlarRecibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
-	recibir(fd, ruta, *size); //recibo la ruta
+	controlarRecibir(fd, ruta, *size); //recibo la ruta
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
 	int rdo=crearArchivo(ruta, NULL, 0, FS);
@@ -842,15 +858,15 @@ int makeFi(osada* FS, int fd) {
 }
 int reubicar(osada* FS, int fd) {
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
-	recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
+	controlarRecibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
-	recibir(fd, ruta, *size); //recibo la ruta
+	controlarRecibir(fd, ruta, *size); //recibo la ruta
 	ruta = string_substring_until(ruta, *size);
 	log_debug(logger, ruta);
 	int* sizeNew = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
-	recibir(fd, sizeNew, sizeof(int)); //recibo la cantidad de bytes de la ruta
+	controlarRecibir(fd, sizeNew, sizeof(int)); //recibo la cantidad de bytes de la ruta
 	char* rutaNew = calloc(*sizeNew, sizeof(char)); //pido memoria para la ruta
-	recibir(fd, rutaNew, *sizeNew); //recibo la ruta
+	controlarRecibir(fd, rutaNew, *sizeNew); //recibo la ruta
 	rutaNew = string_substring_until(rutaNew, *sizeNew);
 	log_debug(logger, rutaNew);
 	int rdo=reubicarArchivo(ruta, rutaNew, FS);
@@ -862,13 +878,13 @@ int reubicar(osada* FS, int fd) {
 }
 int truncador(osada* FS, int fd){
 	int* size = calloc(1, sizeof(int)); //pido memoria para el size de la ruta
-		recibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
+		controlarRecibir(fd, size, sizeof(int)); //recibo la cantidad de bytes de la ruta
 		char* ruta = calloc(*size, sizeof(char)); //pido memoria para la ruta
-		recibir(fd, ruta, *size); //recibo la ruta
+		controlarRecibir(fd, ruta, *size); //recibo la ruta
 		ruta = string_substring_until(ruta, *size);
 		log_debug(logger, ruta);
 		off_t* nuevoTamanio=calloc(1,sizeof(off_t));
-		recibir(fd,nuevoTamanio,sizeof(off_t));
+		controlarRecibir(fd,nuevoTamanio,sizeof(off_t));
 		osada_file* file=findFileWithPath(ruta,FS,NULL);
 		int rdo;
 		if(!truncar(file,FS,*nuevoTamanio,0)){
@@ -887,7 +903,7 @@ void* hilo_atendedor(base* bas) {
 	while (true) {
 		puts("arranca un while");
 		char* disc = calloc(7, sizeof(char));
-		recibir(bas->fd, disc, 7);
+		controlarRecibir(bas->fd, disc, 7);
 		bool criteria(discriminator* d) {
 			return strcmp(disc, d->string) == 0;
 		}
@@ -913,8 +929,7 @@ void* hilo_atendedor(base* bas) {
 			puts("envCont");
 			rdo=enviarContenido(bas->FS, bas->fd);
 			basurero = malloc(4);
-			printf("basurero: %d", recibir(bas->fd, basurero,4));
-			puts(basurero);
+			controlarRecibir(bas->fd, basurero,4);
 			free(basurero);
 			break;
 		case MAKEDIR:
@@ -925,8 +940,7 @@ void* hilo_atendedor(base* bas) {
 			puts("writeFi");
 			writeFi(bas->FS, bas->fd);
 			basurero = malloc(4);
-			printf("basurero: %d", recibir(bas->fd, basurero, 4));
-			puts(basurero);
+			controlarRecibir(bas->fd, basurero, 4);
 			free(basurero);
 
 			break;
