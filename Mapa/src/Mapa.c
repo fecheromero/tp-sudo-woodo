@@ -799,13 +799,11 @@ while(true){
 		int j=0;
 		if(ent==NULL){return true;};
 		if(ent->pedido==NULL) {
-			log_info(logger,"%s puede terminar",ent->nombre);
 			return true;};
 		while(ent->pedido!=vectorDisponible[j].pokemonID && j<cantDeNest){
 			j++;
 		};
 		if(ent->pedido==vectorDisponible[j].pokemonID && vectorDisponible[j].instancias>0){
-			log_info(logger,"%s puede terminar x disponibilidad",ent->nombre);
 			return true;
 		}
 		else{return false;};
@@ -832,34 +830,26 @@ while(true){
 		 log_info(logger,"%c disponibles= %d ",vectorDisponible[h].pokemonID,vectorDisponible[h].instancias);
 	 }
 	}
-	log_info(logger,"vector de Disponibles:");
-	mostrarVector();
-	log_info(logger,"todos los entrenadores");
-	list_iterate(listaEntrenadoresParaDeadLock,mostrar);
 	entrenador* unEntrenadorQuePuedeTerminar=list_find(listaEntrenadoresParaDeadLock,puedeTerminar);
 
 			while(unEntrenadorQuePuedeTerminar!=NULL){
 				simulaTermiado(unEntrenadorQuePuedeTerminar);
 				unEntrenadorQuePuedeTerminar=list_find(listaEntrenadoresParaDeadLock,puedeTerminar);
 			};
-			log_info(logger,"entrenadores que no puede terminar");
-			list_iterate(listaEntrenadoresParaDeadLock,mostrar);
 
 				if(list_size(listaEntrenadoresParaDeadLock)<=1){}
 			else{
-
+				log_info(logger,"HAY DEADLOCK!");
 				log_info(logger,"vector de Disponibles:");
 				mostrarVector();
-				log_info(logger,"HAY DEADLOCK!");
+				log_info(logger,"todos los entrenadores");
+				list_iterate(listaEntrenadoresParaDeadLock,mostrar);
 				list_iterate(listaEntrenadoresParaDeadLock,mostrar);
 				bool noEstasEnInanicion(entrenador* ent){
 					bool meEstasEsperando(entrenador* otroEnt){
 						if(ent==otroEnt){return false;}
 						bool loQueres(pokemon* poke){
 							bool rta=otroEnt->pedido==poke->id;
-							if(rta){
-								log_info(logger,"%s esta esperando a %s",otroEnt->nombre,ent->nombre);
-								}
 							return rta;
 
 						}
