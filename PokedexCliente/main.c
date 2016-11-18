@@ -67,8 +67,10 @@ static int tp_getattr(const char *path, struct stat *stbuf) {
  int * cantArchivos=calloc(1,sizeof(int));
  osada_file* vector = listarDirServer(path,socketPokedexServer, cantArchivos);
  for (i = 0; i < (*cantArchivos); i++) {
+	 char * fullName = calloc(18, sizeof(char));
+	 memcpy(fullName, vector[i].fname,17);
 	 log_debug(logger,"cargo: %s tipo: %d size: %d",vector[i].fname,vector[i].state,vector[i].file_size);
-	 filler(buf, vector[i].fname, NULL, 0);
+	 filler(buf,fullName , NULL, 0);
  }
  free(cantArchivos);
  free(vector);
