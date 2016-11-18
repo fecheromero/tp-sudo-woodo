@@ -15,3 +15,6 @@ gcc PokedexCliente/main.c -DFUSE_USE_VERSION=27 -D_FILE_OFFSET_BITS=64 -lcommons
 
 gcc Mapa/src/Mapa.c -lcommons -lnivel-gui -lcurses -lpthread -lSupport -lpkmn-battle -o ejecutables/mapa
 [ -f ejecutables/mapa ] && echo -e "${verde}Compilamos mapa${normal}" || echo -e "${rojo}No compilo mapa :(${normal}" 
+
+gcc Entrenador/src/Entrenador.c -lSupport -lnivel-gui -lcommons -lcurses -lpthread  -o ejecutables/entrenador
+[ -f ejecutables/entrenador ] && echo -e "${verde}Compilamos entrenador${normal}" || echo -e "${rojo}No compilo entrenador :(${normal}" 
