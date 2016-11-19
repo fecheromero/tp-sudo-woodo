@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "INSTALANDO CURSES"
+sudo apt-get install libncurses5-dev
+
 mkdir libraries
 cd libraries
 echo "DESCARGANDO COMMONS"
@@ -24,3 +27,7 @@ cd ../..
 cd so-nivel-gui-library
 echo "INSTALANDO NIVEL-GUI"
 make && make install
+
+cd ../../Support
+echo "INSTALANDO SUPPORT"
+sudo make install
