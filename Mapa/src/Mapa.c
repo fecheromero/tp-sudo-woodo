@@ -181,7 +181,7 @@ void quitarElementoDeCola(t_queue* cola,_Bool(*condition)(void*)){
 						void* ent=queue_pop(pilaAuxiliar);
 						queue_push(cola,ent);
 					}
-				free(pilaAuxiliar);
+				queue_destroy(pilaAuxiliar);
 				};
 ITEM_NIVEL* buscarItemXId(char caracter){
 		bool criterio(ITEM_NIVEL* item){
@@ -282,7 +282,7 @@ int darSenialDePaso(entrenador* ent,int flag){
 void capt(entrenador* ent,void* buf){
 		ITEM_NIVEL* itemEntr=buscarItemXId(ent->id);
 			_Bool criterio(ITEM_NIVEL* it){
-				return ((itemEntr->posx==it->posx) && (itemEntr->posy==it->posy));
+				return ((itemEntr->posx==it->posx) && (itemEntr->posy==it->posy) && it->id!=itemEntr->id);
 			};
 			ITEM_NIVEL* nest=list_find(items,criterio);
 			_Bool critPoke(bloqueadosXPokemon* pk){
@@ -345,13 +345,13 @@ void sumarNuevo(entrenador* nuevo,char* origen){
 								sem_post(&hayReadys);
 							};
 			queue_push(READY,nuevo);
-			logearCambioDeEstado(nuevo->nombre,origen,"ready");
-			sem_post(&hayReadys);
 			pthread_mutex_lock(&SEM_ATENDIDO);
 			entrenador* exAtendido=atendido;
 			atendido=NULL;
-			if(exAtendido!=NULL && exAtendido!=nuevo){logearCambioDeEstado(exAtendido->nombre,"atendido","ready");};
 			pthread_mutex_unlock(&SEM_ATENDIDO);
+			logearCambioDeEstado(nuevo->nombre,origen,"ready");
+			sem_post(&hayReadys);
+			if(exAtendido!=NULL && exAtendido!=nuevo){logearCambioDeEstado(exAtendido->nombre,"atendido","ready");};
 			pthread_mutex_unlock(&SEM_READY);
 
 			break;
@@ -474,7 +474,6 @@ void RRProximo(){
 
 void SRDFProximo(){
 	if(atendido!=NULL){
-
 	}
 	else{
 		_Bool criterio(entrenador* entr){
@@ -593,7 +592,7 @@ void* hilo_Planificador(void* sarlompa){
 		pthread_mutex_unlock(&controlDeFlujo);
 
 			struct timespec* ret=malloc(sizeof(struct timespec));
-		ret->tv_nsec=(MAPA->retardo-300)*1000000;
+		ret->tv_nsec=(MAPA->retardo)*1000000;
 		ret->tv_sec=0;
 		nanosleep(ret,NULL);
 		free(ret);
@@ -1118,7 +1117,7 @@ int main(int cant,char* argumentos[]) {
 	  	nivel_gui_inicializar();
 
 	  	//tamaño del mapa
-	  	nivel_gui_get_area_nivel(&rows, &cols);
+	 	nivel_gui_get_area_nivel(&rows, &cols);
 	   //carga de pokemons (recorre directorio)
 					  cargarPokemons(mapaNombre);
 	  /*bloqueadosXPokemon* bloq=list_get(pokemons,2);
